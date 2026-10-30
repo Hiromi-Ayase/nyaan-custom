@@ -108,3 +108,7 @@ class SatSolver {
     }
   }
 };
+
+/**
+ * @docs docs/math/sat-solver.md
+ */

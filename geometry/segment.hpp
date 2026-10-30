@@ -29,3 +29,7 @@ Real distance_ss(const Segment &a, const Segment &b) {
   return min({distance_sp(a, b.a), distance_sp(a, b.b), distance_sp(b, a.a),
               distance_sp(b, a.b)});
 }
+
+/**
+ * @docs docs/geometry/segment.md
+ */

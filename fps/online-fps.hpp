@@ -189,3 +189,7 @@ struct OnlineFormalPowerSeries {
 };
 
 using ofps = OnlineFormalPowerSeries;
+
+/**
+ * @docs docs/fps/online-fps.md
+ */

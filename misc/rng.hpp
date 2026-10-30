@@ -60,3 +60,7 @@ using my_rand::randset;
 using my_rand::randshf;
 using my_rand::rnd;
 using my_rand::rng;
+
+/**
+ * @docs docs/misc/rng.md
+ */

@@ -58,4 +58,5 @@ struct RectangleSum {
 
 /*
  * @brief 矩形和(永続セグメント木)
+ * @docs docs/data-structure-2d/rectangle-sum.md
  */

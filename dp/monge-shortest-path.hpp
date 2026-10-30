@@ -30,4 +30,5 @@ vector<T> monge_shortest_path(int N, const function<T(int, int)>& f) {
 
 /**
  * @brief monge グラフ上の最短路
+ * @docs docs/dp/monge-shortest-path.md
  */

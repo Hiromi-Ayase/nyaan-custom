@@ -24,3 +24,8 @@ $G_v(0)$の計算は$G_d(0)$から$G_{2d}(0)$を$\mathrm{O}(d \log d)$で計算�
 となるので、$G_d(d), G_d(dv + d), G_d(dv + v + d)$を標本点のシフトを利用して計算すればよい。
 
 ここでは簡単のため$v$を固定した実装にしているが、$p$の値によっては$v = 32768$が不適切になることに注意する必要がある。
+
+#### 実装・検証
+
+- [実装](../../modulo/factorial.hpp)
+- [検証: yosupo-factorial.test.cpp](../../verify/verify-yosupo-fps/yosupo-factorial.test.cpp)

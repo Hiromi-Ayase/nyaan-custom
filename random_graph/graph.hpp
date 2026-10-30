@@ -105,3 +105,7 @@ struct Graph {
     return os;
   }
 };
+
+/**
+ * @docs docs/random_graph/graph.md
+ */

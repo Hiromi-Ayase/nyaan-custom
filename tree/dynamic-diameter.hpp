@@ -171,3 +171,7 @@ struct DynamicDiameter {
 }  // namespace DynamicDiameterImpl
 
 using DynamicDiameterImpl::DynamicDiameter;
+
+/**
+ * @docs docs/tree/dynamic-diameter.md
+ */

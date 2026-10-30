@@ -187,3 +187,7 @@ struct StringSearch {
 //  SuffixArray sa(S);
 //  LCPArray lcp(sa);
 //  StringSearch search(lcp);
+
+/**
+ * @docs docs/string/suffix-array.md
+ */

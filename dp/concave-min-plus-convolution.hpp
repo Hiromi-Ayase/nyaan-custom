@@ -40,3 +40,7 @@ vector<T> concave_max_plus_convolution(const vector<T>& a, const vector<T>& b) {
   }
   return ans;
 }
+
+/**
+ * @docs docs/dp/concave-min-plus-convolution.md
+ */

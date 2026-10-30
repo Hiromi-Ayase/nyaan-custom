@@ -566,3 +566,7 @@ struct NTT {
     for (int i = 0; i < M; i++) a[M + i].a = buf1[i].a;
   }
 };
+
+/**
+ * @docs docs/ntt/ntt-avx2.md
+ */

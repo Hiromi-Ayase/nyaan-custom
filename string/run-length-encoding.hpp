@@ -21,4 +21,5 @@ vector<pair<typename C::value_type, int>> RunLengthEncoding(const C& S) {
 
 /**
  * @brief Run Length Encoding(連長圧縮)
+ * @docs docs/string/run-length-encoding.md
  */

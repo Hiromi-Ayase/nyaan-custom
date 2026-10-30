@@ -286,4 +286,5 @@ uint64_t HashMapBase<Key, Data>::r =
 
 /**
  * @brief Hash Map(base)　(ハッシュマップ・基底クラス)
+ * @docs docs/hashmap/hashmap-base.md
  */

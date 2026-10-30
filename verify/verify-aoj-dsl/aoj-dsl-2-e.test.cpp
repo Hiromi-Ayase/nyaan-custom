@@ -6,20 +6,22 @@
 #include "../../segment-tree/lazy-segment-tree-utility.hpp"
 
 using namespace Nyaan;
+
 void Nyaan::solve() {
   ini(N, Q);
   int I = 0;
-  AddSum_LazySegmentTree<int> seg(vi(N, I));
+  using SegmentTree = SegmentTree_RangeAdd_RangeSum<int>;
+  SegmentTree::Tree seg(vector<SegmentTree::S>(N, {I, 1}));
   rep(_, Q) {
     ini(c);
     if (c == 0) {
       ini(s, t, x);
       s--;
-      seg.update(s, t, x);
+      seg.apply(s, t, x);
     } else {
       ini(i);
       i--;
-      out(seg.query(i, i + 1));
+      out(seg.prod(i, i + 1).sum);
     }
   }
 }

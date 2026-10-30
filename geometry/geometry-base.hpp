@@ -74,3 +74,7 @@ int ccw(const Point& a, const Point& b, const Point& c) {
   if (norm(x) < norm(y)) return -2;                 // a-b-c の順で一直線
   return 0;                                         // a-c-b の順で一直線
 }
+
+/**
+ * @docs docs/geometry/geometry-base.md
+ */

@@ -42,3 +42,7 @@ struct UnionFindEnumerate {
     return res;
   }
 };
+
+/**
+ * @docs docs/data-structure/union-find-enumerate.md
+ */

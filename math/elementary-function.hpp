@@ -128,3 +128,7 @@ int isDigit(long long n, int zero = 1) {
   }
   return ret;
 }
+
+/**
+ * @docs docs/math/elementary-function.md
+ */

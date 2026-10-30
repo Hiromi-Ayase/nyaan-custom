@@ -84,4 +84,5 @@ struct SurrealNumber {
 
 /**
  * @brief 超現実数
+ * @docs docs/game/surreal-number.md
  */

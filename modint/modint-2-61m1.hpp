@@ -72,3 +72,7 @@ struct modint_2_61m1 {
   friend bool operator!=(const M& l, const M& r) { return l.x != r.x; }
   friend ostream& operator<<(ostream& os, const M& r) { return os << r.x; }
 };
+
+/**
+ * @docs docs/modint/modint-2-61m1.md
+ */

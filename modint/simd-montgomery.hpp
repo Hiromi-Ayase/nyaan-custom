@@ -73,3 +73,7 @@ __attribute__((target("avx2"))) inline __m256i montgomery_sub_256(
   return _mm256_add_epi32(_mm256_and_si256(_mm256_cmpgt_epi32(m0, ret), m2),
                           ret);
 }
+
+/**
+ * @docs docs/modint/simd-montgomery.md
+ */

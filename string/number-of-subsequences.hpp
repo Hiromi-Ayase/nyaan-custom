@@ -15,3 +15,7 @@ mint number_of_subsequences(const Container& S) {
   }
   return al - 1;
 }
+
+/**
+ * @docs docs/string/number-of-subsequences.md
+ */

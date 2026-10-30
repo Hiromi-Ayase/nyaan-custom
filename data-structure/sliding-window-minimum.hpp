@@ -25,3 +25,7 @@ vector<T> SlideWindowMinimum(vector<T> &v, F f, int K) {
   }
   return dat;
 }
+
+/**
+ * @docs docs/data-structure/sliding-window-minimum.md
+ */

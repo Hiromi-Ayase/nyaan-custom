@@ -40,4 +40,5 @@ long long count_square_free(long long N) {
 
 /**
  * @brief 無平方数の数え上げ
+ * @docs docs/multiplicative-function/count-square-free.md
  */

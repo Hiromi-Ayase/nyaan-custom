@@ -55,3 +55,7 @@ struct Gaussian_Integer {
     return os << rhs.x << " " << rhs.y;
   }
 };
+
+/**
+ * @docs docs/math/gaussian-integer.md
+ */

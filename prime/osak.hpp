@@ -46,3 +46,7 @@ vector<int> osak_divisors(int n) {
   sort(begin(ds), end(ds));
   return ds;
 }
+
+/**
+ * @docs docs/prime/osak.md
+ */

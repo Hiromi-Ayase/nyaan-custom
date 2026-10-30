@@ -170,3 +170,7 @@ struct LiChaoTree {
     return best;
   }
 };
+
+/**
+ * @docs docs/segment-tree/li-chao-tree-abstruct.md
+ */

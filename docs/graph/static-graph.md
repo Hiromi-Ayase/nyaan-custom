@@ -6,3 +6,10 @@
 
 - `StaticGraph<T>(N, M)`: N頂点M辺で重みの型が`T`(重み無しの場合は`void`)であるグラフを作成する。
 - `add_edge(u, args...)`: uからvへ向かう重みcの辺を追加する。`args...`には`v, c`あるいは`v`が入る。
+
+#### 実装・検証
+
+- [実装](../../graph/static-graph.hpp)
+- [検証: aoj-2995-hashmap.test.cpp](../../verify/verify-aoj-other/aoj-2995-hashmap.test.cpp)
+- [検証: aoj-2995.test.cpp](../../verify/verify-aoj-other/aoj-2995.test.cpp)
+- [検証: yosupo-vertex-add-path-sum-euler-tour.test.cpp](../../verify/verify-yosupo-ds/yosupo-vertex-add-path-sum-euler-tour.test.cpp)

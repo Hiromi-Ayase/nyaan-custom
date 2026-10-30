@@ -30,3 +30,7 @@ vector<int> max_independent_set(const vector<vector<int>> &g) {
     if (res[i]) res2.push_back(i);
   return res2;
 }
+
+/**
+ * @docs docs/graph/max-independent-set.md
+ */

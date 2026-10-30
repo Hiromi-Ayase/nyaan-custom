@@ -52,3 +52,7 @@ struct MaxInterval {
     return c;
   }
 };
+
+/**
+ * @docs docs/segment-tree/segment-tree-max-of-interval.md
+ */

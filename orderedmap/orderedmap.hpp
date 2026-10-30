@@ -26,4 +26,5 @@ struct OrderedMap : OrderedMapBase<OrderedMapNode<Key, Val, false>, false> {
 
 /**
  * @brief Ordered Map(順序付き連想配列)
+ * @docs docs/orderedmap/orderedmap.md
  */

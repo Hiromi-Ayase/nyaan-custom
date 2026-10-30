@@ -72,4 +72,5 @@ using fast_factorize::is_prime;
 
 /**
  * @brief Miller-Rabin primality test
+ * @docs docs/prime/miller-rabin.md
  */

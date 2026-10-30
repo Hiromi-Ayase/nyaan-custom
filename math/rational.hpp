@@ -110,3 +110,7 @@ struct RationalBase {
 
 using Rational = RationalBase<long long, __int128_t>;
 using Fraction = Rational;
+
+/**
+ * @docs docs/math/rational.md
+ */

@@ -178,3 +178,7 @@ struct UndirectedGraphGenerator {
     return g;
   }
 } undirected;
+
+/**
+ * @docs docs/random_graph/gen.md
+ */

@@ -16,4 +16,5 @@ vector<int> enumerate_superset(int b, int n) {
 
 /**
  * @brief 下位集合/上位集合の列挙
+ * @docs docs/set-function/enumerate-set.md
  */

@@ -199,4 +199,5 @@ struct LinkCutTreeSubtreeQuery {
 
 /**
  * @brief 部分木加算クエリLink/Cut Tree
+ * @docs docs/lct/link-cut-tree-subtree-add.md
  */

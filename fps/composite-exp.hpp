@@ -81,4 +81,5 @@ FormalPowerSeries<mint> inverse_of_composite_exp(FormalPowerSeries<mint> f,
 
 /**
  * @brief $f(exp(cx))$ の計算
+ * @docs docs/fps/composite-exp.md
  */

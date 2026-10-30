@@ -44,4 +44,5 @@ struct PartisanGameSolver {
 
 /**
  * @brief 非不偏ゲーム
+ * @docs docs/game/partisan-game.md
  */

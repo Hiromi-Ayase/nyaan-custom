@@ -3,7 +3,7 @@
 #include "../../template/template.hpp"
 //
 #include "../../data-structure/sparse-table.hpp"
-#include "../../segment-tree/segment-tree.hpp"
+#include "../../segment-tree/segment-tree-utility.hpp"
 //
 #include "../../misc/rng.hpp"
 //
@@ -16,16 +16,16 @@ void test(int N) {
   each(x, v) x = rng(-INF, INF);
 
   SparseTable<T> s{v};
-  SegmentTree seg(
-      v, [](T a, T b) { return min(a, b); }, INF);
+  typename SegmentTree_RangeMin<T, numeric_limits<T>::max() / 2>::Tree seg(v);
   rep(i, N) reg(j, i, N + 1) {
     ll a1 = s.query(i, j);
-    ll a2 = seg.query(i, j);
+    ll a2 = seg.prod(i, j);
     assert(a1 == a2);
   }
 }
 
 using namespace Nyaan;
+
 void Nyaan::solve() {
   rep(t, 100) {
     rep(N, 100) {

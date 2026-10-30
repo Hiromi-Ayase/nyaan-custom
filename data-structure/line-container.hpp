@@ -67,4 +67,5 @@ using MaxLineContainer = LineContainer<T, Objective::MAXIMIZE>;
 
 /**
  * @brief Line container
+ * @docs docs/data-structure/line-container.md
  */

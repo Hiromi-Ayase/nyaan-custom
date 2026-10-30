@@ -41,3 +41,7 @@ struct Adjunction {
     return os << rhs.a << " " << rhs.b;
   }
 };
+
+/**
+ * @docs docs/modint/adjunction-modint.md
+ */

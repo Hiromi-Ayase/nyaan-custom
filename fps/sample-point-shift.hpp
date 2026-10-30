@@ -60,3 +60,7 @@ FormalPowerSeries<mint> SamplePointShift(FormalPowerSeries<mint>& y, mint t,
   }
   return ret;
 }
+
+/**
+ * @docs docs/fps/sample-point-shift.md
+ */

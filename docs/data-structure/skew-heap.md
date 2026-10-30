@@ -19,3 +19,8 @@ Skew Heapとは、ヒープ同士のマージ(融合, meld)やヒープ全体に
 - `Ptr pop(Ptr x)`: 根のノードを削除して新しい根へのポインタを返す。
 - `Ptr alloc(const T& key, int idx)`: `(key, idx)`を持ったノードを新しく作成して、ポインタを返す。
 - `meld(Ptr x, Ptr y)`: `x`と`y`を融合して新たな根のポインタを返す。
+
+#### 実装・検証
+
+- [実装](../../data-structure/skew-heap.hpp)
+- [関連検証（間接使用）: yosupo-directed-mst.test.cpp](../../verify/verify-yosupo-graph/yosupo-directed-mst.test.cpp)

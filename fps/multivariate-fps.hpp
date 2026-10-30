@@ -204,4 +204,5 @@ struct MultivariateFormalPowerSeries {
 
 /**
  * @brief 多変数形式的冪級数ライブラリ
+ * @docs docs/fps/multivariate-fps.md
  */

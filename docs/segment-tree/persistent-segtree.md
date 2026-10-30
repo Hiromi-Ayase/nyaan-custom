@@ -11,3 +11,8 @@
   - `update(int t, k, x)`:= t回目の更新の後の木を更新元とする。
   - `update(k, x)` := 最新の木を更新元とする。
 - `new_tree()` := 空の木を返す
+
+#### 実装・検証
+
+- [実装](../../segment-tree/persistent-segment-tree.hpp)
+- [関連検証（間接使用）: yosupo-rectangle-sum.test.cpp](../../verify/verify-yosupo-ds/yosupo-rectangle-sum.test.cpp)

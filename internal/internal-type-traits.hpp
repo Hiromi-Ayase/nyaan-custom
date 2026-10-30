@@ -46,3 +46,7 @@ ENABLE_VALUE(is_broadly_unsigned);
   constexpr auto has_##var##_v = has_##var<T>::value;
 
 }  // namespace internal
+
+/**
+ * @docs docs/internal/internal-type-traits.md
+ */

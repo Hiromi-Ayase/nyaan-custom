@@ -68,4 +68,5 @@ struct RelaxedConvolution {
 
 /**
  * @brief Relaxed Convolution
+ * @docs docs/ntt/relaxed-convolution.md
  */

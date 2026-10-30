@@ -70,4 +70,5 @@ Matrix<mint> polynomial_matrix_prod(Matrix<FormalPowerSeries<mint>> &m,
 
 /**
  * @brief 多項式行列のprefix product
+ * @docs docs/matrix/polynomial-matrix-prefix-prod.md
  */

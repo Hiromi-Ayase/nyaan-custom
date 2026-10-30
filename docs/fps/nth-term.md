@@ -17,4 +17,8 @@ $$\sum_{i=0}^\infty a_i x^i = \frac{P(x)}{1-c_1x-c_2x^2-\ldots -c_kx^k}$$
 #### 使い方
 
 - `nth-term(N, a)`: 数列$(a_i)$の第$N$項を計算する。
- 
+
+#### 実装・検証
+
+- [実装](../../fps/nth-term.hpp)
+- [検証: yuki-0215-nth-term.test.cpp](../../verify/verify-yuki/yuki-0215-nth-term.test.cpp)

@@ -34,3 +34,7 @@ vector<vector<T>> LinearEquation(vector<vector<T>> a, vector<T> b) {
   }
   return res;
 }
+
+/**
+ * @docs docs/matrix/linear-equation.md
+ */

@@ -493,4 +493,5 @@ using bigint = MultiPrecisionInteger;
 
 /**
  * @brief 多倍長整数
+ * @docs docs/math/bigint.md
  */

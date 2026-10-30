@@ -55,3 +55,7 @@ FormalPowerSeries<mint> stirling_matrix_trans(FormalPowerSeries<mint> a,
     return PolynomialInterpolation(xs, g);
   }
 }
+
+/**
+ * @docs docs/fps/stirling-matrix.md
+ */

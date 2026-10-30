@@ -113,4 +113,5 @@ struct ImpartialGameSolver {
 
 /**
  * @brief 不偏ゲーム
+ * @docs docs/game/impartial-game.md
  */

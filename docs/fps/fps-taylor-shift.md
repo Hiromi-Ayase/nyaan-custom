@@ -19,3 +19,10 @@ $$=\sum_{j=0}^N\frac{x^j}{(N-j)!}\sum_{m=0}^j\frac{a^{j-m}}{(j-m)!}\left((N-m)!f
 #### 使い方
 
 - `TaylorShift(f, a, C, deg)`: 多項式$f$について $f(x+a)$ を deg 次の項まで求める。 $C$ には `Binomial` 構造体を渡す。
+
+#### 実装・検証
+
+- [実装](../../fps/taylor-shift.hpp)
+- [検証: dual-fps.test.cpp](../../verify/verify-unit-test/dual-fps.test.cpp)
+- [検証: yosupo-taylor-shift.test.cpp](../../verify/verify-yosupo-fps/yosupo-taylor-shift.test.cpp)
+- [検証: yuki-1504.test.cpp](../../verify/verify-yuki/yuki-1504.test.cpp)

@@ -58,3 +58,7 @@ vector<T> karatsuba(const vector<T>& a, const vector<T>& b) {
 
 }  // namespace KaratsubaImpl
 using KaratsubaImpl::karatsuba;
+
+/**
+ * @docs docs/ntt/karatsuba.md
+ */

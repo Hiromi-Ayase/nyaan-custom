@@ -47,4 +47,5 @@ struct enumerate_mf_prefix_sum {
 
 /**
  * @brief 乗法的関数のprefix sum の列挙
+ * @docs docs/multiplicative-function/enumerate-sum-of-multiplicative-function.md
  */

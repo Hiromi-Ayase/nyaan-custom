@@ -44,4 +44,5 @@ struct LineContainer2D {
 
 /**
  * @brief Line container (for max(ax + by) query)
+ * @docs docs/data-structure/line-container-2d.md
  */

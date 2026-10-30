@@ -36,4 +36,5 @@ struct Dual_of_Shortest_Path {
 
 /**
  * @brief 牛ゲー(最短路問題の双対)
+ * @docs docs/shortest-path/dual-of-shortest-path.md
  */

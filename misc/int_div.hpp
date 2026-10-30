@@ -30,3 +30,7 @@ long long modulo(long long a, long long b) {
   long long c = a % b;
   return c < 0 ? c + b : c;
 }
+
+/**
+ * @docs docs/misc/int_div.md
+ */

@@ -14,4 +14,5 @@ vector<T> and_convolution(vector<T> a, vector<T> b) {
 
 /**
  * @brief AND Convoluion
+ * @docs docs/set-function/and-convolution.md
  */

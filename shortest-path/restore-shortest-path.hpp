@@ -28,3 +28,7 @@ vector<int> restore_shortest_path(WeightedGraph<T> &g, vector<T> &d, int S,
   reverse(begin(ret), end(ret));
   return ret;
 }
+
+/**
+ * @docs docs/shortest-path/restore-shortest-path.md
+ */

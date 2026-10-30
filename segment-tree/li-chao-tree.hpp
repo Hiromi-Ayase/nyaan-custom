@@ -99,3 +99,7 @@ struct LiChaoTree {
   // xにおける最小クエリ
   T query(T x) { return query_idx(get_more_idx(x)); }
 };
+
+/**
+ * @docs docs/segment-tree/li-chao-tree.md
+ */

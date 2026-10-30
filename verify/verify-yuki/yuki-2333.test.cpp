@@ -3,9 +3,13 @@
 #include "../../template/template.hpp"
 //
 #include "../../segment-tree/segment-tree-max-of-interval.hpp"
-#include "../../segment-tree/segment-tree.hpp"
+#include "../../atcoder/segtree.hpp"
 
 using namespace Nyaan;
+
+using D = MaxInterval<ll>;
+D seg_op(D a, D b) { return merge(a, b); }
+D seg_e() { return {}; }
 
 void q() {
   inl(N);
@@ -33,7 +37,6 @@ void q() {
   }
   p = mkuni(p);
 
-  using D = MaxInterval<ll>;
   V<D> init(sz(p) - 1);
   for (ll i = 0, j = 0, s = 0; i < N; i++) {
     s += B[i];
@@ -42,15 +45,14 @@ void q() {
       j++;
     }
   }
-  SegmentTree seg(
-      init, [](D& a, D& b) { return merge(a, b); }, D{});
+  atcoder::segtree<D, seg_op, seg_e> seg(init);
   rep(i, Q) {
     ll x = X[i], y = Y[i];
     if (cmd[i] == 1) {
       int j = lb(p, x);
-      seg.update(j, D{Y[i], p[j + 1] - p[j]});
+      seg.set(j, D{Y[i], p[j + 1] - p[j]});
     } else {
-      ll ans = seg.query(lb(p, x), lb(p, y)).max;
+      ll ans = seg.prod(lb(p, x), lb(p, y)).max;
       out(ans);
     }
   }

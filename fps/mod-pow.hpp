@@ -32,4 +32,5 @@ FormalPowerSeries<mint> mod_pow(int64_t k, const FormalPowerSeries<mint>& base,
 
 /**
  * @brief Mod-Pow ($f(x)^k \mod g(x)$)
+ * @docs docs/fps/mod-pow.md
  */

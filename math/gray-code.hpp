@@ -10,4 +10,5 @@ vector<int> gray_code(int n) {
 
 /**
  * @brief Gray code
- */ 
+ * @docs docs/math/gray-code.md
+ */

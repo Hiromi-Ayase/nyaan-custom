@@ -16,3 +16,8 @@ $[0,N)$上の区間に対する$Q$個のクエリを$\mathrm{O}(\alpha N \sqrt{Q
 であるので、$\frac{N^2}{2W} + \frac{WQ}{3}$が最小になる$W$を選べばよく、AM-BMより$W=\frac{\sqrt{3}N}{\sqrt{2Q}}$を得る。
 
 (修正前のライブラリはうっかり$W=\frac{\sqrt{3}N}{\sqrt{Q}}$にしていたがこれだと定数倍が$3$倍ほど悪いようだ。これはひどい…)
+
+#### 実装・検証
+
+- [実装](../../misc/mo.hpp)
+- [検証: yosupo-static-range-inversions-query.test.cpp](../../verify/verify-yosupo-ds/yosupo-static-range-inversions-query.test.cpp)

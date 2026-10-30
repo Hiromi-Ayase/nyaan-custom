@@ -33,3 +33,7 @@ struct ErasablePriorityQueue {
     }
   }
 };
+
+/**
+ * @docs docs/data-structure/erasable-priority-queue.md
+ */

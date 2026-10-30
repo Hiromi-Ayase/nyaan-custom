@@ -34,3 +34,7 @@ vector<mint> root_finding(const FormalPowerSeries<mint>& f) {
   }
   return ans;
 }
+
+/**
+ * @docs docs/fps/root-finding.md
+ */

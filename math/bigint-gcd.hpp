@@ -109,3 +109,7 @@ MultiPrecisionInteger lcm(const MultiPrecisionInteger& a,
                           const MultiPrecisionInteger& b) {
   return a / gcd(a, b) * b;
 }
+
+/**
+ * @docs docs/math/bigint-gcd.md
+ */

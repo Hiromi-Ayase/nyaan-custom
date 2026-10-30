@@ -16,3 +16,7 @@ inline void sbit(T &a, int i, bool b) {
 constexpr long long PW(int n) { return 1LL << n; }
 constexpr long long MSK(int n) { return (1LL << n) - 1; }
 }  // namespace Nyaan
+
+/**
+ * @docs docs/template/bitop.md
+ */

@@ -113,4 +113,5 @@ using ArbitraryModInt = ArbitraryModIntBase<-1>;
 
 /**
  * @brief modint (2^{30} 未満の任意 mod 用)
+ * @docs docs/modint/arbitrary-modint.md
  */

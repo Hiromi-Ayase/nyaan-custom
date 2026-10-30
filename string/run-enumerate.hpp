@@ -70,3 +70,7 @@ vector<tuple<int, int, int>> run_enumerate(const C& S) {
   }
   return res;
 }
+
+/**
+ * @docs docs/string/run-enumerate.md
+ */

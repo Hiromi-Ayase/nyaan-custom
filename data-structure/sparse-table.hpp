@@ -34,4 +34,5 @@ struct SparseTable {
 
 /**
  * @brief Sparse Table
+ * @docs docs/data-structure/sparse-table.md
  */

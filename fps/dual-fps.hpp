@@ -306,4 +306,5 @@ vector<int> DualFPS<fps>::btr;
 
 /**
  * @brief 周波数領域での値を保持するFPS
+ * @docs docs/fps/dual-fps.md
  */

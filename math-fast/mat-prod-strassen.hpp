@@ -230,3 +230,7 @@ void prod(unsigned int* __restrict__ a, unsigned int* __restrict__ b,
 }
 
 }  // namespace fast_mat_prod_impl
+
+/**
+ * @docs docs/math-fast/mat-prod-strassen.md
+ */

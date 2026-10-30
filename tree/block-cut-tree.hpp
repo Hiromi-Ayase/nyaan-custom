@@ -55,4 +55,5 @@ struct BlockCutTree {
 
 /**
  * @brief Block Cut Tree
+ * @docs docs/tree/block-cut-tree.md
  */

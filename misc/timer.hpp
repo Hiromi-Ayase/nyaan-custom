@@ -15,3 +15,7 @@ struct Timer {
   }
   long long operator()() { return elapsed(); }
 };
+
+/**
+ * @docs docs/misc/timer.md
+ */

@@ -23,3 +23,7 @@ vector<vector<mint>> inverse_matrix(const vector<vector<mint>>& a) {
   }
   return b;
 }
+
+/**
+ * @docs docs/matrix/inverse-matrix.md
+ */

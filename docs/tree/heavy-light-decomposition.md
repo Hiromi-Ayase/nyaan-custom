@@ -14,3 +14,10 @@ HLDecの特長は「任意のパスを$\rm{O}(\log N)$本の列に分解する�
 - `path_noncommutative_query(u, v, vertex, f)`: **非可換な**パスクエリを処理する。$\mathrm{O}(\log^2N)$
 - `subtree_query(u, vertex, f)`: 部分木クエリを処理する。$\mathrm{O}(\log^N)$
 - `lca(u, v)`: uとvの最小共通祖先(LCA)を返す。$\mathrm{O}(\log^N)$
+
+#### 実装・検証
+
+- [実装](../../tree/heavy-light-decomposition.hpp)
+- [検証: aoj-dsl-3-d-cartesiantree.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-3-d-cartesiantree.test.cpp)
+- [検証: aoj-grl-5-c.test.cpp](../../verify/verify-aoj-grl/aoj-grl-5-c.test.cpp)
+- [検証: aoj-grl-5-d.test.cpp](../../verify/verify-aoj-grl/aoj-grl-5-d.test.cpp)

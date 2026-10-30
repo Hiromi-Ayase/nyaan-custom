@@ -127,3 +127,7 @@ struct F2_Matrix {
     return os;
   }
 };
+
+/**
+ * @docs docs/matrix/f2-matrix.md
+ */

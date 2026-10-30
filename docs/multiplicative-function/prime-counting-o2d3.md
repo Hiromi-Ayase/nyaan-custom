@@ -3,3 +3,8 @@
 計算量は改善されているが、競プロの制約($N \leq 10^{11}$)では[シンプルな実装](https://nyaannyaan.github.io/library/library/multiplicative-function/prime-counting.hpp.html)と実行速度に大きな差が出ないようだ。
 
 TODO: 計算量解析を書く
+
+#### 実装・検証
+
+- [実装](../../multiplicative-function/prime-counting-o2d3.hpp)
+- [検証: yosupo-counting-primes-2.test.cpp](../../verify/verify-yosupo-math/yosupo-counting-primes-2.test.cpp)

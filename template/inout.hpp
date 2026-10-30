@@ -92,3 +92,7 @@ struct IoSetupNya {
 } iosetupnya;
 
 }  // namespace Nyaan
+
+/**
+ * @docs docs/template/inout.md
+ */

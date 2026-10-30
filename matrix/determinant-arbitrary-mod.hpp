@@ -27,3 +27,7 @@ mint determinant_arbitrary_mod(vector<vector<mint>> a) {
   for (int i = 0; i < n; i++) det *= a[i][i];
   return det;
 }
+
+/**
+ * @docs docs/matrix/determinant-arbitrary-mod.md
+ */

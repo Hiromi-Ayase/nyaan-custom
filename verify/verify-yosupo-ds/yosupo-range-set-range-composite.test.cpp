@@ -3,7 +3,8 @@
 #include "../../template/template.hpp"
 //
 #include "../../math/affine-transformation.hpp"
-#include "../../segment-tree/lazy-segment-tree.hpp"
+#include "../../atcoder/lazysegtree.hpp"
+#include <optional>
 //
 #include "../../modint/montgomery-modint.hpp"
 //
@@ -15,35 +16,33 @@ using vvm = vector<vm>;
 
 using namespace Nyaan;
 
+using A = Affine<mint>;
+using D = pair<A, int>;
+using F = optional<A>;
+D op(D a, D b) { return {b.first(a.first), a.second + b.second}; }
+D e() { return {A{1, 0}, 0}; }
+D mapping(F action, D value) {
+  return action ? D{Power(*action, value.second, A{1, 0}), value.second} : value;
+}
+F composition(F newer, F older) { return newer ? newer : older; }
+F id() { return nullopt; }
+
 void q() {
   ini(N, Q);
 
-  using A = Affine<mint>;
-  using D = pair<A, int>;
-
-  D ti = make_pair(A{1, 0}, 0);
-  A ei{0, 0};
-  auto f = [](const D& a, const D& b) -> D {
-    return make_pair(b.fi(a.fi), a.se + b.se);
-  };
-  auto g = [](const D& a, const A& b) -> D {
-    return make_pair(Power(b, a.se, A{1, 0}), a.se);
-  };
-  auto h = [](const A&, const A& b) { return b; };
-
-  V<D> v(N, make_pair(ei, 1));
+  V<D> v(N, make_pair(A{}, 1));
   rep(i, N) in(v[i].fi.a, v[i].fi.b);
 
-  LazySegmentTree seg(v, f, g, h, ti, ei);
+  atcoder::lazy_segtree<D, op, e, F, mapping, composition, id> seg(v);
 
   rep(i, Q) {
     ini(cmd);
     if (cmd == 0) {
       ini(l, r, c, d);
-      seg.update(l, r, A{c, d});
+      seg.apply(l, r, A{c, d});
     } else {
       ini(l, r, x);
-      auto a = seg.query(l, r);
+      auto a = seg.prod(l, r);
       out(a.fi(x));
     }
   }

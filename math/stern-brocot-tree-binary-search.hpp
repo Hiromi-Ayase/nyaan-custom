@@ -68,3 +68,7 @@ pair<pair<I, I>, pair<I, I>> binary_search_on_stern_brocot_tree(
     }
   }
 }
+
+/**
+ * @docs docs/math/stern-brocot-tree-binary-search.md
+ */

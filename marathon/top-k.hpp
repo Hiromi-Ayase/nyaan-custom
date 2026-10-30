@@ -54,3 +54,7 @@ struct Top_K {
     return v;
   }
 };
+
+/**
+ * @docs docs/marathon/top-k.md
+ */

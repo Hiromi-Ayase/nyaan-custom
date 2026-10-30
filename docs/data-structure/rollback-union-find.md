@@ -18,3 +18,8 @@ UnionFindの内部実装をQuickFindと呼ばれる経路圧縮を行わない�
 - `rollback(int state = -1)`：UnionFindをロールバックする。計算量は状況による。(ボトルネックにはならない)
   - `state = -1`のとき：`snapshot()`で保存した状態にロールバックする。
   - そうでないとき：`unite`が`state`回呼び出された時の状態にロールバックする。
+
+#### 実装・検証
+
+- [実装](../../data-structure/rollback-union-find.hpp)
+- [検証: yosupo-rollback-union-find.test.cpp](../../verify/verify-yosupo-ds/yosupo-rollback-union-find.test.cpp)

@@ -41,3 +41,7 @@ vector<mint> CharacteristicPolynomial(vector<vector<mint>> a) {
   }
   return p[N];
 }
+
+/**
+ * @docs docs/matrix/characteristric-polynomial.md
+ */

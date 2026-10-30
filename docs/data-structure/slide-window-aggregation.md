@@ -22,3 +22,8 @@ Slide Window Aggrigation は、モノイド$(S,\bullet,I)$の$S$の要素の列$
 
 - $A$が空のときに`pop`を呼んではならない。
 - 上記の計算量では`f_`の計算量を$\mathrm{O}(1)$と仮定している。
+
+#### 実装・検証
+
+- [実装](../../data-structure/slide-window-aggregation.hpp)
+- [検証: yosupo-swag.test.cpp](../../verify/verify-yosupo-ds/yosupo-swag.test.cpp)

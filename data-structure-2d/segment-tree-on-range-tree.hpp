@@ -1,75 +1,78 @@
 #pragma once
 
+#include <algorithm>
+#include <cassert>
+#include <utility>
+#include <vector>
 
-
-#include "../segment-tree/segment-tree.hpp"
+#include "../atcoder/segtree.hpp"
 
 // S ... index_type
 // T ... value_type
-// F ... function_type
-template <typename S, typename T, typename F>
+// op, e ... aggregation and identity (AtCoder Library interface)
+template <typename S, typename T, T (*op)(T, T), T (*e)()>
 struct RangeTree {
-  using Seg = SegmentTree<T, F>;
-  using P = pair<S, S>;
+  using Seg = atcoder::segtree<T, op, e>;
+  using P = std::pair<S, S>;
 
-  S N, M;
-  const F f;
-  T ti;
-  vector<SegmentTree<T, F>> seg;
-  vector<vector<S>> ys;
-  vector<P> ps;
+  S N = 0;
+  std::vector<Seg> seg;
+  std::vector<std::vector<S>> ys;
+  std::vector<P> ps;
 
-  RangeTree(const F& f_, const T& ti_) : f(f_), ti(ti_) {}
-
-  void add_point(S x, S y) { ps.push_back(make_pair(x, y)); }
+  void add_point(S x, S y) { ps.push_back(std::make_pair(x, y)); }
 
   void build() {
-    sort(begin(ps), end(ps));
-    ps.erase(unique(begin(ps), end(ps)), end(ps));
+    std::sort(std::begin(ps), std::end(ps));
+    ps.erase(std::unique(std::begin(ps), std::end(ps)), std::end(ps));
     N = ps.size();
-    for (int i = 0; i < 2 * N; ++i) seg.push_back(Seg{f, ti});
-    ys.resize(2 * N);
+    seg.assign(2 * N, Seg{});
+    ys.assign(2 * N, {});
     for (int i = 0; i < N; ++i) {
       ys[i + N].push_back(ps[i].second);
-      seg[i + N].init(1);
+      seg[i + N] = Seg(1);
     }
     for (int i = N - 1; i > 0; --i) {
       ys[i].resize(ys[i << 1].size() + ys[(i << 1) | 1].size());
-      merge(begin(ys[(i << 1) | 0]), end(ys[(i << 1) | 0]),
-            begin(ys[(i << 1) | 1]), end(ys[(i << 1) | 1]), begin(ys[i]));
-      ys[i].erase(unique(begin(ys[i]), end(ys[i])), end(ys[i]));
-      seg[i].init(ys[i].size());
+      std::merge(std::begin(ys[(i << 1) | 0]), std::end(ys[(i << 1) | 0]),
+            std::begin(ys[(i << 1) | 1]), std::end(ys[(i << 1) | 1]), std::begin(ys[i]));
+      ys[i].erase(std::unique(std::begin(ys[i]), std::end(ys[i])), std::end(ys[i]));
+      seg[i] = Seg(ys[i].size());
     }
   }
 
   int id(S x) const {
-    return lower_bound(
-               begin(ps), end(ps), make_pair(x, S()),
+    return std::lower_bound(
+               std::begin(ps), std::end(ps), std::make_pair(x, S()),
                [](const P& a, const P& b) { return a.first < b.first; }) -
-           begin(ps);
+           std::begin(ps);
   }
 
   int id(int i, S y) const {
-    return lower_bound(begin(ys[i]), end(ys[i]), y) - begin(ys[i]);
+    return std::lower_bound(std::begin(ys[i]), std::end(ys[i]), y) - std::begin(ys[i]);
   }
 
   void add(S x, S y, T a) {
-    int i = lower_bound(begin(ps), end(ps), make_pair(x, y)) - begin(ps);
-    assert(ps[i] == make_pair(x, y));
-    for (i += N; i; i >>= 1) seg[i].add(id(i, y), a);
+    int i = std::lower_bound(std::begin(ps), std::end(ps), std::make_pair(x, y)) - std::begin(ps);
+    assert(i < N && ps[i] == std::make_pair(x, y));
+    for (i += N; i; i >>= 1) {
+      int k = id(i, y);
+      seg[i].set(k, seg[i].get(k) + a);
+    }
   }
 
   T sum(S xl, S yl, S xr, S yr) {
-    T L = ti, R = ti;
+    T L = e(), R = e();
     int a = id(xl), b = id(xr);
     for (a += N, b += N; a < b; a >>= 1, b >>= 1) {
-      if (a & 1) L = f(L, seg[a].query(id(a, yl), id(a, yr))), ++a;
-      if (b & 1) --b, R = f(seg[b].query(id(b, yl), id(b, yr)), R);
+      if (a & 1) L = op(L, seg[a].prod(id(a, yl), id(a, yr))), ++a;
+      if (b & 1) --b, R = op(seg[b].prod(id(b, yl), id(b, yr)), R);
     }
-    return f(L, R);
+    return op(L, R);
   }
 };
 
 /*
  * @brief 領域木(Segment Tree)
+ * @docs docs/data-structure-2d/segment-tree-on-range-tree.md
  */

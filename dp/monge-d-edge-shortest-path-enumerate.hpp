@@ -27,4 +27,5 @@ vector<long long> enumerate_monge_d_edge_shortest_path(
 
 /**
  * @brief monge グラフ上の d-辺最短路の d=1,...,N における列挙
+ * @docs docs/dp/monge-d-edge-shortest-path-enumerate.md
  */

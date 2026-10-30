@@ -26,3 +26,10 @@ TODO: 森が与えられた時と辺クエリのverifyを書いていないの�
 - `path_query(u, v, f)`: 頂点クエリ用の関数。
 - `edge_query(u, v, f)`: 辺クエリ用の関数。
 - `subtree_query(u, v, f)`: 部分木クエリ用の関数。
+
+#### 実装・検証
+
+- [実装](../../tree/euler-tour.hpp)
+- [検証: yosupo-vertex-add-path-sum-euler-tour.test.cpp](../../verify/verify-yosupo-ds/yosupo-vertex-add-path-sum-euler-tour.test.cpp)
+- [検証: yosupo-vertex-add-subtree-sum-euler-tree.test.cpp](../../verify/verify-yosupo-ds/yosupo-vertex-add-subtree-sum-euler-tree.test.cpp)
+- [検証: yosupo-lowest-common-ancestor-euler-tour.test.cpp](../../verify/verify-yosupo-graph/yosupo-lowest-common-ancestor-euler-tour.test.cpp)

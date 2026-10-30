@@ -16,3 +16,7 @@ T kruskal(int N, Edges<T> &es) {
   }
   return ret;
 }
+
+/**
+ * @docs docs/graph/kruskal.md
+ */

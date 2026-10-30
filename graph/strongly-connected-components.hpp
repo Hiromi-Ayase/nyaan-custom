@@ -71,3 +71,7 @@ struct StronglyConnectedComponents {
     }
   }
 };
+
+/**
+ * @docs docs/graph/strongly-connected-components.md
+ */

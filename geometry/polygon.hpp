@@ -98,3 +98,7 @@ pair<int, int> convex_polygon_diameter(const Polygon &p) {
   } while (i != is || j != js);
   return minmax(maxi, maxj);
 }
+
+/**
+ * @docs docs/geometry/polygon.md
+ */

@@ -30,3 +30,7 @@ int64_t mod_log(int64_t a, int64_t b, int64_t p) {
   }
   return -1;
 }
+
+/**
+ * @docs docs/modulo/mod-log.md
+ */

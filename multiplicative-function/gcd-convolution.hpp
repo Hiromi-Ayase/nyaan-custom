@@ -17,4 +17,5 @@ vector<mint> gcd_convolution(const vector<mint>& a, const vector<mint>& b) {
 
 /**
  * @brief GCD畳み込み
+ * @docs docs/multiplicative-function/gcd-convolution.md
  */

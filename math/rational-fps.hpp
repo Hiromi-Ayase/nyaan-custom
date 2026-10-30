@@ -195,3 +195,7 @@ struct FormalPowerSeries_rational : vector<R> {
     return fps(deg, R(0));
   }
 };
+
+/**
+ * @docs docs/math/rational-fps.md
+ */

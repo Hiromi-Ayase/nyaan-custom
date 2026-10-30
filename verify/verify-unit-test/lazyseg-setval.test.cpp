@@ -10,8 +10,8 @@ using namespace Nyaan;
 void Nyaan::solve() {
   int N = 100000;
   int Q = 1000000;
-  vl init(N);
-  AddSum_LazySegmentTree<ll> seg(init);
+  using SegmentTree = SegmentTree_RangeAdd_RangeSum<ll>;
+  SegmentTree::Tree seg(vector<SegmentTree::S>(N, {0, 1}));
 
   rep(i, Q) {
     if (rng() & 1) {
@@ -20,11 +20,11 @@ void Nyaan::solve() {
       r = randint(0, N);
       if (l > r) swap(l, r);
       r++;
-      seg.update(l, r, randint(0, TEN(6)));
+      seg.apply(l, r, randint(0, TEN(6)));
     } else {
       int x = randint(0, N);
-      ll v = seg.get_val(x);
-      ll w = seg.query(x, x + 1);
+      ll v = seg.get(x).sum;
+      ll w = seg.prod(x, x + 1).sum;
       assert(v == w);
     }
   }

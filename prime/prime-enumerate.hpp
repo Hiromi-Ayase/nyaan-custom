@@ -16,3 +16,7 @@ vector<int> prime_enumerate(int N) {
   while (!ret.empty() && ret.back() > N) ret.pop_back();
   return ret;
 }
+
+/**
+ * @docs docs/prime/prime-enumerate.md
+ */

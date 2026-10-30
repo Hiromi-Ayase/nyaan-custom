@@ -36,4 +36,5 @@ struct RaderNTT {
 
 /**
  * @brief Rader's FFT Algorithm
+ * @docs docs/ntt/rader-ntt.md
  */

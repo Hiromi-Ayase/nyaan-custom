@@ -29,4 +29,5 @@ vector<mint> multipoint_binomial_sum(const vector<pair<int, int>>& qs) {
 
 /**
  * @brief 二項係数のprefix sumの多点評価
+ * @docs docs/modulo/multipoint-binomial-sum.md
  */

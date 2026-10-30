@@ -38,4 +38,5 @@ struct NimberToField {
 
 /**
  * @brief Nimber <-> 多項式環
+ * @docs docs/math/nimber-to-field.md
  */

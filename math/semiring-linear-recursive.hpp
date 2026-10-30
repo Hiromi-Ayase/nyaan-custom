@@ -45,3 +45,7 @@ struct LinearRecursive {
     swap(b, v);
   }
 };
+
+/**
+ * @docs docs/math/semiring-linear-recursive.md
+ */

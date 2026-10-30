@@ -36,4 +36,5 @@ void enumerate_quotient(T N, const F& f) {
 
 /**
  *  @brief 商の列挙
+ * @docs docs/math/enumerate-quotient.md
  */

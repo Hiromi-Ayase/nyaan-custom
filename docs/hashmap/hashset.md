@@ -29,3 +29,9 @@ TODO:書く
 - `reserve`
 - `begin(), end(), begin(*this), end(*this)`
 - `iterator`および`iterator`のメンバ関数
+
+#### 実装・検証
+
+- [実装](../../hashmap/hashset.hpp)
+- [検証: debug.test.cpp](../../verify/verify-unit-test/debug.test.cpp)
+- [検証: hashset.test.cpp](../../verify/verify-unit-test/hashset.test.cpp)

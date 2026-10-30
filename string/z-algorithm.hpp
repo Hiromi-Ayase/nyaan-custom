@@ -23,4 +23,5 @@ vector<int> z_algorithm(const Container& s) {
 
 /**
  * @brief Z algorithm
+ * @docs docs/string/z-algorithm.md
  */

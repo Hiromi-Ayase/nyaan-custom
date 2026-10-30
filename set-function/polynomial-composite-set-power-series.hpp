@@ -42,4 +42,5 @@ vector<mint> polynomial_composite_set_power_series(int n, FormalPowerSeries<mint
 
 /**
  * @brief 集合冪級数の合成
+ * @docs docs/set-function/polynomial-composite-set-power-series.md
  */

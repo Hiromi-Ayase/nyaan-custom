@@ -1,0 +1,15 @@
+## 固定法での逆元の高速計算
+
+`fast_modinv<MOD>` は二進 GCD と小さな表を使って整数の逆元を計算する。
+
+- オブジェクトを構築してから `inv(a)` または `operator()(a)` を呼ぶ。
+- 法は正の奇数で `MOD < 2^30`。入力は `0 <= a < MOD` で、法が `1` 以外なら `gcd(a, MOD) = 1` が必要。
+- 戻り値は `a * result ≡ 1 (mod MOD)` を満たす剰余。法 `1` では `0` を返す。
+
+非可逆な値のエラー通知はなく、法が `1` でない場合の `a = 0` も扱わない。法をコンパイル時に固定することで前計算と除算を減らす実装で、問い合わせは $O(\log MOD)$ 回のワード演算。
+
+#### 実装・検証
+
+- [実装](../../math-fast/inv.hpp)
+- [検証: fast-inv-o1.test.cpp](../../verify/verify-unit-test/fast-inv-o1.test.cpp)
+- [検証: fast-inv.test.cpp](../../verify/verify-unit-test/fast-inv.test.cpp)

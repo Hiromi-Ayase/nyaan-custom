@@ -15,3 +15,8 @@ Binary Indexed Tree(BIT)は区間和と一点加算が配列長を$n$として�
 - `sum(l, r)`: 区間`[l, r)`の和を取得する。
 - `operator[](k)`: `k`番目の要素の値を取得する。
 - `lower_bound(w)`: 要素が全て非負の時、`[0, k]`の区間和がw以上となるような最小のkを求める。
+
+#### 実装・検証
+
+- [実装](../../data-structure/dynamic-binary-indexed-tree.hpp)
+- [関連検証（間接使用）: yosupo-point-add-rectangle-sum-bit2d.test.cpp](../../verify/verify-yosupo-ds/yosupo-point-add-rectangle-sum-bit2d.test.cpp)

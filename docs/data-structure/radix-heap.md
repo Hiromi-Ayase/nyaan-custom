@@ -11,3 +11,8 @@ Radix Heap(基数ヒープ)とは、単調順位ヒープ(追加した値が最�
 - `pop()`: ヒープの要素のうち最小のものをpopして返す。
 - `size()`: ヒープ内の要素数を返す。
 - `empty()`: ヒープが空かどうかを返す。
+
+#### 実装・検証
+
+- [実装](../../data-structure/radix-heap.hpp)
+- [検証: radix-heap.test.cpp](../../verify/verify-unit-test/radix-heap.test.cpp)

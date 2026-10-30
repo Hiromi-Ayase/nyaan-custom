@@ -19,3 +19,7 @@ vector<pair<int, int>> bfs_restore(vector<vector<int>>& g, int st = 0) {
   }
   return d;
 }
+
+/**
+ * @docs docs/shortest-path/bfs-restore.md
+ */

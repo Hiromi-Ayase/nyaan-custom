@@ -14,3 +14,11 @@
 - [自作Hash Map(連鎖法)](https://judge.yosupo.jp/submission/23726)　146ms
 - [ハッシュ衝突の対策をしたunordered_map](https://judge.yosupo.jp/submission/23582) 263ms
 - (入出力にかかる時間は最大50ms程度と考えられる。)
+
+#### 実装・検証
+
+- [実装: hashmap.hpp](../../hashmap/hashmap.hpp)
+- [実装: hashmap-unerasable.hpp](../../hashmap/hashmap-unerasable.hpp)
+- [検証: aoj-1377.test.cpp](../../verify/verify-aoj-other/aoj-1377.test.cpp)
+- [検証: debug.test.cpp](../../verify/verify-unit-test/debug.test.cpp)
+- [検証: hashmap.test.cpp](../../verify/verify-unit-test/hashmap.test.cpp)

@@ -201,4 +201,5 @@ struct LazyReversibleTreap : TreapBase<LazyReversibleTreapNode<T, E>> {
 
 /**
  * @brief 遅延伝搬反転可能Treap
+ * @docs docs/rbst/treap.md
  */

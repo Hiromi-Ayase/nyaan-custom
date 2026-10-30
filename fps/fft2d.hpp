@@ -199,3 +199,7 @@ vector<FormalPowerSeries<mint>> multiply2d(vector<FormalPowerSeries<mint>> a,
   for (auto& v : a) v.resize(Wa + Wb - 1);
   return a;
 }
+
+/**
+ * @docs docs/fps/fft2d.md
+ */

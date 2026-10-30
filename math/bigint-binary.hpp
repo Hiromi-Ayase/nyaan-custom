@@ -266,3 +266,7 @@ struct BinaryBigInt {
 }  // namespace BinaryBigIntImpl
 
 using BinaryBigIntImpl::BinaryBigInt;
+
+/**
+ * @docs docs/math/bigint-binary.md
+ */

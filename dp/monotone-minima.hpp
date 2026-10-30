@@ -40,4 +40,5 @@ vector<int> monotone_minima(int N, int M, const function<T(int, int)>& A) {
 
 /**
  * @brief monotone minima
+ * @docs docs/dp/monotone-minima.md
  */

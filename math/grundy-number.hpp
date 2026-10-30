@@ -25,4 +25,5 @@ vector<int> GrundyNumber(vector<vector<int>> &g) {
 
 /**
  * @brief Grundy Number
+ * @docs docs/math/grundy-number.md
  */

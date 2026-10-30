@@ -28,3 +28,7 @@ struct FloatBinomial {
     return f[n] - f[n - k];
   }
 };
+
+/**
+ * @docs docs/math/float-binomial.md
+ */

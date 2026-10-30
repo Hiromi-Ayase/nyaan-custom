@@ -54,3 +54,7 @@ struct Trie {
 
   vector<int> idxs(int pos) { return pos < 0 ? vector<int>() : st[pos].idxs; }
 };
+
+/**
+ * @docs docs/string/trie.md
+ */

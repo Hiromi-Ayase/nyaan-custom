@@ -142,4 +142,5 @@ struct Matrix {
 
 /**
  * @brief 行列ライブラリ
+ * @docs docs/matrix/matrix.md
  */

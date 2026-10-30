@@ -74,3 +74,7 @@ struct OffLineDynamicConnectivity {
     }
   }
 };
+
+/**
+ * @docs docs/graph/offline-dynamic-connectivity.md
+ */

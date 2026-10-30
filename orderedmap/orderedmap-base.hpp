@@ -123,4 +123,5 @@ struct OrderedMapBase : RBSTBase<Node> {
 
 /**
  * @brief Ordered Set(base)　(順序付き集合・基底クラス)
+ * @docs docs/orderedmap/orderedmap-base.md
  */

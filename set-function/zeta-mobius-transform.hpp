@@ -54,4 +54,5 @@ void subset_mobius_transform(vector<T>& f) {
 
 /**
  * @brief Zeta Transform / Moebius Transform
+ * @docs docs/set-function/zeta-mobius-transform.md
  */

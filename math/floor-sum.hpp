@@ -21,3 +21,7 @@ T mod_affine_range_counting(T a, T b, T m, T xr, T yr) {
   assert(0 <= yr && yr <= m);
   return sum_of_floor(xr, m, a, b + m) - sum_of_floor(xr, m, a, b + m - yr);
 }
+
+/**
+ * @docs docs/math/floor-sum.md
+ */

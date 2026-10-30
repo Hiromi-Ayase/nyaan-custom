@@ -30,3 +30,7 @@ vector<mint> BerlekampMassey(const vector<mint> &s) {
   reverse(begin(c), end(c));
   return c;
 }
+
+/**
+ * @docs docs/fps/berlekamp-massey.md
+ */

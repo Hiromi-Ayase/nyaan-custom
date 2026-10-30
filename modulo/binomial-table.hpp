@@ -16,3 +16,7 @@ vector<vector<mint>> binomial_table(int n) {
   }
   return dp;
 }
+
+/**
+ * @docs docs/modulo/binomial-table.md
+ */

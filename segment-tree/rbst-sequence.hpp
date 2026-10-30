@@ -73,3 +73,7 @@ struct Sequence : RBSTShiftableLazySegmentTree<int, T, E, f, g, h, ti, ei> {
     return os;
   }
 };
+
+/**
+ * @docs docs/segment-tree/rbst-sequence.md
+ */

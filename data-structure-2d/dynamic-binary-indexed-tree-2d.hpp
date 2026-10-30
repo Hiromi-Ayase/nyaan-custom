@@ -42,4 +42,5 @@ struct DynamicFenwickTree2D {
 
 /*
  * @brief 動的二次元Binary Indexed Tree
+ * @docs docs/data-structure-2d/dynamic-binary-indexed-tree-2d.md
  */

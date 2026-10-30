@@ -58,4 +58,5 @@ vector<int> enumerate_leftmost_palindromes(const Container& vec) {
 
 /**
  * @brief Manacher's algorithm
+ * @docs docs/string/manacher.md
  */

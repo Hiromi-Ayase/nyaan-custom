@@ -39,4 +39,5 @@ struct CumulativeSum2D {
 
 /*
  * @brief 二次元累積和
+ * @docs docs/data-structure-2d/2d-cumulative-sum.md
  */

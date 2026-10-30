@@ -51,4 +51,5 @@ pair<unsigned long long, unsigned long long> garner(const vector<T>& rem,
 
 /**
  * @brief Garner's algorithm
+ * @docs docs/math/garner.md
  */

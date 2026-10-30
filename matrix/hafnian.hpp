@@ -41,3 +41,7 @@ mint Hafnian(vector<vector<mint>> &mat) {
   }
   return solve(solve, v).back();
 }
+
+/**
+ * @docs docs/matrix/hafnian.md
+ */

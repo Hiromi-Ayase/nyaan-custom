@@ -82,3 +82,7 @@ Edges<T> MinimumCostArborescence(int N, int root, const Edges<T> &es) {
   }
   return res;
 }
+
+/**
+ * @docs docs/graph/minimum-cost-arborescence.md
+ */

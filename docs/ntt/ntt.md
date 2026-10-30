@@ -1,0 +1,17 @@
+## 2 冪長の数論変換
+
+`NTT<mint>` は素数の法における radix-4 の NTT。`mint::get_mod()` はコンパイル時定数とし、原始根は内部で求める。
+
+- `ntt(a)` は順変換、`intt(a)` は長さの逆元を掛けた逆変換。配列を直接書き換える。
+- `multiply(a,b)` は通常の畳み込みを長さ `a.size()+b.size()-1` で返す。両入力を非空にする。
+- `ntt_doubling(a)` は既に変換した長さ $N$ の配列から、元の係数をゼロ埋めした長さ $2N$ の変換値を作る。変換値の並びはこの実装固有なので、他の NTT と混在させない。
+
+変換長は 2 冪で、法を $p$ として $N\mid p-1$ が必要。内部表の初期化は少なくとも `v2(p-1) >= 3` の法を前提とする。`998244353` なら最大長は $2^{23}$。畳み込みでも結果を切り上げた 2 冪長を上限内に収める。
+
+時間 $O(N\log N)$、領域 $O(N)$。短い入力では直接計算に切り替える。`multiply` は内部表を作り直すので、後でより大きい長さを直接変換する場合は `setwy` で必要なレベルの表を再設定する。他の同名 `NTT` 実装と併用しない。
+
+#### 実装・検証
+
+- [実装](../../ntt/ntt.hpp)
+- [検証: yosupo-convolution-ntt-normalmodint.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-ntt-normalmodint.test.cpp)
+- [検証: yosupo-convolution-ntt.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-ntt.test.cpp)

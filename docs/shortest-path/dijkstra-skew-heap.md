@@ -9,3 +9,8 @@
 #### 使い方
 
 - `dijkstra(g, start = 0)`: sを始点としたダイクストラ法を行い、計算結果を返す。
+
+#### 実装・検証
+
+- [実装](../../shortest-path/dijkstra-skew-heap.hpp)
+- [検証: yosupo-shortest-path-4.test.cpp](../../verify/verify-yosupo-graph/yosupo-shortest-path-4.test.cpp)

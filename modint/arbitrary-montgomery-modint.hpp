@@ -110,3 +110,7 @@ template <int id>
 using ArbitraryLazyMontgomeryModInt64bit =
     ArbitraryLazyMontgomeryModIntBase<long long, unsigned long long, __int128_t,
                                       __uint128_t, id>;
+
+/**
+ * @docs docs/modint/arbitrary-montgomery-modint.md
+ */

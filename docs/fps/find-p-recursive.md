@@ -61,3 +61,10 @@ Schroder number
 また、P-recursiveで表せない列の第$k$項は当然求められない。
 
 - 例えばBell Numberや$S(n,k)$は二項係数の和で表せるのでP-recursiveのような気がしてくるが(本当？)、実際は違うので高速計算できない(と思う)。
+
+#### 実装・検証
+
+- [実装](../../fps/find-p-recursive.hpp)
+- [検証: p-recursive.test.cpp](../../verify/verify-unit-test/p-recursive.test.cpp)
+- [検証: yosupo-factorial-p-recursive.test.cpp](../../verify/verify-yosupo-fps/yosupo-factorial-p-recursive.test.cpp)
+- [検証: yuki-1533.test.cpp](../../verify/verify-yuki/yuki-1533.test.cpp)

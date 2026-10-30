@@ -11,10 +11,15 @@ Binomial<mint> C;
 
 #include "../../graph/graph-template.hpp"
 #include "../../math/affine-transformation.hpp"
-#include "../../segment-tree/segment-tree.hpp"
+#include "../../atcoder/segtree.hpp"
 #include "../../tree/heavy-light-decomposition.hpp"
 //
 using namespace Nyaan;
+
+using af = Affine<mint>;
+af seg_op(af a, af b) { return a * b; }
+af seg_rop(af a, af b) { return b * a; }
+af seg_e() { return {}; }
 
 void Nyaan::solve() {
   ini(n, q);
@@ -24,32 +29,23 @@ void Nyaan::solve() {
 
   HeavyLightDecomposition<vvi> hld(g);
 
-  using af = Affine<mint>;
-  auto m1 = [](af a_, af b_) { return a_ * b_; };
-  auto m2 = [](af a_, af b_) { return b_ * a_; };
-  SegmentTree<af, decltype(m1)> seg1(n, m1, af());
-  SegmentTree<af, decltype(m2)> seg2(n, m2, af());
-
-  rep(i, n) {
-    int j = hld.idx(i).first;
-    trc(j);
-    seg1.set(j, af(a[i], b[i]));
-    seg2.set(j, af(a[i], b[i]));
-  }
-  seg1.build(), seg2.build();
+  vector<af> initial(n);
+  rep(i, n) initial[hld.idx(i).first] = af(a[i], b[i]);
+  atcoder::segtree<af, seg_op, seg_e> seg1(initial);
+  atcoder::segtree<af, seg_rop, seg_e> seg2(initial);
 
   rep(_, q) {
     ini(cmd, x, y, z);
     if (cmd == 0) {
-      seg1.update(hld.idx(x).first, af(y, z));
-      seg2.update(hld.idx(x).first, af(y, z));
+      seg1.set(hld.idx(x).first, af(y, z));
+      seg2.set(hld.idx(x).first, af(y, z));
     } else {
       mint ans = z;
       auto f = [&](int l, int r) {
         if (l <= r)
-          ans = seg1.query(l, r)(ans);
+          ans = seg1.prod(l, r)(ans);
         else
-          ans = seg2.query(r, l)(ans);
+          ans = seg2.prod(r, l)(ans);
       };
       hld.path_noncommutative_query(x, y, true, f);
       out(ans);

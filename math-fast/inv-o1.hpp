@@ -49,3 +49,7 @@ struct Inverse_O1 {
   }
   int operator()(int a) { return inv(a); }
 };
+
+/**
+ * @docs docs/math-fast/inv-o1.md
+ */

@@ -94,4 +94,5 @@ vector<pair<mint, vector<mint>>> PartialFractionDecomposition(
 
 /**
  * @brief 部分分数分解(分母が1次式の積で表せる場合)
+ * @docs docs/fps/partial-fraction-decomposition.md
  */

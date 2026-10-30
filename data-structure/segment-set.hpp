@@ -50,3 +50,7 @@ struct SegmentSet {
 
   int size() { return st.size(); }
 };
+
+/**
+ * @docs docs/data-structure/segment-set.md
+ */

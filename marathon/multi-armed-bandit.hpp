@@ -53,3 +53,7 @@ struct MultiArmedBandit {
   }
   int best() { return max_element(begin(e), end(e)) - begin(e); }
 };
+
+/**
+ * @docs docs/marathon/multi-armed-bandit.md
+ */

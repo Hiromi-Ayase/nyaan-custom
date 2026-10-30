@@ -57,3 +57,7 @@ struct ParallelUnionFind {
   int same(int l, int r) { return uf.same(l, r); }
   int size(int i) { return uf.size(i); }
 };
+
+/**
+ * @docs docs/data-structure/parallel-union-find.md
+ */

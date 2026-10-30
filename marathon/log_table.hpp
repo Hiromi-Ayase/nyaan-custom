@@ -15,3 +15,7 @@ struct log_table {
   }
   double operator()(int i) const { return l[i & mask]; }
 };
+
+/**
+ * @docs docs/marathon/log_table.md
+ */

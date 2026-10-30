@@ -94,3 +94,7 @@ pair<T, T> crt(const vector<T>& r, const vector<T>& m) {
 }
 
 }  // namespace internal
+
+/**
+ * @docs docs/internal/internal-math.md
+ */

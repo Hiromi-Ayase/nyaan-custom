@@ -12,3 +12,8 @@ $\lbrace1,2,\ldots,m\rbrace$の部分集合からなる集合を$[m]$、実数�
 であることと同値である。
 
 よって、係数が非零になるまで$d^k$を昇順に計算していけば彩色数が求まる。これは愚直に計算すると$\mathrm{O}(2^n n^2)$だが、必要な係数は一つだけなのでゼータ/メビウス変換を陽に計算する必要はない事実を利用すると計算量を$\mathrm{O}(2^n n)$に改善できる。
+
+#### 実装・検証
+
+- [実装](../../graph/chromatic-number.hpp)
+- [検証: yosupo-chromatic-number.test.cpp](../../verify/verify-yosupo-graph/yosupo-chromatic-number.test.cpp)

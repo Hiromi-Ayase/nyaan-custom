@@ -17,3 +17,8 @@
 - `range_freq(l, r, upper)`: `[l, r)`の範囲でupper未満の要素の個数を返す。
 - `prev_value(l, r, lower)`: `l, r`の範囲でupper未満の最後の値を返す。
 - `next_value(l, r, lower)`: `l, r`の範囲でlower以上の最初の値を返す。
+
+#### 実装・検証
+
+- [実装](../../data-structure-2d/wavelet-matrix.hpp)
+- [検証: wavelet-matrix.test.cpp](../../verify/verify-unit-test/wavelet-matrix.test.cpp)

@@ -14,3 +14,9 @@
 - [自作Hash Map(連鎖法)](https://judge.yosupo.jp/submission/23726)　146ms
 - [ハッシュ衝突の対策をしたunordered_map](https://judge.yosupo.jp/submission/23582) 263ms
 - (入出力にかかる時間は最大50ms程度と考えられる。)
+
+#### 実装・検証
+
+- [実装](../../data-structure/hash-map-variable-length.hpp)
+- [検証: yosupo-hash-map-variable-length.test.cpp](../../verify/verify-yosupo-ds/yosupo-hash-map-variable-length.test.cpp)
+- [検証: yosupo-point-add-rectangle-sum-bit2d.test.cpp](../../verify/verify-yosupo-ds/yosupo-point-add-rectangle-sum-bit2d.test.cpp)

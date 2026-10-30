@@ -79,4 +79,5 @@ struct ModInt {
 
 /**
  * @brief modint
+ * @docs docs/modint/modint.md
  */

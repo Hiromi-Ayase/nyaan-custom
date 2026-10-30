@@ -80,3 +80,7 @@ vector<pair<Int, Int>> enumerate_convex(
   }
   return ps;
 }
+
+/**
+ * @docs docs/math/enumerate-convex.md
+ */

@@ -72,3 +72,7 @@ namespace Nyaan {
 void solve();
 }
 int main() { Nyaan::solve(); }
+
+/**
+ * @docs docs/template/template.md
+ */

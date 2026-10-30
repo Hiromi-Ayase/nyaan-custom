@@ -35,3 +35,7 @@ tuple<WeightedGraph<T>, vector<T>, int> process_of_merging_tree(
  
   return {g, nodes, 2 * n - 2};
 }
+
+/**
+ * @docs docs/tree/process-of-merging-tree.md
+ */

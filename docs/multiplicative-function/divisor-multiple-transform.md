@@ -82,3 +82,10 @@ $\mathrm{O}(N\log \log N)$の実装についてはnoshiさんが解説してい�
 - `multiple_transform::mobius_transform(a)`: aを倍数メビウス変換する。
 
 計算量は(1)が$\mathrm{O}(n\log \log n)$、(2)が$\mathrm{O}(\sigma(n)^2)$である。
+
+#### 実装・検証
+
+- [実装](../../multiplicative-function/divisor-multiple-transform.hpp)
+- [検証: mf.test.cpp](../../verify/verify-unit-test/mf.test.cpp)
+- [検証: multiplicative-function.test.cpp](../../verify/verify-unit-test/multiplicative-function.test.cpp)
+- [検証: yosupo-lcm-convolution.test.cpp](../../verify/verify-yosupo-math/yosupo-lcm-convolution.test.cpp)

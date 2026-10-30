@@ -24,4 +24,5 @@ struct ReversibleSplayTree
 
 /**
  * @brief 反転可能Splay Tree
+ * @docs docs/lct/splay-reversible.md
  */

@@ -27,3 +27,7 @@ vector<int> longest_increasing_sequence(const vector<T>& a) {
   reverse(begin(res), end(res));
   return res;
 }
+
+/**
+ * @docs docs/dp/longest-increasing-sequence.md
+ */

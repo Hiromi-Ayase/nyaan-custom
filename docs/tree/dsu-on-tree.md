@@ -166,3 +166,10 @@ void dfs(int c, int p) {
     - 存在しない気がする
     - それはそれとしてDSU on Treeの方が(ライブラリがあれば)簡単に書けそう
     - 親に返す時に操作が必要な場合は上記のライブラリでは対応できない？
+
+#### 実装・検証
+
+- [実装](../../tree/dsu-on-tree.hpp)
+- [検証: aoj-2995-hashmap.test.cpp](../../verify/verify-aoj-other/aoj-2995-hashmap.test.cpp)
+- [検証: aoj-2995.test.cpp](../../verify/verify-aoj-other/aoj-2995.test.cpp)
+- [検証: yosupo-vertex-add-subtree-sum-dst-on-tree.test.cpp](../../verify/verify-yosupo-ds/yosupo-vertex-add-subtree-sum-dst-on-tree.test.cpp)

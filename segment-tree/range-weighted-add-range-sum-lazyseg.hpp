@@ -88,3 +88,7 @@ struct Range_Weighted_Add_Range_Sum_SegTree {
     return reflect(a).first;
   }
 };
+
+/**
+ * @docs docs/segment-tree/range-weighted-add-range-sum-lazyseg.md
+ */

@@ -48,4 +48,5 @@ T sum_of_totient(long long N) {
 
 /**
  * @brief トーシェント関数の和
+ * @docs docs/multiplicative-function/sum-of-totient.md
  */

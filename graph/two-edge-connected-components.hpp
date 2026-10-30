@@ -38,3 +38,7 @@ struct TwoEdgeConnectedComponents {
     }
   }
 };
+
+/**
+ * @docs docs/graph/two-edge-connected-components.md
+ */

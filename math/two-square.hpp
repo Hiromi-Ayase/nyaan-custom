@@ -89,3 +89,7 @@ vector<pair<long long, long long>> two_square(long long N) {
   sort(begin(ans), end(ans));
   return ans;
 }
+
+/**
+ * @docs docs/math/two-square.md
+ */

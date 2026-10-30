@@ -62,3 +62,8 @@ pair_t sa(Timer& t) {
 - 書く必要がある関数は必要最小限にしたい(上に同じ)
 - 思いつく定数倍高速化は要れた
   - スコアは毎回わざわざ計算する必要はないが「スコアを陽に持たないことで高速化」はどうせ短期でそこまで実装しきれないので大丈夫だと思う
+
+#### 実装・検証
+
+- [実装](../../marathon/sa-manager.hpp)
+- [検証: sa-manager.test.cpp](../../verify/verify-unit-test/sa-manager.test.cpp)

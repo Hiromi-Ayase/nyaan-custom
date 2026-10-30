@@ -92,3 +92,10 @@ Ptr expose(Ptr t) {
 - `set_key(u, key)`：頂点`u`の`key`を書き換える
 - `get_key(u, key)`：頂点`u`の`key`の値を得る
 - `fold(u, v)` : `u, v`間のパスの`key`の和を得る
+
+#### 実装・検証
+
+- [実装: link-cut-base.hpp](../../lct/link-cut-base.hpp)
+- [実装: link-cut-tree.hpp](../../lct/link-cut-tree.hpp)
+- [検証: yosupo-dynamic-tree-vertex-add-path-sum.test.cpp](../../verify/verify-yosupo-ds/yosupo-dynamic-tree-vertex-add-path-sum.test.cpp)
+- [検証: yosupo-dynamic-tree-vertex-set-path-composite.test.cpp](../../verify/verify-yosupo-ds/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp)

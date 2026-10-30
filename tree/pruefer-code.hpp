@@ -53,4 +53,5 @@ vector<vector<int>> random_tree(int n) {
 
 /**
  * @brief Pruefer Code
+ * @docs docs/tree/pruefer-code.md
  */

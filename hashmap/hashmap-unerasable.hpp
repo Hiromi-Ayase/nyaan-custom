@@ -108,3 +108,7 @@ struct UnerasableHashMap {
   void reset() { init(default_size, true); }
   void clear() { init(default_size, true); }
 };
+
+/**
+ * @docs docs/hashmap/hashmap-unerasable.md
+ */

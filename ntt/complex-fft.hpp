@@ -344,3 +344,7 @@ struct CooleyTukey {
 vector<C> CooleyTukey::w;
 
 }  // namespace ArbitraryModConvolution
+
+/**
+ * @docs docs/ntt/complex-fft.md
+ */

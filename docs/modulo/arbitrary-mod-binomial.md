@@ -178,3 +178,8 @@ $$ 0 \gt \frac{n}{m} - \frac{nx}{B} = n\left(\frac{1}{m} - \frac{x}{B} \right)$$
 $$=-\frac{n}{B}\cdot \frac{r}{M} \gt -1$$
 
 であることから従う。(実用上は$m = 1$の時に$x$がオーバーフローすることに注意する必要がある。)
+
+#### 実装・検証
+
+- [実装](../../modulo/arbitrary-mod-binomial.hpp)
+- [検証: yosupo-binomial-coefficient.test.cpp](../../verify/verify-yosupo-math/yosupo-binomial-coefficient.test.cpp)

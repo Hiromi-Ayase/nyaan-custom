@@ -152,3 +152,7 @@ struct SubproductTree {
     return {work.data() + nn - n, work.data() + nn};
   }
 };
+
+/**
+ * @docs docs/fps/fast-interpolate.md
+ */

@@ -148,4 +148,5 @@ using BBLAImpl::SparseMatrix;
 
 /**
  * @brief Black Box Linear Algebra
+ * @docs docs/matrix/black-box-linear-algebra.md
  */

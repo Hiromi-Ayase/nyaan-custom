@@ -139,4 +139,5 @@ struct SplayTreeBase {
 
 /**
  * @brief Splay Tree(base)
+ * @docs docs/lct/splay-base.md
  */

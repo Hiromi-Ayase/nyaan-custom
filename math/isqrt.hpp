@@ -11,3 +11,7 @@ long long isqrt(long long n) {
   while (x * x > n) x--;
   return x;
 }
+
+/**
+ * @docs docs/math/isqrt.md
+ */

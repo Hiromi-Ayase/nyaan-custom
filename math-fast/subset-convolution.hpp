@@ -134,3 +134,7 @@ vector<mint> fast_multiply(const vector<mint>& a, const vector<mint>& b) {
   delete[] (a2);
   return c;
 }
+
+/**
+ * @docs docs/math-fast/subset-convolution.md
+ */

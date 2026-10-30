@@ -152,4 +152,5 @@ FormalPowerSeries<mint> pow_enumerate(FormalPowerSeries<mint> f,
 
 /**
  * @brief pow 列挙
+ * @docs docs/fps/pow-enumerate.md
  */

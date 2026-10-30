@@ -37,3 +37,8 @@ $$\mathrm{Ind}_r u^s \equiv0 \mod s,\ \mathrm{Ind}_r u^s \equiv 1 \mod 2$$
 まず、現在の$y$の誤差項$2y-b\mod 2^t$の最下位ビットは、現在の$a^{-1}x^2$を自乗していって$1$になるまでにかかった回数を$t'$としたときに$t-t'$ビット目になる。最下位ビットが分かれば、$x$に$\mathrm{pow}(u^s,2^{t-t'-1})$を掛けることで最下位ビットを$0$にすることが出来る。このアルゴリズムを用いて小さいビットから0にしていき、$a^{-1}x^2 \equiv 1$になるまで繰り返せば$x$を求めることが出来る。
 
 計算量は、誤差調整の1回あたり$\mathrm{O}(\log p)$で最大$t=\mathrm{O}(\log p)$回かかるので全体で$\mathrm{O}(\log ^2 p)$となる。
+
+#### 実装・検証
+
+- [実装](../../modulo/mod-sqrt.hpp)
+- [検証: yosupo-mod-sqrt.test.cpp](../../verify/verify-yosupo-math/yosupo-mod-sqrt.test.cpp)

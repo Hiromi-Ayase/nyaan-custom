@@ -13,3 +13,10 @@
 - `dijkstra(g, s)`: sを始点としたダイクストラ法を行い、計算結果を返す。
 - `dijkstra_restore(g, s)`: sを始点としたダイクストラ法(復元付き)を行い、計算結果を返す。
   - いずれの場合もgは[`StaticGraph`](https://nyaannyaan.github.io/library/graph/static-graph.hpp)である必要がある。
+
+#### 実装・検証
+
+- [実装](../../shortest-path/dijkstra-fast.hpp)
+- [検証: aoj-grl-1-a-fast-dijkstra.test.cpp](../../verify/verify-aoj-grl/aoj-grl-1-a-fast-dijkstra.test.cpp)
+- [検証: dijkstra.test.cpp](../../verify/verify-unit-test/dijkstra.test.cpp)
+- [検証: yosupo-shortest-path-3.test.cpp](../../verify/verify-yosupo-graph/yosupo-shortest-path-3.test.cpp)

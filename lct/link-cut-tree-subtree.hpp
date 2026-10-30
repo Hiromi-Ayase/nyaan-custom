@@ -85,4 +85,5 @@ struct LinkCutTreeSubtreeQuery
 
 /**
  * @brief 部分木クエリLink/Cut Tree
+ * @docs docs/lct/link-cut-tree-subtree.md
  */

@@ -59,3 +59,7 @@ vector<mint> LinearEquation_hashmap(vector<HashMap<int, mint>> A,
   }
   return res;
 }
+
+/**
+ * @docs docs/matrix/linear-equation-hashmap.md
+ */

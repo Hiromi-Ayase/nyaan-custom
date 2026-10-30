@@ -62,4 +62,5 @@ using WildcardPatternMatchingImpl::wildcard_pattern_matching;
 
 /**
  * @brief Wildcard Pattern Matching
+ * @docs docs/string/wildcard-pattern-matching.md
  */

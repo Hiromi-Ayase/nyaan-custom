@@ -73,3 +73,8 @@ $$\mathfrak{D}(f) = \mathfrak{D}(\log g) = \frac{\mathfrak{D}(g)}{g} $$
 が成り立つので、$g$から$f \equiv \log g$を計算することが出来た。
 
 [提出](https://uoj.ac/submission/460059)　$\mathrm{O}(\frac{5}{3}M(n))$の逆元を利用しないと通らないTL設定になっており、マニア向けの色合いが極めて強い。
+
+#### 実装・検証
+
+- [実装](../../ntt/multivariate-multiplication.hpp)
+- [検証: yosupo-multiplicative-convolution.test.cpp](../../verify/verify-yosupo-ntt/yosupo-multiplicative-convolution.test.cpp)

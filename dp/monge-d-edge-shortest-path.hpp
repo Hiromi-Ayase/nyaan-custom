@@ -22,4 +22,5 @@ long long monge_d_edge_shortest_path(int N, int D, long long upper,
 
 /**
  * @brief monge グラフ上の d-辺最短路
+ * @docs docs/dp/monge-d-edge-shortest-path.md
  */

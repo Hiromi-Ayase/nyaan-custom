@@ -70,3 +70,7 @@ FormalPowerSeries<mint> n2_sqrt(const FormalPowerSeries<mint>& f) {
   }
   return g;
 }
+
+/**
+ * @docs docs/fps/inversion-formula.md
+ */

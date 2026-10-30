@@ -164,3 +164,7 @@ using fastio::rd;
 using fastio::skip_space;
 using fastio::wt;
 using fastio::wtn;
+
+/**
+ * @docs docs/misc/fastio.md
+ */

@@ -35,3 +35,7 @@ fps convolution_large(const fps &a, const fps &b) {
   }
   return c;
 }
+
+/**
+ * @docs docs/ntt/convolution-large.md
+ */

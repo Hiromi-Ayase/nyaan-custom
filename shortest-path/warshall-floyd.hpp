@@ -14,3 +14,7 @@ void warshall_floyd(T& d) {
     for (int i = 0; i < N; i++)
       for (int j = 0; j < N; j++) d[i][j] = min(d[i][j], d[i][k] + d[k][j]);
 }
+
+/**
+ * @docs docs/shortest-path/warshall-floyd.md
+ */

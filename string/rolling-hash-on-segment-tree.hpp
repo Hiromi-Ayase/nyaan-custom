@@ -59,3 +59,7 @@ struct RollingHashonSegmentTree {
 }  // namespace RollingHashonSegmentTreeImpl
 
 using RollingHashonSegmentTreeImpl::RollingHashonSegmentTree;
+
+/**
+ * @docs docs/string/rolling-hash-on-segment-tree.md
+ */

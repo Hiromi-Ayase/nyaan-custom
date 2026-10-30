@@ -83,21 +83,23 @@ void ARC070C() {
   out(st.get_min().second);
 }
 
-#include "../../segment-tree/segment-tree.hpp"
+#include "../../atcoder/segtree.hpp"
 
 // https://atcoder.jp/contests/abc275/tasks/abc275_h
+pl seg_op(pl a, pl b) { return max(a, b); }
+pl seg_e() { return {-infLL, -1}; }
+
 void ABC275Ex() {
   inl(N);
   vl A(N), B(N);
   in(A, B);
   vp init(N);
   rep(i, N) init[i] = {B[i], i};
-  SegmentTree seg(
-      init, [](pl a, pl b) { return max(a, b); }, pl{-infLL, -1});
+  atcoder::segtree<pl, seg_op, seg_e> seg(init);
   i128 ans = 0;
   auto dfs = [&](auto rc, int l, int r) -> SlopeTrick {
     if (l == r) return {};
-    auto [v, m] = seg.query(l, r);
+    auto [v, m] = seg.prod(l, r);
     SlopeTrick L = rc(rc, l, m + 0);
     SlopeTrick R = rc(rc, m + 1, r);
     L.merge(R);

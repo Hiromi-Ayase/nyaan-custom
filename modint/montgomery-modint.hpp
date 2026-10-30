@@ -101,3 +101,7 @@ struct LazyMontgomeryModInt {
 
   static constexpr u32 get_mod() { return mod; }
 };
+
+/**
+ * @docs docs/modint/montgomery-modint.md
+ */

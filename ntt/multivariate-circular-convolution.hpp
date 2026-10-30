@@ -68,4 +68,5 @@ FormalPowerSeries<mint> multivariate_circular_convolution(
 
 /**
  * @brief 多変数巡回畳み込み
+ * @docs docs/ntt/multivariate-circular-convolution.md
  */

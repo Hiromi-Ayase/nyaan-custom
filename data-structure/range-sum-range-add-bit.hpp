@@ -21,3 +21,7 @@ struct RangeAddRangeSumBIT {
     return a.sum(r) * r + b.sum(r) - a.sum(l) * l - b.sum(l);
   }
 };
+
+/**
+ * @docs docs/data-structure/range-sum-range-add-bit.md
+ */

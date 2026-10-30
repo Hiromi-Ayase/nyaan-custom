@@ -60,4 +60,5 @@ __int128_t binary_gcd128(__int128_t a, __int128_t b) {
 
 /**
  * @brief binary GCD
+ * @docs docs/math-fast/gcd.md
  */

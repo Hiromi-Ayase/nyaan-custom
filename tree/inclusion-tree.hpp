@@ -31,3 +31,7 @@ vector<vector<int>> inclusion_tree(vector<Pair>& AB, int N) {
   }
   return g;
 }
+
+/**
+ * @docs docs/tree/inclusion-tree.md
+ */

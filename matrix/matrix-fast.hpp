@@ -126,4 +126,5 @@ struct Matrix {
 
 /**
  * @brief 行列ライブラリ(std::array版)
+ * @docs docs/matrix/matrix-fast.md
  */

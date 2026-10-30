@@ -35,4 +35,5 @@ typename PersistentUnionFind::Node *PersistentUnionFind::root = nullptr;
 
 /**
  * @brief 完全永続Union-Find
+ * @docs docs/data-structure/persistent-union-find.md
  */

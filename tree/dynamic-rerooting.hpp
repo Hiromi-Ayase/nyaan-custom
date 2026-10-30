@@ -396,3 +396,7 @@ Path add_vertex(const Point &a, const Info &i) {
 using DR = DynamicRerooting<Path, Point, Info, vertex, compress, rake, add_edge,
                             add_vertex>;
 */
+
+/**
+ * @docs docs/tree/dynamic-rerooting.md
+ */

@@ -21,3 +21,10 @@
 - `nxt(s, t)`: s-t間のパス上の点のうちsに隣接する点を返す。 $\mathrm{O}(\log N)$
 - `lca(u, v)`: uとvのlcaを返す。$\mathrm{O}(\log N)$
 - `path(s, t)`: s-t間のパス$p$をパスに所属する頂点の列で返す。$\mathrm{O}(\lvert p\rvert)$
+
+#### 実装・検証
+
+- [実装](../../tree/tree-query.hpp)
+- [検証: tree-path.test.cpp](../../verify/verify-unit-test/tree-path.test.cpp)
+- [検証: yosupo-jump-on-tree.test.cpp](../../verify/verify-yosupo-graph/yosupo-jump-on-tree.test.cpp)
+- [検証: yosupo-lowest-common-ancestor-tree-util.test.cpp](../../verify/verify-yosupo-graph/yosupo-lowest-common-ancestor-tree-util.test.cpp)

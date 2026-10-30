@@ -39,3 +39,7 @@ vector<T> bellman_ford(int N, Edges<T> &es, int start = 0, int goal = -1) {
   else
     return d;
 }
+
+/**
+ * @docs docs/shortest-path/bellman-ford.md
+ */

@@ -185,4 +185,5 @@ struct NTT {
 
 /**
  * @brief Number Theory Transform (for c++11)
+ * @docs docs/ntt/ntt-cpp11.md
  */

@@ -89,3 +89,7 @@ struct MontgomeryModInt998244353 {
 
 }  // namespace modint998244353
 using modint998244353::MontgomeryModInt998244353;
+
+/**
+ * @docs docs/modint/modint-cpp11.md
+ */

@@ -88,3 +88,7 @@ vector<u128> multiply_u128(const vector<T> &s, const vector<T> &t) {
   return ret;
 }
 }  // namespace ArbitraryNTT
+
+/**
+ * @docs docs/ntt/arbitrary-ntt.md
+ */

@@ -5,10 +5,11 @@
 #include "../../misc/fastio.hpp"
 #include "../../data-structure-2d/segment-tree-on-range-tree.hpp"
 
-using namespace Nyaan; void Nyaan::solve() {
-  auto f = [](ll a, ll b) { return a + b; };
+using namespace Nyaan; ll seg_op(ll a, ll b) { return a + b; }
+ll seg_e() { return 0; }
 
-  RangeTree<int, ll, decltype(f)> rtree(f, 0);
+void Nyaan::solve() {
+  RangeTree<int, ll, seg_op, seg_e> rtree;
 
   int N, Q;
   rd(N, Q);

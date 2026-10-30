@@ -17,3 +17,7 @@ FormalPowerSeries<mint> middle_product(FormalPowerSeries<mint> a,
   a.intt();
   return {begin(a) + s - 1, begin(a) + t};
 }
+
+/**
+ * @docs docs/fps/middle-product.md
+ */

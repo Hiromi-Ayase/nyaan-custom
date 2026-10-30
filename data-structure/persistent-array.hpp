@@ -77,4 +77,5 @@ struct PersistentArray {
 
 /**
  * @brief 永続配列
+ * @docs docs/data-structure/persistent-array.md
  */

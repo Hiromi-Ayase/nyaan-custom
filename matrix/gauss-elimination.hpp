@@ -45,3 +45,7 @@ std::pair<int, T> GaussElimination(vector<vector<T>> &a, int pivot_end = -1,
   }
   return make_pair(rank, det);
 }
+
+/**
+ * @docs docs/matrix/gauss-elimination.md
+ */

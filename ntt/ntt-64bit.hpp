@@ -198,3 +198,7 @@ struct NTT_64bit {
     copy(begin(b), end(b), back_inserter(a));
   }
 };
+
+/**
+ * @docs docs/ntt/ntt-64bit.md
+ */

@@ -1,0 +1,16 @@
+## 形式的冪級数の Newton 法
+
+`newton_method<fps>(calc_g, f0, deg)` は $G(f)=0\bmod x^{deg}$ の解を求める。初期解 `f0` は非空の FPS または定数で、既知の次数まで方程式を満たしていることが必要。
+
+`calc_g(f,d)` は `(G(f), dG/df(f))` を指定した精度まで返すコールバック。通常は導関数の定数項が可逆である条件で使う。`f <- f - G(f)/(dG/df)` により精度を倍にする。
+
+実装は追加で `10` 項を要求し、導関数の先頭の零を最大 `10` 項まで除いて割る。導関数が零級数の場合や、一般の特異解を自動で処理できるわけではない。先頭の零を除く場合は、分子も対応する次数で割り切れ、補正が必要な精度を持つことを利用者側で保証する。
+
+計算量は各段のコールバックと FPS 積・逆数の費用の和。準線形な評価ができる方程式なら、全体も準線形時間で処理できる。
+
+#### 実装・検証
+
+- [実装](../../fps/newton-method.hpp)
+- [検証: yosupo-compositional-inverse-newton.test.cpp](../../verify/verify-yosupo-fps/yosupo-compositional-inverse-newton.test.cpp)
+- [検証: yosupo-exp-newton-method-2.test.cpp](../../verify/verify-yosupo-fps/yosupo-exp-newton-method-2.test.cpp)
+- [検証: yosupo-exp-newton-method.test.cpp](../../verify/verify-yosupo-fps/yosupo-exp-newton-method.test.cpp)

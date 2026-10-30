@@ -154,3 +154,9 @@ $f$ の一番次数の低い項が $a_p x^p \ (p \neq 0)$ のときは $\left(\f
 (関数は未実装)  
 数列に対して階差を取る(いわゆる imos 法)、あるいはその逆に累積和を取る操作を形式的冪級数の数式的な操作に置き換えると、それぞれ $1-x$ を掛ける/割る操作に対応している。計算量はともに $\mathrm{O}(N)$ である。
 
+#### 実装・検証
+
+- [実装](../../fps/formal-power-series.hpp)
+- [検証: yosupo-composition-fast.test.cpp](../../verify/verify-yosupo-fps/yosupo-composition-fast.test.cpp)
+- [検証: yosupo-composition.test.cpp](../../verify/verify-yosupo-fps/yosupo-composition.test.cpp)
+- [検証: yosupo-multieval.test.cpp](../../verify/verify-yosupo-fps/yosupo-multieval.test.cpp)

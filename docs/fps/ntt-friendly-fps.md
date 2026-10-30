@@ -13,3 +13,10 @@ modがNTT modの時に高速に動作する実装を行ったFPSライブラリ�
 他にも$\mathrm{sqrt}$や剰余算なども高速化が可能である。
 
 また、このページでは使用していないが、値を周波数領域で保持したままダブリングを続けたり、長さ$n$の$DFT(f)$を長さ$n$の$\mathrm{FFT}$2回で長さ$2n$の$DFT(f)$に変換するテクニックも高速化に有用である。([一例](https://nyaannyaan.github.io/library/library/fps/kitamasa.hpp.html))
+
+#### 実装・検証
+
+- [実装](../../fps/ntt-friendly-fps.hpp)
+- [検証: composite-exp.test.cpp](../../verify/verify-unit-test/composite-exp.test.cpp)
+- [検証: composition.test.cpp](../../verify/verify-unit-test/composition.test.cpp)
+- [検証: dual-fps.test.cpp](../../verify/verify-unit-test/dual-fps.test.cpp)

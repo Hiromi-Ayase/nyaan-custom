@@ -27,3 +27,7 @@ FormalPowerSeries<mint> PolynomialInterpolation(const vector<mint> &xs,
   };
   return rec(rec, 1);
 }
+
+/**
+ * @docs docs/fps/polynomial-interpolation.md
+ */

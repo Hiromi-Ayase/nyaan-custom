@@ -15,3 +15,7 @@ using vvm = vector<vm>;
 using fps = FormalPowerSeries_rational<mint>;
 Binomial_rational<mint> C;
 */
+
+/**
+ * @docs docs/math/bigint-all.md
+ */

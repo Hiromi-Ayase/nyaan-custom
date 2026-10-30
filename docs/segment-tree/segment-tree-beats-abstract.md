@@ -17,3 +17,9 @@ Segment Tree Beatsの抽象化ライブラリ。
 - `Beats(vector<T> &v)`:　`Node`構造体を初期化できる型`T`の列を初期値として初期化する。
 - `apply(int l, int r, U x)`: `U`を区間$[l, r)$に作用させる。
 - `query(int l, int r, const F& f)`: 各区間に対して`f(Node &n)`を行う関数。クエリの取得に利用する。
+
+#### 実装・検証
+
+- [実装](../../segment-tree/segment-tree-beats-abstract.hpp)
+- [検証: yuki-0879.test.cpp](../../verify/verify-yuki/yuki-0879.test.cpp)
+- [検証: yuki-0880.test.cpp](../../verify/verify-yuki/yuki-0880.test.cpp)

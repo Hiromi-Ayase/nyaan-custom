@@ -29,3 +29,10 @@ $$a ^ {2^r \cdot d} \equiv -1 \mod p$$
 TODO:書く
 
 参考文献　[Kiri8128さんの記事](https://qiita.com/Kiri8128/items/eca965fe86ea5f4cbb98)　[高校数学の美しい物語](https://mathtrain.jp/rhoalgorithm)
+
+#### 実装・検証
+
+- [実装](../../prime/fast-factorize.hpp)
+- [検証: factorize.test.cpp](../../verify/verify-unit-test/factorize.test.cpp)
+- [検証: garner-bigint.test.cpp](../../verify/verify-unit-test/garner-bigint.test.cpp)
+- [検証: osak.test.cpp](../../verify/verify-unit-test/osak.test.cpp)

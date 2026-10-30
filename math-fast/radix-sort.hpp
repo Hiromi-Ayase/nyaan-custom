@@ -164,4 +164,5 @@ using RadixSortImpl::radix_sort_compare_first;
 
 /*
   @brief radix sort
-*/
+ * @docs docs/math-fast/radix-sort.md
+ */

@@ -84,3 +84,7 @@ DijkstraResult<Index, Cost> dijkstra_abstruct(
   };
   return dijkstra_abstruct<Index, Cost, has_goal>(f, start, is_goal);
 }
+
+/**
+ * @docs docs/shortest-path/dijkstra-abstruct.md
+ */

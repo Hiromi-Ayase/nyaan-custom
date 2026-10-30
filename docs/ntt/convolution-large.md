@@ -1,0 +1,12 @@
+## NTT の最大長を超える畳み込み
+
+`convolution_large(a,b)` は NTT の根が許す最大長より長い多項式同士の畳み込みを計算する。片方が空なら空配列を返す。
+
+係数列の型には `operator*`, `ntt()`, 正規化済みの `intt()` が必要。法を $p$、$L=2^{v_2(p-1)}$ として、入力を長さ `L/2` のブロックに分け、長さ `L` で変換して積を足す。使用するバックエンドが長さ `L` を実際に扱えることを確認する。法は奇素数で、内部シフトと配列長が整数型に収まるものを使う。
+
+ブロック数を $a,b$ とすると、時間は $O((a+b)L\log L+abL)$、領域 $O((a+b)L)$。入力が非常に長い場合はブロック同士の積の数が増えるため、単一の NTT と同じ準線形時間にはならない。
+
+#### 実装・検証
+
+- [実装](../../ntt/convolution-large.hpp)
+- [検証: yosupo-convolution-large.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-large.test.cpp)

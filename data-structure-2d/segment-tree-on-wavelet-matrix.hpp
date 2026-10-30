@@ -167,3 +167,7 @@ struct WaveletMatrix {
     return _sum(l, r, yid(U)) - _sum(l, r, yid(D));
   }
 };
+
+/**
+ * @docs docs/data-structure-2d/segment-tree-on-wavelet-matrix.md
+ */

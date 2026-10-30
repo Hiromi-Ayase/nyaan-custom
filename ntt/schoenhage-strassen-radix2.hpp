@@ -209,4 +209,5 @@ struct Schoenhage_Strassen_radix2 {
 
 /**
  * @brief Schönhage-Strassen Algorithm(radix-2)
+ * @docs docs/ntt/schoenhage-strassen-radix2.md
  */

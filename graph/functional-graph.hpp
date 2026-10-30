@@ -126,3 +126,7 @@ struct FunctionalGraph {
 }  // namespace FunctionalGraphImpl
 
 using FunctionalGraphImpl::FunctionalGraph;
+
+/**
+ * @docs docs/graph/functional-graph-decomposition.md
+ */

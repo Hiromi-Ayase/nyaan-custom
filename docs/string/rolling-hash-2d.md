@@ -8,3 +8,8 @@
 - `build(S)`: Sを対象としたRollingHashを構築する。$\mathrm{O}(\lvert S\rvert)$
 - `get(l, r)`: 区間[l, r)のハッシュを返す。$\mathrm{O}(1)$
 - `get_hash(T)`: Tのハッシュ値を返す。$\mathrm{O}(\lvert T\rvert)$
+
+#### 実装・検証
+
+- [実装](../../string/rolling-hash-2d.hpp)
+- [検証: verify-aoj-alds-14-c.test.cpp](../../verify/verify-aoj-alds/verify-aoj-alds-14-c.test.cpp)

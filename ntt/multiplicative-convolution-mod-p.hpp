@@ -28,3 +28,7 @@ fps multiplicative_convolution_mod_p(const fps& a, const fps& b, int p) {
   c[0] = sa * b[0] + sb * a[0] - a[0] * b[0];
   return c;
 }
+
+/**
+ * @docs docs/ntt/multiplicative-convolution-mod-p.md
+ */

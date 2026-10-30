@@ -9,3 +9,8 @@ TODO : 清書・使い方を書く
   - $\mod x^m$が欲しい場合はFPSで$\mathrm{O}(N^3 m \mathrm{polylog} m)$くらいで解ける
   - ただし常にpivotに対して逆元が存在する必要があり、これは$\mod x$の行列が行列式を持つことと同値
   - リンク先の問題では「連結グラフに行列木を適用している」「辺のあるところに重み$1$の辺を張る」という事実から逆元の存在が示せる
+
+#### 実装・検証
+
+- [実装](../../matrix/polynomial-matrix-determinant.hpp)
+- [検証: yuki-1303.test.cpp](../../verify/verify-yuki/yuki-1303.test.cpp)

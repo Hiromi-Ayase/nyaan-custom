@@ -20,3 +20,9 @@
 - `vector<HeavyLightDecomposition<G>> hld`: `aux`をHL分解したもの。
   - `hld[i].idx(i).first`と`Namori::idx(i).first`が一致するようにしている(はず)
   - TODO: ここ自信がないのでverifyを書く
+
+#### 実装・検証
+
+- [実装](../../graph/namori.hpp)
+- [検証: aoj-2891.test.cpp](../../verify/verify-aoj-other/aoj-2891.test.cpp)
+- [検証: yuki-1254.test.cpp](../../verify/verify-yuki/yuki-1254.test.cpp)

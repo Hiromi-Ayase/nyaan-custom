@@ -124,3 +124,7 @@ vector<vector<mint>> LinearEquation(vector<vector<mint>> A, vector<mint> B) {
 
 using Gauss::determinant;
 using Gauss::LinearEquation;
+
+/**
+ * @docs docs/modulo/gauss-elimination-fast.md
+ */

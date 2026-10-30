@@ -17,3 +17,8 @@
 - `toggle(t)`: tを反転する。$\mathrm{O}(1)$
 - `size(t)`: tの大きさを返す。$\mathrm{O}(1)$
 - `make_tree()`: 空の木を返す。$\mathrm{O}(1)$
+
+#### 実装・検証
+
+- [実装](../../rbst/lazy-reversible-rbst.hpp)
+- [検証: yosupo-dynamic-sequence-range-affine-range-sum.test.cpp](../../verify/verify-yosupo-ds/yosupo-dynamic-sequence-range-affine-range-sum.test.cpp)

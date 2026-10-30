@@ -27,3 +27,8 @@ $$a \uparrow \uparrow b \equiv a^{a \uparrow \uparrow (b-1)} \equiv a^{(a \uparr
 以上より、$a\uparrow \uparrow b \mod m$は$a\uparrow \uparrow (b-1) \mod \phi(m)$の値から導出できることがわかった。計算量はアルゴリズム全体でのトーシェント関数の計算量に依存するので、計算量を求めるために数列$m,\phi(m),\phi(\phi(m))\ldots$の性質を考察する。
 
 ここで、$m$が偶数の時$\phi(m)$は$\frac{m}{2}$以下になる。また、$m$が奇数の時、$\phi(m)$は偶数なので$\phi(\phi(m))$は$\frac{\phi(m)}{2}$以下になる。以上より、上記の数列は少なくとも$2$個おきに半減して、$\mathrm{O}(\log_2 m)$回で$1$に収束する。よって全体の計算量は$T(m) = \mathrm{O}(\sqrt{m})+T(\frac{m}{2})$を解いて$\mathrm{O}(\sqrt{m})$となる。
+
+#### 実装・検証
+
+- [実装](../../modulo/tetration.hpp)
+- [検証: yosupo-tetration-mod.test.cpp](../../verify/verify-yosupo-math/yosupo-tetration-mod.test.cpp)

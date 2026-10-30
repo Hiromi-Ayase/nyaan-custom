@@ -9,3 +9,7 @@ vector<bool> prime_sieve(int N) {
       for (int j = i * i; j <= N; j += i) sieve[j] = false;
   return sieve;
 }
+
+/**
+ * @docs docs/prime/prime-sieve.md
+ */

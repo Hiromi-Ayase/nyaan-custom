@@ -20,3 +20,7 @@ T inv_mod(T a, T m) {
     a %= b;
   }
 }
+
+/**
+ * @docs docs/math/inv-mod.md
+ */

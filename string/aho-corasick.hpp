@@ -79,3 +79,7 @@ struct AhoCorasick : Trie<X + 1, margin> {
 
   int count(int pos) { return cnt[pos]; }
 };
+
+/**
+ * @docs docs/string/aho-corasick.md
+ */

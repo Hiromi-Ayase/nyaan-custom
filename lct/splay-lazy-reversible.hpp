@@ -26,4 +26,5 @@ struct LazyReversibleSplayTree
 
 /**
  * @brief 遅延伝搬反転可能Splay Tree
+ * @docs docs/lct/splay-lazy-reversible.md
  */

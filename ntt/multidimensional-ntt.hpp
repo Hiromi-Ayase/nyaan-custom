@@ -51,4 +51,5 @@ struct MultidimensionalFourierTransform {
 
 /**
  * @brief 多次元FFT
+ * @docs docs/ntt/multidimensional-ntt.md
  */

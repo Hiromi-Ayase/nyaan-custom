@@ -23,4 +23,5 @@ vector<mint> exp_of_set_power_series(int n, vector<mint> g) {
 
 /**
  * @brief 集合冪級数の exp
+ * @docs docs/set-function/exp-of-set-power-series.md
  */

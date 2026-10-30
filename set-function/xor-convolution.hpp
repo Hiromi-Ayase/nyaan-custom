@@ -14,4 +14,5 @@ vector<T> xor_convolution(vector<T> a, vector<T> b) {
 
 /**
  * @brief XOR Convoluion
+ * @docs docs/set-function/xor-convolution.md
  */

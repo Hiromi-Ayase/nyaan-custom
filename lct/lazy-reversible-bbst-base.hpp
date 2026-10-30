@@ -73,4 +73,5 @@ struct LazyReversibleBBST : Tree {
 
 /**
  * @brief 遅延伝搬反転可能平衡二分木(基底クラス)
+ * @docs docs/lct/lazy-reversible-bbst-base.md
  */

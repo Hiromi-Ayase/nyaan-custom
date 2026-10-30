@@ -23,4 +23,5 @@ void walsh_hadamard_transform(vector<T>& f, bool inverse = false) {
 
 /**
  * @brief Walsh Hadamard Transform
+ * @docs docs/set-function/walsh-hadamard-transform.md
  */

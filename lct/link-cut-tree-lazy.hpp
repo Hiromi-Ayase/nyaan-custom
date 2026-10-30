@@ -32,4 +32,5 @@ struct LazyLinkCutTree
 
 /**
  * @brief 遅延伝搬Link/Cut Tree
+ * @docs docs/lct/link-cut-tree-lazy.md
  */

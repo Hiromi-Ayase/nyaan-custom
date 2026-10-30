@@ -48,4 +48,5 @@ struct Sweep {
 
 /**
  * @brief 掃き出し法(復元付き)
+ * @docs docs/math/sweep-restore.md
  */

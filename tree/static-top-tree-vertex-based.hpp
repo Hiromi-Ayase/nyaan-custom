@@ -191,4 +191,5 @@ using StaticTopTreeVertexBasedImpl::StaticTopTreeVertexBased;
 
 /**
  * @brief Static Top Tree
+ * @docs docs/tree/static-top-tree-vertex-based.md
  */

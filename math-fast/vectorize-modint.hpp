@@ -105,3 +105,7 @@ struct alignas(32) vectorize_modint {
   vmint& operator-=(const vmint& A) { return (*this) = (*this) - A; }
   vmint& operator*=(const vmint& A) { return (*this) = (*this) * A; }
 };
+
+/**
+ * @docs docs/math-fast/vectorize-modint.md
+ */

@@ -27,3 +27,7 @@ unsigned long long seed() {
 }
 
 }  // namespace internal
+
+/**
+ * @docs docs/internal/internal-seed.md
+ */

@@ -266,4 +266,5 @@ typename DimensionExpandedGraph<DIM, Data_t>::A
 
 /**
  * @brief 次元拡張グラフ
+ * @docs docs/graph/dimension-expanded-graph.md
  */

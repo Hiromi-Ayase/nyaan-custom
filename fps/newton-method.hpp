@@ -29,4 +29,5 @@ fps newton_method(function<pair<fps, fps>(fps, int)> calc_g,
 
 /**
  * @brief ニュートン法
+ * @docs docs/fps/newton-method.md
  */

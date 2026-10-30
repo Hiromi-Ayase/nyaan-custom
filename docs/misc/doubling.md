@@ -14,3 +14,8 @@ TODO: 書く　[わかりやすい解説](https://ei1333.github.io/luzhiled/snip
 - `set_next(k, nxt, t)`　$\cdots$　$k$から$nxt$に重み$t$の辺を貼る。
 - `build()` $\cdots$ データ構造を構築する。
 - `query(i, t)` $\cdots$ $i$を始点として$t$回移動したときの(遷移先,始点と終点の間のパスの重みの和)を返す。遷移先が存在しない場合は($-1$, 最後に到達した点までのパスの重みの和)を返す。
+
+#### 実装・検証
+
+- [実装](../../misc/doubling.hpp)
+- [検証: yosupo-lowest-common-ancestor-doubling.test.cpp](../../verify/verify-yosupo-graph/yosupo-lowest-common-ancestor-doubling.test.cpp)

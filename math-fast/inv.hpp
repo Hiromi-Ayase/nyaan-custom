@@ -65,3 +65,7 @@ struct fast_modinv {
   }
   constexpr u32 operator()(u32 a) const { return inv(a); }
 };
+
+/**
+ * @docs docs/math-fast/inv.md
+ */

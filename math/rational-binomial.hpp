@@ -57,3 +57,7 @@ struct Binomial_rational {
     return r == 0 ? 1 : C(n + r - 1, r);
   }
 };
+
+/**
+ * @docs docs/math/rational-binomial.md
+ */

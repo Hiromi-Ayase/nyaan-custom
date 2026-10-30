@@ -91,4 +91,5 @@ vector<mint> Montmort(int N) {
 
 /**
  * @brief 有名な数列
+ * @docs docs/fps/fps-famous-series.md
  */

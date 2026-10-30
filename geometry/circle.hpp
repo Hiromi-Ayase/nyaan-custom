@@ -32,3 +32,7 @@ pair<Point, Point> crosspoint(const Circle& c1, const Circle& c2) {
   Point p2 = c1.p + Point(cos(t - a) * c1.r, sin(t - a) * c1.r);
   return {p1, p2};
 }
+
+/**
+ * @docs docs/geometry/circle.md
+ */

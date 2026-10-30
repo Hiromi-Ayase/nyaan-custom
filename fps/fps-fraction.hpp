@@ -62,3 +62,7 @@ struct fps_fraction {
     return os;
   }
 };
+
+/**
+ * @docs docs/fps/fps-fraction.md
+ */

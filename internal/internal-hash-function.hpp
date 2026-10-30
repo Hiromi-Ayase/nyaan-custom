@@ -59,4 +59,5 @@ struct HashObject {
 
 /*
 @brief ハッシュ関数
-*/
+ * @docs docs/internal/internal-hash-function.md
+ */

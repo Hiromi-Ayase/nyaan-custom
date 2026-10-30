@@ -143,4 +143,5 @@ struct SlopeTrick {
 
 /**
  * @brief Slope Trick
+ * @docs docs/data-structure/slope-trick.md
  */

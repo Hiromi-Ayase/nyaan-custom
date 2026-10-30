@@ -139,3 +139,7 @@ using StaticTopTreeImpl::StaticTopTree;
                     decltype(compress), decltype(rake)>
       dp(hld, edge, compress, rake);
 */
+
+/**
+ * @docs docs/tree/static-top-tree-edge-based.md
+ */

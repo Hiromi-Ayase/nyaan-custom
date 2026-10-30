@@ -18,3 +18,7 @@ vector<int> factor_enumerate(int N) {
   }
   return lp;
 }
+
+/**
+ * @docs docs/prime/factor-enumerate.md
+ */

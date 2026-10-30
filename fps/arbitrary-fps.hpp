@@ -59,3 +59,7 @@ FormalPowerSeries<mint> FormalPowerSeries<mint>::exp(int deg) const {
   }
   return ret.pre(deg);
 }
+
+/**
+ * @docs docs/fps/arbitrary-fps.md
+ */

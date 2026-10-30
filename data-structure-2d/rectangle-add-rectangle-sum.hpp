@@ -88,3 +88,7 @@ class RectangleAddRectangleSum {
     return ret;
   }
 };
+
+/**
+ * @docs docs/data-structure-2d/rectangle-add-rectangle-sum.md
+ */

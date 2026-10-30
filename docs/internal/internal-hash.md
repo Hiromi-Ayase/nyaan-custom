@@ -10,3 +10,8 @@ $2^{61}-1$ を法とするハッシュのライブラリ。
 - `Hash get_basis()`: ランダムなハッシュを生成。(要素は原始根であることが保証される。)
 - `+,-,*,+=,-=,*=`: 加算・減算・乗算用の関数。
 - `Hash pfma(Hash a, Hash b, T c)`: `fma` 用の関数。`T` は` hash` または `long long` 。
+
+#### 実装・検証
+
+- [実装](../../internal/internal-hash.hpp)
+- [検証: inner-hash.test.cpp](../../verify/verify-unit-test/inner-hash.test.cpp)

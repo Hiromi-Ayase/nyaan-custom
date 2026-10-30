@@ -34,4 +34,5 @@ fps ChirpZ(fps f, typename fps::value_type W, int N = -1,
 
 /**
  * @brief Chirp Z-transform(Bluestein's algorithm)
+ * @docs docs/ntt/chirp-z.md
  */

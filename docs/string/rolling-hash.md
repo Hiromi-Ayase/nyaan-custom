@@ -12,3 +12,10 @@
 - `LCP(a, b, al, bl)`: aのal文字目から始まるsuffixとbのb文字目から始まるsuffixのLCPを返す。$\mathrm{O}(\log (\lvert S\rvert+\lvert T\rvert))$
 - `strcmp(a, b, al, bl, ar=-1, br=-1)`: a[al, ar)とb[bl, br)の大小を比較する。(返り値はstd::strcmpの仕様に準ずる。)$\mathrm{O}(\log (\lvert S\rvert+\lvert T\rvert))$
 - `size()`: Sのサイズを返す。
+
+#### 実装・検証
+
+- [実装](../../string/rolling-hash.hpp)
+- [検証: string-search.test.cpp](../../verify/verify-unit-test/string-search.test.cpp)
+- [検証: yosupo-enumerate-palindromes-roriha.test.cpp](../../verify/verify-yosupo-string/yosupo-enumerate-palindromes-roriha.test.cpp)
+- [検証: yosupo-zalgo-rollinghash.test.cpp](../../verify/verify-yosupo-string/yosupo-zalgo-rollinghash.test.cpp)

@@ -54,4 +54,5 @@ struct ReversibleBBST : Tree {
 
 /**
  * @brief 反転可能平衡二分木(基底クラス)
+ * @docs docs/lct/reversible-bbst-base.md
  */

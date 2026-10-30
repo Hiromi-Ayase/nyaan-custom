@@ -31,3 +31,7 @@ using m256 = __m256i;
 #define SETHI(a) _mm256_shuffle_epi32(a, 0xF9)
 #define CAST64(a) AND(a, SET64(0xFFFFFFFF))
 #define ADD64(a, b) _mm256_add_epi64(a, b)
+
+/**
+ * @docs docs/misc/simd.md
+ */

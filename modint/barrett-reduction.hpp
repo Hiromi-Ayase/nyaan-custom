@@ -37,3 +37,7 @@ struct Barrett {
     return r;
   }
 };
+
+/**
+ * @docs docs/modint/barrett-reduction.md
+ */

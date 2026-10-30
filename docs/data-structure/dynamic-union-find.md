@@ -11,3 +11,9 @@
 - `find(int k)`：kの根を返す。計算量$\mathrm{O}(\alpha(n))$
 - `same(int x, int y)`：xとyが同じ連結成分に所属しているかを返す。計算量$\mathrm{O}(\alpha(n))$
 - `size(int k)`：xを含む連結成分のサイズを返す。
+
+#### 実装・検証
+
+- [実装](../../data-structure/dynamic-union-find.hpp)
+- [検証: aoj-dsl-1-a-dynamic.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-1-a-dynamic.test.cpp)
+- [検証: aoj-2995-hashmap.test.cpp](../../verify/verify-aoj-other/aoj-2995-hashmap.test.cpp)

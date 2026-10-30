@@ -10,3 +10,9 @@ $g \equiv \cos f, h \equiv \sin f \pmod{x^n}$ を求めたい。
 #### 使い方
 
 - `circular(fre, fim, deg)` : $Re[f]=fre,Im[f]=fim$ である FPS $f$ について $\cos f,\sin f$ を $\deg$ 次の項まで求める。
+
+#### 実装・検証
+
+- [実装](../../fps/fps-circular.hpp)
+- [検証: yuki-0963-circular.test.cpp](../../verify/verify-yuki/yuki-0963-circular.test.cpp)
+- [検証: yuki-1080.test.cpp](../../verify/verify-yuki/yuki-1080.test.cpp)

@@ -19,3 +19,7 @@ $$\leftrightarrow g \equiv \frac{1}{2}\left(\hat{g}+\frac{f}{\hat{g}}\right) \pm
 
 - `sqrt(f, deg)`: FPS である $f$ について $\sqrt f$ を $\deg$ 次の項まで求める。
 
+#### 実装・検証
+
+- [実装](../../fps/fps-sqrt.hpp)
+- [検証: yosupo-sqrt.test.cpp](../../verify/verify-yosupo-fps/yosupo-sqrt.test.cpp)

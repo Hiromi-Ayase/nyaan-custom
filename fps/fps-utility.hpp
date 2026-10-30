@@ -14,3 +14,7 @@ fps Pi(vector<fps> v) {
   }
   return v.back();
 }
+
+/**
+ * @docs docs/fps/fps-utility.md
+ */

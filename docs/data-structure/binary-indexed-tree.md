@@ -16,3 +16,10 @@ Binary Indexed Tree(BIT, Fenwick Treeとも)とは、要素数$n$の数列に対
 - `imos(l, r, k)`: imos法を利用するとき、`[l, r]`にkを加算する。(この時、一点取得は`sum(k)`で行う。)
 - `lower_bound(w)`: 要素が全て非負の時、`[0, k]`の区間和がw以上となるような最小のkを求める。
 - `upper_bound(w)`: 要素が全て非負の時、`[0, k]`の区間和がwよりも大きくなるような最小のkを求める。
+
+#### 実装・検証
+
+- [実装](../../data-structure/binary-indexed-tree.hpp)
+- [検証: aoj-dsl-2-b-bit.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-2-b-bit.test.cpp)
+- [検証: aoj-dsl-2-e-imos.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-2-e-imos.test.cpp)
+- [検証: yosupo-point-add-range-sum.test.cpp](../../verify/verify-yosupo-ds/yosupo-point-add-range-sum.test.cpp)

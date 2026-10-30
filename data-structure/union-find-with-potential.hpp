@@ -43,3 +43,7 @@ struct UnionFindWithPotential {
   // return size of CC including x
   int size(int x) { return -dat[root(x)]; }
 };
+
+/**
+ * @docs docs/data-structure/union-find-with-potential.md
+ */

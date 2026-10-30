@@ -7,6 +7,7 @@
 #include "../../tree/heavy-light-decomposition.hpp"
 
 using namespace Nyaan;
+
 void Nyaan::solve() {
   ini(N);
   vvi g(N);
@@ -17,11 +18,12 @@ void Nyaan::solve() {
   }
 
   HeavyLightDecomposition<vvi> hld(g);
-  AddSum_LazySegmentTree<ll> seg(vl(N, 0));
+  using SegmentTree = SegmentTree_RangeAdd_RangeSum<ll>;
+  SegmentTree::Tree seg(vector<SegmentTree::S>(N, {0, 1}));
   ll W = 0;
-  auto add = [&](int u, int v) { seg.update(u, v, W); };
+  auto add = [&](int u, int v) { seg.apply(u, v, W); };
   ll ans = 0;
-  auto query = [&](int u, int v) { ans += seg.query(u, v); };
+  auto query = [&](int u, int v) { ans += seg.prod(u, v).sum; };
 
   ini(Q);
   rep(_, Q) {

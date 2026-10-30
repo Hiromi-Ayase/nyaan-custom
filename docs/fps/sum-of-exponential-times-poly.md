@@ -48,3 +48,9 @@ $$t(i) = a^{-n}\cdot\left(-c + \sum_{j=0}^i f(i)a^i \right)$$
 とおいて$t(0),t(1)\ldots t(k)$を計算した後、ラグランジュ補間で$t(n-1)$を$\mathrm{O}(k)$で計算すればよい。
 
 (注：この解法では$a$と$1-a$の逆元が必要なため、$a=0,a=1$の時は場合分けして別に実装する。)
+
+#### 実装・検証
+
+- [実装](../../fps/sum-of-exponential-times-poly.hpp)
+- [検証: yosupo-sum-of-exp-poly-limit.test.cpp](../../verify/verify-yosupo-fps/yosupo-sum-of-exp-poly-limit.test.cpp)
+- [検証: yosupo-sum-of-exp-poly.test.cpp](../../verify/verify-yosupo-fps/yosupo-sum-of-exp-poly.test.cpp)

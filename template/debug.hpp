@@ -125,3 +125,7 @@ void trace(Head&& head, Tail&&... tail) {
 #else
 #define trc2(...) (void(0))
 #endif
+
+/**
+ * @docs docs/template/debug.md
+ */

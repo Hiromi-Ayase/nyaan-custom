@@ -6,7 +6,7 @@
 //
 #include "../../misc/all.hpp"
 //
-#include "../../segment-tree/lazy-segment-tree.hpp"
+#include "../../atcoder/lazysegtree.hpp"
 //
 #include "../../math/affine-transformation.hpp"
 #include "../../modint/montgomery-modint.hpp"
@@ -20,12 +20,15 @@ E h(E a, E b) { return a * b; };
 T ti() { return T{}; }
 E ei() { return E{}; }
 
+T acl_mapping(E action, T value) { return g(value, action); }
+E acl_composition(E newer, E older) { return h(older, newer); }
+
 using namespace Nyaan;
 
 // すべての関数のテスト。ただしセグ木にぶたん系は別途 verify する
 void test(const int N = 100, const int Q = 100) {
   RBSTLazySegmentTree<int, T, E, f, g, h, ti, ei> seg1;
-  LazySegmentTree seg2(N, f, g, h, ti(), ei());
+  atcoder::lazy_segtree<T, f, ti, E, acl_mapping, acl_composition, ei> seg2(N);
 
   ll MOD = 998244353;
   vector<function<void(void)>> funcs{
@@ -34,20 +37,20 @@ void test(const int N = 100, const int Q = 100) {
         int i = rng(0, N - 1);
         T x{rng(0, MOD - 1), 1};
         seg1.set_val(i, x);
-        seg2.set_val(i, x);
+        seg2.set(i, x);
       },
       [&]() {
         // set_val_fast
         int i = rng(0, N - 1);
         T x{rng(0, MOD - 1), 1};
         seg1.set_val_fast(i, x);
-        seg2.set_val(i, x);
+        seg2.set(i, x);
       },
       [&]() {
         // get_val
         int i = rng(0, N - 1);
         T v1 = seg1.get_val(i);
-        T v2 = seg2.get_val(i);
+        T v2 = seg2.get(i);
         assert(v1 == v2 and "get_val");
       },
       [&]() {
@@ -55,20 +58,20 @@ void test(const int N = 100, const int Q = 100) {
         int i = rng(0, N - 1);
         E x{rng(0, MOD - 1), rng(0, MOD - 1)};
         seg1.apply_val(i, [&](T& t) { t = g(t, x); });
-        seg2.update(i, i + 1, x);
+        seg2.apply(i, i + 1, x);
       },
       [&]() {
         // apply_val_fast
         int i = rng(0, N - 1);
         E x{rng(0, MOD - 1), rng(0, MOD - 1)};
         seg1.apply_val_fast(i, [&](T& t) { t = g(t, x); });
-        seg2.update(i, i + 1, x);
+        seg2.apply(i, i + 1, x);
       },
       [&]() {
         // erase
         int i = rng(0, N - 1);
         seg1.erase(i);
-        seg2.set_val(i, T{});
+        seg2.set(i, T{});
       },
       [&]() {
         // apply
@@ -78,7 +81,7 @@ void test(const int N = 100, const int Q = 100) {
         r++;
         E x{rng(0, MOD - 1), rng(0, MOD - 1)};
         seg1.apply(l, r, x);
-        seg2.update(l, r, x);
+        seg2.apply(l, r, x);
       },
       [&]() {
         // fold
@@ -87,7 +90,7 @@ void test(const int N = 100, const int Q = 100) {
         if (l > r) swap(l, r);
         r++;
         auto v1 = seg1.fold(l, r);
-        auto v2 = seg2.query(l, r);
+        auto v2 = seg2.prod(l, r);
         assert(v1 == v2 and "fold");
       },
       [&]() {
@@ -96,23 +99,23 @@ void test(const int N = 100, const int Q = 100) {
         while (true) {
           v1 = seg1.get_min_key(-1);
           if (v1 == -1) break;
-          T val = seg2.get_val(v1);
+          T val = seg2.get(v1);
           if (val.second == 1) break;
           if (val.second == 0) {
             seg1.erase(v1);
-            seg2.set_val(v1, T{});
+            seg2.set(v1, T{});
           } else {
             assert(false and "get_min_key");
           }
         }
 
         int v2 = -1;
-        if (seg2.query(0, N).second != 0) {
+        if (seg2.prod(0, N).second != 0) {
           // [0, n) は非ゼロですか？
           int ng = 0, ok = N;
           while (ng + 1 < ok) {
             int m = (ng + ok) / 2;
-            mint x = seg2.query(0, m).second;
+            mint x = seg2.prod(0, m).second;
             (x == 0 ? ng : ok) = m;
           }
           v2 = ok - 1;
@@ -124,7 +127,7 @@ void test(const int N = 100, const int Q = 100) {
           assert(kv1.second == T{} && "get_min_keyval");
         } else {
           auto kv1 = seg1.get_min_keyval(-1);
-          auto kv2 = make_pair(v2, seg2.get_val(v2));
+          auto kv2 = make_pair(v2, seg2.get(v2));
           assert(kv1 == kv2 && "get_min_keyval");
         }
       },
@@ -134,23 +137,23 @@ void test(const int N = 100, const int Q = 100) {
         while (true) {
           v1 = seg1.get_max_key(-1);
           if (v1 == -1) break;
-          T val = seg2.get_val(v1);
+          T val = seg2.get(v1);
           if (val.second == 1) break;
           if (val.second == 0) {
             seg1.erase(v1);
-            seg2.set_val(v1, T{});
+            seg2.set(v1, T{});
           } else {
             assert(false and "get_max_key");
           }
         }
 
         int v2 = -1;
-        if (seg2.query(0, N).second != 0) {
+        if (seg2.prod(0, N).second != 0) {
           // [i, N) は非ゼロですか？
           int ok = 0, ng = N;
           while (ok + 1 < ng) {
             int m = (ng + ok) / 2;
-            mint x = seg2.query(m, N).second;
+            mint x = seg2.prod(m, N).second;
             (x == 0 ? ng : ok) = m;
           }
           v2 = ok;
@@ -162,19 +165,19 @@ void test(const int N = 100, const int Q = 100) {
           assert(kv1.second == T{} && "get_max_keyval");
         } else {
           auto kv1 = seg1.get_max_keyval(-1);
-          auto kv2 = make_pair(v2, seg2.get_val(v2));
+          auto kv2 = make_pair(v2, seg2.get(v2));
           assert(kv1 == kv2 && "get_mix_keyval");
         }
       },
       [&]() {
         // pop_min_key
         int v2 = -1;
-        if (seg2.query(0, N).second != 0) {
+        if (seg2.prod(0, N).second != 0) {
           // [0, n) は非ゼロですか？
           int ng = 0, ok = N;
           while (ng + 1 < ok) {
             int m = (ng + ok) / 2;
-            mint x = seg2.query(0, m).second;
+            mint x = seg2.prod(0, m).second;
             (x == 0 ? ng : ok) = m;
           }
           v2 = ok - 1;
@@ -184,20 +187,20 @@ void test(const int N = 100, const int Q = 100) {
           do {
             kv1 = seg1.pop_min_keyval(-1);
           } while (kv1.second.second == 0);
-          auto kv2 = make_pair(v2, seg2.get_val(v2));
+          auto kv2 = make_pair(v2, seg2.get(v2));
           assert(kv1 == kv2 && "pop_min_keyval");
-          seg2.set_val(v2, T{});
+          seg2.set(v2, T{});
         }
       },
       [&]() {
         // pop_max_key
         int v2 = -1;
-        if (seg2.query(0, N).second != 0) {
+        if (seg2.prod(0, N).second != 0) {
           // [i, N) は非ゼロですか？
           int ok = 0, ng = N;
           while (ok + 1 < ng) {
             int m = (ng + ok) / 2;
-            mint x = seg2.query(m, N).second;
+            mint x = seg2.prod(m, N).second;
             (x == 0 ? ng : ok) = m;
           }
           v2 = ok;
@@ -207,9 +210,9 @@ void test(const int N = 100, const int Q = 100) {
           do {
             kv1 = seg1.pop_max_keyval(-1);
           } while (kv1.second.second == 0);
-          auto kv2 = make_pair(v2, seg2.get_val(v2));
+          auto kv2 = make_pair(v2, seg2.get(v2));
           assert(kv1 == kv2 && "pop_max_keyval");
-          seg2.set_val(v2, T{});
+          seg2.set(v2, T{});
         }
       },
   };
@@ -228,7 +231,7 @@ void test(const int N = 100, const int Q = 100) {
 
       vector<pair<int, T>> vec2;
       rep(i, N) {
-        T val = seg2.get_val(i);
+        T val = seg2.get(i);
         if (val != T{}) vec2.push_back({i, val});
       }
       // trc(vec1);
@@ -245,7 +248,7 @@ void test(const int N = 100, const int Q = 100) {
       // trc("make_array ok");
     }
     seg1.clear();
-    rep(i, N) seg2.set_val(i, T{});
+    rep(i, N) seg2.set(i, T{});
   }
 }
 
@@ -255,7 +258,7 @@ void test_tl(const int N = 5 * TEN(5), const int Q = 5 * TEN(5)) {
   rep(i, N) init.emplace_back(rng(0, MOD - 1), rng(0, MOD - 1));
 
   RBSTLazySegmentTree<int, T, E, f, g, h, ti, ei> seg1(init);
-  LazySegmentTree seg2(init, f, g, h, ti(), ei());
+  atcoder::lazy_segtree<T, f, ti, E, acl_mapping, acl_composition, ei> seg2(init);
 
   vector<function<void(void)>> funcs{
       [&]() {
@@ -264,14 +267,14 @@ void test_tl(const int N = 5 * TEN(5), const int Q = 5 * TEN(5)) {
         int r = -rng(0, 10) + N;
         E x{rng(0, MOD - 1), rng(0, MOD - 1)};
         seg1.apply(l, r, x);
-        seg2.update(l, r, x);
+        seg2.apply(l, r, x);
       },
       [&]() {
         // fold
         int l = +rng(0, 10);
         int r = -rng(0, 10) + N;
         auto v1 = seg1.fold(l, r);
-        auto v2 = seg2.query(l, r);
+        auto v2 = seg2.prod(l, r);
         assert(v1 == v2 and "fold");
       },
   };

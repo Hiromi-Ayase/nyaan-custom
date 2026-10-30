@@ -43,3 +43,7 @@ struct VectorPool {
     st.clear();
   }
 };
+
+/**
+ * @docs docs/misc/vector-pool.md
+ */

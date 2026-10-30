@@ -48,4 +48,5 @@ vector<L> decode(string S) {
 
 /**
  * @brief Base64 (ソースコードに数列を圧縮して埋め込む用の符号化・復号化ライブラリ)
+ * @docs docs/misc/base64.md
  */

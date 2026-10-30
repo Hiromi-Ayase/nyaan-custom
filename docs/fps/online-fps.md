@@ -1,0 +1,18 @@
+## 遅延評価する形式的冪級数
+
+`OnlineFormalPowerSeries`（別名 `ofps`）は係数を必要になった順に計算・キャッシュする。係数型は `LazyMontgomeryModInt<998244353>` に固定される。
+
+- `ofps(fps)` で既知の係数を渡す。未指定の高次係数は `0`。
+- `f[i]` は非負の添字の係数、`pre(n)` は先頭 `n` 項。`pre` は `n >= 1` とする。
+- 加減乗除、スカラー倍、微分・積分、左右シフト、`inv()`, `exp()`, `log()` を提供する。`dot(a,b)` は係数ごとの積。
+- `set_corner(f)` は既知の初期係数を設定し、`set(g)` は評価関数を設定する。自己参照させる場合は、未確定の同じ次数へ循環して問い合わせないよう、必要な初期値と次数のずれを与える。
+
+逆数は定数項非零、対数は定数項 `1`、指数は定数項 `0` を前提とする。整数による除算や NTT 長が法の範囲内であることも必要。
+
+乗算は relaxed convolution を使い、先頭 $N$ 項までの総時間は $O(N\log^2 N)$、キャッシュは $O(N)$。演算ごとに確保したノードを解放するデストラクタはなく、コピーは内部ポインタを共有する。短いプログラム内での利用を想定し、大量の独立した式を繰り返し作る用途ではメモリに注意する。
+
+#### 実装・検証
+
+- [実装](../../fps/online-fps.hpp)
+- [検証: yosupo-exp-ofps.test.cpp](../../verify/verify-yosupo-fps/yosupo-exp-ofps.test.cpp)
+- [検証: yosupo-inv-ofps.test.cpp](../../verify/verify-yosupo-fps/yosupo-inv-ofps.test.cpp)

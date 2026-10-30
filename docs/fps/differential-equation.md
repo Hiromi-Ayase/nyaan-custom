@@ -45,3 +45,8 @@ $$f\equiv r^{-1}\left( \int \left( \left(F(\hat{f}) -F'(\hat{f})\hat{f}\right)\c
 この式を利用して初項を$f \equiv f_0 \mod x$としたダブリングを行うことで、常微分方程式を$\mathrm{O}(N \log N)$で計算できる。
 
 なお、低速なexp/invを使用している場合は(計算量の劣る)分割統治FFTの方が高速に動作するようである。
+
+#### 実装・検証
+
+- [実装](../../fps/differential-equation.hpp)
+- [検証: yuki-0963.test.cpp](../../verify/verify-yuki/yuki-0963.test.cpp)

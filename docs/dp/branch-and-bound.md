@@ -16,3 +16,9 @@
 ### 注意点
 
 - このライブラリは、弱いテストケースを狙う嘘解法での利用を想定したものである。
+
+#### 実装・検証
+
+- [実装](../../dp/branch-and-bound.hpp)
+- [検証: aoj-dpl-1-f-bandb.test.cpp](../../verify/verify-aoj-dpl/aoj-dpl-1-f-bandb.test.cpp)
+- [検証: aoj-dpl-1-h-bandb.test.cpp](../../verify/verify-aoj-dpl/aoj-dpl-1-h-bandb.test.cpp)

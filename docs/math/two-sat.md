@@ -16,3 +16,8 @@ SATは一般にはNP困難であることが知られているが、連言標準
 - `set_val(s)` : $s$を条件に加える。
 - `at_most_one(nodes)`: 「$n_1,\dots,n_L$のうち真である条件が高々1つである」という条件を加える。
 - `answer()` : 2-SATを解く。条件を満たす組み合わせが存在するときは各変数の値が格納された`vector<bool>`の配列を、存在しないときは空の配列を返す。
+
+#### 実装・検証
+
+- [実装](../../math/two-sat.hpp)
+- [検証: yosupo-two-sat.test.cpp](../../verify/verify-yosupo-math/yosupo-two-sat.test.cpp)

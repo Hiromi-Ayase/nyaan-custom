@@ -44,3 +44,7 @@ struct PersistentQueue {
     return make_pair(ns->val, (int)roots.size() - 1);
   }
 };
+
+/**
+ * @docs docs/data-structure/persistent-queue.md
+ */

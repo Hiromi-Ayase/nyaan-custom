@@ -118,4 +118,5 @@ __attribute__((aligned(32))) mmint mmint::M0, mmint::M1, mmint::M2, mmint::N2;
 
 /**
  * @brief vectorize modint
+ * @docs docs/modint/vectorize-modint.md
  */

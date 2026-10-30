@@ -21,4 +21,5 @@ struct Affine {
 
 /**
  * @brief アフィン変換
+ * @docs docs/math/affine-transformation.md
  */

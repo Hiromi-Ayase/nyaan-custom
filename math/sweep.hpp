@@ -109,4 +109,5 @@ struct Basis {
 
 /*
  * @brief 掃き出し法
+ * @docs docs/math/sweep.md
  */

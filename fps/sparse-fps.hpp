@@ -161,4 +161,5 @@ FormalPowerSeries<mint> sparse_pow(const FormalPowerSeries<mint>& f,
 
 /**
  * @brief sparse な形式的冪級数の演算
+ * @docs docs/fps/sparse-fps.md
  */

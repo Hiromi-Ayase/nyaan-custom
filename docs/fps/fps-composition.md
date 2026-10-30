@@ -1,0 +1,15 @@
+## 形式的冪級数の合成
+
+`composition(f, g, deg = -1)` は **$g(f(x))$** を $x^{deg}$ で打ち切って返す。引数の順序は内側の関数、外側の関数。
+
+`deg` の省略時は両配列の長さの最大値。`deg >= 1` を指定する。内部で両入力を `deg` 要素へ切り詰めるため、無限級数の合成として使う場合は `f[0] = 0` とする。定数項が非零の場合は、外側を有限多項式とみなし、その全係数が切り捨てられないようにする。
+
+係数は低次順。NTT の変換値の順序を直接利用するので、対応する `ntt-friendly-fps.hpp` のバックエンドを使い、内部で必要な 2 冪長が法の制限に収まる必要がある。
+
+時間 $O(N\log^2 N)$。再帰に各段の作業配列を保持し、領域は $O(N\log N)$ 以下。
+
+#### 実装・検証
+
+- [実装](../../fps/fps-composition.hpp)
+- [検証: composition.test.cpp](../../verify/verify-unit-test/composition.test.cpp)
+- [検証: yosupo-composition-large.test.cpp](../../verify/verify-yosupo-fps/yosupo-composition-large.test.cpp)

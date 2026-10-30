@@ -29,3 +29,7 @@ vector<int> TopologicalSort(T &g) {
   reverse(v.begin(), v.end());
   return v;
 }
+
+/**
+ * @docs docs/graph/topological-sort.md
+ */

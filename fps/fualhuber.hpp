@@ -21,3 +21,7 @@ FormalPowerSeries<mint> fualhuber(const FormalPowerSeries<mint>& f,
   for (int i = 0; i < N; i++) g[i + 1] = u[i + N - 1] * C.finv(i + 1);
   return g;
 }
+
+/**
+ * @docs docs/fps/fualhuber.md
+ */

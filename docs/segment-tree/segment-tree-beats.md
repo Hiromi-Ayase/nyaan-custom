@@ -11,3 +11,9 @@ Range (Chmin Chmax Add Update)クエリとRange (Min Max Sum)クエリに対応�
 - `range_min(l, r)`: return $\min(a_l,\ldots,a_{r-1})$
 - `range_max(l, r)`: return $\max(a_l,\ldots,a_{r-1})$
 - `range_sum(l, r)`: return $\sum_{i=l}^{r-1}a_i$
+
+#### 実装・検証
+
+- [実装](../../segment-tree/segment-tree-beats.hpp)
+- [検証: segment-tree-beats.test.cpp](../../verify/verify-unit-test/segment-tree-beats.test.cpp)
+- [検証: yosupo-segtree-beats.test.cpp](../../verify/verify-yosupo-ds/yosupo-segtree-beats.test.cpp)

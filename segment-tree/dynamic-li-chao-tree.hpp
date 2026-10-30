@@ -86,3 +86,7 @@ struct DynamicLiChaoTree {
     return ret;
   }
 };
+
+/**
+ * @docs docs/segment-tree/dynamic-li-chao-tree.md
+ */

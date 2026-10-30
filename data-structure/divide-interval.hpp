@@ -54,3 +54,7 @@ struct DivideInterval {
     for (int i : range(l, r)) f(i);
   }
 };
+
+/**
+ * @docs docs/data-structure/divide-interval.md
+ */

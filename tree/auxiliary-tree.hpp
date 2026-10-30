@@ -42,4 +42,5 @@ struct AuxiliaryTree {
 
 /**
  * @brief Auxiliary Tree
+ * @docs docs/tree/auxiliary-tree.md
  */

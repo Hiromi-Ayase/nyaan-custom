@@ -15,7 +15,7 @@
 - `vector<T> Depth<T>(WeightedGraph<T> g, int start = 0)`:
 
   グラフ$g$は根付き木でなくてはならない。
-  
+
   返り値の$i$番の要素は、頂点startから頂点$i$までの最短パスの長さ。パスがない場合は$-1$を返す。計算量$\mathrm{O}(N)$
 
 - `pair<pair<int, int>, int> Diameter(const UnweightedGraph &g)` , `pair<pair<int, int>, T> Diameter<T>(const WeightedGraph<T> &g)`
@@ -27,5 +27,12 @@
 - `vector<int> Path<G>(G &g, int u, int v)`:
 
   型`G`は`UnweightedGraph`または`WeightedGraph<T>`で、グラフは木でなくてはならない。
-  
+
   頂点$u$から$v$に至るパスが通る頂点($u$,$v$を含む)の列を返す。計算量$\mathrm{O}(N)$
+
+#### 実装・検証
+
+- [実装](../../graph/graph-utility.hpp)
+- [検証: aoj-grl-5-a.test.cpp](../../verify/verify-aoj-grl/aoj-grl-5-a.test.cpp)
+- [検証: dynamic-diameter.test.cpp](../../verify/verify-unit-test/dynamic-diameter.test.cpp)
+- [検証: yosupo-diameter.test.cpp](../../verify/verify-yosupo-graph/yosupo-diameter.test.cpp)

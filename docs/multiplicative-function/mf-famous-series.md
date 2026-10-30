@@ -88,3 +88,9 @@ $$=\sum_{2\leq m\leq M} g(m)\left(\sum_{a\mid m,a\neq 1}\mu\left(\frac{m}{a}\rig
 $$=\sum_{2\leq m\leq M} g(m)(-\mu(m)+\sum_{a\mid m}\mu(a))=-\sum_{2\leq m\leq M} g(m)\mu(m)$$
 
 と非常にきれいな式になる。$\mu(m)$および$g(m)$は線形で列挙できるため、求める答えも線形で列挙できる。以上よりこの問題を$\mathrm{O}(\sqrt[3]{N})$で解くことが出来た。
+
+#### 実装・検証
+
+- [実装](../../multiplicative-function/mf-famous-series.hpp)
+- [検証: mf.test.cpp](../../verify/verify-unit-test/mf.test.cpp)
+- [検証: sum-of-mf.test.cpp](../../verify/verify-unit-test/sum-of-mf.test.cpp)

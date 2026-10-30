@@ -182,4 +182,5 @@ struct ArbitraryLengthNTT {
 
 /**
  * @brief Cooley-Tukey FFT Algorithm
+ * @docs docs/ntt/cooley-tukey-ntt.md
  */

@@ -218,4 +218,5 @@ using SlopeTrick = WeightedSlopeTrick<__int128_t>;
 
 /**
  * @brief Weighted Slope Trick
+ * @docs docs/data-structure/slope-trick-weighted.md
  */

@@ -21,9 +21,9 @@
     | `M` | グラフの辺の個数。$-1$を設定すると$N-1$で置き換えられる。 |
     | `is_directed` | `false`なら、入力された辺の逆辺も追加する。自己ループは$2$回追加されることになる。 |
     | `is_1origin` | `true`なら頂点番号は$1$-indexed、`false`なら$0$-indexedとして入力を読み込む。どちらにしても返り値では頂点番号は$0$-originとする。 |
-  
+
     以下の入力形式に対応する。
-  
+
     > 辺iは、頂点u\[i]から頂点v\[i]へ向かう。
     > ```
     > u[0] v[0]
@@ -99,3 +99,10 @@
 
     同じ辺が複数回与えらえる場合、後から入力されるもので上書きされる。
 
+
+#### 実装・検証
+
+- [実装](../../graph/graph-template.hpp)
+- [検証: aoj-2821.test.cpp](../../verify/verify-aoj-other/aoj-2821.test.cpp)
+- [検証: aoj-2891-2.test.cpp](../../verify/verify-aoj-other/aoj-2891-2.test.cpp)
+- [検証: aoj-3022.test.cpp](../../verify/verify-aoj-other/aoj-3022.test.cpp)

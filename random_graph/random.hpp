@@ -138,3 +138,7 @@ struct Random {
         return {res.begin(), res.end()};
     }
 } global_gen;
+
+/**
+ * @docs docs/random_graph/random.md
+ */

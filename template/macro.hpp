@@ -35,3 +35,7 @@
     Nyaan::out(__VA_ARGS__); \
     return;                  \
   } while (0)
+
+/**
+ * @docs docs/template/macro.md
+ */

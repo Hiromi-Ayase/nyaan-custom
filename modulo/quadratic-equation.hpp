@@ -19,3 +19,7 @@ vector<mint> QuadraticEquation(mint a, mint b, mint c) {
   if(D <= 1) return vector<mint>{-b * inv2 + D};
   return vector<mint>{-b * inv2 + D, -b * inv2 - D};
 }
+
+/**
+ * @docs docs/modulo/quadratic-equation.md
+ */

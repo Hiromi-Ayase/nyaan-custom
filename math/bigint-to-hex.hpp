@@ -63,3 +63,7 @@ string BtoH(bigint x) {
   string lo = BtoH(r);
   return hi + string(e - lo.size(), '0') + lo;
 }
+
+/**
+ * @docs docs/math/bigint-to-hex.md
+ */

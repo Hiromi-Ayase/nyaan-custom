@@ -159,4 +159,5 @@ using DynamicSegmentTreeImpl::DynamicSegmentTree;
 
 /**
  * @brief Dynamic Segment Tree
+ * @docs docs/segment-tree/dynamic-segment-tree.md
  */

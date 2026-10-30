@@ -320,3 +320,7 @@ struct NTT {
     return s;
   }
 };
+
+/**
+ * @docs docs/ntt/ntt-sse42.md
+ */

@@ -9,3 +9,7 @@
 - `MinimumVertexCover()`
 - `MaximumIndependentSet()`
 
+#### 実装・検証
+
+- [実装](../../flow/flow-on-bipartite-graph.hpp)
+- [検証: yosupo-matching-on-bipartite-graph.test.cpp](../../verify/verify-yosupo-graph/yosupo-matching-on-bipartite-graph.test.cpp)

@@ -55,4 +55,5 @@ struct SlideWindowAggregationDeque {
 
 /**
  * @brief Slide Window Aggrigation (deque)
+ * @docs docs/data-structure/slide-window-aggregation-deque.md
  */

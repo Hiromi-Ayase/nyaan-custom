@@ -81,4 +81,9 @@ $$\mathrm{minlen}(v) = \mathrm{len}(\mathrm{link}(v)) + 1$$
 
 - 任意のcloneされたノードnについて、clone元のsuffix link先はnである
 
-##### 
+#####
+
+#### 実装・検証
+
+- [実装](../../string/suffix-automaton.hpp)
+- [検証: yosupo-number-of-substrings-suffixautomaton.test.cpp](../../verify/verify-yosupo-string/yosupo-number-of-substrings-suffixautomaton.test.cpp)

@@ -22,3 +22,7 @@ struct FastPow {
     return p0[e & mask] * p1[(e >> LOG) & mask] * p2[(e >> (LOG * 2)) & mask];
   }
 };
+
+/**
+ * @docs docs/modulo/fastpow.md
+ */

@@ -9,16 +9,17 @@ using namespace Nyaan;
 void Nyaan::solve() {
   ini(N, Q);
   int I = (1LL << 31) - 1;
-  UpdateSum_LazySegmentTree<ll, infLL> seg{vl(N, I)};
+  using SegmentTree = SegmentTree_RangeUpdate_RangeSum<ll>;
+  SegmentTree::Tree seg(vector<SegmentTree::S>(N, {I, 1}));
   rep(_, Q) {
     ini(c);
     if (c == 0) {
       ini(s, t, x);
       t++;
-      seg.update(s, t, x);
+      seg.apply(s, t, x);
     } else {
       ini(i);
-      out(seg.query(i, i + 1));
+      out(seg.prod(i, i + 1).sum);
     }
   }
 }

@@ -635,3 +635,7 @@ strassen(const vector<fps>& s, const vector<fps>& t) {
 #undef BUFFER_SIZE
 #endif
 }  // namespace FastMatProd
+
+/**
+ * @docs docs/modulo/strassen.md
+ */

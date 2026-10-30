@@ -108,4 +108,5 @@ struct FenwickRangeTree {
 
 /*
  * @brief 領域木(Binary Indexed Tree)
+ * @docs docs/data-structure-2d/fenwick-tree-on-range-tree.md
  */

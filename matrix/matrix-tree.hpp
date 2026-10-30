@@ -43,4 +43,5 @@ struct MatrixTree {
 
 /**
  * @brief 行列木定理(ラプラシアン行列)
+ * @docs docs/matrix/matrix-tree.md
  */

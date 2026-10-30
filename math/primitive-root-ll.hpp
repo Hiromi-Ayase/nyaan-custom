@@ -24,3 +24,7 @@ long long primitive_root_ll(long long p) {
   }
   exit(1);
 }
+
+/**
+ * @docs docs/math/primitive-root-ll.md
+ */

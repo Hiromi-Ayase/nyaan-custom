@@ -66,3 +66,7 @@ struct StringSearch {
     return strcmp(p.first, p.second, q.first, q.second);
   }
 };
+
+/**
+ * @docs docs/string/string-search.md
+ */

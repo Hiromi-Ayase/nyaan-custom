@@ -3,7 +3,7 @@
 #include "../../template/template.hpp"
 //
 #include "../../data-structure/union-find.hpp"
-#include "../../segment-tree/segment-tree.hpp"
+#include "../../segment-tree/segment-tree-utility.hpp"
 #include "../../tree/auxiliary-tree.hpp"
 #include "../../tree/heavy-light-decomposition.hpp"
 #include "../../tree/tree-query.hpp"
@@ -41,8 +41,7 @@ void q() {
 
   HeavyLightDecomposition hld(g, N - 1);
   Tree tree(g, N - 1);
-  SegmentTree dp(
-      N, [](mint a, mint b) { return a + b; }, mint{});
+  SegmentTree_RangeSum<mint>::Tree dp(N);
 
   AuxiliaryTree auxgen(g, N - 1);
   rep(i, N) {
@@ -57,11 +56,11 @@ void q() {
       int l = mp[ii], c = mp[j];
       int nxt = tree.nxt(l, c);
       hld.path_query(nxt, c, true,
-                     [&](int u, int v) { cur += dp.query(u, v); });
+                     [&](int u, int v) { cur += dp.prod(u, v); });
     }
-    dp.update(hld.idx(i).fi, cur);
+    dp.set(hld.idx(i).fi, cur);
   }
-  out(dp.query(0, N));
+  out(dp.prod(0, N));
 }
 
 void Nyaan::solve() {

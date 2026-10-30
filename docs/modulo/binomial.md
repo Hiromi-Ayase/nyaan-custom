@@ -1,0 +1,20 @@
+## 階乗表による二項係数
+
+`Binomial<T>(MAX = 0)` は階乗・逆階乗・整数の逆元を必要に応じて前計算する。`T` は `get_mod()` と `inverse()` を持つ modint で、通常は素数を法とする。
+
+- `fac(i)`, `finv(i)`, `inv(i)` は階乗、逆階乗、逆元。`inv` には非零の整数を渡す。
+- `C(n,r)` / `operator()(n,r)` は二項係数、`P(n,r)` は順列数。
+- `H(n,r)` は重複組合せ $[x^r](1-x)^{-n}$。`r = 0` なら `1`。
+- `multinomial(r)` / `operator()(r)` は多項係数、`C_naive(n,r)` は積による二項係数。
+- 不正な組合せの範囲は `0` を返す。
+
+通常の階乗方式では参照する添字を法未満にする。表の拡張は法で止まるので、`fac` などへ法以上の添字を渡すと拡張ループが終了しない。`H` の `n+r-1`、多項係数の要素和もこの条件を満たす必要がある。`C_naive` は分母側の `min(r,n-r)` が法未満であれば使える。
+
+最大添字 $N$ までの表は $O(N)$ 領域。拡張時に線形時間と逆元計算を要し、前計算後の通常の問い合わせは $O(1)$。`C_naive` は $O(\min(r,n-r))$。
+
+#### 実装・検証
+
+- [実装](../../modulo/binomial.hpp)
+- [検証: bigrational.test.cpp](../../verify/verify-unit-test/bigrational.test.cpp)
+- [検証: binomial-table.test.cpp](../../verify/verify-unit-test/binomial-table.test.cpp)
+- [検証: composite-exp.test.cpp](../../verify/verify-unit-test/composite-exp.test.cpp)

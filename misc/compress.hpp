@@ -20,3 +20,7 @@ struct compress {
 /**
  * 座標圧縮
  */
+
+/**
+ * @docs docs/misc/compress.md
+ */

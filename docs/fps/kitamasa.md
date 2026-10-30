@@ -30,3 +30,9 @@ $$a_N = [x^N]\frac{P(x)}{Q(x)}$$
 
 - `LinearRecurrence(k, Q, P)` : $\lbrack x^k \rbrack \frac{P(x)}{Q(x)}$ を求める。
 - `LinearRecurrence(N, Q, a)` : $$\forall n \leq k, Q_0 a_{n} + Q_1 a_{n-1} + \dots + Q_{k} a_{n-k} = 0, Q_0 = 1$$ である $a, Q$ に対して $a_N$ を求める。
+
+#### 実装・検証
+
+- [実装](../../fps/kitamasa.hpp)
+- [検証: yuki-0214.test.cpp](../../verify/verify-yuki/yuki-0214.test.cpp)
+- [検証: yuki-0215.test.cpp](../../verify/verify-yuki/yuki-0215.test.cpp)

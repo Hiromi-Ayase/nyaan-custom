@@ -14,3 +14,8 @@
 - `max_element()/min_element()` : 最大値/最小値を返す。返り値はpair(最大値/最小値,インデックスの集合)
 - `get_kth()` : k番目の値を返す。返り値はpair(値,インデックスの集合)
 - `operate_xor(x)` : 集合全体にxorを作用させる。
+
+#### 実装・検証
+
+- [実装](../../data-structure/binary-trie.hpp)
+- [検証: yosupo-binary-trie.test.cpp](../../verify/verify-yosupo-ds/yosupo-binary-trie.test.cpp)

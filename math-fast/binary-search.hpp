@@ -27,3 +27,7 @@ template <typename T>
 int fast_ub(const vector<T>& v, const T& x) {
   return fast_bs(v, x, std::less<T>{});
 }
+
+/**
+ * @docs docs/math-fast/binary-search.md
+ */

@@ -87,4 +87,5 @@ using w_ary_tree = w_ary_tree_impl::w_ary_tree_node<LOG>;
 
 /**
  * @brief 64-ary tree
+ * @docs docs/data-structure/w-ary-tree.md
  */

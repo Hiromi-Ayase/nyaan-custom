@@ -3,22 +3,23 @@
 #include "../../template/template.hpp"
 //
 #include "../../segment-tree/segment-tree-max-of-interval.hpp"
-#include "../../segment-tree/segment-tree.hpp"
+#include "../../atcoder/segtree.hpp"
 
 using namespace Nyaan;
+
+using D = MaxInterval<ll>;
+D seg_op(D a, D b) { return merge(a, b); }
+D seg_e() { return {}; }
 
 void q() {
   inl(N, Q);
   ins(S);
 
-  using D = MaxInterval<ll>;
-  SegmentTree seg0(
-      N, [](D& a, D& b) { return merge(a, b); }, D{});
-  SegmentTree seg1(
-      N, [](D& a, D& b) { return merge(a, b); }, D{});
+  atcoder::segtree<D, seg_op, seg_e> seg0(N);
+  atcoder::segtree<D, seg_op, seg_e> seg1(N);
 
-  rep(i, N) seg0.update(i, D{S[i] == '0' ? 1 : -inf});
-  rep(i, N) seg1.update(i, D{S[i] == '1' ? 1 : -inf});
+  rep(i, N) seg0.set(i, D{S[i] == '0' ? 1 : -inf});
+  rep(i, N) seg1.set(i, D{S[i] == '1' ? 1 : -inf});
 
   vi is1(N);
   rep(i, N) is1[i] = S[i] == '1';
@@ -27,7 +28,7 @@ void q() {
   rep(_, Q) {
     inl(L, R, K);
     L--;
-    if (max(seg0.query(L, R).max, seg1.query(L, R).max) < K) {
+    if (max(seg0.prod(L, R).max, seg1.prod(L, R).max) < K) {
       out(R - L);
       continue;
     }

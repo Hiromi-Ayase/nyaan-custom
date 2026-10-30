@@ -46,4 +46,5 @@ struct RootedTreeHash {
 
 /**
  * @brief 根付き木のハッシュ
+ * @docs docs/tree/rooted-tree-hash.md
  */

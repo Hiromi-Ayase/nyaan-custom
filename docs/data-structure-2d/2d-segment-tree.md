@@ -21,4 +21,10 @@
 - `void build()` : データ構造を構築する。$\mathrm{O}(hw)$
 - `T& get(h, w)`, `operator()(h, w)` : $A_{h,w}$ の値を取得する。 $\mathrm{O}(1)$
 - `void update(h, w, x)` : 配列を $A$ として $A_{h,w}$ の値を更新する。いつでも呼ぶことができる。 $\mathrm{O}(\log H \log W)$ 
-- `void query(h1, w1, h2, w2)` : 区間 $[A_{h_1,w_1}, A_{h2, w2})$ の総積を取得する。$\mathrm{O}(\log H \log W)$ 
+- `void query(h1, w1, h2, w2)` : 区間 $[A_{h_1,w_1}, A_{h2, w2})$ の総積を取得する。$\mathrm{O}(\log H \log W)$
+
+#### 実装・検証
+
+- [実装](../../data-structure-2d/2d-segment-tree.hpp)
+- [検証: aoj-dsl-5-b-2dseg.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-5-b-2dseg.test.cpp)
+- [検証: aoj-1068.test.cpp](../../verify/verify-aoj-other/aoj-1068.test.cpp)

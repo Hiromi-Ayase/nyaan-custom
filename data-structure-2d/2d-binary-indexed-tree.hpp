@@ -55,4 +55,5 @@ struct BinaryIndexedTree2D {
 
 /*
  * @brief 二次元Binary Indexed Tree
+ * @docs docs/data-structure-2d/2d-binary-indexed-tree.md
  */

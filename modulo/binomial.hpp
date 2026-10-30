@@ -98,3 +98,7 @@ struct Binomial {
     return r == 0 ? 1 : C(n + r - 1, r);
   }
 };
+
+/**
+ * @docs docs/modulo/binomial.md
+ */

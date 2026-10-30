@@ -32,4 +32,5 @@ struct Bitset : bitset<Nb> {
 
 /**
  * @brief bitset::find_prev
+ * @docs docs/misc/bitset-find-prev.md
  */

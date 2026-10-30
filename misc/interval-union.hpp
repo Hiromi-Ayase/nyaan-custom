@@ -23,4 +23,5 @@ vector<pair<T, T>> interval_union(const vector<pair<T, T>> &v) {
 
 /**
  * @brief 区間の集合の直和
+ * @docs docs/misc/interval-union.md
  */

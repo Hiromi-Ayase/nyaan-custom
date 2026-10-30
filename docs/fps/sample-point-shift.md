@@ -1,0 +1,14 @@
+## 連続する評価点のシフト
+
+`SamplePointShift(y, t, m = -1)` は次数が `y.size()` 未満の多項式について、`y[i] = f(i)` から `f(t),f(t+1),...,f(t+m-1)` を求める。`m` の省略値は `y.size()`。
+
+`y` は係数列ではなく値の列で、非空とする。`m` は非負。係数体で標本点 `0..y.size()-1` が相異なり、対応する階乗が可逆であることが必要。`y` は非 const 参照で受け取るが、内容は変更しない。
+
+既知の範囲はそのままコピーし、法をまたぐ評価点は分割して処理する。それ以外は Lagrange 補間を畳み込みへ変換する。FPS の積のバックエンドを用意する。
+
+標本数 $N$ と出力数 $M$ に対し、法をまたがない区間の処理は時間 $O((N+M)\log(N+M))$、領域 $O(N+M)$。
+
+#### 実装・検証
+
+- [実装](../../fps/sample-point-shift.hpp)
+- [検証: yosupo-sample-point-shift.test.cpp](../../verify/verify-yosupo-fps/yosupo-sample-point-shift.test.cpp)

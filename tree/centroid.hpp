@@ -37,3 +37,7 @@ vector<int> centroid(const G &g) {
 
   return ret;
 }
+
+/**
+ * @docs docs/tree/centroid.md
+ */

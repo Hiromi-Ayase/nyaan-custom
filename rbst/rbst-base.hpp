@@ -91,4 +91,5 @@ struct RBSTBase {
 
 /**
  * @brief 乱択平衡二分木(基底クラス)
+ * @docs docs/rbst/rbst-base.md
  */

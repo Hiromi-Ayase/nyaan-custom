@@ -105,3 +105,7 @@ Points ConvexHull(Points ps) {
   convex.resize(k - 1);
   return convex;
 }
+
+/**
+ * @docs docs/geometry/integer-geometry.md
+ */

@@ -23,3 +23,6 @@ constexpr unsigned int constexpr_primitive_root(unsigned int mod) {
   }
 }
 
+/**
+ * @docs docs/math/constexpr-primitive-root.md
+ */

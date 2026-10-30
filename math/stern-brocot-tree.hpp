@@ -127,4 +127,5 @@ struct SternBrocotTreeNode {
 
 /**
  *  @brief Stern-Brocot Tree
+ * @docs docs/math/stern-brocot-tree.md
  */

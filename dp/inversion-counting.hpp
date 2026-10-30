@@ -40,3 +40,7 @@ long long swap_distance(const vector<T>& v, const vector<T>& w) {
   }
   return inversion_counting(order);
 }
+
+/**
+ * @docs docs/dp/inversion-counting.md
+ */

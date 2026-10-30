@@ -747,4 +747,5 @@ using RBSTSegmentTreeImpl::RBSTShiftableLazySegmentTree;
 
 /**
  * @brief RBST-based Dynamic Lazy Segment Tree
+ * @docs docs/segment-tree/rbst-segment-tree.md
  */

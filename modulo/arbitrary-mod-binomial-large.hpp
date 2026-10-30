@@ -349,3 +349,7 @@ struct arbitrary_mod_binomial {
 
 #undef PRIME_POWER_BINOMIAL_M_MAX
 #undef PRIME_POWER_BINOMIAL_N_MAX
+
+/**
+ * @docs docs/modulo/arbitrary-mod-binomial-large.md
+ */

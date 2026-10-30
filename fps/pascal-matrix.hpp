@@ -62,3 +62,7 @@ FormalPowerSeries<mint> pascal_matrix_trans(FormalPowerSeries<mint> a,
     return b;
   }
 }
+
+/**
+ * @docs docs/fps/pascal-matrix.md
+ */

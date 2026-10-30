@@ -43,4 +43,5 @@ using golden_section_search_impl::golden_section_search;
 
 /*
   @brief 黄金分割探索
-*/
+ * @docs docs/dp/golden-section-search.md
+ */

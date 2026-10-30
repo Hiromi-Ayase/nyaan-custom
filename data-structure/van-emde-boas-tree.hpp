@@ -102,4 +102,5 @@ using van_Emde_Boas_tree = vEB_tree_impl::vEB_tree_node<4>;
 
 /**
  * @brief van Emde Boas tree
+ * @docs docs/data-structure/van-emde-boas-tree.md
  */

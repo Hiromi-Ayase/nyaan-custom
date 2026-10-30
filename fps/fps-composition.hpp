@@ -71,4 +71,5 @@ FormalPowerSeries<mint> composition(FormalPowerSeries<mint> f,
 
 /**
  * @brief 関数の合成( $\mathrm{O}(N \log^2 N)$ )
+ * @docs docs/fps/fps-composition.md
  */

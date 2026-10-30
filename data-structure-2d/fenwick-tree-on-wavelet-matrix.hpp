@@ -154,3 +154,7 @@ struct WaveletMatrix {
     return sum(l, r, yid(U)) - sum(l, r, yid(D));
   }
 };
+
+/**
+ * @docs docs/data-structure-2d/fenwick-tree-on-wavelet-matrix.md
+ */

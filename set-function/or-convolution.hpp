@@ -14,4 +14,5 @@ vector<T> or_convolution(vector<T> a, vector<T> b) {
 
 /**
  * @brief OR Convoluion
+ * @docs docs/set-function/or-convolution.md
  */

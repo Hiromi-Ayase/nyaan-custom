@@ -35,3 +35,7 @@ struct RangeUnionFind {
 
   int same(int x, int y) { return find(x) == find(y); }
 };
+
+/**
+ * @docs docs/data-structure/range-union-find.md
+ */

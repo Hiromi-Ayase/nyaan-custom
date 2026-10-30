@@ -85,3 +85,7 @@ struct Fast_Mo {
     }
   }
 };
+
+/**
+ * @docs docs/misc/mo-fast.md
+ */

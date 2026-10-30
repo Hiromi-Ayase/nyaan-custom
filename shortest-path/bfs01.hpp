@@ -28,3 +28,7 @@ vector<T> bfs01(WeightedGraph<T>& g, int start = 0) {
   }
   return d;
 }
+
+/**
+ * @docs docs/shortest-path/bfs01.md
+ */

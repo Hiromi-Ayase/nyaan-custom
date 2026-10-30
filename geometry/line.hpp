@@ -74,3 +74,7 @@ Polygon convex_polygon_cut(const Polygon &U, const Line &l) {
   }
   return ret;
 }
+
+/**
+ * @docs docs/geometry/line.md
+ */

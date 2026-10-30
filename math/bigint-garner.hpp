@@ -83,4 +83,5 @@ using GarnerImpl::garner_bigint;
 
 /**
  * @brief Garner's algorithm for bigint
+ * @docs docs/math/bigint-garner.md
  */

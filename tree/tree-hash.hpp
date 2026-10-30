@@ -13,3 +13,7 @@ vector<typename RootedTreeHash<G>::Hash> tree_hash(const G& g) {
   sort(begin(hs), end(hs));
   return hs;
 }
+
+/**
+ * @docs docs/tree/tree-hash.md
+ */

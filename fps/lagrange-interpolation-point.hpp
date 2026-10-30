@@ -20,3 +20,7 @@ mint lagrange_interpolation(const vector<mint>& y, long long x,
   }
   return ret;
 }
+
+/**
+ * @docs docs/fps/lagrange-interpolation-point.md
+ */

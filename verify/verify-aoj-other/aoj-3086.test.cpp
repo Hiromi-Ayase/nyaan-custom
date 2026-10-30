@@ -4,7 +4,7 @@
 //
 #include "../../dp/monge-shortest-path.hpp"
 //
-#include "../../segment-tree/segment-tree.hpp"
+#include "../../segment-tree/segment-tree-utility.hpp"
 using namespace Nyaan;
 
 void q() {
@@ -12,11 +12,10 @@ void q() {
   vl d(N);
   in(d);
   each(x, d) x = -x;
-  SegmentTree seg(
-      d, [](ll a, ll b) { return min(a, b); }, infLL);
+  SegmentTree_RangeMin<ll, infLL>::Tree seg(d);
   auto ans = monge_shortest_path<ll>(N, [&](int l, int r) -> ll {
     if (r - l < L) return infLL;
-    return seg.query(l, r);
+    return seg.prod(l, r);
   });
   out(-ans[N]);
 }

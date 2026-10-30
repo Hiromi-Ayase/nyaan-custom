@@ -9,3 +9,8 @@
 ### 使い方
 
 - `MaximalRectangle(buf)`: `buf`で非負整数列$A$を与える。求める最大値を返す。計算量$\mathrm{O}(\vert A \vert)$
+
+#### 実装・検証
+
+- [実装](../../dp/maximal-rectangle.hpp)
+- [検証: aoj-dpl-3-c.test.cpp](../../verify/verify-aoj-dpl/aoj-dpl-3-c.test.cpp)

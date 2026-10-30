@@ -235,3 +235,7 @@ vector<T> Rotate(const vector<T> &v, int clockwise = true) {
 }
 
 }  // namespace Nyaan
+
+/**
+ * @docs docs/template/util.md
+ */

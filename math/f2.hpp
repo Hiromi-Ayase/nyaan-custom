@@ -65,3 +65,7 @@ void OrthogonalComplement(BitMat<MAX_H, MAX_W> &A, int N) {
     }
   }
 }
+
+/**
+ * @docs docs/math/f2.md
+ */
