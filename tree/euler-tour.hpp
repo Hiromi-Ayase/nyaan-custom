@@ -55,17 +55,16 @@ struct EulerTour {
   RMQ rmq;
 
   void init(G& g, int root) {
-    dfs(g, root, -1, 0);
-    if (id < rmq.size()) {
-      rmq.set(id++, {-1, -1});
+    if (g.empty()) {
+      return;
     }
+    dfs(g, root, -1, 0);
+    // 各成分の末尾に番兵を1つ置くと、頂点k個の成分はちょうど2k要素になる。
+    rmq.set(id++, {-1, -1});
     for (int i = 0; i < (int)g.size(); i++) {
       if (down[i] == -1) {
-        rmq.set(id++, {-1, -1});
         dfs(g, i, -1, 0);
-        if (id < rmq.size()) {
-          rmq.set(id++, {-1, -1});
-        }
+        rmq.set(id++, {-1, -1});
       }
     }
     rmq.build();

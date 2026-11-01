@@ -1,6 +1,7 @@
 #pragma once
 
 #include <immintrin.h>
+#include <limits>
 
 struct bit_vector {
   using u32 = uint32_t;
@@ -114,7 +115,13 @@ struct WaveletMatrix {
 
   // count i s.t. (l <= i < r) && (v[i] < upper)
   int range_freq(int l, int r, T upper) {
-    if (upper >= (T(1) << lg)) return r - l;
+    if (upper <= T{0}) {
+      return 0;
+    }
+    // 上限そのものを左シフトで作らず、符号ビットや型幅を超えるシフトを避ける。
+    if (lg < std::numeric_limits<T>::digits && (upper >> lg) != 0) {
+      return r - l;
+    }
     int ret = 0;
     for (int h = lg - 1; h >= 0; --h) {
       bool f = (upper >> h) & 1;

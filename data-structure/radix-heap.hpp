@@ -30,9 +30,13 @@ struct RadixHeap {
   }
 
   pair<uint, Val> pop() {
-    if (ms[0] == uint(-1)) {
+    assert(!empty());
+    // 最大キーも有効なので、最小値の番兵では空かどうかを判定しない。
+    if (vs[0].empty()) {
       int idx = 1;
-      while (ms[idx] == uint(-1)) idx++;
+      while (vs[idx].empty()) {
+        idx++;
+      }
       last = ms[idx];
       for (auto &p : vs[idx]) {
         uint64_t b = getbit(p.first ^ last);

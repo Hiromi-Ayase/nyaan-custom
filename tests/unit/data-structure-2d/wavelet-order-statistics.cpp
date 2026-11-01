@@ -4,7 +4,69 @@
 using namespace std;
 #include "data-structure-2d/wavelet-matrix.hpp"
 
+// int/long longと符号なし型の最大値付近を、区間の直接走査と比較する。
+template <typename T>
+void check_limits() {
+  T largest = numeric_limits<T>::max();
+  vector<T> a{largest / 2 + 1, 0, largest, 1, largest - 1};
+  vector<T> thresholds{0, 1, 2, largest / 2, largest / 2 + 1, largest - 1, largest};
+  if constexpr (is_signed_v<T>) {
+    thresholds.push_back(-1);
+    thresholds.push_back(numeric_limits<T>::min());
+  }
+  WaveletMatrix<T> tree(a);
+  for (int i = 0; i < (int)a.size(); ++i) {
+    // 最上位の値ビットを使う要素も、元の位置から取得できる。
+    assert(tree.access(i) == a[i]);
+  }
+  for (int l = 0; l <= (int)a.size(); ++l) {
+    for (int r = l; r <= (int)a.size(); ++r) {
+      vector<T> sorted(a.begin() + l, a.begin() + r);
+      sort(sorted.begin(), sorted.end());
+      for (int k = 0; k < r - l; ++k) {
+        // 順序統計も符号ビット付近の値で並び順を失わない。
+        assert(tree.kth_smallest(l, r, k) == sorted[k]);
+      }
+      for (T upper : thresholds) {
+        int count = 0;
+        T previous = T(-1);
+        T next = T(-1);
+        bool found_next = false;
+        for (T x : sorted) {
+          if (x < upper) {
+            ++count;
+            previous = x;
+          } else if (!found_next) {
+            next = x;
+            found_next = true;
+          }
+        }
+        // 負の閾値、0、最大値でも頻度と直前・直後の値は直接走査に一致する。
+        assert(tree.range_freq(l, r, upper) == count);
+        assert(tree.prev_value(l, r, upper) == previous);
+        assert(tree.next_value(l, r, upper) == next);
+        for (T lower : thresholds) {
+          if (lower > upper) {
+            continue;
+          }
+          int expected = 0;
+          for (T x : sorted) {
+            expected += lower <= x && x < upper;
+          }
+          // 二つの閾値による半開値域の頻度も直接数える。
+          assert(tree.range_freq(l, r, lower, upper) == expected);
+        }
+      }
+    }
+  }
+}
+
 int main() {
+  check_limits<int>();
+  check_limits<long long>();
+  check_limits<unsigned int>();
+  check_limits<unsigned long long>();
+
   mt19937_64 rng(1904);
   for (int n : {1, 2, 3, 31, 63, 64, 65, 127, 128, 129, 257}) {
     bit_vector bits(n);

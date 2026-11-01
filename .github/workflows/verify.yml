@@ -4,13 +4,22 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   verify:
+    name: ${{ matrix.name }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        - name: Release
+          sanitizers: "OFF"
+        - name: ASan and UBSan
+          sanitizers: "ON"
 
     steps:
     - uses: actions/checkout@v4
 
     - name: Configure
-      run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+      run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DNYAAN_ENABLE_SANITIZERS=${{ matrix.sanitizers }}
 
     - name: Build
       run: cmake --build build -j 2

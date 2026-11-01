@@ -5,7 +5,49 @@ using namespace std;
 #include "modint/montgomery-modint.hpp"
 #include "ntt/ntt.hpp"
 
+// 小さい法を使い、法が許す最大長まで巡回畳み込みを二重ループと比較する。
+template <uint32_t Mod>
+void check_max_length() {
+  using M = LazyMontgomeryModInt<Mod>;
+  NTT<M> transform;
+  int maximum = 1 << __builtin_ctz(Mod - 1);
+  for (int n = 1; n <= maximum; n *= 2) {
+    vector<M> a(n);
+    vector<M> b(n);
+    for (int i = 0; i < n; ++i) {
+      a[i] = (i * 7 + 3) % Mod;
+      b[i] = (i * i + 5) % Mod;
+    }
+    vector<unsigned long long> expected(n);
+    for (int i = 0; i < n; ++i) {
+      for (int j = 0; j < n; ++j) {
+        int k = (i + j) % n;
+        expected[k] = (expected[k] + 1ULL * a[i].get() * b[j].get()) % Mod;
+      }
+    }
+    auto fa = a;
+    transform.ntt(fa);
+    transform.intt(fa);
+    // 最大長でも、回転因子の表を超えて参照せず元の列を復元できる。
+    assert(fa == a);
+    auto fb = b;
+    transform.ntt(fa);
+    transform.ntt(fb);
+    for (int i = 0; i < n; ++i) {
+      fa[i] *= fb[i];
+    }
+    transform.intt(fa);
+    for (int i = 0; i < n; ++i) {
+      // 順逆変換で同じ誤りが相殺されないよう、添字を巡回させた直接積とも照合する。
+      assert(fa[i].get() == expected[i]);
+    }
+  }
+}
+
 int main() {
+  check_max_length<17>();
+  check_max_length<353>();
+  check_max_length<257>();
   using M = LazyMontgomeryModInt<998244353>;
 
   NTT<M> ntt;

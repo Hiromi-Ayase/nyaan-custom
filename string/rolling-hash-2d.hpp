@@ -21,13 +21,14 @@ struct RollingHash2D {
   void build(const vector<Str> &S) {
     data = S;
     h = S.size();
-    w = S[0].size();
+    w = S.empty() ? 0 : S[0].size();
     pw[0].resize(h + 1);
     pw[1].resize(w + 1);
     pw[0][0] = pw[1][0] = Hash::set(1);
     for (int i = 1; i <= h; i++) pw[0][i] = pw[0][i - 1] * basis[0];
     for (int i = 1; i <= w; i++) pw[1][i] = pw[1][i - 1] * basis[1];
-    hs.resize(h + 1, vector<Hash>(w + 1));
+    // 再構築では既存の行も新しい幅にそろえる。
+    hs.assign(h + 1, vector<Hash>(w + 1));
     hs[0][0] = Hash::set(0);
     for (int i = 1; i <= h; i++) {
       hs[i][0] = Hash::set(0);

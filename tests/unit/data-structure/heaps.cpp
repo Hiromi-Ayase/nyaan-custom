@@ -10,7 +10,35 @@ using namespace std;
 #include "data-structure/radix-heap.hpp"
 #include "data-structure/skew-heap.hpp"
 
+// 最大キーと重複キーを、std::multisetの昇順に取り出せるか確認する。
+template <typename Key>
+void check_radix_limits() {
+  Key largest = numeric_limits<Key>::max();
+  vector<Key> keys{largest, 0, largest - 1, 1, largest / 2 + 1, largest};
+  RadixHeap<Key, int> heap;
+  multiset<Key> expected(keys.begin(), keys.end());
+  for (int i = 0; i < (int)keys.size(); ++i) {
+    heap.push(keys[i], i);
+  }
+  set<int> ids;
+  while (!expected.empty()) {
+    auto [key, id] = heap.pop();
+    // unsigned最大値も空バケットと区別され、追加した各要素を一度ずつ返す。
+    assert(key == *expected.begin() && keys[id] == key && ids.insert(id).second);
+    expected.erase(expected.begin());
+    assert(heap.size() == (int)expected.size());
+  }
+  // 最大値を最後に取り出した後も、同じキーの再挿入と取り出しができる。
+  assert(heap.empty());
+  heap.push(largest, 123);
+  assert((heap.pop() == pair<Key, int>{largest, 123}));
+  assert(heap.empty());
+}
+
 int main() {
+  check_radix_limits<unsigned int>();
+  check_radix_limits<unsigned long long>();
+
   mt19937_64 rng(654);
   ErasablePriorityQueue<long long> lo;
   ErasablePriorityQueue<long long, false> hi;

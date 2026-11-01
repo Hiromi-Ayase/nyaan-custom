@@ -1,6 +1,6 @@
 // Verify: string/rolling-hash-2d.hpp
 // 縦横の基数を固定し、各矩形を二重ループで多項式評価して比較する。
-// 幅0、一行、一列、全体および部分矩形を検証する。
+// 空行列、幅0、一行、一列、全体・部分矩形と、縦横サイズを変えた再構築を検証する。
 #include <bits/stdc++.h>
 using namespace std;
 #include "string/rolling-hash-2d.hpp"
@@ -9,6 +9,9 @@ int main() {
   using RH = RollingHash2D<string, 1>;
   RH::basis[0] = RH::Hash::set(1009);
   RH::basis[1] = RH::Hash::set(1013);
+  RH hash;
+  // デフォルト構築は空行列を表し、空矩形のハッシュは0になる。
+  assert(hash.get(0, 0, 0, 0) == RH::Hash::set(0));
   mt19937 rng(9931);
   for (int h = 1; h <= 9; ++h) {
     for (int w = 0; w <= 9; ++w) {
@@ -19,7 +22,8 @@ int main() {
         }
       }
 
-      RH hash(a);
+      // 同じインスタンスを再利用し、幅の増加・縮小でも全行が再確保されるか調べる。
+      hash.build(a);
       for (int u = 0; u < h; ++u) {
         for (int d = u + 1; d <= h; ++d) {
           for (int l = 0; l <= w; ++l) {
@@ -48,4 +52,11 @@ int main() {
       }
     }
   }
+  hash.build({"a"});
+  hash.build({"ab"});
+  // 1行のまま幅を増やしても、直接評価した1009/1013進ハッシュになる。
+  assert(hash.get(0, 0, 1, 2) == RH::Hash::set('a' * 1013ULL + 'b'));
+  hash.build({});
+  // 非空から空への再構築でも、過去の寸法や係数を残さない。
+  assert(hash.h == 0 && hash.w == 0 && hash.get(0, 0, 0, 0) == RH::Hash::set(0));
 }

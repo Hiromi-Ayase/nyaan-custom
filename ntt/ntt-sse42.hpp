@@ -107,7 +107,11 @@ struct NTT {
           mint t0m2 = t0 - t2, t1m3 = (t1 - t3) * imag;
           a[jh + 0] = t0p2 + t1p3, a[jh + 1] = t0p2 - t1p3;
           a[jh + 2] = t0m2 + t1m3, a[jh + 3] = t0m2 - t1m3;
-          xx *= dw[__builtin_ctz((jh += 4))];
+          jh += 4;
+          // 最後のブロックの後には回転因子を更新しない。
+          if (jh < u) {
+            xx *= dw[__builtin_ctz(jh)];
+          }
         }
       } else {
         mint ww = one, xx = one, wx = one;
@@ -170,7 +174,11 @@ struct NTT {
                                montgomery_sub_128(T0M2, T1M3, m2, m0));
             }
           }
-          xx *= dw[__builtin_ctz((jh += 4))];
+          jh += 4;
+          // 最後のブロックの後には回転因子を更新しない。
+          if (jh < u) {
+            xx *= dw[__builtin_ctz(jh)];
+          }
         }
       }
       u <<= 2;
@@ -214,7 +222,11 @@ struct NTT {
           mint t0m1 = (t0 - t1) * xx, t2m3 = (t2 - t3) * yy;
           a[jh + 0] = t0p1 + t2p3, a[jh + 2] = (t0p1 - t2p3) * ww;
           a[jh + 1] = t0m1 + t2m3, a[jh + 3] = (t0m1 - t2m3) * ww;
-          xx *= dy[__builtin_ctz(jh += 4)];
+          jh += 4;
+          // 最後のブロックの後には回転因子を更新しない。
+          if (jh < u) {
+            xx *= dy[__builtin_ctz(jh)];
+          }
         }
       } else {
         mint ww = one, xx = one, yy = one;
@@ -279,7 +291,11 @@ struct NTT {
                                  m1));
             }
           }
-          xx *= dy[__builtin_ctz(jh += 4)];
+          jh += 4;
+          // 最後のブロックの後には回転因子を更新しない。
+          if (jh < u) {
+            xx *= dy[__builtin_ctz(jh)];
+          }
         }
       }
       u >>= 4;

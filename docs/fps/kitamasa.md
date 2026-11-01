@@ -28,10 +28,11 @@ $$a_N = [x^N]\frac{P(x)}{Q(x)}$$
 
 #### 使い方
 
-- `LinearRecurrence(k, Q, P)` : $\lbrack x^k \rbrack \frac{P(x)}{Q(x)}$ を求める。
-- `LinearRecurrence(N, Q, a)` : $$\forall n \leq k, Q_0 a_{n} + Q_1 a_{n-1} + \dots + Q_{k} a_{n-k} = 0, Q_0 = 1$$ である $a, Q$ に対して $a_N$ を求める。
+- `LinearRecurrence(k, Q, P)` : $\lbrack x^k \rbrack \frac{P(x)}{Q(x)}$ を求める。`Q[0]` は非零とし、1でなくてもよい。NTT向け・任意法向けの両バックエンドに対応する。
+- `kitamasa(N, Q, a)` : $Q_0 a_n + Q_1 a_{n-1} + \dots + Q_k a_{n-k} = 0$ を満たす数列の $a_N$ を求める。`Q[0]` は非零で、`a` に少なくとも最初の $k$ 項を渡す。
 
 #### 実装・検証
 
 - [実装](../../fps/kitamasa.hpp)
+- [Verify: arbitrary.cpp](../../tests/unit/fps/arbitrary.cpp)
 - [Verify: recurrences.cpp](../../tests/unit/fps/recurrences.cpp)

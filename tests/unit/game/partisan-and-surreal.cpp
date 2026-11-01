@@ -12,6 +12,12 @@ long long scaled(SurrealNumber a) {
 
 int main() {
   using S = SurrealNumber;
+  S negative_half(-1, 1);
+  // 負数の分母合わせを含む加減算・比較が、既知の二進有理数に一致する。
+  assert(negative_half + S(1) == S(1, 1));
+  assert(S(-1) + S(1, 1) == negative_half);
+  assert(negative_half - S(1) == S(-3, 1));
+  assert(negative_half < S(0) && negative_half > S(-1));
   mt19937 rng(1101);
   for (int trial = 0; trial < 10000; ++trial) {
     S a((int)(rng() % 257) - 128, rng() % 7);

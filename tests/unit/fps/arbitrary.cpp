@@ -1,9 +1,11 @@
 // Verify: fps/arbitrary-fps.hpp
+// Verify: fps/kitamasa.hpp
 // 基本演算を筆算と係数漸化式で比較し、2の冪の前後・先頭ゼロを検査する。
 #include <bits/stdc++.h>
 using namespace std;
 #include "modint/montgomery-modint.hpp"
 #include "fps/arbitrary-fps.hpp"
+#include "fps/kitamasa.hpp"
 using mint = LazyMontgomeryModInt<1000000007>;
 using fps = FormalPowerSeries<mint>;
 
@@ -115,4 +117,36 @@ int main() {
   // ゼロ級数の正の冪と、次数0の出力を確認する。
   assert(fps(5).pow(7) == fps(5));
   assert(fps{1}.pow(0, 0).empty());
+  for (int order : {1, 2, 7, 32}) {
+    for (int numerator_size : {0, 1, order, order + 3}) {
+      fps denominator(order + 1);
+      for (auto& x : denominator) {
+        x = rng();
+      }
+      denominator[0] = 2 + rng() % 100;
+      denominator.back() = 3;
+      fps numerator(numerator_size);
+      for (auto& x : numerator) {
+        x = rng();
+      }
+      fps expected(128);
+      for (int i = 0; i < (int)expected.size(); ++i) {
+        mint value = i < numerator_size ? numerator[i] : mint(0);
+        for (int j = 1; j <= min(i, order); ++j) {
+          value -= denominator[j] * expected[i - j];
+        }
+        expected[i] = value / denominator[0];
+      }
+      for (int k : {0, 1, 2, 17, 127}) {
+        // Q[0]!=1の分数P/Qを逐次除算し、任意法版Bostan-Moriの係数と比較する。
+        assert(LinearRecurrence(k, denominator, numerator) == expected[k]);
+      }
+    }
+  }
+  for (long long k : {0LL, 1LL, 2LL, 10LL, 1000000000000000000LL}) {
+    // 1/(2-2x)の全係数は1/2。遠い項でも分母の定数項で正規化される。
+    assert(LinearRecurrence(k, fps{2, -2}, fps{1}) == mint(2).inverse());
+    // Qを定数倍しても、初期値から定まる等比数列は変わらない。
+    assert(kitamasa(k, fps{2, -14}, fps{3}) == mint(3) * mint(7).pow(k));
+  }
 }

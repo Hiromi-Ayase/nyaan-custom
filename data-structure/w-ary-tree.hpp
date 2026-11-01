@@ -51,8 +51,11 @@ struct w_ary_tree_node {
     if (((map >> pos) & 1) && mask(key) <= chd[pos].max()) {
       return (pos << shift) + chd[pos].find_next(mask(key));
     }
+    if (pos == 63) {
+      return -1;
+    }
     int nxt = ctz(map & ~((1ULL << (pos + 1)) - 1));
-    if (pos == 63 || nxt == -1) return -1;
+    if (nxt == -1) return -1;
     return (nxt << shift) + chd[nxt].min();
   }
   int find_prev(int key) const {

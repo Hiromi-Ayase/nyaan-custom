@@ -13,6 +13,16 @@ ctest --test-dir build -R z-algorithm --output-on-failure
 
 テストは正常終了で成功、assertion failure・異常終了・時間超過で失敗します。CMake は Release ビルドでも `assert` を有効にします。ランダムケースはテストごとに固定シードを使います。失敗した場合は CTest のログに示されるソース行を参照し、同じテストを再実行できます。
 
+範囲外アクセスや未定義動作は、AddressSanitizer・UBSanを有効にした別ビルドで検査できます。
+
+```sh
+cmake -S . -B build-sanitized -DCMAKE_BUILD_TYPE=Release -DNYAAN_ENABLE_SANITIZERS=ON
+cmake --build build-sanitized -j 4
+ctest --test-dir build-sanitized -j 4 --output-on-failure
+```
+
+Sanitizerが問題を検出すると、そのテストは直ちに失敗します。終了時まで節点プールを保持する競技プログラミング用の実装があるため、CTestではLeakSanitizerによるメモリリーク検査を無効にしています。範囲外アクセス・解放後のアクセス・未定義動作の検査は有効です。CIでも通常ビルドとSanitizerビルドの両方を実行します。
+
 索引の363ヘッダを179個のテストで検証します。関連するヘッダは同じプログラム内で検証することがあります。CMakeの構成時に、索引の全ヘッダにテストがあること、各ドキュメントのVerifyリンクが登録済みのテストを指すことを検査します。
 
 各ソースの `// Verify: ...` は直接検証するヘッダを示します。ヘッダの include が通ることだけでは検証扱いにせず、各対象の機能を実際に呼び出して結果を照合します。

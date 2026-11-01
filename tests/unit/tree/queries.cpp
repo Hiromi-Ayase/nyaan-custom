@@ -16,7 +16,119 @@ using namespace std;
 #include "tree/convert-tree.hpp"
 #include "tree/rerooting.hpp"
 
+// 森の各成分をBFSで根付き化し、孤立点・異なる成分・非零の根も確認する。
+void check_euler_forests() {
+  mt19937 rng(1002);
+  vector<vector<int>> empty;
+  EulerTour empty_tour(empty);
+  // 空の森にはツアーの要素も存在しない。
+  assert(empty_tour.size() == 0);
+  for (int n : {1, 2, 3, 4, 7, 8, 16, 31, 32}) {
+    for (int trial = 0; trial < 12; ++trial) {
+      vector<vector<int>> g(n);
+      vector<vector<pair<int, long long>>> weighted(n);
+      for (int u = 1; u < n; ++u) {
+        if (trial == 0 || rng() % 3 == 0) {
+          continue;
+        }
+        int p = rng() % u;
+        g[u].push_back(p);
+        g[p].push_back(u);
+        weighted[u].emplace_back(p, u * 100LL);
+        weighted[p].emplace_back(u, u * 100LL);
+      }
+      int root = trial % n;
+      vector<int> starts{root};
+      for (int i = 0; i < n; ++i) {
+        starts.push_back(i);
+      }
+      vector<int> parent(n, -2);
+      vector<int> component(n, -1);
+      for (int start : starts) {
+        if (parent[start] != -2) {
+          continue;
+        }
+        parent[start] = -1;
+        component[start] = start;
+        vector<int> queue{start};
+        for (int i = 0; i < (int)queue.size(); ++i) {
+          int u = queue[i];
+          for (int v : g[u]) {
+            if (parent[v] == -2) {
+              parent[v] = u;
+              component[v] = start;
+              queue.push_back(v);
+            }
+          }
+        }
+      }
+      auto ancestor = [&](int u, int v) {
+        while (v != -1 && v != u) {
+          v = parent[v];
+        }
+        return v == u;
+      };
+      EulerTour tour(g, root);
+      EulerTour pair_tour(weighted, root);
+      vector<long long> values(tour.size());
+      vector<long long> edge_values(tour.size());
+      // 成分数にかかわらず、ツアーと番兵は2N要素に収まる。
+      assert(tour.size() == 2 * n && pair_tour.size() == 2 * n);
+      for (int u = 0; u < n; ++u) {
+        auto [in, out] = tour.idx(u);
+        assert(0 <= in && in < out && out < tour.size());
+        assert(pair_tour.idx(u) == tour.idx(u));
+        values[in] += u + 1;
+        values[out] -= u + 1;
+        if (parent[u] != -1) {
+          edge_values[in] += u + 1;
+          edge_values[out] -= u + 1;
+        }
+      }
+      for (int u = 0; u < n; ++u) {
+        for (int v = 0; v < n; ++v) {
+          int expected = -1;
+          if (component[u] == component[v]) {
+            expected = u;
+            while (!ancestor(expected, v)) {
+              expected = parent[expected];
+            }
+          }
+          // 異なる成分のLCAは-1。同じ成分なら親鎖の最初の共通頂点になる。
+          assert(tour.lca(u, v) == expected && pair_tour.lca(u, v) == expected);
+          auto [in, out] = tour.idx(u);
+          bool inside = in <= tour.idx(v).first && tour.idx(v).first < out;
+          // 部分木区間には、別成分や同じ成分の非子孫が混入しない。
+          assert(inside == ancestor(u, v));
+          if (expected == -1) {
+            continue;
+          }
+          long long sum = expected + 1;
+          for (int x = u; x != expected; x = parent[x]) {
+            sum += x + 1;
+          }
+          for (int x = v; x != expected; x = parent[x]) {
+            sum += x + 1;
+          }
+          long long actual = 0;
+          long long edge_sum = 0;
+          tour.node_query(u, v, [&](int l, int r) {
+            actual += accumulate(values.begin() + l, values.begin() + r, 0LL);
+          });
+          tour.edge_query(u, v, [&](int l, int r) {
+            edge_sum += accumulate(edge_values.begin() + l, edge_values.begin() + r, 0LL);
+          });
+          // 入退時刻の符号付き配列から得る頂点和・辺和を、親鎖の直接和と照合する。
+          assert(actual == sum && edge_sum == sum - expected - 1);
+        }
+      }
+    }
+  }
+}
+
 int main() {
+  check_euler_forests();
+
   mt19937 rng(1001);
   for (int n = 1; n <= 50; ++n) {
     for (int shape = 0; shape < 3; ++shape) {

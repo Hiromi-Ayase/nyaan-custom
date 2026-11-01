@@ -31,12 +31,12 @@ struct SurrealNumber {
   // 加算・減算
   friend S operator+(const S& l, const S& r) {
     i64 cq = max(l.q, r.q);
-    i64 cp = (l.p << (cq - l.q)) + (r.p << (cq - r.q));
+    i64 cp = l.p * (i64{1} << (cq - l.q)) + r.p * (i64{1} << (cq - r.q));
     return normalize(S{cp, cq});
   }
   friend S operator-(const S& l, const S& r) {
     i64 cq = max(l.q, r.q);
-    i64 cp = (l.p << (cq - l.q)) - (r.p << (cq - r.q));
+    i64 cp = l.p * (i64{1} << (cq - l.q)) - r.p * (i64{1} << (cq - r.q));
     return normalize(S{cp, cq});
   }
   S& operator+=(const S& r) { return (*this) = (*this) + r; }

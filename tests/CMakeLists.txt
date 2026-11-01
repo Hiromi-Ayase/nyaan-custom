@@ -10,7 +10,16 @@ foreach(source IN LISTS unit_sources)
   target_include_directories("${target}" PRIVATE "${PROJECT_SOURCE_DIR}")
   # Keep assertions active even in Release; many references use exhaustive loops.
   target_compile_options("${target}" PRIVATE -O2 -UNDEBUG)
+  if(NYAAN_ENABLE_SANITIZERS)
+    target_compile_options("${target}" PRIVATE
+      -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -g1)
+    target_link_options("${target}" PRIVATE -fsanitize=address,undefined)
+  endif()
   add_test(NAME "${name}" COMMAND "${target}")
   string(REGEX REPLACE "/.*" "" category "${name}")
   set_tests_properties("${name}" PROPERTIES TIMEOUT 60 LABELS "unit;${category}")
+  if(NYAAN_ENABLE_SANITIZERS)
+    # Several contest data structures keep their node pools until process exit.
+    set_tests_properties("${name}" PROPERTIES ENVIRONMENT "ASAN_OPTIONS=detect_leaks=0")
+  endif()
 endforeach()

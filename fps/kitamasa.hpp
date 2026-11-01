@@ -32,7 +32,7 @@ mint LinearRecurrence(long long k, FormalPowerSeries<mint> Q,
       }
       k >>= 1;
     }
-    return ret + P[0];
+    return ret + P[0] / Q[0];
   } else {
     int N = 1;
     while (N < (int)Q.size()) N <<= 1;

@@ -8,6 +8,16 @@ using namespace std;
 #include "data-structure/van-emde-boas-tree.hpp"
 
 int main() {
+  w_ary_tree<2> boundary;
+  // 空集合でも最大の子番号63を調べられ、64ビットシフトを実行しない。
+  assert(boundary.find_next(4095) == -1);
+  boundary.insert(4094);
+  assert(boundary.find_next(4095) == -1);
+  boundary.insert(4095);
+  // 最後のバケット内の値も、包含・直前・直後を正しく区別できる。
+  assert(boundary.find_next(4095) == 4095 && boundary.find_prev(4095) == 4094);
+  boundary.erase(4095);
+  assert(boundary.find_next(4095) == -1);
   mt19937 rng(9173);
   auto w = make_unique<w_ary_tree<3>>();
   auto v = make_unique<van_Emde_Boas_tree>();

@@ -98,4 +98,25 @@ int main() {
   Timer timer;
   // all.hppの集約インポートから、タイマーと乱数の公開APIも使用できる。
   assert(timer.elapsed() >= 0 && randint(5, 6) == 5);
+  for (int length : {1, 3, fastio::SZ - 1, fastio::SZ, fastio::SZ + 1, 2 * fastio::SZ + 13}) {
+    FILE* eof_input = tmpfile();
+    // 改行のない最終単語を入れるための入力ファイルを用意する。
+    assert(eof_input);
+    string last_word(length, 'a');
+    for (int i = 0; i < length; ++i) {
+      last_word[i] += i % 26;
+    }
+    string text = " \t" + last_word;
+    fwrite(text.data(), 1, text.size(), eof_input);
+    rewind(eof_input);
+    stdin = eof_input;
+    fastio::in_left = 0;
+    fastio::in_right = 0;
+    string parsed_word = "prefix:";
+    rd(parsed_word);
+    // EOFで終わる単語も、バッファ境界をまたぐ長さも、既存文字列へ一度だけ追記する。
+    assert(parsed_word == "prefix:" + last_word);
+    stdin = saved_in;
+    fclose(eof_input);
+  }
 }

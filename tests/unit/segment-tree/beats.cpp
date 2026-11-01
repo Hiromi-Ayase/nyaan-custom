@@ -36,6 +36,14 @@ struct ModNode {
 };
 
 int main() {
+  AngelBeats negative(8);
+  negative.range_add(0, 8, -1);
+  negative.range_add(1, 7, -3);
+  // 負の加算を根と部分区間へ適用し、和と遅延伝播後の一点値を確認する。
+  assert(negative.range_sum(0, 8) == -26);
+  for (int i = 0; i < 8; ++i) {
+    assert(negative.range_sum(i, i + 1) == (i == 0 || i == 7 ? -1 : -4));
+  }
   mt19937 rng(1202);
   for (int n : {0, 1, 2, 3, 7, 16, 31, 64, 129}) {
     vector<long long> a(n);

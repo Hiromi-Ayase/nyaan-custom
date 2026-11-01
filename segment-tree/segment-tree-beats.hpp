@@ -65,7 +65,8 @@ struct AngelBeats {
 
   void push_add(int k, i64 x) {
     Node& p = v[k];
-    p.sum += x << (log + __builtin_clz(k) - 31);
+    i64 length = i64{1} << (log + __builtin_clz(k) - 31);
+    p.sum += x * length;
     p.g1 += x;
     p.l1 += x;
     if (p.g2 != -INF) p.g2 += x;

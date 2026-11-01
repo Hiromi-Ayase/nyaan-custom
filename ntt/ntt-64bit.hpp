@@ -83,7 +83,11 @@ struct NTT_64bit {
           a[j0] = t0p2 + t1p3, a[j0 + v] = t0p2 - t1p3;
           a[j2] = t0m2 + t1m3, a[j2 + v] = t0m2 - t1m3;
         }
-        xx *= dw[__builtin_ctzll((jh += 4))];
+        jh += 4;
+        // 最後のブロックの後には回転因子を更新しない。
+        if (jh < u) {
+          xx *= dw[__builtin_ctzll(jh)];
+        }
       }
       u <<= 2;
       v >>= 2;
@@ -132,7 +136,11 @@ struct NTT_64bit {
           a[j0] = t0p1 + t2p3, a[j2] = (t0p1 - t2p3) * ww;
           a[j0 + v] = t0m1 + t2m3, a[j2 + v] = (t0m1 - t2m3) * ww;
         }
-        xx *= dy[__builtin_ctzll(jh += 4)];
+        jh += 4;
+        // 最後のブロックの後には回転因子を更新しない。
+        if (jh < u) {
+          xx *= dy[__builtin_ctzll(jh)];
+        }
       }
       u >>= 4;
       v <<= 2;

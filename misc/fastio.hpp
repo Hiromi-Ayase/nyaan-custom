@@ -52,7 +52,13 @@ void single_read(char& c) {
 void single_read(string& S) {
   skip_space();
   while (true) {
-    if (in_left == in_right) load();
+    if (in_left == in_right) {
+      load();
+      // 最終トークンは空白や改行ではなくEOFで終わる場合もある。
+      if (in_left == in_right) {
+        break;
+      }
+    }
     int i = in_left;
     for (; i != in_right; i++) {
       if (inbuf[i] <= ' ') break;
