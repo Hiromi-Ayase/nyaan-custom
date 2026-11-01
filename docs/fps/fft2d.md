@@ -12,4 +12,4 @@ NTT 向け FPS バックエンドを使い、両軸の変換長が法の上限�
 #### 実装・検証
 
 - [実装](../../fps/fft2d.hpp)
-- [検証: fft2d.test.cpp](../../verify/verify-unit-test/fft2d.test.cpp)
+- [Verify: fft2d.cpp](../../tests/unit/fps/fft2d.cpp)

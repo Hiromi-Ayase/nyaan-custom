@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../modint/adjunction-modint.hpp)
-- [検証: yuki-2883.test.cpp](../../verify/verify-yuki/yuki-2883.test.cpp)
+- [Verify: adjunction.cpp](../../tests/unit/modint/adjunction.cpp)

@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../string/trie.hpp)
-- [関連検証（間接使用）: yuki-0430-2.test.cpp](../../verify/verify-yuki/yuki-0430-2.test.cpp)
-- [関連検証（間接使用）: yuki-0430.test.cpp](../../verify/verify-yuki/yuki-0430.test.cpp)
-- [関連検証（間接使用）: yuki-1269.test.cpp](../../verify/verify-yuki/yuki-1269.test.cpp)
+- [Verify: trie.cpp](../../tests/unit/string/trie.cpp)

@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/inv-mod.hpp)
-- [検証: math.test.cpp](../../verify/verify-unit-test/math.test.cpp)
+- [Verify: elementary.cpp](../../tests/unit/math/elementary.cpp)

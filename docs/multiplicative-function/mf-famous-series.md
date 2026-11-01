@@ -92,5 +92,4 @@ $$=\sum_{2\leq m\leq M} g(m)(-\mu(m)+\sum_{a\mid m}\mu(a))=-\sum_{2\leq m\leq M}
 #### 実装・検証
 
 - [実装](../../multiplicative-function/mf-famous-series.hpp)
-- [検証: mf.test.cpp](../../verify/verify-unit-test/mf.test.cpp)
-- [検証: sum-of-mf.test.cpp](../../verify/verify-unit-test/sum-of-mf.test.cpp)
+- [Verify: basic.cpp](../../tests/unit/multiplicative-function/basic.cpp)

@@ -11,6 +11,4 @@
 #### 実装・検証
 
 - [実装](../../ntt/relaxed-convolution.hpp)
-- [検証: relaxed-convolution.test.cpp](../../verify/verify-unit-test/relaxed-convolution.test.cpp)
-- [検証: yosupo-exp-relaxed-convolution.test.cpp](../../verify/verify-yosupo-fps/yosupo-exp-relaxed-convolution.test.cpp)
-- [検証: yosupo-inv-relaxed-convolution.test.cpp](../../verify/verify-yosupo-fps/yosupo-inv-relaxed-convolution.test.cpp)
+- [Verify: fps-convolutions.cpp](../../tests/unit/ntt/fps-convolutions.cpp)

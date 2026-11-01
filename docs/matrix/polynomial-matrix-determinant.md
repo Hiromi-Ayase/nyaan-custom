@@ -13,4 +13,4 @@ TODO : 清書・使い方を書く
 #### 実装・検証
 
 - [実装](../../matrix/polynomial-matrix-determinant.hpp)
-- [検証: yuki-1303.test.cpp](../../verify/verify-yuki/yuki-1303.test.cpp)
+- [Verify: polynomial.cpp](../../tests/unit/matrix/polynomial.cpp)

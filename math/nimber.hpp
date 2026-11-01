@@ -157,7 +157,7 @@ struct NimberBase {
   uint discrete_logarithm(N y) const {
     assert(x != 0 && y != 0);
     vector<uint> rem, mod;
-    for (uint p : {3, 5, 17, 257, 641, 65537, 6700417}) {
+    for (uint64_t p : {3, 5, 17, 257, 641, 65537, 6700417}) {
       if (uint(-1) % p) continue;
       uint q = uint(-1) / p;
       uint STEP = 1;
@@ -188,7 +188,7 @@ struct NimberBase {
 
   uint is_primitive_root() const {
     if (x == 0) return false;
-    for (uint p : {3, 5, 17, 257, 641, 65537, 6700417}) {
+    for (uint64_t p : {3, 5, 17, 257, 641, 65537, 6700417}) {
       if (uint(-1) % p != 0) continue;
       if ((*this).pow(uint(-1) / p) == 1) return false;
     }

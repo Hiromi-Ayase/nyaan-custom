@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/grundy-number.hpp)
-- [検証: yuki-0103.test.cpp](../../verify/verify-yuki/yuki-0103.test.cpp)
+- [Verify: directed.cpp](../../tests/unit/graph/directed.cpp)

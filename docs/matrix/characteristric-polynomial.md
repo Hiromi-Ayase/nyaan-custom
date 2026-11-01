@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../matrix/characteristric-polynomial.hpp)
-- [検証: yosupo-characteristic-polynomial.test.cpp](../../verify/verify-yosupo-math/yosupo-characteristic-polynomial.test.cpp)
+- [Verify: dynamic.cpp](../../tests/unit/matrix/dynamic.cpp)

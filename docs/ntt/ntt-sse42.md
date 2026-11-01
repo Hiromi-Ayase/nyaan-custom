@@ -13,4 +13,4 @@
 #### 実装・検証
 
 - [実装](../../ntt/ntt-sse42.hpp)
-- [検証: yosupo-convolution-ntt-sse42.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-ntt-sse42.test.cpp)
+- [Verify: ntt-sse42.cpp](../../tests/unit/ntt/ntt-sse42.cpp)

@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../ntt/schoenhage-strassen-radix2.hpp)
-- [検証: yosupo-convolution-schoenhage-radix2.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-schoenhage-radix2.test.cpp)
+- [Verify: integer-convolution.cpp](../../tests/unit/ntt/integer-convolution.cpp)

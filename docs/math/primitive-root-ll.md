@@ -9,4 +9,4 @@ p-1 を素因数分解し、候補 g について各素因数 q に対する `g^
 #### 実装・検証
 
 - [実装](../../math/primitive-root-ll.hpp)
-- [検証: yosupo-primitive-root.test.cpp](../../verify/verify-yosupo-math/yosupo-primitive-root.test.cpp)
+- [Verify: elementary.cpp](../../tests/unit/math/elementary.cpp)

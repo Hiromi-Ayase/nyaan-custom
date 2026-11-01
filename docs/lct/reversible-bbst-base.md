@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../lct/reversible-bbst-base.hpp)
-- [関連検証（間接使用）: yosupo-dynamic-tree-vertex-add-subtree-sum.test.cpp](../../verify/verify-yosupo-ds/yosupo-dynamic-tree-vertex-add-subtree-sum.test.cpp)
-- [関連検証（間接使用）: yosupo-dynamic-tree-vertex-set-path-composite.test.cpp](../../verify/verify-yosupo-ds/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp)
-- [関連検証（間接使用）: yosupo-offline-dynamic-connectivity.test.cpp](../../verify/verify-yosupo-ds/yosupo-offline-dynamic-connectivity.test.cpp)
+- [Verify: splay-sequences.cpp](../../tests/unit/lct/splay-sequences.cpp)

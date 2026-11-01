@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure-2d/abstract-range-tree.hpp)
-- [検証: yosupo-point-add-rectangle-sum-abstruct-range-tree.test.cpp](../../verify/verify-yosupo-ds/yosupo-point-add-rectangle-sum-abstruct-range-tree.test.cpp)
+- [Verify: range-tree-abstract.cpp](../../tests/unit/data-structure-2d/range-tree-abstract.cpp)

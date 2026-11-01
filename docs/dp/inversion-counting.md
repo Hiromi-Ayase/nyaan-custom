@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../dp/inversion-counting.hpp)
-- [検証: yuki-1115.test.cpp](../../verify/verify-yuki/yuki-1115.test.cpp)
+- [Verify: sequences.cpp](../../tests/unit/dp/sequences.cpp)

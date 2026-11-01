@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/slope-trick.hpp)
-- [検証: yuki-1467.test.cpp](../../verify/verify-yuki/yuki-1467.test.cpp)
+- [Verify: slope-trick.cpp](../../tests/unit/data-structure/slope-trick.cpp)

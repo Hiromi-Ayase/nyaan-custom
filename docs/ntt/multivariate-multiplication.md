@@ -77,4 +77,4 @@ $$\mathfrak{D}(f) = \mathfrak{D}(\log g) = \frac{\mathfrak{D}(g)}{g} $$
 #### 実装・検証
 
 - [実装](../../ntt/multivariate-multiplication.hpp)
-- [検証: yosupo-multiplicative-convolution.test.cpp](../../verify/verify-yosupo-ntt/yosupo-multiplicative-convolution.test.cpp)
+- [Verify: fps-convolutions.cpp](../../tests/unit/ntt/fps-convolutions.cpp)

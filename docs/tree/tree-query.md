@@ -25,6 +25,4 @@
 #### 実装・検証
 
 - [実装](../../tree/tree-query.hpp)
-- [検証: tree-path.test.cpp](../../verify/verify-unit-test/tree-path.test.cpp)
-- [検証: yosupo-jump-on-tree.test.cpp](../../verify/verify-yosupo-graph/yosupo-jump-on-tree.test.cpp)
-- [検証: yosupo-lowest-common-ancestor-tree-util.test.cpp](../../verify/verify-yosupo-graph/yosupo-lowest-common-ancestor-tree-util.test.cpp)
+- [Verify: queries.cpp](../../tests/unit/tree/queries.cpp)

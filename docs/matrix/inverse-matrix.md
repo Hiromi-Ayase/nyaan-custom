@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../matrix/inverse-matrix.hpp)
-- [検証: inverse-matrix.test.cpp](../../verify/verify-unit-test/inverse-matrix.test.cpp)
-- [検証: yosupo-inverse-matrix.test.cpp](../../verify/verify-yosupo-math/yosupo-inverse-matrix.test.cpp)
+- [Verify: linear-algebra.cpp](../../tests/unit/matrix/linear-algebra.cpp)

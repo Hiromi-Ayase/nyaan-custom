@@ -118,6 +118,7 @@ struct BinaryBigInt {
       dat[0] <<= r;
     }
     dat.insert(begin(dat), q, 0);
+    _shrink();
     return *this;
   }
   M& operator>>=(int s) {
@@ -125,6 +126,7 @@ struct BinaryBigInt {
     int q = s / 32, r = s % 32;
     if ((int)dat.size() <= q) {
       dat.clear();
+      neg = false;
       return *this;
     }
     dat.erase(begin(dat), begin(dat) + q);
@@ -203,6 +205,7 @@ struct BinaryBigInt {
   // 末尾 0 を削除
   void _shrink() {
     while (_size() && dat.back() == 0) dat.pop_back();
+    if (dat.empty()) neg = false;
   }
   // a + b
   static vector<u32> _add(const vector<u32>& a, const vector<u32>& b) {

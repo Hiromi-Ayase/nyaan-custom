@@ -9,4 +9,4 @@ rig は半環の演算 `+/*`、`rig::id0()`、`rig::id1()` を提供する。係
 #### 実装・検証
 
 - [実装](../../math/semiring-linear-recursive.hpp)
-- [検証: yuki-1460.test.cpp](../../verify/verify-yuki/yuki-1460.test.cpp)
+- [Verify: semiring.cpp](../../tests/unit/math/semiring.cpp)

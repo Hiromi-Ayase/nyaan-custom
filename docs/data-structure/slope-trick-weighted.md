@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/slope-trick-weighted.hpp)
-- [検証: yuki-1467-weighted.test.cpp](../../verify/verify-yuki/yuki-1467-weighted.test.cpp)
+- [Verify: slope-trick-weighted.cpp](../../tests/unit/data-structure/slope-trick-weighted.cpp)

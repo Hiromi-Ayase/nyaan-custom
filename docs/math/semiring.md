@@ -73,6 +73,4 @@ using rig = semiring<U, add, mul, i0, i1>;
 #### 実装・検証
 
 - [実装](../../math/semiring.hpp)
-- [検証: semiring.test.cpp](../../verify/verify-unit-test/semiring.test.cpp)
-- [検証: yuki-1340-semiring.test.cpp](../../verify/verify-yuki/yuki-1340-semiring.test.cpp)
-- [検証: yuki-1460.test.cpp](../../verify/verify-yuki/yuki-1460.test.cpp)
+- [Verify: semiring.cpp](../../tests/unit/math/semiring.cpp)

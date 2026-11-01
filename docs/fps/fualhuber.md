@@ -9,4 +9,4 @@ Bernoulli 数の指数型母関数と 1 回の畳み込みを利用する。高�
 #### 実装・検証
 
 - [実装](../../fps/fualhuber.hpp)
-- [検証: yuki-2580.test.cpp](../../verify/verify-yuki/yuki-2580.test.cpp)
+- [Verify: famous-series.cpp](../../tests/unit/fps/famous-series.cpp)

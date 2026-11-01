@@ -12,4 +12,4 @@
 #### 実装・検証
 
 - [実装](../../string/rolling-hash-2d.hpp)
-- [検証: verify-aoj-alds-14-c.test.cpp](../../verify/verify-aoj-alds/verify-aoj-alds-14-c.test.cpp)
+- [Verify: rolling-hash-2d.cpp](../../tests/unit/string/rolling-hash-2d.cpp)

@@ -16,4 +16,4 @@ $\lbrace1,2,\ldots,m\rbrace$の部分集合からなる集合を$[m]$、実数�
 #### 実装・検証
 
 - [実装](../../graph/chromatic-number.hpp)
-- [検証: yosupo-chromatic-number.test.cpp](../../verify/verify-yosupo-graph/yosupo-chromatic-number.test.cpp)
+- [Verify: coloring-and-independent-set.cpp](../../tests/unit/graph/coloring-and-independent-set.cpp)

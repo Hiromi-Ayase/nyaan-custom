@@ -11,6 +11,4 @@
 #### 実装・検証
 
 - [実装](../../matrix/linear-equation.hpp)
-- [検証: aoj-2171-bigrational.test.cpp](../../verify/verify-aoj-other/aoj-2171-bigrational.test.cpp)
-- [検証: aoj-2171.test.cpp](../../verify/verify-aoj-other/aoj-2171.test.cpp)
-- [検証: gauss-elimination.test.cpp](../../verify/verify-unit-test/gauss-elimination.test.cpp)
+- [Verify: linear-algebra.cpp](../../tests/unit/matrix/linear-algebra.cpp)

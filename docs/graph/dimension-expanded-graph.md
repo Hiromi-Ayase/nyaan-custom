@@ -21,6 +21,4 @@
 #### 実装・検証
 
 - [実装](../../graph/dimension-expanded-graph.hpp)
-- [検証: aoj-1130-DG-bfs.test.cpp](../../verify/verify-aoj-other/aoj-1130-DG-bfs.test.cpp)
-- [検証: aoj-2945-DG-01bfs.test.cpp](../../verify/verify-aoj-other/aoj-2945-DG-01bfs.test.cpp)
-- [検証: yuki-0697.test.cpp](../../verify/verify-yuki/yuki-0697.test.cpp)
+- [Verify: dimension-expanded.cpp](../../tests/unit/graph/dimension-expanded.cpp)

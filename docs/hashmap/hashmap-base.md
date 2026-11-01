@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../hashmap/hashmap-base.hpp)
-- [関連検証（間接使用）: debug.test.cpp](../../verify/verify-unit-test/debug.test.cpp)
-- [関連検証（間接使用）: hashmap.test.cpp](../../verify/verify-unit-test/hashmap.test.cpp)
-- [関連検証（間接使用）: hashset.test.cpp](../../verify/verify-unit-test/hashset.test.cpp)
+- [Verify: maps-and-sets.cpp](../../tests/unit/hashmap/maps-and-sets.cpp)

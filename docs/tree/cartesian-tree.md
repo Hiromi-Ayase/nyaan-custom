@@ -19,5 +19,4 @@ Cartesian Treeの長所として「頂点$(u,v)$のLCAが区間$[u,v]$の最小�
 #### 実装・検証
 
 - [実装](../../tree/cartesian-tree.hpp)
-- [検証: aoj-dsl-3-d-cartesiantree.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-3-d-cartesiantree.test.cpp)
-- [検証: yosupo-cartesian.test.cpp](../../verify/verify-yosupo-graph/yosupo-cartesian.test.cpp)
+- [Verify: constructions.cpp](../../tests/unit/tree/constructions.cpp)

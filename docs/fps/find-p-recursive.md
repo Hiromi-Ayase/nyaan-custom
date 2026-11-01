@@ -65,6 +65,4 @@ Schroder number
 #### 実装・検証
 
 - [実装](../../fps/find-p-recursive.hpp)
-- [検証: p-recursive.test.cpp](../../verify/verify-unit-test/p-recursive.test.cpp)
-- [検証: yosupo-factorial-p-recursive.test.cpp](../../verify/verify-yosupo-fps/yosupo-factorial-p-recursive.test.cpp)
-- [検証: yuki-1533.test.cpp](../../verify/verify-yuki/yuki-1533.test.cpp)
+- [Verify: recurrences.cpp](../../tests/unit/fps/recurrences.cpp)

@@ -59,4 +59,4 @@ struct block {
 #### 実装・検証
 
 - [実装](../../data-structure/square-root-decomposition.hpp)
-- [検証: yosupo-range-affine-sqdec.test.cpp](../../verify/verify-yosupo-ds/yosupo-range-affine-sqdec.test.cpp)
+- [Verify: square-root-decomposition.cpp](../../tests/unit/data-structure/square-root-decomposition.cpp)

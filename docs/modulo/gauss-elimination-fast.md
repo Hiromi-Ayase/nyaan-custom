@@ -13,6 +13,4 @@
 #### 実装・検証
 
 - [実装](../../modulo/gauss-elimination-fast.hpp)
-- [検証: gauss-elimination.test.cpp](../../verify/verify-unit-test/gauss-elimination.test.cpp)
-- [検証: yosupo-determinant.test.cpp](../../verify/verify-yosupo-math/yosupo-determinant.test.cpp)
-- [検証: yosupo-linear-equation.test.cpp](../../verify/verify-yosupo-math/yosupo-linear-equation.test.cpp)
+- [Verify: gauss-fast.cpp](../../tests/unit/modulo/gauss-fast.cpp)

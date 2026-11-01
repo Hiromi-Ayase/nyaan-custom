@@ -226,7 +226,7 @@ struct DualFPS {
     if ((int)btr.size() < cap) {
       btr.resize(cap);
       for (int i = 0, lg = __builtin_ctz(cap); i < (1 << lg); i++) {
-        btr[i] = (btr[i >> 1] >> 1) + ((i & 1) << (lg - 1));
+        btr[i] = (btr[i >> 1] >> 1) + (lg == 0 ? 0 : ((i & 1) << (lg - 1)));
       }
     }
 

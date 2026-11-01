@@ -19,7 +19,6 @@ vector<vector<int>> inclusion_tree(vector<Pair>& AB, int N) {
     auto [a, b] = AB[i];
     int p = i - 1;
     while (p <= M) {
-      trc(i, p);
       auto [v, pb] = AB[p];
       assert(v <= a);
       if (b <= pb) break;

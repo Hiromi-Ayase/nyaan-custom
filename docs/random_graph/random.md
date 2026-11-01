@@ -9,3 +9,4 @@
 #### 実装・検証
 
 - [実装](../../random_graph/random.hpp)
+- [Verify: generation.cpp](../../tests/unit/random_graph/generation.cpp)

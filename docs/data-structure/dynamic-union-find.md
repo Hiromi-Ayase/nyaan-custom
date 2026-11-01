@@ -15,5 +15,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/dynamic-union-find.hpp)
-- [検証: aoj-dsl-1-a-dynamic.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-1-a-dynamic.test.cpp)
-- [検証: aoj-2995-hashmap.test.cpp](../../verify/verify-aoj-other/aoj-2995-hashmap.test.cpp)
+- [Verify: union-find.cpp](../../tests/unit/data-structure/union-find.cpp)

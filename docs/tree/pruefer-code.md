@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../tree/pruefer-code.hpp)
-- [検証: rerooting.test.cpp](../../verify/verify-unit-test/rerooting.test.cpp)
-- [検証: tree-path.test.cpp](../../verify/verify-unit-test/tree-path.test.cpp)
+- [Verify: constructions.cpp](../../tests/unit/tree/constructions.cpp)

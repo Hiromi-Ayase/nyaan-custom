@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../ntt/rader-ntt.hpp)
-- [関連検証（間接使用）: yosupo-convolution-arbitrarylengthntt.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-arbitrarylengthntt.test.cpp)
+- [Verify: arbitrary-length.cpp](../../tests/unit/ntt/arbitrary-length.cpp)

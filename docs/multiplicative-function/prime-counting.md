@@ -61,5 +61,5 @@ $$h(x,n) = \begin{cases} h(x-1,n) & \mathrm{if}\ x\ \mathrm{is}\ \mathrm{not}\  
 
 - [実装: prime-counting-faster.hpp](../../multiplicative-function/prime-counting-faster.hpp)
 - [実装: prime-counting.hpp](../../multiplicative-function/prime-counting.hpp)
-- [検証: yosupo-counting-primes-3.test.cpp](../../verify/verify-yosupo-math/yosupo-counting-primes-3.test.cpp)
-- [検証: yosupo-counting-primes.test.cpp](../../verify/verify-yosupo-math/yosupo-counting-primes.test.cpp)
+- [Verify: prime-counting-faster.cpp](../../tests/unit/multiplicative-function/prime-counting-faster.cpp)
+- [Verify: prime-counting.cpp](../../tests/unit/multiplicative-function/prime-counting.cpp)

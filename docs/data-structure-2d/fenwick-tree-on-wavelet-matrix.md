@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure-2d/fenwick-tree-on-wavelet-matrix.hpp)
-- [検証: yosupo-point-add-rectangle-sum-wm.test.cpp](../../verify/verify-yosupo-ds/yosupo-point-add-rectangle-sum-wm.test.cpp)
+- [Verify: wavelet-fenwick.cpp](../../tests/unit/data-structure-2d/wavelet-fenwick.cpp)

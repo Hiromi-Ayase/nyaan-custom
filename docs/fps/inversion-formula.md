@@ -14,3 +14,4 @@
 #### 実装・検証
 
 - [実装](../../fps/inversion-formula.hpp)
+- [Verify: special-series.cpp](../../tests/unit/fps/special-series.cpp)

@@ -13,6 +13,4 @@ NTT、原始根、倍長化の並び順を直接使うので、対応する NTT 
 #### 実装・検証
 
 - [実装](../../fps/pow-enumerate.hpp)
-- [関連検証（間接使用）: composition.test.cpp](../../verify/verify-unit-test/composition.test.cpp)
-- [関連検証（間接使用）: yosupo-compositional-inverse-large.test.cpp](../../verify/verify-yosupo-fps/yosupo-compositional-inverse-large.test.cpp)
-- [関連検証（間接使用）: yosupo-compositional-inverse.test.cpp](../../verify/verify-yosupo-fps/yosupo-compositional-inverse.test.cpp)
+- [Verify: equations.cpp](../../tests/unit/fps/equations.cpp)

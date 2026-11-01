@@ -9,4 +9,4 @@ $n=\lceil MOD^{1/3}\rceil$ とすると、表の大きさはおおむね `MOD / 
 #### 実装・検証
 
 - [実装](../../math-fast/inv-o1.hpp)
-- [検証: fast-inv-o1.test.cpp](../../verify/verify-unit-test/fast-inv-o1.test.cpp)
+- [Verify: basic.cpp](../../tests/unit/math-fast/basic.cpp)

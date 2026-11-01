@@ -13,4 +13,4 @@
 #### 実装・検証
 
 - [実装](../../shortest-path/bellman-ford.hpp)
-- [検証: aoj-grl-1-b.test.cpp](../../verify/verify-aoj-grl/aoj-grl-1-b.test.cpp)
+- [Verify: negative-edges.cpp](../../tests/unit/shortest-path/negative-edges.cpp)

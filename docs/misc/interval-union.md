@@ -7,4 +7,4 @@
 #### 実装・検証
 
 - [実装](../../misc/interval-union.hpp)
-- [検証: interval-union.test.cpp](../../verify/verify-unit-test/interval-union.test.cpp)
+- [Verify: basic-utilities.cpp](../../tests/unit/misc/basic-utilities.cpp)

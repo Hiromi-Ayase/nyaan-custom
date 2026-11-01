@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/sparse-table.hpp)
-- [検証: sparse-table.test.cpp](../../verify/verify-unit-test/sparse-table.test.cpp)
-- [検証: yosupo-static-rmq.test.cpp](../../verify/verify-yosupo-ds/yosupo-static-rmq.test.cpp)
+- [Verify: sparse-and-window.cpp](../../tests/unit/data-structure/sparse-and-window.cpp)

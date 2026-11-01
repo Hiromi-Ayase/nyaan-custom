@@ -16,6 +16,8 @@ vector<long long> enumerate_monge_d_edge_shortest_path(
   vector<T> dp(N + 1, INF);
   dp[0] = 0;
   for (int d = 1; d <= N; d++) {
+    // With d-1 edges, vertices before d-1 are unreachable.
+    if (d > 1) dp[d - 2] = INF;
     vector<int> midx = monotone_minima<T>(N + 1, N + 1, [&](int j, int i) -> T {
       return i < j ? dp[i] + f(i, j) : INF;
     });

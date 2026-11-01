@@ -7,4 +7,4 @@
 #### 実装・検証
 
 - [実装](../../string/z-algorithm.hpp)
-- [検証: yosupo-z-algorithm.test.cpp](../../verify/verify-yosupo-string/yosupo-z-algorithm.test.cpp)
+- [Verify: z-algorithm.cpp](../../tests/unit/string/z-algorithm.cpp)

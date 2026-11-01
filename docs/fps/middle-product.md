@@ -9,3 +9,4 @@ NTT を直接使うため、対応する FPS バックエンドが必要。時�
 #### 実装・検証
 
 - [実装](../../fps/middle-product.hpp)
+- [Verify: polynomial-operations.cpp](../../tests/unit/fps/polynomial-operations.cpp)

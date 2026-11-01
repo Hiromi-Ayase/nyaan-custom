@@ -9,6 +9,4 @@ r は法の 2^32 に対する逆元、m1 は法、m2 は法の二倍、m0 は零
 #### 実装・検証
 
 - [実装](../../modint/simd-montgomery.hpp)
-- [関連検証（間接使用）: gauss-elimination.test.cpp](../../verify/verify-unit-test/gauss-elimination.test.cpp)
-- [関連検証（間接使用）: strassen.test.cpp](../../verify/verify-unit-test/strassen.test.cpp)
-- [関連検証（間接使用）: yosupo-determinant.test.cpp](../../verify/verify-yosupo-math/yosupo-determinant.test.cpp)
+- [Verify: simd.cpp](../../tests/unit/modint/simd.cpp)

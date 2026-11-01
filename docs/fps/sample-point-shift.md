@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../fps/sample-point-shift.hpp)
-- [検証: yosupo-sample-point-shift.test.cpp](../../verify/verify-yosupo-fps/yosupo-sample-point-shift.test.cpp)
+- [Verify: shifts.cpp](../../tests/unit/fps/shifts.cpp)

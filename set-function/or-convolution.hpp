@@ -1,6 +1,8 @@
 #pragma once
 
-#include "../template/template.hpp"
+#include <cassert>
+#include <vector>
+using namespace std;
 #include "zeta-mobius-transform.hpp"
 
 template <typename T>

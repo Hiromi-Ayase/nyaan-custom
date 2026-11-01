@@ -50,7 +50,7 @@ struct DynamicLiChaoTree {
   void update(T a, T b, T seg_idx) {
     T left, right;
     T upper_bit = 63 - __builtin_clzll(seg_idx);
-    left = (_size >> upper_bit) * (seg_idx - (1 << upper_bit));
+    left = (_size >> upper_bit) * (seg_idx - (T{1} << upper_bit));
     right = left + (_size >> upper_bit);
     update(a, b, left, right, seg_idx);
   }

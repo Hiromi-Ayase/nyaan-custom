@@ -7,6 +7,4 @@
 #### 実装・検証
 
 - [実装](../../misc/compress.hpp)
-- [検証: yosupo-point-add-rectangle-sum-abstruct-range-tree.test.cpp](../../verify/verify-yosupo-ds/yosupo-point-add-rectangle-sum-abstruct-range-tree.test.cpp)
-- [検証: yosupo-point-add-rectangle-sum-bit2d.test.cpp](../../verify/verify-yosupo-ds/yosupo-point-add-rectangle-sum-bit2d.test.cpp)
-- [検証: yosupo-point-add-rectangle-sum-dseg2d.test.cpp](../../verify/verify-yosupo-ds/yosupo-point-add-rectangle-sum-dseg2d.test.cpp)
+- [Verify: basic-utilities.cpp](../../tests/unit/misc/basic-utilities.cpp)

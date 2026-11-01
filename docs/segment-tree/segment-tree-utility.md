@@ -46,8 +46,5 @@ void example() {
 #### 実装・検証
 
 - [実装](../../segment-tree/segment-tree-utility.hpp)
-- [検証: SegmentTree_RangeMax・境界探索](../../verify/verify-yosupo-ds/yosupo-precedessor-problem-segtree.test.cpp)
-- [検証: SegmentTree_RangeMin](../../verify/verify-aoj-dsl/aoj-dsl-2-a-segtree.test.cpp)
-- [検証: SegmentTree_RangeSum](../../verify/verify-aoj-dsl/aoj-dsl-2-b-segtree.test.cpp)
-- [検証: 木上の一点加算・経路和](../../verify/verify-aoj-grl/aoj-grl-5-d.test.cpp)
 - [AtCoder Library の実装](../../atcoder/segtree.hpp)
+- [Verify: utilities.cpp](../../tests/unit/segment-tree/utilities.cpp)

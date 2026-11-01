@@ -15,3 +15,4 @@
 #### 実装・検証
 
 - [実装](../../geometry/circle.hpp)
+- [Verify: lines-and-circles.cpp](../../tests/unit/geometry/lines-and-circles.cpp)

@@ -7,7 +7,7 @@ struct Gaussian_Integer {
   using G = Gaussian_Integer;
 
   Gaussian_Integer(T _x = 0, T _y = 0) : x(_x), y(_y) {}
-  Gaussian_Integer(const pair<T, T>& p) : x(p.fi), y(p.se) {}
+  Gaussian_Integer(const pair<T, T>& p) : x(p.first), y(p.second) {}
 
   T norm() const { return x * x + y * y; }
   G conj() const { return G{x, -y}; }
@@ -46,7 +46,6 @@ struct Gaussian_Integer {
 
   friend G gcd(G a, G b) {
     while (b != G{0, 0}) {
-      trc(a, b, a / b, a % b);
       swap(a %= b, b);
     }
     return a;

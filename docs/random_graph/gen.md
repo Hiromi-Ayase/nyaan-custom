@@ -9,3 +9,4 @@ namori は n>=2 が必要で多重辺を含み得る。simple は連結性を保
 #### 実装・検証
 
 - [実装](../../random_graph/gen.hpp)
+- [Verify: generation.cpp](../../tests/unit/random_graph/generation.cpp)

@@ -12,5 +12,4 @@
 #### 実装・検証
 
 - [実装](../../graph/strongly-connected-components.hpp)
-- [検証: aoj-grl-3-c.test.cpp](../../verify/verify-aoj-grl/aoj-grl-3-c.test.cpp)
-- [検証: yosupo-strongly-connected-components.test.cpp](../../verify/verify-yosupo-graph/yosupo-strongly-connected-components.test.cpp)
+- [Verify: directed.cpp](../../tests/unit/graph/directed.cpp)

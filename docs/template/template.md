@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../template/template.hpp)
-- [検証: verify-aoj-alds-14-c.test.cpp](../../verify/verify-aoj-alds/verify-aoj-alds-14-c.test.cpp)
-- [検証: aoj-cgl-1-a.test.cpp](../../verify/verify-aoj-cgl/aoj-cgl-1-a.test.cpp)
-- [検証: aoj-cgl-1-b.test.cpp](../../verify/verify-aoj-cgl/aoj-cgl-1-b.test.cpp)
+- [Verify: utilities.cpp](../../tests/unit/template/utilities.cpp)

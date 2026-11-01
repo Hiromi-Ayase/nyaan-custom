@@ -16,4 +16,4 @@
 #### 実装・検証
 
 - [実装](../../graph/offline-dynamic-connectivity.hpp)
-- [検証: yosupo-offline-dynamic-connectivity.test.cpp](../../verify/verify-yosupo-ds/yosupo-offline-dynamic-connectivity.test.cpp)
+- [Verify: dynamic-connectivity.cpp](../../tests/unit/graph/dynamic-connectivity.cpp)

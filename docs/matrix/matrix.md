@@ -14,6 +14,4 @@ $h\times k$ と $k\times w$ の積は $O(hkw)$。$n$ 次正方行列の逆行列
 #### 実装・検証
 
 - [実装](../../matrix/matrix.hpp)
-- [検証: bigint-gcd.test.cpp](../../verify/verify-unit-test/bigint-gcd.test.cpp)
-- [検証: debug.test.cpp](../../verify/verify-unit-test/debug.test.cpp)
-- [検証: gauss-elimination.test.cpp](../../verify/verify-unit-test/gauss-elimination.test.cpp)
+- [Verify: dynamic.cpp](../../tests/unit/matrix/dynamic.cpp)

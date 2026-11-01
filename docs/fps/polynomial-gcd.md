@@ -80,4 +80,4 @@ $$(1,0)^T h \equiv M(1,0)^T \mod g(x)$$
 #### 実装・検証
 
 - [実装](../../fps/polynomial-gcd.hpp)
-- [検証: yosupo-inv-of-polynomials.test.cpp](../../verify/verify-yosupo-fps/yosupo-inv-of-polynomials.test.cpp)
+- [Verify: gcd-and-roots.cpp](../../tests/unit/fps/gcd-and-roots.cpp)

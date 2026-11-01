@@ -21,6 +21,4 @@ Rerooting<T, decltype(g), decltype(f1), decltype(f2)> dp(g, f1, f2, leaf);
 #### 実装・検証
 
 - [実装](../../tree/rerooting.hpp)
-- [検証: aoj-grl-5-a-rerooting.test.cpp](../../verify/verify-aoj-grl/aoj-grl-5-a-rerooting.test.cpp)
-- [検証: aoj-grl-5-b.test.cpp](../../verify/verify-aoj-grl/aoj-grl-5-b.test.cpp)
-- [検証: rerooting.test.cpp](../../verify/verify-unit-test/rerooting.test.cpp)
+- [Verify: queries.cpp](../../tests/unit/tree/queries.cpp)

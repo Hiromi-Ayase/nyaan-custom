@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/range-union-find.hpp)
-- [検証: yuki-1170.test.cpp](../../verify/verify-yuki/yuki-1170.test.cpp)
+- [Verify: range-union-find.cpp](../../tests/unit/data-structure/range-union-find.cpp)

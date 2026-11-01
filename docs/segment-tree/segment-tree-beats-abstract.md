@@ -21,5 +21,4 @@ Segment Tree Beatsの抽象化ライブラリ。
 #### 実装・検証
 
 - [実装](../../segment-tree/segment-tree-beats-abstract.hpp)
-- [検証: yuki-0879.test.cpp](../../verify/verify-yuki/yuki-0879.test.cpp)
-- [検証: yuki-0880.test.cpp](../../verify/verify-yuki/yuki-0880.test.cpp)
+- [Verify: beats.cpp](../../tests/unit/segment-tree/beats.cpp)

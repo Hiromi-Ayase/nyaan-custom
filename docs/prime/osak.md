@@ -11,5 +11,4 @@
 #### 実装・検証
 
 - [実装](../../prime/osak.hpp)
-- [検証: factorize.test.cpp](../../verify/verify-unit-test/factorize.test.cpp)
-- [検証: osak.test.cpp](../../verify/verify-unit-test/osak.test.cpp)
+- [Verify: factorization.cpp](../../tests/unit/prime/factorization.cpp)

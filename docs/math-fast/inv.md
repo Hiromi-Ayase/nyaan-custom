@@ -11,5 +11,4 @@
 #### 実装・検証
 
 - [実装](../../math-fast/inv.hpp)
-- [検証: fast-inv-o1.test.cpp](../../verify/verify-unit-test/fast-inv-o1.test.cpp)
-- [検証: fast-inv.test.cpp](../../verify/verify-unit-test/fast-inv.test.cpp)
+- [Verify: basic.cpp](../../tests/unit/math-fast/basic.cpp)

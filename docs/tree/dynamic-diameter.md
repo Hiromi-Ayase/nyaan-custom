@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../tree/dynamic-diameter.hpp)
-- [検証: dynamic-diameter.test.cpp](../../verify/verify-unit-test/dynamic-diameter.test.cpp)
+- [Verify: dynamic-diameter.cpp](../../tests/unit/tree/dynamic-diameter.cpp)

@@ -10,6 +10,4 @@
 #### 実装・検証
 
 - [実装](../../graph/static-graph.hpp)
-- [検証: aoj-2995-hashmap.test.cpp](../../verify/verify-aoj-other/aoj-2995-hashmap.test.cpp)
-- [検証: aoj-2995.test.cpp](../../verify/verify-aoj-other/aoj-2995.test.cpp)
-- [検証: yosupo-vertex-add-path-sum-euler-tour.test.cpp](../../verify/verify-yosupo-ds/yosupo-vertex-add-path-sum-euler-tour.test.cpp)
+- [Verify: dijkstra-fast.cpp](../../tests/unit/shortest-path/dijkstra-fast.cpp)

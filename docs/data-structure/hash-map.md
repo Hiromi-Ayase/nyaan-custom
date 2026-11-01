@@ -18,5 +18,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/hash-map-variable-length.hpp)
-- [検証: yosupo-hash-map-variable-length.test.cpp](../../verify/verify-yosupo-ds/yosupo-hash-map-variable-length.test.cpp)
-- [検証: yosupo-point-add-rectangle-sum-bit2d.test.cpp](../../verify/verify-yosupo-ds/yosupo-point-add-rectangle-sum-bit2d.test.cpp)
+- [Verify: dynamic-fenwick.cpp](../../tests/unit/data-structure/dynamic-fenwick.cpp)

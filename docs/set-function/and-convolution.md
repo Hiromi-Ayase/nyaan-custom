@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../set-function/and-convolution.hpp)
-- [検証: set-function.test.cpp](../../verify/verify-unit-test/set-function.test.cpp)
+- [Verify: transforms.cpp](../../tests/unit/set-function/transforms.cpp)

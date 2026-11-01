@@ -9,6 +9,4 @@ Board は map のキーとして比較可能であること。循環を検出す
 #### 実装・検証
 
 - [実装](../../game/impartial-game.hpp)
-- [検証: yuki-0002.test.cpp](../../verify/verify-yuki/yuki-0002.test.cpp)
-- [検証: yuki-0102.test.cpp](../../verify/verify-yuki/yuki-0102.test.cpp)
-- [検証: yuki-0361.test.cpp](../../verify/verify-yuki/yuki-0361.test.cpp)
+- [Verify: impartial.cpp](../../tests/unit/game/impartial.cpp)

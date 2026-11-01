@@ -11,4 +11,4 @@ NTT と原始根を直接使うので、対応する NTT 向け FPS バックエ
 #### 実装・検証
 
 - [実装](../../fps/fast-interpolate.hpp)
-- [検証: yosupo-polynomial-interpolation-fast.test.cpp](../../verify/verify-yosupo-fps/yosupo-polynomial-interpolation-fast.test.cpp)
+- [Verify: evaluation.cpp](../../tests/unit/fps/evaluation.cpp)

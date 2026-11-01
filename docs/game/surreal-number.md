@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../game/surreal-number.hpp)
-- [関連検証（間接使用）: aoj-1377.test.cpp](../../verify/verify-aoj-other/aoj-1377.test.cpp)
+- [Verify: partisan-and-surreal.cpp](../../tests/unit/game/partisan-and-surreal.cpp)

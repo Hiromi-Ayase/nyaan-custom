@@ -186,6 +186,11 @@ struct NTT {
       mint a1 = a[1];
       a[1] = a[0] - a[1];
       a[0] = a[0] + a1;
+      if (normalize) {
+        mint inv2 = mint(2).inverse();
+        a[0] *= inv2;
+        a[1] *= inv2;
+      }
       return;
     }
     int u = 1 << (k - 2);

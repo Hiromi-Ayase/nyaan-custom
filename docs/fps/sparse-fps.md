@@ -15,6 +15,4 @@
 #### 実装・検証
 
 - [実装](../../fps/sparse-fps.hpp)
-- [検証: fps-sparse.test.cpp](../../verify/verify-unit-test/fps-sparse.test.cpp)
-- [検証: yosupo-sparse-exp.test.cpp](../../verify/verify-yosupo-fps/yosupo-sparse-exp.test.cpp)
-- [検証: yosupo-sparse-inv.test.cpp](../../verify/verify-yosupo-fps/yosupo-sparse-inv.test.cpp)
+- [Verify: special-series.cpp](../../tests/unit/fps/special-series.cpp)

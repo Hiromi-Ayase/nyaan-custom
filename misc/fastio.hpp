@@ -74,11 +74,9 @@ void single_read(T& x) {
   }
   x = 0;
   while (c >= '0') {
-    x = x * 10 + (c & 15);
+    // 負数は負のまま構築し、最小値の絶対値を符号付き型に作らない。
+    x = minus ? x * 10 - (c & 15) : x * 10 + (c & 15);
     c = inbuf[in_left++];
-  }
-  if constexpr (internal::is_broadly_signed_v<T>) {
-    if (minus) x = -x;
   }
 }
 void rd() {}
@@ -108,9 +106,19 @@ void single_write(const T& _x) {
     outbuf[out_right++] = '0';
     return;
   }
-  T x = _x;
+  auto x = [&] {
+    if constexpr (is_same_v<T, __int128_t> || is_same_v<T, __uint128_t>) {
+      return static_cast<__uint128_t>(_x);
+    } else {
+      return static_cast<make_unsigned_t<T>>(_x);
+    }
+  }();
+  using U = decltype(x);
   if constexpr (internal::is_broadly_signed_v<T>) {
-    if (x < 0) outbuf[out_right++] = '-', x = -x;
+    if (_x < 0) {
+      outbuf[out_right++] = '-';
+      x = U{0} - x;
+    }
   }
   constexpr int buffer_size = sizeof(T) * 10 / 4;
   char buf[buffer_size];

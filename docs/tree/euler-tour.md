@@ -30,6 +30,4 @@ TODO: 森が与えられた時と辺クエリのverifyを書いていないの�
 #### 実装・検証
 
 - [実装](../../tree/euler-tour.hpp)
-- [検証: yosupo-vertex-add-path-sum-euler-tour.test.cpp](../../verify/verify-yosupo-ds/yosupo-vertex-add-path-sum-euler-tour.test.cpp)
-- [検証: yosupo-vertex-add-subtree-sum-euler-tree.test.cpp](../../verify/verify-yosupo-ds/yosupo-vertex-add-subtree-sum-euler-tree.test.cpp)
-- [検証: yosupo-lowest-common-ancestor-euler-tour.test.cpp](../../verify/verify-yosupo-graph/yosupo-lowest-common-ancestor-euler-tour.test.cpp)
+- [Verify: queries.cpp](../../tests/unit/tree/queries.cpp)

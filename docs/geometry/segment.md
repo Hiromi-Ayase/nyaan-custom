@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../geometry/segment.hpp)
-- [検証: aoj-cgl-2-b.test.cpp](../../verify/verify-aoj-cgl/aoj-cgl-2-b.test.cpp)
-- [検証: aoj-cgl-2-d.test.cpp](../../verify/verify-aoj-cgl/aoj-cgl-2-d.test.cpp)
+- [Verify: lines-and-circles.cpp](../../tests/unit/geometry/lines-and-circles.cpp)

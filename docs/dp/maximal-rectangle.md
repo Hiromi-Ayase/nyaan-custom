@@ -13,4 +13,4 @@
 #### 実装・検証
 
 - [実装](../../dp/maximal-rectangle.hpp)
-- [検証: aoj-dpl-3-c.test.cpp](../../verify/verify-aoj-dpl/aoj-dpl-3-c.test.cpp)
+- [Verify: sequences.cpp](../../tests/unit/dp/sequences.cpp)

@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../rbst/rbst-base.hpp)
-- [関連検証（間接使用）: yosupo-dynamic-sequence-range-affine-range-sum.test.cpp](../../verify/verify-yosupo-ds/yosupo-dynamic-sequence-range-affine-range-sum.test.cpp)
+- [Verify: reversible.cpp](../../tests/unit/rbst/reversible.cpp)

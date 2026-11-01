@@ -49,4 +49,4 @@ $$f\equiv r^{-1}\left( \int \left( \left(F(\hat{f}) -F'(\hat{f})\hat{f}\right)\c
 #### 実装・検証
 
 - [実装](../../fps/differential-equation.hpp)
-- [検証: yuki-0963.test.cpp](../../verify/verify-yuki/yuki-0963.test.cpp)
+- [Verify: equations.cpp](../../tests/unit/fps/equations.cpp)

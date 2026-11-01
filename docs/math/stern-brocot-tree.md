@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/stern-brocot-tree.hpp)
-- [検証: yosupo-stern-brocot-tree-2.test.cpp](../../verify/verify-yosupo-math/yosupo-stern-brocot-tree-2.test.cpp)
-- [検証: yosupo-stern-brocot-tree.test.cpp](../../verify/verify-yosupo-math/yosupo-stern-brocot-tree.test.cpp)
+- [Verify: stern-brocot.cpp](../../tests/unit/math/stern-brocot.cpp)

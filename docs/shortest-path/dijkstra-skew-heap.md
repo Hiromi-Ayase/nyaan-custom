@@ -13,4 +13,4 @@
 #### 実装・検証
 
 - [実装](../../shortest-path/dijkstra-skew-heap.hpp)
-- [検証: yosupo-shortest-path-4.test.cpp](../../verify/verify-yosupo-graph/yosupo-shortest-path-4.test.cpp)
+- [Verify: dijkstra-skew-heap.cpp](../../tests/unit/shortest-path/dijkstra-skew-heap.cpp)

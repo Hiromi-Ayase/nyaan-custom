@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../modint/arbitrary-montgomery-modint.hpp)
-- [検証: arbitrary-modint.test.cpp](../../verify/verify-unit-test/arbitrary-modint.test.cpp)
-- [検証: ntt-64bit.test.cpp](../../verify/verify-unit-test/ntt-64bit.test.cpp)
-- [検証: yosupo-convolution-arbitraryntt-arbitraryprimemodint.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-arbitraryntt-arbitraryprimemodint.test.cpp)
+- [Verify: scalar.cpp](../../tests/unit/modint/scalar.cpp)

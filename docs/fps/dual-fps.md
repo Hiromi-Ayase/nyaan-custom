@@ -11,5 +11,4 @@
 #### 実装・検証
 
 - [実装](../../fps/dual-fps.hpp)
-- [検証: dual-fps.test.cpp](../../verify/verify-unit-test/dual-fps.test.cpp)
-- [検証: yuki-1504.test.cpp](../../verify/verify-yuki/yuki-1504.test.cpp)
+- [Verify: dual.cpp](../../tests/unit/fps/dual.cpp)

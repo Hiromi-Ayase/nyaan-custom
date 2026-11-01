@@ -14,6 +14,4 @@
 #### 実装・検証
 
 - [実装](../../matrix/black-box-linear-algebra.hpp)
-- [検証: yosupo-determinant-of-matrix-bbla.test.cpp](../../verify/verify-yosupo-math/yosupo-determinant-of-matrix-bbla.test.cpp)
-- [検証: yosupo-determinant-of-sparse-matrix-bbla.test.cpp](../../verify/verify-yosupo-math/yosupo-determinant-of-sparse-matrix-bbla.test.cpp)
-- [検証: yuki-1112-sparse.test.cpp](../../verify/verify-yuki/yuki-1112-sparse.test.cpp)
+- [Verify: black-box.cpp](../../tests/unit/matrix/black-box.cpp)

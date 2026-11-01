@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../ntt/karatsuba.hpp)
-- [検証: karatsuba.test.cpp](../../verify/verify-unit-test/karatsuba.test.cpp)
-- [検証: yosupo-convolution-2-64-karatsuba.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-2-64-karatsuba.test.cpp)
+- [Verify: integer-convolution.cpp](../../tests/unit/ntt/integer-convolution.cpp)

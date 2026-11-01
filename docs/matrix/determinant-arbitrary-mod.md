@@ -9,4 +9,4 @@ $n$ 次行列、法 $m$ に対して時間は $O(n^3\log m)$ 以下、コピー�
 #### 実装・検証
 
 - [実装](../../matrix/determinant-arbitrary-mod.hpp)
-- [検証: yosupo-determinant-arbitrary-mod.test.cpp](../../verify/verify-yosupo-math/yosupo-determinant-arbitrary-mod.test.cpp)
+- [Verify: composite-determinant.cpp](../../tests/unit/matrix/composite-determinant.cpp)

@@ -22,4 +22,4 @@ UnionFindの内部実装をQuickFindと呼ばれる経路圧縮を行わない�
 #### 実装・検証
 
 - [実装](../../data-structure/rollback-union-find.hpp)
-- [検証: yosupo-rollback-union-find.test.cpp](../../verify/verify-yosupo-ds/yosupo-rollback-union-find.test.cpp)
+- [Verify: rollback-union-find.cpp](../../tests/unit/data-structure/rollback-union-find.cpp)

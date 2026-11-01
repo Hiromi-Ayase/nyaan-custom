@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/bigint.hpp)
-- [検証: aoj-ntl-2-a.test.cpp](../../verify/verify-aoj-ntl/aoj-ntl-2-a.test.cpp)
-- [検証: aoj-ntl-2-b.test.cpp](../../verify/verify-aoj-ntl/aoj-ntl-2-b.test.cpp)
-- [検証: aoj-ntl-2-c.test.cpp](../../verify/verify-aoj-ntl/aoj-ntl-2-c.test.cpp)
+- [Verify: bigint.cpp](../../tests/unit/math/bigint.cpp)

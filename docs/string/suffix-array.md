@@ -9,6 +9,4 @@ SA 構築 $O(n\log n)$、LCP 構築 $O(n)$、検索用の前処理 $O(n\log n)$�
 #### 実装・検証
 
 - [実装](../../string/suffix-array.hpp)
-- [検証: yosupo-number-of-substrings.test.cpp](../../verify/verify-yosupo-string/yosupo-number-of-substrings.test.cpp)
-- [検証: yosupo-suffix-array.test.cpp](../../verify/verify-yosupo-string/yosupo-suffix-array.test.cpp)
-- [検証: yosupo-zalgo-suffixarray.test.cpp](../../verify/verify-yosupo-string/yosupo-zalgo-suffixarray.test.cpp)
+- [Verify: suffix-array.cpp](../../tests/unit/string/suffix-array.cpp)

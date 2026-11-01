@@ -39,7 +39,7 @@ struct SternBrocotTreeNode {
     for (const Int &d : _seq) {
       assert(d != 0);
       if (d > 0) go_right(d);
-      if (d < 0) go_left(d);
+      if (d < 0) go_left(-d);
     }
     assert(seq == _seq);
   }

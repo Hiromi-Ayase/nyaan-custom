@@ -14,6 +14,4 @@
 #### 実装・検証
 
 - [実装](../../segment-tree/dynamic-segment-tree.hpp)
-- [検証: yosupo-associative-array-dynamic-segtree.test.cpp](../../verify/verify-yosupo-ds/yosupo-associative-array-dynamic-segtree.test.cpp)
-- [検証: yosupo-point-add-range-sum-dynamic-segtree.test.cpp](../../verify/verify-yosupo-ds/yosupo-point-add-range-sum-dynamic-segtree.test.cpp)
-- [検証: yosupo-point-set-range-composite-dynamic-segtree.test.cpp](../../verify/verify-yosupo-ds/yosupo-point-set-range-composite-dynamic-segtree.test.cpp)
+- [Verify: persistent-and-dynamic.cpp](../../tests/unit/segment-tree/persistent-and-dynamic.cpp)

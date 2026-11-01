@@ -66,4 +66,4 @@ pair_t sa(Timer& t) {
 #### 実装・検証
 
 - [実装](../../marathon/sa-manager.hpp)
-- [検証: sa-manager.test.cpp](../../verify/verify-unit-test/sa-manager.test.cpp)
+- [Verify: annealing.cpp](../../tests/unit/marathon/annealing.cpp)

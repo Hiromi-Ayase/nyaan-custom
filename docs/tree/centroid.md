@@ -7,4 +7,4 @@
 #### 実装・検証
 
 - [実装](../../tree/centroid.hpp)
-- [関連検証（間接使用）: aoj-2821.test.cpp](../../verify/verify-aoj-other/aoj-2821.test.cpp)
+- [Verify: centroids-and-distances.cpp](../../tests/unit/tree/centroids-and-distances.cpp)

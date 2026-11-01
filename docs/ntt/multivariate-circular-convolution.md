@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../ntt/multivariate-circular-convolution.hpp)
-- [検証: yosupo-multivariate-circular-convolution.test.cpp](../../verify/verify-yosupo-ntt/yosupo-multivariate-circular-convolution.test.cpp)
+- [Verify: multidimensional.cpp](../../tests/unit/ntt/multidimensional.cpp)

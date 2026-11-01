@@ -22,4 +22,4 @@ $$\leftrightarrow g \equiv \frac{1}{2}\left(\hat{g}+\frac{f}{\hat{g}}\right) \pm
 #### 実装・検証
 
 - [実装](../../fps/fps-sqrt.hpp)
-- [検証: yosupo-sqrt.test.cpp](../../verify/verify-yosupo-fps/yosupo-sqrt.test.cpp)
+- [Verify: special-series.cpp](../../tests/unit/fps/special-series.cpp)

@@ -73,30 +73,28 @@ int contains_convex(const Polygon &C, const Point &p) {
 // 凸包が与えられるので最遠点対を返す
 // 返り値：頂点番号のペア
 pair<int, int> convex_polygon_diameter(const Polygon &p) {
-  int N = (int)p.size();
-  int is = 0, js = 0;
-  for (int i = 1; i < N; i++) {
-    if (imag(p[i]) > imag(p[is])) is = i;
-    if (imag(p[i]) < imag(p[js])) js = i;
-  }
-  Real maxdis = norm(p[is] - p[js]);
-
-  int maxi, maxj, i, j;
-  i = maxi = is;
-  j = maxj = js;
-  do {
-    if (cross(p[(i + 1) % N] - p[i], p[(j + 1) % N] - p[j]) >= 0) {
+  int N = p.size();
+  if (N == 1) return {0, 0};
+  int j = 1;
+  pair<int, int> answer{0, 1};
+  Real best = norm(p[0] - p[1]);
+  for (int i = 0; i < N; ++i) {
+    int next = (i + 1) % N;
+    Point edge = p[next] - p[i];
+    // 同じ高さの頂点では停止し、平行な辺があっても周回し続けない。
+    while (cross(edge, p[(j + 1) % N] - p[i]) >
+           cross(edge, p[j] - p[i]) + EPS) {
       j = (j + 1) % N;
-    } else {
-      i = (i + 1) % N;
     }
-    if (norm(p[i] - p[j]) > maxdis) {
-      maxdis = norm(p[i] - p[j]);
-      maxi = i;
-      maxj = j;
+    for (int u : {i, next}) {
+      Real distance = norm(p[u] - p[j]);
+      if (distance > best) {
+        best = distance;
+        answer = minmax(u, j);
+      }
     }
-  } while (i != is || j != js);
-  return minmax(maxi, maxj);
+  }
+  return answer;
 }
 
 /**

@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure-2d/segment-tree-on-wavelet-matrix.hpp)
-- [検証: yosupo-point-add-rectangle-sum-segtree-on-wm.test.cpp](../../verify/verify-yosupo-ds/yosupo-point-add-rectangle-sum-segtree-on-wm.test.cpp)
+- [Verify: wavelet-segment.cpp](../../tests/unit/data-structure-2d/wavelet-segment.cpp)

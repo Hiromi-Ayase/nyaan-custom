@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/segment-set.hpp)
-- [検証: segment-set.test.cpp](../../verify/verify-unit-test/segment-set.test.cpp)
+- [Verify: segment-set.cpp](../../tests/unit/data-structure/segment-set.cpp)

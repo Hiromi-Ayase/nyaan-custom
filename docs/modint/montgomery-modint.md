@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../modint/montgomery-modint.hpp)
-- [検証: bigrational.test.cpp](../../verify/verify-unit-test/bigrational.test.cpp)
-- [検証: binomial-table.test.cpp](../../verify/verify-unit-test/binomial-table.test.cpp)
-- [検証: composite-exp.test.cpp](../../verify/verify-unit-test/composite-exp.test.cpp)
+- [Verify: scalar.cpp](../../tests/unit/modint/scalar.cpp)

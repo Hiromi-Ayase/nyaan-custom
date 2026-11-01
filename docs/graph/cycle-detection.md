@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../graph/cycle-detection.hpp)
-- [検証: yosupo-cycle-detection.test.cpp](../../verify/verify-yosupo-graph/yosupo-cycle-detection.test.cpp)
+- [Verify: directed.cpp](../../tests/unit/graph/directed.cpp)

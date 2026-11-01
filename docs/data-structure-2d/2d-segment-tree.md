@@ -26,5 +26,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure-2d/2d-segment-tree.hpp)
-- [検証: aoj-dsl-5-b-2dseg.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-5-b-2dseg.test.cpp)
-- [検証: aoj-1068.test.cpp](../../verify/verify-aoj-other/aoj-1068.test.cpp)
+- [Verify: dense.cpp](../../tests/unit/data-structure-2d/dense.cpp)

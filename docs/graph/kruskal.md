@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../graph/kruskal.hpp)
-- [検証: aoj-grl-2-a.test.cpp](../../verify/verify-aoj-grl/aoj-grl-2-a.test.cpp)
+- [Verify: spanning-trees.cpp](../../tests/unit/graph/spanning-trees.cpp)

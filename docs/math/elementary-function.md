@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/elementary-function.hpp)
-- [検証: aoj-ntl-1-a.test.cpp](../../verify/verify-aoj-ntl/aoj-ntl-1-a.test.cpp)
-- [検証: aoj-ntl-1-b.test.cpp](../../verify/verify-aoj-ntl/aoj-ntl-1-b.test.cpp)
-- [検証: aoj-ntl-1-c.test.cpp](../../verify/verify-aoj-ntl/aoj-ntl-1-c.test.cpp)
+- [Verify: elementary.cpp](../../tests/unit/math/elementary.cpp)

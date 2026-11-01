@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/erasable-priority-queue.hpp)
-- [検証: erasable-priority-queue.test.cpp](../../verify/verify-unit-test/erasable-priority-queue.test.cpp)
+- [Verify: heaps.cpp](../../tests/unit/data-structure/heaps.cpp)

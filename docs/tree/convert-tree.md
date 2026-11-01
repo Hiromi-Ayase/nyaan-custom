@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../tree/convert-tree.hpp)
-- [検証: tree-path.test.cpp](../../verify/verify-unit-test/tree-path.test.cpp)
-- [検証: yuki-1789.test.cpp](../../verify/verify-yuki/yuki-1789.test.cpp)
+- [Verify: queries.cpp](../../tests/unit/tree/queries.cpp)

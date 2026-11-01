@@ -34,5 +34,4 @@ $$a_N = [x^N]\frac{P(x)}{Q(x)}$$
 #### 実装・検証
 
 - [実装](../../fps/kitamasa.hpp)
-- [検証: yuki-0214.test.cpp](../../verify/verify-yuki/yuki-0214.test.cpp)
-- [検証: yuki-0215.test.cpp](../../verify/verify-yuki/yuki-0215.test.cpp)
+- [Verify: recurrences.cpp](../../tests/unit/fps/recurrences.cpp)

@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../shortest-path/bfs-restore.hpp)
-- [検証: yuki-1323.test.cpp](../../verify/verify-yuki/yuki-1323.test.cpp)
+- [Verify: weighted.cpp](../../tests/unit/shortest-path/weighted.cpp)

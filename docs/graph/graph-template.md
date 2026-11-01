@@ -103,6 +103,4 @@
 #### 実装・検証
 
 - [実装](../../graph/graph-template.hpp)
-- [検証: aoj-2821.test.cpp](../../verify/verify-aoj-other/aoj-2821.test.cpp)
-- [検証: aoj-2891-2.test.cpp](../../verify/verify-aoj-other/aoj-2891-2.test.cpp)
-- [検証: aoj-3022.test.cpp](../../verify/verify-aoj-other/aoj-3022.test.cpp)
+- [Verify: utilities.cpp](../../tests/unit/graph/utilities.cpp)

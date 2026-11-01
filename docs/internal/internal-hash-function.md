@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../internal/internal-hash-function.hpp)
-- [検証: internal-type-traits.test.cpp](../../verify/verify-unit-test/internal-type-traits.test.cpp)
+- [Verify: hash.cpp](../../tests/unit/internal/hash.cpp)

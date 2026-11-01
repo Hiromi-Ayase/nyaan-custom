@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure-2d/2d-binary-indexed-tree.hpp)
-- [検証: aoj-dsl-5-b-bit2d.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-5-b-bit2d.test.cpp)
+- [Verify: dense.cpp](../../tests/unit/data-structure-2d/dense.cpp)

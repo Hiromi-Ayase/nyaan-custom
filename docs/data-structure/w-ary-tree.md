@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/w-ary-tree.hpp)
-- [検証: yosupo-predecessor-problem.test.cpp](../../verify/verify-yosupo-ds/yosupo-predecessor-problem.test.cpp)
+- [Verify: integer-set.cpp](../../tests/unit/data-structure/integer-set.cpp)

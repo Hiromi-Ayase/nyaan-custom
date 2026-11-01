@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/line-container.hpp)
-- [検証: yuki-2012.test.cpp](../../verify/verify-yuki/yuki-2012.test.cpp)
+- [Verify: line-container.cpp](../../tests/unit/data-structure/line-container.cpp)

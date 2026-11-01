@@ -82,6 +82,4 @@ DFS の計算量は葉でないノードの個数に一致する。~~この個�
 #### 実装・検証
 
 - [実装](../../multiplicative-function/sum-of-multiplicative-function.hpp)
-- [検証: sum-of-mf.test.cpp](../../verify/verify-unit-test/sum-of-mf.test.cpp)
-- [検証: yosupo-sum-of-totient-2.test.cpp](../../verify/verify-yosupo-math/yosupo-sum-of-totient-2.test.cpp)
-- [検証: yuki-1781.test.cpp](../../verify/verify-yuki/yuki-1781.test.cpp)
+- [Verify: prefix.cpp](../../tests/unit/multiplicative-function/prefix.cpp)

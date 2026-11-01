@@ -7,5 +7,4 @@
 #### 実装・検証
 
 - [実装](../../math/constexpr-primitive-root.hpp)
-- [検証: primitive-root.test.cpp](../../verify/verify-unit-test/primitive-root.test.cpp)
-- [検証: yuki-1783.test.cpp](../../verify/verify-yuki/yuki-1783.test.cpp)
+- [Verify: elementary.cpp](../../tests/unit/math/elementary.cpp)

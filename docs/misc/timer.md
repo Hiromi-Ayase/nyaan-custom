@@ -7,6 +7,4 @@
 #### 実装・検証
 
 - [実装](../../misc/timer.hpp)
-- [検証: bigint-gcd.test.cpp](../../verify/verify-unit-test/bigint-gcd.test.cpp)
-- [検証: bitset-find-prev.test.cpp](../../verify/verify-unit-test/bitset-find-prev.test.cpp)
-- [検証: composite-exp.test.cpp](../../verify/verify-unit-test/composite-exp.test.cpp)
+- [Verify: random-and-timer.cpp](../../tests/unit/misc/random-and-timer.cpp)

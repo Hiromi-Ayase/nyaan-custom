@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../modulo/binomial-table.hpp)
-- [検証: binomial-table.test.cpp](../../verify/verify-unit-test/binomial-table.test.cpp)
+- [Verify: binomial.cpp](../../tests/unit/modulo/binomial.cpp)

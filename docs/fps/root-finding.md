@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../fps/root-finding.hpp)
-- [検証: yosupo-polynomial-root-finding.test.cpp](../../verify/verify-yosupo-fps/yosupo-polynomial-root-finding.test.cpp)
+- [Verify: gcd-and-roots.cpp](../../tests/unit/fps/gcd-and-roots.cpp)

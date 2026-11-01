@@ -50,10 +50,10 @@ template <typename mint>
 vector<mint> exp_enamurate(int p, int n) {
   vector<mint> f(n + 1, mint(0));
   if (!p) {
-    f[0] = 1;
+    fill(f.begin(), f.end(), mint(1));
     return std::move(f);
   }
-  f[1] = 1;
+  if (n >= 1) f[1] = 1;
   vector<bool> sieve(n + 1, false);
   vector<int> ps;
   for (int i = 2; i <= n; i++) {

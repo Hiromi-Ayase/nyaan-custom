@@ -14,6 +14,4 @@
 #### 実装・検証
 
 - [実装](../../graph/lowlink.hpp)
-- [検証: aoj-grl-3-a.test.cpp](../../verify/verify-aoj-grl/aoj-grl-3-a.test.cpp)
-- [検証: aoj-grl-3-b.test.cpp](../../verify/verify-aoj-grl/aoj-grl-3-b.test.cpp)
-- [検証: yosupo-two-edge-cc.test.cpp](../../verify/verify-yosupo-graph/yosupo-two-edge-cc.test.cpp)
+- [Verify: cuts.cpp](../../tests/unit/graph/cuts.cpp)

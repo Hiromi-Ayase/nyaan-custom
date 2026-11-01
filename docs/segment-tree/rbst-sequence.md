@@ -13,4 +13,4 @@
 #### 実装・検証
 
 - [実装](../../segment-tree/rbst-sequence.hpp)
-- [検証: rbst-sequence.test.cpp](../../verify/verify-unit-test/rbst-sequence.test.cpp)
+- [Verify: rbst-sequences.cpp](../../tests/unit/segment-tree/rbst-sequences.cpp)

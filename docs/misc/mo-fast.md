@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../misc/mo-fast.hpp)
-- [検証: yosupo-static-range-inversion-query-2.test.cpp](../../verify/verify-yosupo-ds/yosupo-static-range-inversion-query-2.test.cpp)
+- [Verify: mo-and-doubling.cpp](../../tests/unit/misc/mo-and-doubling.cpp)

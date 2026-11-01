@@ -13,4 +13,4 @@
 #### 実装・検証
 
 - [実装](../../graph/two-edge-connected-components.hpp)
-- [検証: yosupo-two-edge-cc.test.cpp](../../verify/verify-yosupo-graph/yosupo-two-edge-cc.test.cpp)
+- [Verify: cuts.cpp](../../tests/unit/graph/cuts.cpp)

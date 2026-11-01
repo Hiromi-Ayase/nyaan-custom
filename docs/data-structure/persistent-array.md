@@ -10,4 +10,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/persistent-array.hpp)
-- [関連検証（間接使用）: yosupo-persistent-unionfind.test.cpp](../../verify/verify-yosupo-ds/yosupo-persistent-unionfind.test.cpp)
+- [Verify: persistent.cpp](../../tests/unit/data-structure/persistent.cpp)

@@ -21,9 +21,13 @@ struct alignas(32) mmint {
       : x(_mm256_set_epi32(a7, a6, a5, a4, a3, a2, a1, a0)) {}
   inline operator m256&() { return x; }
   inline operator const m256&() const { return x; }
-  inline int& operator[](int i) { return *(reinterpret_cast<int*>(&x) + i); }
-  inline const int& operator[](int i) const {
-    return *(reinterpret_cast<const int*>(&x) + i);
+  // SIMD レジスタを整数として参照する際の strict aliasing を明示する。
+  using lane_type = int __attribute__((may_alias));
+  inline lane_type& operator[](int i) {
+    return *(reinterpret_cast<lane_type*>(&x) + i);
+  }
+  inline const lane_type& operator[](int i) const {
+    return *(reinterpret_cast<const lane_type*>(&x) + i);
   }
 
   friend ostream& operator<<(ostream& os, const mmint& m) {

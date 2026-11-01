@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../string/run-enumerate.hpp)
-- [検証: yosupo-run-enumerate.test.cpp](../../verify/verify-yosupo-string/yosupo-run-enumerate.test.cpp)
+- [Verify: run-enumerate.cpp](../../tests/unit/string/run-enumerate.cpp)

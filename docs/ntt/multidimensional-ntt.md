@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../ntt/multidimensional-ntt.hpp)
-- [検証: yuki-1783.test.cpp](../../verify/verify-yuki/yuki-1783.test.cpp)
+- [Verify: multidimensional.cpp](../../tests/unit/ntt/multidimensional.cpp)

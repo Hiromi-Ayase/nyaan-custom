@@ -7,4 +7,4 @@
 #### 実装・検証
 
 - [実装](../../misc/bitset-find-prev.hpp)
-- [検証: bitset-find-prev.test.cpp](../../verify/verify-unit-test/bitset-find-prev.test.cpp)
+- [Verify: basic-utilities.cpp](../../tests/unit/misc/basic-utilities.cpp)

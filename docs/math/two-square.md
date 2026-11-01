@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/two-square.hpp)
-- [検証: enumerate-convex.test.cpp](../../verify/verify-unit-test/enumerate-convex.test.cpp)
-- [検証: yosupo-two-square-sum.test.cpp](../../verify/verify-yosupo-math/yosupo-two-square-sum.test.cpp)
+- [Verify: gaussian.cpp](../../tests/unit/math/gaussian.cpp)

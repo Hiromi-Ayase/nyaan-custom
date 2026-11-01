@@ -24,5 +24,4 @@
 #### 実装・検証
 
 - [実装](../../graph/namori.hpp)
-- [検証: aoj-2891.test.cpp](../../verify/verify-aoj-other/aoj-2891.test.cpp)
-- [検証: yuki-1254.test.cpp](../../verify/verify-yuki/yuki-1254.test.cpp)
+- [Verify: functional.cpp](../../tests/unit/graph/functional.cpp)

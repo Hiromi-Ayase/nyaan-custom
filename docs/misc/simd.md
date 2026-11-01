@@ -9,3 +9,4 @@ GCC のターゲットを `avx2,avx512f,avx512vl` に設定するため、対応
 #### 実装・検証
 
 - [実装](../../misc/simd.hpp)
+- [Verify: simd.cpp](../../tests/unit/misc/simd.cpp)

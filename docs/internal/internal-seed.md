@@ -7,6 +7,4 @@
 #### 実装・検証
 
 - [実装](../../internal/internal-seed.hpp)
-- [関連検証（間接使用）: aoj-1068.test.cpp](../../verify/verify-aoj-other/aoj-1068.test.cpp)
-- [関連検証（間接使用）: aoj-2171-bigrational.test.cpp](../../verify/verify-aoj-other/aoj-2171-bigrational.test.cpp)
-- [関連検証（間接使用）: arbitrary-modint.test.cpp](../../verify/verify-unit-test/arbitrary-modint.test.cpp)
+- [Verify: hash.cpp](../../tests/unit/internal/hash.cpp)

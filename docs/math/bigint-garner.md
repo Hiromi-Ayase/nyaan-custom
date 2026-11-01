@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/bigint-garner.hpp)
-- [検証: garner-bigint.test.cpp](../../verify/verify-unit-test/garner-bigint.test.cpp)
+- [Verify: bigint-gcd-and-crt.cpp](../../tests/unit/math/bigint-gcd-and-crt.cpp)

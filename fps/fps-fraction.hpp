@@ -35,6 +35,8 @@ struct fps_fraction {
     return *this;
   }
 
+  frac& operator/=(const mint& r) { return *this *= r.inverse(); }
+
   frac operator+(const mint& r) { return frac{*this} += r; }
   frac operator-(const mint& r) { return frac{*this} -= r; }
   frac operator*(const mint& r) { return frac{*this} *= r; }

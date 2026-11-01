@@ -18,4 +18,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/binary-trie.hpp)
-- [検証: yosupo-binary-trie.test.cpp](../../verify/verify-yosupo-ds/yosupo-binary-trie.test.cpp)
+- [Verify: binary-trie.cpp](../../tests/unit/data-structure/binary-trie.cpp)

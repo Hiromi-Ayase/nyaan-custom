@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../matrix/hafnian.hpp)
-- [検証: yosupo-hafnian-of-matrix.test.cpp](../../verify/verify-yosupo-math/yosupo-hafnian-of-matrix.test.cpp)
+- [Verify: hafnian.cpp](../../tests/unit/matrix/hafnian.cpp)

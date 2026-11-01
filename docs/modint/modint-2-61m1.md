@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../modint/modint-2-61m1.hpp)
-- [検証: modint-2-61m1.test.cpp](../../verify/verify-unit-test/modint-2-61m1.test.cpp)
+- [Verify: scalar.cpp](../../tests/unit/modint/scalar.cpp)

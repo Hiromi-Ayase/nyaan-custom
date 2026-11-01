@@ -50,7 +50,15 @@ struct MultiPrecisionInteger {
             enable_if_t<internal::is_broadly_integral_v<I>>* = nullptr>
   MultiPrecisionInteger(I x) : neg(false) {
     if constexpr (internal::is_broadly_signed_v<I>) {
-      if (x < 0) neg = true, x = -x;
+      if (x < 0) {
+        neg = true;
+        // 最小の符号付き整数は符号反転できないため、負のまま桁を取り出す。
+        while (x) {
+          dat.push_back(-(x % D));
+          x /= D;
+        }
+        return;
+      }
     }
     while (x) dat.push_back(x % D), x /= D;
   }

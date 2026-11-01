@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../geometry/integer-geometry.hpp)
-- [検証: yosupo-argument-sort.test.cpp](../../verify/verify-yosupo-other/yosupo-argument-sort.test.cpp)
-- [検証: yosupo-static-convex-hull-2.test.cpp](../../verify/verify-yosupo-other/yosupo-static-convex-hull-2.test.cpp)
+- [Verify: integer.cpp](../../tests/unit/geometry/integer.cpp)

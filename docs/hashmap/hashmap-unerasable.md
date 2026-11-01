@@ -11,6 +11,4 @@
 #### 実装・検証
 
 - [実装](../../hashmap/hashmap-unerasable.hpp)
-- [検証: aoj-1377.test.cpp](../../verify/verify-aoj-other/aoj-1377.test.cpp)
-- [検証: internal-type-traits.test.cpp](../../verify/verify-unit-test/internal-type-traits.test.cpp)
-- [検証: yosupo-associative-array-unerasable-hashmap.test.cpp](../../verify/verify-yosupo-ds/yosupo-associative-array-unerasable-hashmap.test.cpp)
+- [Verify: maps-and-sets.cpp](../../tests/unit/hashmap/maps-and-sets.cpp)

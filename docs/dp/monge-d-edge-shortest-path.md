@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../dp/monge-d-edge-shortest-path.hpp)
-- [検証: yuki-0952.test.cpp](../../verify/verify-yuki/yuki-0952.test.cpp)
+- [Verify: monge.cpp](../../tests/unit/dp/monge.cpp)

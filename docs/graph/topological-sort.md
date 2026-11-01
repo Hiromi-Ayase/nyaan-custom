@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../graph/topological-sort.hpp)
-- [検証: aoj-grl-4-a.test.cpp](../../verify/verify-aoj-grl/aoj-grl-4-a.test.cpp)
-- [検証: aoj-grl-4-b.test.cpp](../../verify/verify-aoj-grl/aoj-grl-4-b.test.cpp)
+- [Verify: directed.cpp](../../tests/unit/graph/directed.cpp)

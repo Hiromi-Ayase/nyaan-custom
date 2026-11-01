@@ -9,4 +9,4 @@ Walsh–Hadamard 変換で積を成分ごとの乗算へ変換する。値型に
 #### 実装・検証
 
 - [実装](../../set-function/xor-convolution.hpp)
-- [検証: set-function.test.cpp](../../verify/verify-unit-test/set-function.test.cpp)
+- [Verify: transforms.cpp](../../tests/unit/set-function/transforms.cpp)

@@ -56,6 +56,8 @@ struct FrequencyTableOfTreeDistance : CentroidDecomposition<G> {
       for (int i = 0; i < (int)count2.size(); i++) ans[i] += count2[i];
     }
 
+    // 距離0の自己対は、異なる頂点の順序なし対に含めない。
+    if (!ans.empty()) ans[0] = 0;
     for (auto &x : ans) x >>= 1;
     return ans;
   }

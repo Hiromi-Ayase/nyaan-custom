@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../math-fast/radix-sort.hpp)
-- [検証: radix-sort.test.cpp](../../verify/verify-unit-test/radix-sort.test.cpp)
+- [Verify: basic.cpp](../../tests/unit/math-fast/basic.cpp)

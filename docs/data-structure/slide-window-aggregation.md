@@ -26,4 +26,4 @@ Slide Window Aggrigation は、モノイド$(S,\bullet,I)$の$S$の要素の列$
 #### 実装・検証
 
 - [実装](../../data-structure/slide-window-aggregation.hpp)
-- [検証: yosupo-swag.test.cpp](../../verify/verify-yosupo-ds/yosupo-swag.test.cpp)
+- [Verify: sliding-aggregation.cpp](../../tests/unit/data-structure/sliding-aggregation.cpp)

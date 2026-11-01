@@ -16,7 +16,7 @@ vector<mint> QuadraticEquation(mint a, mint b, mint c) {
   b *= ia, c *= ia;
   auto D = mod_sqrt(((b * inv2).pow(2) - c).get(), mint::get_mod());
   if(D == -1) return {};
-  if(D <= 1) return vector<mint>{-b * inv2 + D};
+  if(D == 0) return vector<mint>{-b * inv2};
   return vector<mint>{-b * inv2 + D, -b * inv2 - D};
 }
 

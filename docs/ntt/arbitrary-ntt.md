@@ -13,6 +13,4 @@
 #### 実装・検証
 
 - [実装](../../ntt/arbitrary-ntt.hpp)
-- [検証: arbitrary-ntt-mod18446744069414584321.test.cpp](../../verify/verify-unit-test/arbitrary-ntt-mod18446744069414584321.test.cpp)
-- [検証: yosupo-convolution-arbitraryntt-arbitrarymodint.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-arbitraryntt-arbitrarymodint.test.cpp)
-- [検証: yosupo-convolution-arbitraryntt-arbitraryprimemodint.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-arbitraryntt-arbitraryprimemodint.test.cpp)
+- [Verify: arbitrary-modulus.cpp](../../tests/unit/ntt/arbitrary-modulus.cpp)

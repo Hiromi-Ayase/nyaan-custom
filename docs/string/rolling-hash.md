@@ -16,6 +16,4 @@
 #### 実装・検証
 
 - [実装](../../string/rolling-hash.hpp)
-- [検証: string-search.test.cpp](../../verify/verify-unit-test/string-search.test.cpp)
-- [検証: yosupo-enumerate-palindromes-roriha.test.cpp](../../verify/verify-yosupo-string/yosupo-enumerate-palindromes-roriha.test.cpp)
-- [検証: yosupo-zalgo-rollinghash.test.cpp](../../verify/verify-yosupo-string/yosupo-zalgo-rollinghash.test.cpp)
+- [Verify: rolling-hash.cpp](../../tests/unit/string/rolling-hash.cpp)

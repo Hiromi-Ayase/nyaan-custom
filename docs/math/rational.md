@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/rational.hpp)
-- [検証: bigrational.test.cpp](../../verify/verify-unit-test/bigrational.test.cpp)
-- [検証: rational-number.test.cpp](../../verify/verify-unit-test/rational-number.test.cpp)
-- [検証: yosupo-stern-brocot-tree-2.test.cpp](../../verify/verify-yosupo-math/yosupo-stern-brocot-tree-2.test.cpp)
+- [Verify: rational.cpp](../../tests/unit/math/rational.cpp)

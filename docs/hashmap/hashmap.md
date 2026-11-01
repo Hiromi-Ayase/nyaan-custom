@@ -35,6 +35,4 @@ TODO:書く
 #### 実装・検証
 
 - [実装](../../hashmap/hashmap.hpp)
-- [検証: debug.test.cpp](../../verify/verify-unit-test/debug.test.cpp)
-- [検証: hashmap.test.cpp](../../verify/verify-unit-test/hashmap.test.cpp)
-- [検証: yosupo-hashmap.test.cpp](../../verify/verify-yosupo-ds/yosupo-hashmap.test.cpp)
+- [Verify: maps-and-sets.cpp](../../tests/unit/hashmap/maps-and-sets.cpp)

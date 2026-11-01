@@ -29,21 +29,15 @@ struct alignas(32) vectorize_modint {
                    int a7)
       : x(_mm256_set_epi32(a7, a6, a5, a4, a3, a2, a1, a0)) {}
   int at(int i) const {
-    /*
     alignas(32) array<int, 8> b;
     _mm256_store_si256((m256*)b.data(), x);
     return b[i];
-    */
-    return *(reinterpret_cast<const int*>(&x) + i);
   }
   void set(int i, int val) {
-    /*
     alignas(32) array<int, 8> b;
     _mm256_store_si256((m256*)b.data(), x);
     b[i] = val;
     x = _mm256_load_si256((m256*)b.data());
-    */
-    *(reinterpret_cast<int*>(&x) + i) = val;
   }
   operator const __m256i&() const { return x; }
   friend ostream& operator<<(ostream& os, const vmint& m) {

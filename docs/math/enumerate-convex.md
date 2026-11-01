@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/enumerate-convex.hpp)
-- [検証: enumerate-convex.test.cpp](../../verify/verify-unit-test/enumerate-convex.test.cpp)
+- [Verify: stern-brocot.cpp](../../tests/unit/math/stern-brocot.cpp)

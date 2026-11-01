@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../matrix/polynomial-matrix-prefix-prod.hpp)
-- [検証: polynomial-matrix-prod.test.cpp](../../verify/verify-unit-test/polynomial-matrix-prod.test.cpp)
+- [Verify: polynomial.cpp](../../tests/unit/matrix/polynomial.cpp)

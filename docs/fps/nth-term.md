@@ -21,4 +21,4 @@ $$\sum_{i=0}^\infty a_i x^i = \frac{P(x)}{1-c_1x-c_2x^2-\ldots -c_kx^k}$$
 #### 実装・検証
 
 - [実装](../../fps/nth-term.hpp)
-- [検証: yuki-0215-nth-term.test.cpp](../../verify/verify-yuki/yuki-0215-nth-term.test.cpp)
+- [Verify: recurrences.cpp](../../tests/unit/fps/recurrences.cpp)

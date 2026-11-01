@@ -7,6 +7,4 @@
 #### 実装・検証
 
 - [実装](../../modint/barrett-reduction.hpp)
-- [関連検証（間接使用）: arbitrary-modint.test.cpp](../../verify/verify-unit-test/arbitrary-modint.test.cpp)
-- [関連検証（間接使用）: barrett-reduction.test.cpp](../../verify/verify-unit-test/barrett-reduction.test.cpp)
-- [関連検証（間接使用）: garner-bigint.test.cpp](../../verify/verify-unit-test/garner-bigint.test.cpp)
+- [Verify: barrett.cpp](../../tests/unit/modint/barrett.cpp)

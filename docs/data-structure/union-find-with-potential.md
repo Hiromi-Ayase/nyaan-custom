@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/union-find-with-potential.hpp)
-- [検証: aoj-dsl-1-b.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-1-b.test.cpp)
+- [Verify: union-find-with-potential.cpp](../../tests/unit/data-structure/union-find-with-potential.cpp)

@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../ntt/chirp-z.hpp)
-- [検証: yosupo-convolution-chirp-z.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-chirp-z.test.cpp)
-- [検証: yosupo-multipoint-evaluation-chirp-z.test.cpp](../../verify/verify-yosupo-ntt/yosupo-multipoint-evaluation-chirp-z.test.cpp)
+- [Verify: fps-convolutions.cpp](../../tests/unit/ntt/fps-convolutions.cpp)

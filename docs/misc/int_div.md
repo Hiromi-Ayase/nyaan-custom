@@ -7,4 +7,4 @@
 #### 実装・検証
 
 - [実装](../../misc/int_div.hpp)
-- [検証: int-div.test.cpp](../../verify/verify-unit-test/int-div.test.cpp)
+- [Verify: basic-utilities.cpp](../../tests/unit/misc/basic-utilities.cpp)

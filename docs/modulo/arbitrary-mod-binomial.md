@@ -182,4 +182,4 @@ $$=-\frac{n}{B}\cdot \frac{r}{M} \gt -1$$
 #### 実装・検証
 
 - [実装](../../modulo/arbitrary-mod-binomial.hpp)
-- [検証: yosupo-binomial-coefficient.test.cpp](../../verify/verify-yosupo-math/yosupo-binomial-coefficient.test.cpp)
+- [Verify: arbitrary-mod-binomial.cpp](../../tests/unit/modulo/arbitrary-mod-binomial.cpp)

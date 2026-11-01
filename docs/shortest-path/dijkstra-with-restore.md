@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../shortest-path/dijkstra-with-restore.hpp)
-- [検証: yosupo-shortest-path-2.test.cpp](../../verify/verify-yosupo-graph/yosupo-shortest-path-2.test.cpp)
+- [Verify: weighted.cpp](../../tests/unit/shortest-path/weighted.cpp)

@@ -102,4 +102,4 @@ $$F(S) = 1 - \sqrt{1 - 2 L(S)}$$
 #### 実装・検証
 
 - [実装](../../set-function/subset-convolution.hpp)
-- [検証: yosupo-subset-convolution.test.cpp](../../verify/verify-yosupo-math/yosupo-subset-convolution.test.cpp)
+- [Verify: transforms.cpp](../../tests/unit/set-function/transforms.cpp)

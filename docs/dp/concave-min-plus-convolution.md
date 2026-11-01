@@ -9,5 +9,4 @@ Monotone Minima を使用し、長さを $n,m$ とすると時間 $O((n+m)\log(n
 #### 実装・検証
 
 - [実装](../../dp/concave-min-plus-convolution.hpp)
-- [検証: yosupo-concave-min-plus-convolution-1.test.cpp](../../verify/verify-yosupo-math/yosupo-concave-min-plus-convolution-1.test.cpp)
-- [検証: yosupo-concave-min-plus-convolution-2.test.cpp](../../verify/verify-yosupo-math/yosupo-concave-min-plus-convolution-2.test.cpp)
+- [Verify: monge.cpp](../../tests/unit/dp/monge.cpp)

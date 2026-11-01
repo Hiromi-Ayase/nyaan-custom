@@ -9,3 +9,4 @@
 #### 実装・検証
 
 - [実装](../../matrix/linear-equation-hashmap.hpp)
+- [Verify: sparse-equation.cpp](../../tests/unit/matrix/sparse-equation.cpp)

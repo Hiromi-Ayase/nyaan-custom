@@ -33,5 +33,4 @@ TODO:書く
 #### 実装・検証
 
 - [実装](../../hashmap/hashset.hpp)
-- [検証: debug.test.cpp](../../verify/verify-unit-test/debug.test.cpp)
-- [検証: hashset.test.cpp](../../verify/verify-unit-test/hashset.test.cpp)
+- [Verify: maps-and-sets.cpp](../../tests/unit/hashmap/maps-and-sets.cpp)

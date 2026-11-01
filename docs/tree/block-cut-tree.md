@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../tree/block-cut-tree.hpp)
-- [検証: aoj-3022.test.cpp](../../verify/verify-aoj-other/aoj-3022.test.cpp)
-- [検証: yuki-1326.test.cpp](../../verify/verify-yuki/yuki-1326.test.cpp)
+- [Verify: block-cut-tree.cpp](../../tests/unit/tree/block-cut-tree.cpp)

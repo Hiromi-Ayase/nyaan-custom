@@ -1,85 +1,81 @@
-import subprocess
-import sys
+#!/usr/bin/env python3
+"""Expand local C++ includes using only the Python standard library."""
+
+import argparse
+import hashlib
+from pathlib import Path
 import re
-import io
-import os
-import datetime
+import sys
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+INCLUDE = re.compile(r'^\s*#\s*include\s*([<"])([^">]+)[">]')
+PRAGMA_ONCE = re.compile(r'^\s*#\s*pragma\s+once\s*(?://.*)?$')
 
-args = sys.argv
-if len(args) < 2:
-  exit()
-buffer = "buf.cpp"
 
-buf = open(buffer, mode='w', encoding='utf-8')
-with open(args[1], mode='r', encoding='utf-8') as f:
-  lines = f.readlines()
-  for line in lines:
-    buf.write(line)
-    # `#include` 同士は 1 行空ける
-    if len(line) > 8 and line[:8] == '#include':
-      buf.write('\n')
-buf.close()
+def bundle(source, include_dirs):
+    active = set()
 
-library_path = os.getcwd()
+    def expand(path):
+        path = path.resolve()
+        lines = path.read_text(encoding="utf-8").splitlines()
+        once = any(PRAGMA_ONCE.fullmatch(line) for line in lines)
+        if path in active:
+            if once:
+                return []
+            raise ValueError(f"Cyclic include without #pragma once: {path}")
 
-nw = datetime.datetime.now()
-print("/**")
-print(" * date   : " + nw.strftime("%Y-%m-%d %H:%M:%S"))
-print(" * author : Nyaan")
-print(" */")
-print()
-print("#define NDEBUG")
-cmd = ["oj-bundle", "-I", library_path, buffer]
-proc = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-if proc.returncode != 0:
-  msg = proc.stderr.decode("utf-8").split('\n')
-  msg = msg[max(0, len(msg) - 20):]
-  print("\n".join(msg), file=sys.stderr)
-  print('\033[31m' + 'bundle Failed.' + '\033[0m', file=sys.stderr)
-  exit(1)
-src = proc.stdout.decode("utf-8")
-lines = src.split('\n')
+        active.add(path)
+        output = []
+        if once:
+            # Each occurrence retains its guard, including occurrences inside #if.
+            # Skipping an already seen file would break a first include under #if 0.
+            identity = str(
+                path.relative_to(include_dirs[0])
+                if path.is_relative_to(include_dirs[0])
+                else path
+            )
+            guard = "NYAAN_BUNDLED_" + hashlib.sha256(identity.encode()).hexdigest().upper()
+            output.extend([f"#ifndef {guard}", f"#define {guard}"])
 
-debug_flag = False
-trc_ifdef_flag = False
-trc2_ifdef_flag = False
+        for line in lines:
+            if PRAGMA_ONCE.fullmatch(line):
+                continue
+            match = INCLUDE.match(line)
+            if match:
+                delimiter, name = match.groups()
+                directories = ([path.parent] if delimiter == '"' else []) + include_dirs
+                included = next(
+                    (directory / name for directory in directories if (directory / name).is_file()),
+                    None,
+                )
+                if included is not None:
+                    output.extend(expand(included))
+                    continue
+                if delimiter == '"':
+                    raise FileNotFoundError(f"Include not found: {name} (from {path})")
+            output.append(line)
 
-for line in lines:
-  # namespace DebugImpl を適切に削除
-  if re.search('namespace DebugImpl', line):
-    debug_flag = not debug_flag
-    continue
+        if once:
+            output.append(f"#endif  // {guard}")
+        active.remove(path)
+        return output
 
-  # define trc2 からはじまる行を適切に置換
-  if re.search('define trc2', line):
-    if re.search('void', line) == None:
-      assert trc2_ifdef_flag == False
-      trc2_ifdef_flag = True
-      continue
-  if trc2_ifdef_flag == True and re.search('while', line):
-    assert trc2_ifdef_flag == True
-    trc2_ifdef_flag = False
-    print('#define trc2(...) (void(0))')
-    continue
+    return "\n".join(expand(source)) + "\n"
 
-  # define trc からはじまる行を適切に置換
-  if re.search('define trc', line):
-    if re.search('void', line) == None:
-      assert trc_ifdef_flag == False
-      trc_ifdef_flag = True
-      continue
-  if trc_ifdef_flag == True and re.search('while', line):
-    assert trc_ifdef_flag == True
-    trc_ifdef_flag = False
-    print('#define trc(...) (void(0))')
-    continue
 
-  if debug_flag or trc_ifdef_flag or trc2_ifdef_flag:
-    continue
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("source", type=Path)
+    parser.add_argument("-I", dest="include_dirs", type=Path, action="append", default=[])
+    args = parser.parse_args()
+    directories = [Path(__file__).resolve().parent, Path.cwd()]
+    directories.extend(directory.resolve() for directory in args.include_dirs)
+    try:
+        result = bundle(args.source, directories)
+    except (OSError, ValueError) as error:
+        parser.exit(1, f"bundle failed: {error}\n")
+    # Match the submission mode of the previous bundler without deleting code.
+    sys.stdout.write("#ifndef NDEBUG\n#define NDEBUG\n#endif\n" + result)
 
-  if not re.match('^#line', line):
-    print(line, end='')
-  else:
-    print()
+
+if __name__ == "__main__":
+    main()

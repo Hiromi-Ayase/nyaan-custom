@@ -9,3 +9,4 @@ XOR・探索の最悪時間と領域は $O(\lceil n/64\rceil)$。添字の範囲
 #### 実装・検証
 
 - [実装](../../data-structure/dynamic-bitset.hpp)
+- [Verify: dynamic-bitset.cpp](../../tests/unit/data-structure/dynamic-bitset.cpp)

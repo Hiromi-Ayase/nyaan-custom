@@ -14,4 +14,4 @@ $2^{61}-1$ を法とするハッシュのライブラリ。
 #### 実装・検証
 
 - [実装](../../internal/internal-hash.hpp)
-- [検証: inner-hash.test.cpp](../../verify/verify-unit-test/inner-hash.test.cpp)
+- [Verify: hash.cpp](../../tests/unit/internal/hash.cpp)

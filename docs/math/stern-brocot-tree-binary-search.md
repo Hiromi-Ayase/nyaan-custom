@@ -9,6 +9,4 @@ Stern–Brocot 木の連続した同方向移動を倍増・二分探索でま�
 #### 実装・検証
 
 - [実装](../../math/stern-brocot-tree-binary-search.hpp)
-- [検証: yosupo-rational-approximation.test.cpp](../../verify/verify-yosupo-math/yosupo-rational-approximation.test.cpp)
-- [検証: yosupo-stern-brocot-tree-2.test.cpp](../../verify/verify-yosupo-math/yosupo-stern-brocot-tree-2.test.cpp)
-- [検証: yuki-2262.test.cpp](../../verify/verify-yuki/yuki-2262.test.cpp)
+- [Verify: stern-brocot.cpp](../../tests/unit/math/stern-brocot.cpp)

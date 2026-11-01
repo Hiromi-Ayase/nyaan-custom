@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/divide-interval.hpp)
-- [検証: aoj-3506.test.cpp](../../verify/verify-aoj-other/aoj-3506.test.cpp)
-- [検証: yuki-1170-divide-interval.test.cpp](../../verify/verify-yuki/yuki-1170-divide-interval.test.cpp)
+- [Verify: divide-interval.cpp](../../tests/unit/data-structure/divide-interval.cpp)

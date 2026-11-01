@@ -52,5 +52,4 @@ $$t(i) = a^{-n}\cdot\left(-c + \sum_{j=0}^i f(i)a^i \right)$$
 #### 実装・検証
 
 - [実装](../../fps/sum-of-exponential-times-poly.hpp)
-- [検証: yosupo-sum-of-exp-poly-limit.test.cpp](../../verify/verify-yosupo-fps/yosupo-sum-of-exp-poly-limit.test.cpp)
-- [検証: yosupo-sum-of-exp-poly.test.cpp](../../verify/verify-yosupo-fps/yosupo-sum-of-exp-poly.test.cpp)
+- [Verify: famous-series.cpp](../../tests/unit/fps/famous-series.cpp)

@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../lct/link-cut-tree-subtree.hpp)
-- [検証: yosupo-dynamic-tree-vertex-add-subtree-sum.test.cpp](../../verify/verify-yosupo-ds/yosupo-dynamic-tree-vertex-add-subtree-sum.test.cpp)
-- [検証: yosupo-offline-dynamic-connectivity.test.cpp](../../verify/verify-yosupo-ds/yosupo-offline-dynamic-connectivity.test.cpp)
+- [Verify: subtree.cpp](../../tests/unit/lct/subtree.cpp)

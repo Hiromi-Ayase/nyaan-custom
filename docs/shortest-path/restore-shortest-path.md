@@ -13,4 +13,4 @@
 #### 実装・検証
 
 - [実装](../../shortest-path/restore-shortest-path.hpp)
-- [検証: yosupo-shortest-path.test.cpp](../../verify/verify-yosupo-graph/yosupo-shortest-path.test.cpp)
+- [Verify: weighted.cpp](../../tests/unit/shortest-path/weighted.cpp)

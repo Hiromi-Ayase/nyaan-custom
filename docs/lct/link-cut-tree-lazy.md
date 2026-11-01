@@ -9,4 +9,4 @@ link は異なる木、cut は実在する辺、パス操作は同じ木の頂�
 #### 実装・検証
 
 - [実装](../../lct/link-cut-tree-lazy.hpp)
-- [検証: yosupo-range-add-range-sum-linkcuttree.test.cpp](../../verify/verify-yosupo-ds/yosupo-range-add-range-sum-linkcuttree.test.cpp)
+- [Verify: paths.cpp](../../tests/unit/lct/paths.cpp)

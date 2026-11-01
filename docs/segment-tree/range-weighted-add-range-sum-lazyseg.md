@@ -13,3 +13,4 @@
 #### 実装・検証
 
 - [実装](../../segment-tree/range-weighted-add-range-sum-lazyseg.hpp)
+- [Verify: utilities.cpp](../../tests/unit/segment-tree/utilities.cpp)

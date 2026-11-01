@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../string/manacher.hpp)
-- [検証: manacher.test.cpp](../../verify/verify-unit-test/manacher.test.cpp)
+- [Verify: manacher.cpp](../../tests/unit/string/manacher.cpp)

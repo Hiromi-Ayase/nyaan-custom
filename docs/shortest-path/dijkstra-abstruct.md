@@ -17,4 +17,4 @@
 #### 実装・検証
 
 - [実装](../../shortest-path/dijkstra-abstruct.hpp)
-- [検証: yosupo-shortest-path-dijkstra-abstruct.test.cpp](../../verify/verify-yosupo-graph/yosupo-shortest-path-dijkstra-abstruct.test.cpp)
+- [Verify: abstract.cpp](../../tests/unit/shortest-path/abstract.cpp)

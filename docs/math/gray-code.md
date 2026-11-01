@@ -7,4 +7,4 @@ n は非負で、`1<<n` が符号付き int に収まり配列を確保できる
 #### 実装・検証
 
 - [実装](../../math/gray-code.hpp)
-- [検証: math.test.cpp](../../verify/verify-unit-test/math.test.cpp)
+- [Verify: affine-and-gray.cpp](../../tests/unit/math/affine-and-gray.cpp)

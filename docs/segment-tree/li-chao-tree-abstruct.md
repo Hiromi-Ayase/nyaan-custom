@@ -12,6 +12,4 @@
 #### 実装・検証
 
 - [実装](../../segment-tree/li-chao-tree-abstruct.hpp)
-- [検証: li-chao-tree-abstruct.test.cpp](../../verify/verify-unit-test/li-chao-tree-abstruct.test.cpp)
-- [検証: yosupo-concave-min-plus-convolution-3.test.cpp](../../verify/verify-yosupo-math/yosupo-concave-min-plus-convolution-3.test.cpp)
-- [検証: yosupo-concave-min-plus-convolution-4.test.cpp](../../verify/verify-yosupo-math/yosupo-concave-min-plus-convolution-4.test.cpp)
+- [Verify: li-chao-abstract.cpp](../../tests/unit/segment-tree/li-chao-abstract.cpp)

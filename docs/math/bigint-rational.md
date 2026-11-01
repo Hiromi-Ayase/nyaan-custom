@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/bigint-rational.hpp)
-- [検証: aoj-2171-bigrational.test.cpp](../../verify/verify-aoj-other/aoj-2171-bigrational.test.cpp)
-- [検証: bigrational.test.cpp](../../verify/verify-unit-test/bigrational.test.cpp)
+- [Verify: big-rational.cpp](../../tests/unit/math/big-rational.cpp)

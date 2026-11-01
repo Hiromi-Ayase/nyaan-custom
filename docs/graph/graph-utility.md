@@ -33,6 +33,4 @@
 #### 実装・検証
 
 - [実装](../../graph/graph-utility.hpp)
-- [検証: aoj-grl-5-a.test.cpp](../../verify/verify-aoj-grl/aoj-grl-5-a.test.cpp)
-- [検証: dynamic-diameter.test.cpp](../../verify/verify-unit-test/dynamic-diameter.test.cpp)
-- [検証: yosupo-diameter.test.cpp](../../verify/verify-yosupo-graph/yosupo-diameter.test.cpp)
+- [Verify: utilities.cpp](../../tests/unit/graph/utilities.cpp)

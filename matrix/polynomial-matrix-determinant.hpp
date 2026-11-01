@@ -11,7 +11,15 @@ FormalPowerSeries<mint> PolynomialMatrixDeterminant(
     const Matrix<FormalPowerSeries<mint>> &m) {
   int N = m.size();
   int deg = 0;
-  for (int i = 0; i < N; ++i) deg += max<int>(1, m[i][i].size()) - 1;
+  // 各置換の積は各行から1項ずつ選ぶため、各行の最大次数の和を上界にする。
+  // 対角成分だけでは、非対角成分の次数が高い行列の補間点が不足する。
+  for (int i = 0; i < N; ++i) {
+    int row_degree = 0;
+    for (int j = 0; j < N; ++j) {
+      row_degree = max(row_degree, int(m[i][j].size()) - 1);
+    }
+    deg += row_degree;
+  }
   vector<mint> xs(deg + 1);
   vector<mint> ys(deg + 1);
   Matrix<mint> M(N);

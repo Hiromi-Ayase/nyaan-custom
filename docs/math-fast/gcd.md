@@ -11,6 +11,4 @@
 #### 実装・検証
 
 - [実装](../../math-fast/gcd.hpp)
-- [検証: internal-math.test.cpp](../../verify/verify-unit-test/internal-math.test.cpp)
-- [検証: math-fast-2.test.cpp](../../verify/verify-unit-test/math-fast-2.test.cpp)
-- [検証: math-fast.test.cpp](../../verify/verify-unit-test/math-fast.test.cpp)
+- [Verify: basic.cpp](../../tests/unit/math-fast/basic.cpp)

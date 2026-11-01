@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/enumerate-quotient.hpp)
-- [検証: enumerate-quotient.test.cpp](../../verify/verify-unit-test/enumerate-quotient.test.cpp)
-- [検証: yosupo-counting-primes-4.test.cpp](../../verify/verify-yosupo-math/yosupo-counting-primes-4.test.cpp)
-- [検証: yosupo-enumerate-quotient.test.cpp](../../verify/verify-yosupo-math/yosupo-enumerate-quotient.test.cpp)
+- [Verify: floor-and-quotient.cpp](../../tests/unit/math/floor-and-quotient.cpp)

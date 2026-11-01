@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../set-function/enumerate-set.hpp)
-- [検証: aoj-itp2-11-b.test.cpp](../../verify/verify-aoj-itp/aoj-itp2-11-b.test.cpp)
-- [検証: aoj-itp2-11-c.test.cpp](../../verify/verify-aoj-itp/aoj-itp2-11-c.test.cpp)
-- [検証: yuki-3024.test.cpp](../../verify/verify-yuki/yuki-3024.test.cpp)
+- [Verify: transforms.cpp](../../tests/unit/set-function/transforms.cpp)

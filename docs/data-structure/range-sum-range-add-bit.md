@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/range-sum-range-add-bit.hpp)
-- [検証: aoj-dsl-2-g-bit.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-2-g-bit.test.cpp)
+- [Verify: fenwick.cpp](../../tests/unit/data-structure/fenwick.cpp)

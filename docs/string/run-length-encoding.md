@@ -7,4 +7,4 @@
 #### 実装・検証
 
 - [実装](../../string/run-length-encoding.hpp)
-- [検証: run-length-encoding.test.cpp](../../verify/verify-unit-test/run-length-encoding.test.cpp)
+- [Verify: run-length-encoding.cpp](../../tests/unit/string/run-length-encoding.cpp)

@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../string/string-search.hpp)
-- [検証: string-search.test.cpp](../../verify/verify-unit-test/string-search.test.cpp)
-- [検証: yuki-2231.test.cpp](../../verify/verify-yuki/yuki-2231.test.cpp)
+- [Verify: string-search.cpp](../../tests/unit/string/string-search.cpp)

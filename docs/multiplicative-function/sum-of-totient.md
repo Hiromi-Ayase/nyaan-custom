@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../multiplicative-function/sum-of-totient.hpp)
-- [検証: sum-of-mf.test.cpp](../../verify/verify-unit-test/sum-of-mf.test.cpp)
-- [検証: yosupo-sum-of-totient.test.cpp](../../verify/verify-yosupo-math/yosupo-sum-of-totient.test.cpp)
+- [Verify: basic.cpp](../../tests/unit/multiplicative-function/basic.cpp)

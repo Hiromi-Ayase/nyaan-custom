@@ -12,5 +12,4 @@ Segment Tree の要素・結合演算として利用できる。区間代入は 
 #### 実装・検証
 
 - [実装](../../segment-tree/segment-tree-max-of-interval.hpp)
-- [検証: yuki-2281.test.cpp](../../verify/verify-yuki/yuki-2281.test.cpp)
-- [検証: yuki-2333.test.cpp](../../verify/verify-yuki/yuki-2333.test.cpp)
+- [Verify: max-interval.cpp](../../tests/unit/segment-tree/max-interval.cpp)

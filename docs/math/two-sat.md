@@ -20,4 +20,4 @@ SATは一般にはNP困難であることが知られているが、連言標準
 #### 実装・検証
 
 - [実装](../../math/two-sat.hpp)
-- [検証: yosupo-two-sat.test.cpp](../../verify/verify-yosupo-math/yosupo-two-sat.test.cpp)
+- [Verify: sat.cpp](../../tests/unit/math/sat.cpp)

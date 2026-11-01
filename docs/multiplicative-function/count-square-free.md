@@ -9,4 +9,4 @@ $\sum_{d\le\sqrt N}\mu(d)\lfloor N/d^2\rfloor$ を、商が同じ区間でまと
 #### 実装・検証
 
 - [実装](../../multiplicative-function/count-square-free.hpp)
-- [検証: yosupo-count-squarefrees.test.cpp](../../verify/verify-yosupo-math/yosupo-count-squarefrees.test.cpp)
+- [Verify: basic.cpp](../../tests/unit/multiplicative-function/basic.cpp)

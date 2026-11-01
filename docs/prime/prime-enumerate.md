@@ -7,6 +7,4 @@
 #### 実装・検証
 
 - [実装](../../prime/prime-enumerate.hpp)
-- [検証: garner-bigint.test.cpp](../../verify/verify-unit-test/garner-bigint.test.cpp)
-- [検証: primitive-root.test.cpp](../../verify/verify-unit-test/primitive-root.test.cpp)
-- [検証: yosupo-prime-table.test.cpp](../../verify/verify-yosupo-math/yosupo-prime-table.test.cpp)
+- [Verify: factorization.cpp](../../tests/unit/prime/factorization.cpp)

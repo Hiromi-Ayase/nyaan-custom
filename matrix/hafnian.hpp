@@ -15,7 +15,7 @@ mint Hafnian(vector<vector<mint>> &mat) {
   };
   auto solve = [&](auto rc, const vector<vvm> &v) -> vm {
     vm ans(h);
-    if (sz(v) == 0) {
+    if (v.empty()) {
       ans[0] = 1;
       return ans;
     }

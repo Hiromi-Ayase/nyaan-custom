@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../fps/mod-pow.hpp)
-- [検証: yuki-0720.test.cpp](../../verify/verify-yuki/yuki-0720.test.cpp)
+- [Verify: polynomial-operations.cpp](../../tests/unit/fps/polynomial-operations.cpp)

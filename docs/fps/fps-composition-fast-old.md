@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../fps/fps-composition-fast-old.hpp)
-- [検証: yosupo-composition-fast.test.cpp](../../verify/verify-yosupo-fps/yosupo-composition-fast.test.cpp)
+- [Verify: composition-fast-old.cpp](../../tests/unit/fps/composition-fast-old.cpp)

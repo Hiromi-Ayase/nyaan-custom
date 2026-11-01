@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../shortest-path/bfs01.hpp)
-- [検証: aoj-2945-01bfs.test.cpp](../../verify/verify-aoj-other/aoj-2945-01bfs.test.cpp)
-- [検証: aoj-3506.test.cpp](../../verify/verify-aoj-other/aoj-3506.test.cpp)
+- [Verify: weighted.cpp](../../tests/unit/shortest-path/weighted.cpp)

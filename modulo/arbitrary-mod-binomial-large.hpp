@@ -6,7 +6,7 @@
 #define PRIME_POWER_BINOMIAL_M_MAX ((1LL << 30) - 1)
 #define PRIME_POWER_BINOMIAL_N_MAX 20000000
 
-struct simd_prime_binomial {
+struct alignas(32) simd_prime_binomial {
   using u32 = unsigned int;
   using i64 = long long;
   using u64 = unsigned long long;

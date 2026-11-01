@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/sweep.hpp)
-- [検証: aoj-3277.test.cpp](../../verify/verify-aoj-other/aoj-3277.test.cpp)
+- [Verify: xor-basis.cpp](../../tests/unit/math/xor-basis.cpp)

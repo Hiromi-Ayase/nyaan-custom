@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/garner.hpp)
-- [検証: garner.test.cpp](../../verify/verify-unit-test/garner.test.cpp)
+- [Verify: elementary.cpp](../../tests/unit/math/elementary.cpp)

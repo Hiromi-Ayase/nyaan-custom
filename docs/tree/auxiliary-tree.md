@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../tree/auxiliary-tree.hpp)
-- [検証: yuki-2588.test.cpp](../../verify/verify-yuki/yuki-2588.test.cpp)
+- [Verify: queries.cpp](../../tests/unit/tree/queries.cpp)

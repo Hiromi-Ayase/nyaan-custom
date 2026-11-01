@@ -13,6 +13,4 @@
 #### 実装・検証
 
 - [実装](../../ntt/complex-fft.hpp)
-- [検証: complex-fft.test.cpp](../../verify/verify-unit-test/complex-fft.test.cpp)
-- [検証: yosupo-convolution-real-fft-15bit.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-real-fft-15bit.test.cpp)
-- [検証: yosupo-convolution-real-fft-toom-3.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-real-fft-toom-3.test.cpp)
+- [Verify: complex-fft.cpp](../../tests/unit/ntt/complex-fft.cpp)

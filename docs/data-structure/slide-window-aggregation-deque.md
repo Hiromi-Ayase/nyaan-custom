@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/slide-window-aggregation-deque.hpp)
-- [検証: yosupo-deque-operate-all-composite.test.cpp](../../verify/verify-yosupo-ds/yosupo-deque-operate-all-composite.test.cpp)
+- [Verify: sliding-aggregation.cpp](../../tests/unit/data-structure/sliding-aggregation.cpp)

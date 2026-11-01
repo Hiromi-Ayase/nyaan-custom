@@ -11,4 +11,4 @@ Strassen 部分の演算量は $O(S^{\log_2 7})$、領域 $O(S^2)$。AVX2 対応
 #### 実装・検証
 
 - [実装](../../math-fast/mat-prod-strassen.hpp)
-- [検証: yosupo-matrix-product-vectorize-modint.test.cpp](../../verify/verify-yosupo-math/yosupo-matrix-product-vectorize-modint.test.cpp)
+- [Verify: matrix-product.cpp](../../tests/unit/math-fast/matrix-product.cpp)

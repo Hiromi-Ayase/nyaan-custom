@@ -13,4 +13,4 @@
 #### 実装・検証
 
 - [実装](../../fps/stirling-matrix.hpp)
-- [検証: stirling-matrix.test.cpp](../../verify/verify-unit-test/stirling-matrix.test.cpp)
+- [Verify: combinatorial-transforms.cpp](../../tests/unit/fps/combinatorial-transforms.cpp)

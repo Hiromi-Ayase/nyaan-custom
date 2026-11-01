@@ -11,5 +11,4 @@
 #### 実装・検証
 
 - [実装](../../fps/partial-fraction-decomposition.hpp)
-- [検証: partial-fraction-decomposition.test.cpp](../../verify/verify-unit-test/partial-fraction-decomposition.test.cpp)
-- [検証: yuki-1510.test.cpp](../../verify/verify-yuki/yuki-1510.test.cpp)
+- [Verify: polynomial-operations.cpp](../../tests/unit/fps/polynomial-operations.cpp)

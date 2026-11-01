@@ -11,6 +11,4 @@ $$a \otimes b =\mathrm{mex}(\lbrace a' \otimes b \oplus a \otimes b' \oplus a' \
 #### 実装・検証
 
 - [実装](../../math/nimber.hpp)
-- [検証: karatsuba.test.cpp](../../verify/verify-unit-test/karatsuba.test.cpp)
-- [検証: nimber-to-field.test.cpp](../../verify/verify-unit-test/nimber-to-field.test.cpp)
-- [検証: nimber.test.cpp](../../verify/verify-unit-test/nimber.test.cpp)
+- [Verify: nimber.cpp](../../tests/unit/math/nimber.cpp)

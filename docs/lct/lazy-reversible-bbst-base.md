@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../lct/lazy-reversible-bbst-base.hpp)
-- [関連検証（間接使用）: yosupo-dynamic-sequence-range-affine-range-sum-splay.test.cpp](../../verify/verify-yosupo-ds/yosupo-dynamic-sequence-range-affine-range-sum-splay.test.cpp)
+- [Verify: splay-sequences.cpp](../../tests/unit/lct/splay-sequences.cpp)

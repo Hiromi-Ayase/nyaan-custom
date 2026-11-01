@@ -15,4 +15,4 @@ Radix Heap(基数ヒープ)とは、単調順位ヒープ(追加した値が最�
 #### 実装・検証
 
 - [実装](../../data-structure/radix-heap.hpp)
-- [検証: radix-heap.test.cpp](../../verify/verify-unit-test/radix-heap.test.cpp)
+- [Verify: heaps.cpp](../../tests/unit/data-structure/heaps.cpp)

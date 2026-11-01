@@ -14,4 +14,4 @@ NTT 向け FPS バックエンドと必要な整数の逆元が必要。変数�
 #### 実装・検証
 
 - [実装](../../fps/multivariate-fps.hpp)
-- [検証: yuki-1783.test.cpp](../../verify/verify-yuki/yuki-1783.test.cpp)
+- [Verify: multivariate.cpp](../../tests/unit/fps/multivariate.cpp)

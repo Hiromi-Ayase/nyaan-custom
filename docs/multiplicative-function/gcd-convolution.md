@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../multiplicative-function/gcd-convolution.hpp)
-- [検証: yosupo-gcd-convolution.test.cpp](../../verify/verify-yosupo-math/yosupo-gcd-convolution.test.cpp)
-- [検証: yuki-0886.test.cpp](../../verify/verify-yuki/yuki-0886.test.cpp)
+- [Verify: basic.cpp](../../tests/unit/multiplicative-function/basic.cpp)

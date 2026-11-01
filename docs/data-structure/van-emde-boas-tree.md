@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/van-emde-boas-tree.hpp)
-- [検証: yosupo-predecessor-problem-vEB-tree.test.cpp](../../verify/verify-yosupo-ds/yosupo-predecessor-problem-vEB-tree.test.cpp)
+- [Verify: integer-set.cpp](../../tests/unit/data-structure/integer-set.cpp)

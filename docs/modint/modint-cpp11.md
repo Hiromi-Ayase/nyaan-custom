@@ -7,3 +7,4 @@
 #### 実装・検証
 
 - [実装](../../modint/modint-cpp11.hpp)
+- [Verify: scalar.cpp](../../tests/unit/modint/scalar.cpp)

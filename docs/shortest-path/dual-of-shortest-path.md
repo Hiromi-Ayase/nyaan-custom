@@ -14,4 +14,4 @@
 #### 実装・検証
 
 - [実装](../../shortest-path/dual-of-shortest-path.hpp)
-- [検証: aoj-0304.test.cpp](../../verify/verify-aoj-other/aoj-0304.test.cpp)
+- [Verify: negative-edges.cpp](../../tests/unit/shortest-path/negative-edges.cpp)

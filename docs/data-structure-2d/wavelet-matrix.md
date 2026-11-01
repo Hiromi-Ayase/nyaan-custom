@@ -21,4 +21,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure-2d/wavelet-matrix.hpp)
-- [検証: wavelet-matrix.test.cpp](../../verify/verify-unit-test/wavelet-matrix.test.cpp)
+- [Verify: wavelet-order-statistics.cpp](../../tests/unit/data-structure-2d/wavelet-order-statistics.cpp)

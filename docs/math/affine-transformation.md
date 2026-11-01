@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/affine-transformation.hpp)
-- [検証: rbst-segment-tree.test.cpp](../../verify/verify-unit-test/rbst-segment-tree.test.cpp)
-- [検証: yosupo-deque-operate-all-composite.test.cpp](../../verify/verify-yosupo-ds/yosupo-deque-operate-all-composite.test.cpp)
-- [検証: yosupo-dynamic-sequence-range-affine-range-sum-splay.test.cpp](../../verify/verify-yosupo-ds/yosupo-dynamic-sequence-range-affine-range-sum-splay.test.cpp)
+- [Verify: affine-and-gray.cpp](../../tests/unit/math/affine-and-gray.cpp)

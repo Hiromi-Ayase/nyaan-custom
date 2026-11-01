@@ -14,6 +14,4 @@
 #### 実装・検証
 
 - [実装](../../fps/fps-famous-series.hpp)
-- [検証: yosupo-stirling-1st-row.test.cpp](../../verify/verify-yosupo-fps/yosupo-stirling-1st-row.test.cpp)
-- [検証: yosupo-stirling-1st.test.cpp](../../verify/verify-yosupo-fps/yosupo-stirling-1st.test.cpp)
-- [検証: yosupo-stirling-2nd-row.test.cpp](../../verify/verify-yosupo-fps/yosupo-stirling-2nd-row.test.cpp)
+- [Verify: famous-series.cpp](../../tests/unit/fps/famous-series.cpp)

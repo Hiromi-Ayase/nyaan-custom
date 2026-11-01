@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../set-function/walsh-hadamard-transform.hpp)
-- [関連検証（間接使用）: set-function.test.cpp](../../verify/verify-unit-test/set-function.test.cpp)
+- [Verify: transforms.cpp](../../tests/unit/set-function/transforms.cpp)

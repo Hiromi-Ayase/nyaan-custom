@@ -42,6 +42,7 @@ struct F2_Matrix {
       }
     }
     swap(A, C.A);
+    W = C.W;
     return *this;
   }
   Mat operator*(const Mat &B) const { return Mat(*this) *= B; }

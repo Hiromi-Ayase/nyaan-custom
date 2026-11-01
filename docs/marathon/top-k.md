@@ -9,3 +9,4 @@
 #### 実装・検証
 
 - [実装](../../marathon/top-k.hpp)
+- [Verify: top-k-and-bandit.cpp](../../tests/unit/marathon/top-k-and-bandit.cpp)

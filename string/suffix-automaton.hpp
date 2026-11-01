@@ -38,7 +38,7 @@ struct SuffixAutomaton {
     }
   };
 
-  inline int next(int i, char c) { return st[i].next(c); }
+  inline int next(int i, char c) const { return st[i].next(c); }
   inline vector<pair<char, int>> &chd(int i) { return st[i].nxt; }
   inline int link(int i) { return st[i].link; }
 
@@ -49,6 +49,9 @@ struct SuffixAutomaton {
   SuffixAutomaton(const string &S) : st(1) { build(S); }
 
   void build(const string &S) {
+    // During construction, transitions are in insertion order, even when an
+    // earlier instance has already completed tsort().
+    sorted = false;
     int last = 0;
     for (int i = 0; i < (int)S.size(); i++) extend(S[i], last);
     tsort();

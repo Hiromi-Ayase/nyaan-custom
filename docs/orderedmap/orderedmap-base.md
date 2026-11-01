@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../orderedmap/orderedmap-base.hpp)
-- [関連検証（間接使用）: orderedmap.test.cpp](../../verify/verify-unit-test/orderedmap.test.cpp)
-- [関連検証（間接使用）: yosupo-orderedmap.test.cpp](../../verify/verify-yosupo-ds/yosupo-orderedmap.test.cpp)
+- [Verify: ordered-map.cpp](../../tests/unit/orderedmap/ordered-map.cpp)

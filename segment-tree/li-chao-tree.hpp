@@ -80,7 +80,7 @@ struct LiChaoTree {
     }
   }
 
-  T inner_query(int x, int segidx) {
+  T inner_query(T x, int segidx) {
     T ret = seg[segidx].get(x);
     while (segidx > 1) {
       segidx = segidx >> 1;

@@ -91,7 +91,7 @@ struct SubproductTree {
       invAll.resize(mm, 0U);
       ntt(invAll.data(), invAll.size());
       vector<mint> ffs(mm, 0U);
-      memcpy(ffs.data(), fs.data(), fs.size() * sizeof(mint));
+      if (!fs.empty()) memcpy(ffs.data(), fs.data(), fs.size() * sizeof(mint));
       ntt(ffs.data(), ffs.size());
       for (int i = 0; i < mm; ++i) ffs[i] *= invAll[i];
       intt(ffs.data(), ffs.size());

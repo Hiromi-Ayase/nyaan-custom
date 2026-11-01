@@ -13,5 +13,4 @@
 #### 実装・検証
 
 - [実装](../../ntt/ntt.hpp)
-- [検証: yosupo-convolution-ntt-normalmodint.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-ntt-normalmodint.test.cpp)
-- [検証: yosupo-convolution-ntt.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-ntt.test.cpp)
+- [Verify: ntt.cpp](../../tests/unit/ntt/ntt.cpp)

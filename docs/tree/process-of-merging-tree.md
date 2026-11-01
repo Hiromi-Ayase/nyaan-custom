@@ -9,3 +9,4 @@
 #### 実装・検証
 
 - [実装](../../tree/process-of-merging-tree.hpp)
+- [Verify: constructions.cpp](../../tests/unit/tree/constructions.cpp)

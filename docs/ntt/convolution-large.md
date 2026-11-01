@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../ntt/convolution-large.hpp)
-- [検証: yosupo-convolution-large.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-large.test.cpp)
+- [Verify: fps-convolutions.cpp](../../tests/unit/ntt/fps-convolutions.cpp)

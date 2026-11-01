@@ -7,3 +7,4 @@ bigint、BigRational、Rational、および有理数版の二項係数・形式�
 #### 実装・検証
 
 - [実装](../../math/bigint-all.hpp)
+- [Verify: big-rational.cpp](../../tests/unit/math/big-rational.cpp)

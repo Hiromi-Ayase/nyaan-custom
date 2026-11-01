@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../lct/splay-reversible.hpp)
-- [検証: yosupo-dynamic-tree-vertex-set-path-composite.test.cpp](../../verify/verify-yosupo-ds/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp)
-- [検証: yosupo-range-reverse-range-sum.test.cpp](../../verify/verify-yosupo-ds/yosupo-range-reverse-range-sum.test.cpp)
+- [Verify: splay-sequences.cpp](../../tests/unit/lct/splay-sequences.cpp)

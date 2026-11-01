@@ -9,4 +9,4 @@ TODO
 #### 実装・検証
 
 - [実装](../../tree/centroid-decomposition.hpp)
-- [関連検証（間接使用）: yosupo-frequency-table-of-tree-distance.test.cpp](../../verify/verify-yosupo-graph/yosupo-frequency-table-of-tree-distance.test.cpp)
+- [Verify: centroids-and-distances.cpp](../../tests/unit/tree/centroids-and-distances.cpp)

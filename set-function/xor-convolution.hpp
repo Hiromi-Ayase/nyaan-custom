@@ -1,6 +1,8 @@
 #pragma once
 
-#include "../template/template.hpp"
+#include <type_traits>
+#include <vector>
+using namespace std;
 #include "walsh-hadamard-transform.hpp"
 
 template <typename T>

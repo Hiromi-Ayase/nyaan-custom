@@ -20,6 +20,4 @@ Union-Find Treeとは、素集合データ構造に対して
 #### 実装・検証
 
 - [実装](../../data-structure/union-find.hpp)
-- [検証: aoj-dsl-1-a.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-1-a.test.cpp)
-- [検証: aoj-2821.test.cpp](../../verify/verify-aoj-other/aoj-2821.test.cpp)
-- [検証: aoj-2891-2.test.cpp](../../verify/verify-aoj-other/aoj-2891-2.test.cpp)
+- [Verify: union-find.cpp](../../tests/unit/data-structure/union-find.cpp)

@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../matrix/matrix-tree.hpp)
-- [検証: yuki-1303.test.cpp](../../verify/verify-yuki/yuki-1303.test.cpp)
+- [Verify: tree-count.cpp](../../tests/unit/matrix/tree-count.cpp)

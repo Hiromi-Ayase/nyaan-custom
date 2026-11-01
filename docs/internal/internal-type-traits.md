@@ -9,4 +9,4 @@ C++17 の `void_t`・可変テンプレートを用いるコンパイル時の�
 #### 実装・検証
 
 - [実装](../../internal/internal-type-traits.hpp)
-- [検証: internal-type-traits.test.cpp](../../verify/verify-unit-test/internal-type-traits.test.cpp)
+- [Verify: math-and-traits.cpp](../../tests/unit/internal/math-and-traits.cpp)

@@ -9,7 +9,7 @@
 ##### 図
 
 文字列$S="\mathrm{nyaan}"$に対応するオートマトンを書いたものが下図
-![nyaan](https://nyaannyaan.github.io/library/nyaan.png)
+![nyaan](../images/nyaan.png)
 
 ##### 図の説明
 
@@ -44,7 +44,7 @@ $$\begin{cases}
   - オートマトンのある状態$v\neq t_0$に含まれる部分文字列のうち最も長いものを$w$とする。この時、$v$に含まれない部分文字列のうち最も長い文字列を$t$とおき、$t$が含まれる状態を$u$として$v$から$u$にSuffix Linkを貼る。
   - 頂点に含まれる部分文字列とSuffix Linkのみを図に書いたものが下の図である。
 
-![nyaan](https://nyaannyaan.github.io/library/suffix_link.png)
+![nyaan](../images/suffix_link.png)
 
 - 性質4:Suffix Linkは$t_0$を根とした木になる。
 - 性質5:次のルールのみを用いて木を構築したとき、その構造はSuffix Linkによって作られた木と一致する。
@@ -86,4 +86,4 @@ $$\mathrm{minlen}(v) = \mathrm{len}(\mathrm{link}(v)) + 1$$
 #### 実装・検証
 
 - [実装](../../string/suffix-automaton.hpp)
-- [検証: yosupo-number-of-substrings-suffixautomaton.test.cpp](../../verify/verify-yosupo-string/yosupo-number-of-substrings-suffixautomaton.test.cpp)
+- [Verify: suffix-automaton.cpp](../../tests/unit/string/suffix-automaton.cpp)

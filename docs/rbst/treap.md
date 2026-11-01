@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../rbst/treap.hpp)
-- [検証: yosupo-dynamic-sequence-range-affine-range-sum-treap.test.cpp](../../verify/verify-yosupo-ds/yosupo-dynamic-sequence-range-affine-range-sum-treap.test.cpp)
+- [Verify: reversible.cpp](../../tests/unit/rbst/reversible.cpp)

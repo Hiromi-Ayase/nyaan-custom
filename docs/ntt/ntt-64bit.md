@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../ntt/ntt-64bit.hpp)
-- [検証: ntt-64bit.test.cpp](../../verify/verify-unit-test/ntt-64bit.test.cpp)
+- [Verify: ntt-64bit.cpp](../../tests/unit/ntt/ntt-64bit.cpp)

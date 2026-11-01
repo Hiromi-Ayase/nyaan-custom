@@ -11,5 +11,4 @@
 #### 実装・検証
 
 - [実装](../../ntt/ntt-avx2.hpp)
-- [検証: yosupo-convolution-ntt-avx2.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-ntt-avx2.test.cpp)
-- [検証: yosupo-inliner-multiply.test.cpp](../../verify/verify-yosupo-ntt/yosupo-inliner-multiply.test.cpp)
+- [Verify: ntt-avx2.cpp](../../tests/unit/ntt/ntt-avx2.cpp)

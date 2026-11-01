@@ -9,6 +9,4 @@ $S_f(n)=S_h(n)-\sum_{l=2}^n g(l)S_f(\lfloor n/l\rfloor)$ の和を商が等し�
 #### 実装・検証
 
 - [実装](../../multiplicative-function/enumerate-sum-of-multiplicative-function.hpp)
-- [検証: yosupo-sum-of-totient-3.test.cpp](../../verify/verify-yosupo-math/yosupo-sum-of-totient-3.test.cpp)
-- [検証: yuki-2262.test.cpp](../../verify/verify-yuki/yuki-2262.test.cpp)
-- [検証: yuki-2266.test.cpp](../../verify/verify-yuki/yuki-2266.test.cpp)
+- [Verify: prefix.cpp](../../tests/unit/multiplicative-function/prefix.cpp)

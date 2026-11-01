@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../string/aho-corasick.hpp)
-- [検証: yuki-0430-2.test.cpp](../../verify/verify-yuki/yuki-0430-2.test.cpp)
-- [検証: yuki-0430.test.cpp](../../verify/verify-yuki/yuki-0430.test.cpp)
-- [検証: yuki-1269.test.cpp](../../verify/verify-yuki/yuki-1269.test.cpp)
+- [Verify: aho-corasick.cpp](../../tests/unit/string/aho-corasick.cpp)

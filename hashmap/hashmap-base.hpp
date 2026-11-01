@@ -1,6 +1,8 @@
 #pragma once
 
+#include <cstddef>
 #include <cstdint>
+#include <iterator>
 using namespace std;
 
 namespace HashMapImpl {
@@ -11,12 +13,14 @@ template <typename Key, typename Data>
 struct HashMapBase;
 
 template <typename Key, typename Data>
-struct itrB
-    : iterator<bidirectional_iterator_tag, Data, ptrdiff_t, Data*, Data&> {
-  using base =
-      iterator<bidirectional_iterator_tag, Data, ptrdiff_t, Data*, Data&>;
-  using ptr = typename base::pointer;
-  using ref = typename base::reference;
+struct itrB {
+  using iterator_category = bidirectional_iterator_tag;
+  using value_type = Data;
+  using difference_type = ptrdiff_t;
+  using pointer = Data*;
+  using reference = Data&;
+  using ptr = pointer;
+  using ref = reference;
 
   u32 i;
   HashMapBase<Key, Data>* p;
@@ -248,9 +252,13 @@ struct HashMapBase {
     nxt++;
     this->deleted_flag[it.i] = true;
     if (shrink_rate(s)) {
+      if (nxt == this->end()) {
+        shrink();
+        return this->end();
+      }
       Data d = data[nxt.i];
       shrink();
-      it = find(data_to_key(d));
+      return find(data_to_key(d));
     }
     return nxt;
   }

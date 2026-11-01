@@ -1,5 +1,7 @@
 #pragma once
 
+#include <immintrin.h>
+
 template <typename Key, typename Val>
 struct RadixHeap {
   using uint = typename make_unsigned<Key>::type;

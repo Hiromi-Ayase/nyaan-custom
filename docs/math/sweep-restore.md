@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/sweep-restore.hpp)
-- [検証: nimber-to-field.test.cpp](../../verify/verify-unit-test/nimber-to-field.test.cpp)
+- [Verify: xor-basis.cpp](../../tests/unit/math/xor-basis.cpp)

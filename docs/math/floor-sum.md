@@ -9,5 +9,4 @@ Euclid 型の再帰により対数回の整数演算を行う。二乗項・中�
 #### 実装・検証
 
 - [実装](../../math/floor-sum.hpp)
-- [検証: math.test.cpp](../../verify/verify-unit-test/math.test.cpp)
-- [検証: yosupo-sum-of-floor.test.cpp](../../verify/verify-yosupo-math/yosupo-sum-of-floor.test.cpp)
+- [Verify: floor-and-quotient.cpp](../../tests/unit/math/floor-and-quotient.cpp)

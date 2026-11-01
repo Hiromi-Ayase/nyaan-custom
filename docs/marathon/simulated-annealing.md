@@ -28,4 +28,4 @@ using SA = Simulated_Annealing<Input, State, typename State::Diff>;
 #### 実装・検証
 
 - [実装](../../marathon/simulated-annealing.hpp)
-- [検証: simulated-annealing.test.cpp](../../verify/verify-unit-test/simulated-annealing.test.cpp)
+- [Verify: annealing.cpp](../../tests/unit/marathon/annealing.cpp)

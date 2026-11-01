@@ -97,5 +97,4 @@ Ptr expose(Ptr t) {
 
 - [実装: link-cut-base.hpp](../../lct/link-cut-base.hpp)
 - [実装: link-cut-tree.hpp](../../lct/link-cut-tree.hpp)
-- [検証: yosupo-dynamic-tree-vertex-add-path-sum.test.cpp](../../verify/verify-yosupo-ds/yosupo-dynamic-tree-vertex-add-path-sum.test.cpp)
-- [検証: yosupo-dynamic-tree-vertex-set-path-composite.test.cpp](../../verify/verify-yosupo-ds/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp)
+- [Verify: paths.cpp](../../tests/unit/lct/paths.cpp)

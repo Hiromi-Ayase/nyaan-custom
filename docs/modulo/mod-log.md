@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../modulo/mod-log.hpp)
-- [検証: yosupo-mod-log.test.cpp](../../verify/verify-yosupo-math/yosupo-mod-log.test.cpp)
+- [Verify: mod-log.cpp](../../tests/unit/modulo/mod-log.cpp)

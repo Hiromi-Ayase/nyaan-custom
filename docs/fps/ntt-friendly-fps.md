@@ -17,6 +17,4 @@ modがNTT modの時に高速に動作する実装を行ったFPSライブラリ�
 #### 実装・検証
 
 - [実装](../../fps/ntt-friendly-fps.hpp)
-- [検証: composite-exp.test.cpp](../../verify/verify-unit-test/composite-exp.test.cpp)
-- [検証: composition.test.cpp](../../verify/verify-unit-test/composition.test.cpp)
-- [検証: dual-fps.test.cpp](../../verify/verify-unit-test/dual-fps.test.cpp)
+- [Verify: ntt-friendly.cpp](../../tests/unit/fps/ntt-friendly.cpp)

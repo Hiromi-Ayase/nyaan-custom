@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../dp/longest-increasing-sequence.hpp)
-- [検証: yosupo-longest-increasing-sequence.test.cpp](../../verify/verify-yosupo-math/yosupo-longest-increasing-sequence.test.cpp)
+- [Verify: sequences.cpp](../../tests/unit/dp/sequences.cpp)

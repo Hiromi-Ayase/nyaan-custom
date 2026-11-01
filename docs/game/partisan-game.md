@@ -9,4 +9,4 @@ Game は map のキーとして比較可能であること。時間・領域は�
 #### 実装・検証
 
 - [実装](../../game/partisan-game.hpp)
-- [検証: aoj-1377.test.cpp](../../verify/verify-aoj-other/aoj-1377.test.cpp)
+- [Verify: partisan-and-surreal.cpp](../../tests/unit/game/partisan-and-surreal.cpp)

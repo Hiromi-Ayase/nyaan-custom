@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../tree/rooted-tree-hash.hpp)
-- [検証: aoj-1613.test.cpp](../../verify/verify-aoj-other/aoj-1613.test.cpp)
-- [検証: yosupo-tree-hash.test.cpp](../../verify/verify-yosupo-graph/yosupo-tree-hash.test.cpp)
-- [検証: yuki-1789.test.cpp](../../verify/verify-yuki/yuki-1789.test.cpp)
+- [Verify: hashes.cpp](../../tests/unit/tree/hashes.cpp)

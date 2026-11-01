@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../ntt/multiplicative-convolution-mod-p.hpp)
-- [検証: yosupo-convolution-on-z-pz.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-on-z-pz.test.cpp)
+- [Verify: fps-convolutions.cpp](../../tests/unit/ntt/fps-convolutions.cpp)

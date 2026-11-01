@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../graph/max-independent-set.hpp)
-- [検証: yosupo-max-independent-set.test.cpp](../../verify/verify-yosupo-graph/yosupo-max-independent-set.test.cpp)
+- [Verify: coloring-and-independent-set.cpp](../../tests/unit/graph/coloring-and-independent-set.cpp)

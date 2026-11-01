@@ -14,5 +14,4 @@
 #### 実装・検証
 
 - [実装](../../fps/online-fps.hpp)
-- [検証: yosupo-exp-ofps.test.cpp](../../verify/verify-yosupo-fps/yosupo-exp-ofps.test.cpp)
-- [検証: yosupo-inv-ofps.test.cpp](../../verify/verify-yosupo-fps/yosupo-inv-ofps.test.cpp)
+- [Verify: online.cpp](../../tests/unit/fps/online.cpp)

@@ -11,5 +11,4 @@
 #### 実装・検証
 
 - [実装](../../fps/composite-exp.hpp)
-- [検証: composite-exp.test.cpp](../../verify/verify-unit-test/composite-exp.test.cpp)
-- [検証: yuki-1875.test.cpp](../../verify/verify-yuki/yuki-1875.test.cpp)
+- [Verify: combinatorial-transforms.cpp](../../tests/unit/fps/combinatorial-transforms.cpp)

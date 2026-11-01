@@ -17,5 +17,4 @@
 #### 実装・検証
 
 - [実装](../../graph/functional-graph.hpp)
-- [検証: aoj-2891-2.test.cpp](../../verify/verify-aoj-other/aoj-2891-2.test.cpp)
-- [検証: yuki-1254-2.test.cpp](../../verify/verify-yuki/yuki-1254-2.test.cpp)
+- [Verify: functional.cpp](../../tests/unit/graph/functional.cpp)

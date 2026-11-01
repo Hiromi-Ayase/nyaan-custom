@@ -9,4 +9,4 @@ Subset Convolution を用い、時間 $O(n^2 2^n)$、内部のランク付き表
 #### 実装・検証
 
 - [実装](../../set-function/exp-of-set-power-series.hpp)
-- [検証: yosupo-exp-of-set-power-series.test.cpp](../../verify/verify-yosupo-graph/yosupo-exp-of-set-power-series.test.cpp)
+- [Verify: series.cpp](../../tests/unit/set-function/series.cpp)

@@ -18,4 +18,4 @@ TODO: 書く　[わかりやすい解説](https://ei1333.github.io/luzhiled/snip
 #### 実装・検証
 
 - [実装](../../misc/doubling.hpp)
-- [検証: yosupo-lowest-common-ancestor-doubling.test.cpp](../../verify/verify-yosupo-graph/yosupo-lowest-common-ancestor-doubling.test.cpp)
+- [Verify: mo-and-doubling.cpp](../../tests/unit/misc/mo-and-doubling.cpp)

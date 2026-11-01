@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure-2d/2d-cumulative-sum.hpp)
-- [検証: aoj-dsl-5-b.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-5-b.test.cpp)
+- [Verify: dense.cpp](../../tests/unit/data-structure-2d/dense.cpp)

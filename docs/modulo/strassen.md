@@ -11,5 +11,4 @@ AVX2 対応 CPU が必要。`BUFFER_SIZE`（既定 `1<<23`）要素の作業配�
 #### 実装・検証
 
 - [実装](../../modulo/strassen.hpp)
-- [検証: strassen.test.cpp](../../verify/verify-unit-test/strassen.test.cpp)
-- [検証: yosupo-matrix-product-strassen.test.cpp](../../verify/verify-yosupo-math/yosupo-matrix-product-strassen.test.cpp)
+- [Verify: strassen.cpp](../../tests/unit/modulo/strassen.cpp)

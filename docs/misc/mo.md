@@ -20,4 +20,4 @@ $[0,N)$上の区間に対する$Q$個のクエリを$\mathrm{O}(\alpha N \sqrt{Q
 #### 実装・検証
 
 - [実装](../../misc/mo.hpp)
-- [検証: yosupo-static-range-inversions-query.test.cpp](../../verify/verify-yosupo-ds/yosupo-static-range-inversions-query.test.cpp)
+- [Verify: mo-and-doubling.cpp](../../tests/unit/misc/mo-and-doubling.cpp)

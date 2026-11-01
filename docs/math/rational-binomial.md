@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/rational-binomial.hpp)
-- [検証: bigrational.test.cpp](../../verify/verify-unit-test/bigrational.test.cpp)
-- [検証: rational-number.test.cpp](../../verify/verify-unit-test/rational-number.test.cpp)
+- [Verify: rational.cpp](../../tests/unit/math/rational.cpp)

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../template/template.hpp"
 #include "enamurate-multiplicative-function.hpp"
 
 namespace multiplicative_function {

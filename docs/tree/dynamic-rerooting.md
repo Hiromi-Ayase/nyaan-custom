@@ -11,6 +11,4 @@
 #### 実装・検証
 
 - [実装](../../tree/dynamic-rerooting.hpp)
-- [検証: aoj-grl-5-a-dynamic-rerooting.test.cpp](../../verify/verify-aoj-grl/aoj-grl-5-a-dynamic-rerooting.test.cpp)
-- [検証: yosupo-point-set-tree-path-composite-sum-fixed-root-2.test.cpp](../../verify/verify-yosupo-graph/yosupo-point-set-tree-path-composite-sum-fixed-root-2.test.cpp)
-- [検証: yosupo-point-set-tree-path-composite-sum.test.cpp](../../verify/verify-yosupo-graph/yosupo-point-set-tree-path-composite-sum.test.cpp)
+- [Verify: dynamic-rerooting.cpp](../../tests/unit/tree/dynamic-rerooting.cpp)

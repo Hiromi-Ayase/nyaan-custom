@@ -15,6 +15,4 @@
 #### 実装・検証
 
 - [実装](../../segment-tree/rbst-segment-tree.hpp)
-- [検証: rbst-segment-tree.test.cpp](../../verify/verify-unit-test/rbst-segment-tree.test.cpp)
-- [検証: yosupo-associative-array-rbstseg.test.cpp](../../verify/verify-yosupo-ds/yosupo-associative-array-rbstseg.test.cpp)
-- [検証: yosupo-point-set-range-composite-rbstseg.test.cpp](../../verify/verify-yosupo-ds/yosupo-point-set-range-composite-rbstseg.test.cpp)
+- [Verify: rbst-sequences.cpp](../../tests/unit/segment-tree/rbst-sequences.cpp)

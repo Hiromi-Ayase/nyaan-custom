@@ -11,3 +11,4 @@
 #### 実装・検証
 
 - [実装](../../ntt/ntt-cpp11.hpp)
+- [Verify: ntt-cpp11.cpp](../../tests/unit/ntt/ntt-cpp11.cpp)

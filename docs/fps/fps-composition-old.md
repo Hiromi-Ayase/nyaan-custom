@@ -38,6 +38,4 @@ $\rightarrow$実装したら3倍速かった [実装](https://nyaannyaan.github.
 #### 実装・検証
 
 - [実装](../../fps/fps-composition-old.hpp)
-- [検証: composition.test.cpp](../../verify/verify-unit-test/composition.test.cpp)
-- [検証: yosupo-composition.test.cpp](../../verify/verify-yosupo-fps/yosupo-composition.test.cpp)
-- [検証: yosupo-compositional-inverse-newton.test.cpp](../../verify/verify-yosupo-fps/yosupo-compositional-inverse-newton.test.cpp)
+- [Verify: composition-old.cpp](../../tests/unit/fps/composition-old.cpp)

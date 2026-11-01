@@ -13,6 +13,4 @@
 #### 実装・検証
 
 - [実装](../../dp/knapsack01.hpp)
-- [検証: aoj-dpl-1-b.test.cpp](../../verify/verify-aoj-dpl/aoj-dpl-1-b.test.cpp)
-- [検証: aoj-dpl-1-f.test.cpp](../../verify/verify-aoj-dpl/aoj-dpl-1-f.test.cpp)
-- [検証: aoj-dpl-1-h.test.cpp](../../verify/verify-aoj-dpl/aoj-dpl-1-h.test.cpp)
+- [Verify: knapsack.cpp](../../tests/unit/dp/knapsack.cpp)

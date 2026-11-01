@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/persistent-queue.hpp)
-- [検証: yosupo-persistent-queue.test.cpp](../../verify/verify-yosupo-ds/yosupo-persistent-queue.test.cpp)
+- [Verify: persistent.cpp](../../tests/unit/data-structure/persistent.cpp)

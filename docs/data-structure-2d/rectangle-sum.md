@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure-2d/rectangle-sum.hpp)
-- [検証: yosupo-rectangle-sum.test.cpp](../../verify/verify-yosupo-ds/yosupo-rectangle-sum.test.cpp)
+- [Verify: rectangles.cpp](../../tests/unit/data-structure-2d/rectangles.cpp)

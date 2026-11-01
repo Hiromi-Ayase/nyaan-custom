@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure-2d/rectangle-add-rectangle-sum.hpp)
-- [検証: yosupo-static-rectangle-add-rectangle-sum.test.cpp](../../verify/verify-yosupo-ds/yosupo-static-rectangle-add-rectangle-sum.test.cpp)
+- [Verify: rectangles.cpp](../../tests/unit/data-structure-2d/rectangles.cpp)

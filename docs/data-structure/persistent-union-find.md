@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/persistent-union-find.hpp)
-- [検証: yosupo-persistent-unionfind.test.cpp](../../verify/verify-yosupo-ds/yosupo-persistent-unionfind.test.cpp)
+- [Verify: persistent.cpp](../../tests/unit/data-structure/persistent.cpp)

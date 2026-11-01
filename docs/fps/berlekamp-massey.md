@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../fps/berlekamp-massey.hpp)
-- [検証: yosupo-linear-recurrence.test.cpp](../../verify/verify-yosupo-fps/yosupo-linear-recurrence.test.cpp)
+- [Verify: recurrences.cpp](../../tests/unit/fps/recurrences.cpp)

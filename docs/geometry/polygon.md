@@ -11,6 +11,4 @@
 #### 実装・検証
 
 - [実装](../../geometry/polygon.hpp)
-- [検証: aoj-cgl-3-a.test.cpp](../../verify/verify-aoj-cgl/aoj-cgl-3-a.test.cpp)
-- [検証: aoj-cgl-3-b.test.cpp](../../verify/verify-aoj-cgl/aoj-cgl-3-b.test.cpp)
-- [検証: aoj-cgl-3-c.test.cpp](../../verify/verify-aoj-cgl/aoj-cgl-3-c.test.cpp)
+- [Verify: polygons.cpp](../../tests/unit/geometry/polygons.cpp)

@@ -41,4 +41,4 @@ $$\mathrm{Ind}_r u^s \equiv0 \mod s,\ \mathrm{Ind}_r u^s \equiv 1 \mod 2$$
 #### 実装・検証
 
 - [実装](../../modulo/mod-sqrt.hpp)
-- [検証: yosupo-mod-sqrt.test.cpp](../../verify/verify-yosupo-math/yosupo-mod-sqrt.test.cpp)
+- [Verify: roots.cpp](../../tests/unit/modulo/roots.cpp)

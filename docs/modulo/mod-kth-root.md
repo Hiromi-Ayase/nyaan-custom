@@ -70,4 +70,4 @@ $g$の素因数分解も[Millar-rabinとPollardの$\rho$法](https://nyaannyaan.
 #### 実装・検証
 
 - [実装](../../modulo/mod-kth-root.hpp)
-- [検証: yosupo-kth-root-mod.test.cpp](../../verify/verify-yosupo-math/yosupo-kth-root-mod.test.cpp)
+- [Verify: roots.cpp](../../tests/unit/modulo/roots.cpp)

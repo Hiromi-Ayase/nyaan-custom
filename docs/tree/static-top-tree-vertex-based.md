@@ -15,4 +15,4 @@
 #### 実装・検証
 
 - [実装](../../tree/static-top-tree-vertex-based.hpp)
-- [検証: yosupo-point-set-tree-path-composite-sum-fixed-root.test.cpp](../../verify/verify-yosupo-graph/yosupo-point-set-tree-path-composite-sum-fixed-root.test.cpp)
+- [Verify: static-top-trees.cpp](../../tests/unit/tree/static-top-trees.cpp)

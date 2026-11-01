@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../dp/monge-shortest-path.hpp)
-- [検証: aoj-3086.test.cpp](../../verify/verify-aoj-other/aoj-3086.test.cpp)
-- [検証: yuki-0703.test.cpp](../../verify/verify-yuki/yuki-0703.test.cpp)
-- [検証: yuki-0704.test.cpp](../../verify/verify-yuki/yuki-0704.test.cpp)
+- [Verify: monge.cpp](../../tests/unit/dp/monge.cpp)

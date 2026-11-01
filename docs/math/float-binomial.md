@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/float-binomial.hpp)
-- [検証: yuki-1220.test.cpp](../../verify/verify-yuki/yuki-1220.test.cpp)
+- [Verify: rational.cpp](../../tests/unit/math/rational.cpp)

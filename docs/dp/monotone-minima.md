@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../dp/monotone-minima.hpp)
-- [関連検証（間接使用）: yosupo-concave-min-plus-convolution-1.test.cpp](../../verify/verify-yosupo-math/yosupo-concave-min-plus-convolution-1.test.cpp)
-- [関連検証（間接使用）: yosupo-concave-min-plus-convolution-2.test.cpp](../../verify/verify-yosupo-math/yosupo-concave-min-plus-convolution-2.test.cpp)
-- [関連検証（間接使用）: yuki-0952.test.cpp](../../verify/verify-yuki/yuki-0952.test.cpp)
+- [Verify: monge.cpp](../../tests/unit/dp/monge.cpp)

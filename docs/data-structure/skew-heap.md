@@ -23,4 +23,4 @@ Skew Heapとは、ヒープ同士のマージ(融合, meld)やヒープ全体に
 #### 実装・検証
 
 - [実装](../../data-structure/skew-heap.hpp)
-- [関連検証（間接使用）: yosupo-directed-mst.test.cpp](../../verify/verify-yosupo-graph/yosupo-directed-mst.test.cpp)
+- [Verify: heaps.cpp](../../tests/unit/data-structure/heaps.cpp)

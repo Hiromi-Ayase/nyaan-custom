@@ -7,6 +7,4 @@
 #### 実装・検証
 
 - [実装](../../misc/all.hpp)
-- [検証: arbitrary-ntt-mod18446744069414584321.test.cpp](../../verify/verify-unit-test/arbitrary-ntt-mod18446744069414584321.test.cpp)
-- [検証: bigint2.test.cpp](../../verify/verify-unit-test/bigint2.test.cpp)
-- [検証: bigint3.test.cpp](../../verify/verify-unit-test/bigint3.test.cpp)
+- [Verify: fastio.cpp](../../tests/unit/misc/fastio.cpp)

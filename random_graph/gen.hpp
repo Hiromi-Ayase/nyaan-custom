@@ -73,7 +73,13 @@ struct UndirectedGraphGenerator {
   Graph test(int n, bool is_tree = true, bool weighted = false, W w_min = 1,
              W w_max = 1) {
     using F = Graph (UndirectedGraphGenerator::*)(int, bool, W, W);
-    vector<F> f{tree, path, star, perfect, simple, namori, simple_sparse};
+    vector<F> f{&UndirectedGraphGenerator::tree,
+                &UndirectedGraphGenerator::path,
+                &UndirectedGraphGenerator::star,
+                &UndirectedGraphGenerator::perfect,
+                &UndirectedGraphGenerator::simple,
+                &UndirectedGraphGenerator::namori,
+                &UndirectedGraphGenerator::simple_sparse};
     int mx = is_tree ? 2 : 6;
     return (this->*f[random(0, mx)])(n, weighted, w_min, w_max);
   }

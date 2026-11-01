@@ -12,3 +12,4 @@ GCC の AVX2 指定を含み、AVX2 対応 CPU が必要。静的定数は型ご
 #### 実装・検証
 
 - [実装](../../math-fast/vectorize-modint.hpp)
+- [Verify: simd.cpp](../../tests/unit/modint/simd.cpp)

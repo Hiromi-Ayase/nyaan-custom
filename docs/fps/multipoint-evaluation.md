@@ -11,6 +11,4 @@
 #### 実装・検証
 
 - [実装](../../fps/multipoint-evaluation.hpp)
-- [検証: multieval.test.cpp](../../verify/verify-unit-test/multieval.test.cpp)
-- [検証: yosupo-interpolation.test.cpp](../../verify/verify-yosupo-fps/yosupo-interpolation.test.cpp)
-- [検証: yosupo-multieval.test.cpp](../../verify/verify-yosupo-fps/yosupo-multieval.test.cpp)
+- [Verify: evaluation.cpp](../../tests/unit/fps/evaluation.cpp)

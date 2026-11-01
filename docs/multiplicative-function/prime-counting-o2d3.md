@@ -7,4 +7,4 @@ TODO: 計算量解析を書く
 #### 実装・検証
 
 - [実装](../../multiplicative-function/prime-counting-o2d3.hpp)
-- [検証: yosupo-counting-primes-2.test.cpp](../../verify/verify-yosupo-math/yosupo-counting-primes-2.test.cpp)
+- [Verify: prime-counting-o2d3.cpp](../../tests/unit/multiplicative-function/prime-counting-o2d3.cpp)

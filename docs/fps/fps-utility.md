@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../fps/fps-utility.hpp)
-- [検証: partial-fraction-decomposition.test.cpp](../../verify/verify-unit-test/partial-fraction-decomposition.test.cpp)
-- [検証: yosupo-product-of-polynomial-sequence.test.cpp](../../verify/verify-yosupo-fps/yosupo-product-of-polynomial-sequence.test.cpp)
-- [検証: yuki-1145.test.cpp](../../verify/verify-yuki/yuki-1145.test.cpp)
+- [Verify: polynomial-operations.cpp](../../tests/unit/fps/polynomial-operations.cpp)

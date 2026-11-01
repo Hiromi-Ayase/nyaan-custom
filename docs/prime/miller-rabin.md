@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../prime/miller-rabin.hpp)
-- [検証: ntt-64bit.test.cpp](../../verify/verify-unit-test/ntt-64bit.test.cpp)
-- [検証: primality-test.test.cpp](../../verify/verify-unit-test/primality-test.test.cpp)
-- [検証: yosupo-primality-test-u64.test.cpp](../../verify/verify-yosupo-math/yosupo-primality-test-u64.test.cpp)
+- [Verify: factorization.cpp](../../tests/unit/prime/factorization.cpp)

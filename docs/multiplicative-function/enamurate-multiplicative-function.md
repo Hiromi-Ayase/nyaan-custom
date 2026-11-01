@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../multiplicative-function/enamurate-multiplicative-function.hpp)
-- [検証: mf.test.cpp](../../verify/verify-unit-test/mf.test.cpp)
+- [Verify: basic.cpp](../../tests/unit/multiplicative-function/basic.cpp)

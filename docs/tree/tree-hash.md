@@ -7,4 +7,4 @@
 #### 実装・検証
 
 - [実装](../../tree/tree-hash.hpp)
-- [検証: aoj-2821.test.cpp](../../verify/verify-aoj-other/aoj-2821.test.cpp)
+- [Verify: hashes.cpp](../../tests/unit/tree/hashes.cpp)

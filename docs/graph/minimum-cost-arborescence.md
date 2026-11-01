@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../graph/minimum-cost-arborescence.hpp)
-- [検証: yosupo-directed-mst.test.cpp](../../verify/verify-yosupo-graph/yosupo-directed-mst.test.cpp)
+- [Verify: spanning-trees.cpp](../../tests/unit/graph/spanning-trees.cpp)

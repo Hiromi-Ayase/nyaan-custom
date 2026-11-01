@@ -44,8 +44,14 @@ struct SplayTreeBase {
 
   pair<Ptr, Ptr> split(Ptr t, int k) {
     if (!t) return {nullptr, nullptr};
-    if (k == 0) return {nullptr, t};
-    if (k == count(t)) return {t, nullptr};
+    if (k == 0) {
+      t->p = nullptr;
+      return {nullptr, t};
+    }
+    if (k == count(t)) {
+      t->p = nullptr;
+      return {t, nullptr};
+    }
     push(t);
     if (k <= count(t->l)) {
       auto x = split(t->l, k);

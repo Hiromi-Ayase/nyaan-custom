@@ -11,5 +11,4 @@
 #### 実装・検証
 
 - [実装](../../fps/fps-composition.hpp)
-- [検証: composition.test.cpp](../../verify/verify-unit-test/composition.test.cpp)
-- [検証: yosupo-composition-large.test.cpp](../../verify/verify-yosupo-fps/yosupo-composition-large.test.cpp)
+- [Verify: composition.cpp](../../tests/unit/fps/composition.cpp)

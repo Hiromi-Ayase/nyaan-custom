@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../modint/modint.hpp)
-- [検証: modint.test.cpp](../../verify/verify-unit-test/modint.test.cpp)
-- [検証: yosupo-convolution-ntt-normalmodint.test.cpp](../../verify/verify-yosupo-ntt/yosupo-convolution-ntt-normalmodint.test.cpp)
+- [Verify: scalar.cpp](../../tests/unit/modint/scalar.cpp)

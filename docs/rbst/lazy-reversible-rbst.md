@@ -21,4 +21,4 @@
 #### 実装・検証
 
 - [実装](../../rbst/lazy-reversible-rbst.hpp)
-- [検証: yosupo-dynamic-sequence-range-affine-range-sum.test.cpp](../../verify/verify-yosupo-ds/yosupo-dynamic-sequence-range-affine-range-sum.test.cpp)
+- [Verify: reversible.cpp](../../tests/unit/rbst/reversible.cpp)

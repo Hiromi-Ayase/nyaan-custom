@@ -5,9 +5,9 @@
 #### 使い方
 
 - `FrequencyTableOfTreeDistance(const G &g)`: 重心分解用のデータ構造を構築する。
-- `get(start = 0)`: startを根として計算した結果を返す。
+- `get(start = 0)`: startを根として計算した結果を返す。距離ごとに、異なる頂点の順序なし対を数える（距離0は0）。
 
 #### 実装・検証
 
 - [実装](../../tree/frequency-table-of-tree-distance.hpp)
-- [検証: yosupo-frequency-table-of-tree-distance.test.cpp](../../verify/verify-yosupo-graph/yosupo-frequency-table-of-tree-distance.test.cpp)
+- [Verify: centroids-and-distances.cpp](../../tests/unit/tree/centroids-and-distances.cpp)

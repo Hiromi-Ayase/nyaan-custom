@@ -9,3 +9,4 @@
 #### 実装・検証
 
 - [実装](../../misc/vector-pool.hpp)
+- [Verify: basic-utilities.cpp](../../tests/unit/misc/basic-utilities.cpp)

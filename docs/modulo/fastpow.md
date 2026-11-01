@@ -9,3 +9,4 @@
 #### 実装・検証
 
 - [実装](../../modulo/fastpow.hpp)
+- [Verify: binomial.cpp](../../tests/unit/modulo/binomial.cpp)

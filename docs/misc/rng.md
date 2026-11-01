@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../misc/rng.hpp)
-- [検証: aoj-1068.test.cpp](../../verify/verify-aoj-other/aoj-1068.test.cpp)
-- [検証: aoj-2171-bigrational.test.cpp](../../verify/verify-aoj-other/aoj-2171-bigrational.test.cpp)
-- [検証: arbitrary-modint.test.cpp](../../verify/verify-unit-test/arbitrary-modint.test.cpp)
+- [Verify: random-and-timer.cpp](../../tests/unit/misc/random-and-timer.cpp)

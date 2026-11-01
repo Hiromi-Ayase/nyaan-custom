@@ -10,4 +10,4 @@
 #### 実装・検証
 
 - [実装](../../math-fast/binary-search.hpp)
-- [検証: fast-bs.test.cpp](../../verify/verify-unit-test/fast-bs.test.cpp)
+- [Verify: basic.cpp](../../tests/unit/math-fast/basic.cpp)

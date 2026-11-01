@@ -9,6 +9,4 @@ Barrett reduction により乗算は定数時間。逆元・累乗は対数時�
 #### 実装・検証
 
 - [実装](../../modint/arbitrary-modint.hpp)
-- [検証: arbitrary-modint.test.cpp](../../verify/verify-unit-test/arbitrary-modint.test.cpp)
-- [検証: barrett-reduction.test.cpp](../../verify/verify-unit-test/barrett-reduction.test.cpp)
-- [検証: garner-bigint.test.cpp](../../verify/verify-unit-test/garner-bigint.test.cpp)
+- [Verify: scalar.cpp](../../tests/unit/modint/scalar.cpp)

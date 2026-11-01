@@ -14,6 +14,4 @@
 #### 実装・検証
 
 - [実装](../../fps/arbitrary-fps.hpp)
-- [検証: yosupo-exp-arb.test.cpp](../../verify/verify-yosupo-fps/yosupo-exp-arb.test.cpp)
-- [検証: yosupo-inv-arb.test.cpp](../../verify/verify-yosupo-fps/yosupo-inv-arb.test.cpp)
-- [検証: yosupo-log-arb.test.cpp](../../verify/verify-yosupo-fps/yosupo-log-arb.test.cpp)
+- [Verify: arbitrary.cpp](../../tests/unit/fps/arbitrary.cpp)

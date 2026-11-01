@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../set-function/polynomial-composite-set-power-series.hpp)
-- [検証: yosupo-polynomial-composite-set-power-series.test.cpp](../../verify/verify-yosupo-math/yosupo-polynomial-composite-set-power-series.test.cpp)
+- [Verify: series.cpp](../../tests/unit/set-function/series.cpp)

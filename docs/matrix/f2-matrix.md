@@ -12,6 +12,4 @@
 #### 実装・検証
 
 - [実装](../../matrix/f2-matrix.hpp)
-- [検証: yosupo-determinant-of-matrix-mod-2.test.cpp](../../verify/verify-yosupo-math/yosupo-determinant-of-matrix-mod-2.test.cpp)
-- [検証: yosupo-inverse-matrix-mod-2.test.cpp](../../verify/verify-yosupo-math/yosupo-inverse-matrix-mod-2.test.cpp)
-- [検証: yosupo-matrix-product-mod-2.test.cpp](../../verify/verify-yosupo-math/yosupo-matrix-product-mod-2.test.cpp)
+- [Verify: f2.cpp](../../tests/unit/matrix/f2.cpp)

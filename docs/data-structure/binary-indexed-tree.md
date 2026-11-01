@@ -20,6 +20,4 @@ Binary Indexed Tree(BIT, Fenwick Treeとも)とは、要素数$n$の数列に対
 #### 実装・検証
 
 - [実装](../../data-structure/binary-indexed-tree.hpp)
-- [検証: aoj-dsl-2-b-bit.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-2-b-bit.test.cpp)
-- [検証: aoj-dsl-2-e-imos.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-2-e-imos.test.cpp)
-- [検証: yosupo-point-add-range-sum.test.cpp](../../verify/verify-yosupo-ds/yosupo-point-add-range-sum.test.cpp)
+- [Verify: fenwick.cpp](../../tests/unit/data-structure/fenwick.cpp)

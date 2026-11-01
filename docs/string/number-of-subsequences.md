@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../string/number-of-subsequences.hpp)
-- [検証: yosupo-number-of-subsequences.test.cpp](../../verify/verify-yosupo-string/yosupo-number-of-subsequences.test.cpp)
+- [Verify: number-of-subsequences.cpp](../../tests/unit/string/number-of-subsequences.cpp)

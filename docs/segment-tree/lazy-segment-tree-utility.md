@@ -53,13 +53,5 @@ void example() {
 #### 実装・検証
 
 - [実装](../../segment-tree/lazy-segment-tree-utility.hpp)
-- [検証: SegmentTree_RangeAdd_RangeMax](../../verify/verify-aoj-dsl/aoj-dsl-2-h-max.test.cpp)
-- [検証: SegmentTree_RangeAdd_RangeMin](../../verify/verify-aoj-dsl/aoj-dsl-2-h.test.cpp)
-- [検証: SegmentTree_RangeAdd_RangeSum](../../verify/verify-aoj-dsl/aoj-dsl-2-g.test.cpp)
-- [検証: SegmentTree_RangeUpdate_RangeMax](../../verify/verify-aoj-dsl/aoj-dsl-2-f-max.test.cpp)
-- [検証: SegmentTree_RangeUpdate_RangeMin](../../verify/verify-aoj-dsl/aoj-dsl-2-f.test.cpp)
-- [検証: SegmentTree_RangeUpdate_RangeSum](../../verify/verify-aoj-dsl/aoj-dsl-2-i.test.cpp)
-- [検証: 二分探索](../../verify/verify-unit-test/lazyseg-bsearch.test.cpp)
-- [検証: 一点更新](../../verify/verify-unit-test/lazyseg-setval.test.cpp)
 - [AtCoder Library の実装](../../atcoder/lazysegtree.hpp)
-- [検証: ACL 移行・各種操作の差分検証](../../verify/verify-unit-test/acl-segment-tree.test.cpp)
+- [Verify: utilities.cpp](../../tests/unit/segment-tree/utilities.cpp)

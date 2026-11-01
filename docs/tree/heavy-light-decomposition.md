@@ -18,6 +18,4 @@ HLDecの特長は「任意のパスを$\rm{O}(\log N)$本の列に分解する�
 #### 実装・検証
 
 - [実装](../../tree/heavy-light-decomposition.hpp)
-- [検証: aoj-dsl-3-d-cartesiantree.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-3-d-cartesiantree.test.cpp)
-- [検証: aoj-grl-5-c.test.cpp](../../verify/verify-aoj-grl/aoj-grl-5-c.test.cpp)
-- [検証: aoj-grl-5-d.test.cpp](../../verify/verify-aoj-grl/aoj-grl-5-d.test.cpp)
+- [Verify: queries.cpp](../../tests/unit/tree/queries.cpp)

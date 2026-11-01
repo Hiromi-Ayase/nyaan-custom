@@ -11,4 +11,4 @@
 #### 実装・検証
 
 - [実装](../../modulo/arbitrary-mod-binomial-large.hpp)
-- [検証: yosupo-binomial-coefficient-large.test.cpp](../../verify/verify-yosupo-math/yosupo-binomial-coefficient-large.test.cpp)
+- [Verify: large-binomial.cpp](../../tests/unit/modulo/large-binomial.cpp)

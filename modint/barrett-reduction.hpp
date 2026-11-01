@@ -12,16 +12,19 @@ struct Barrett {
   Barrett() : m(), im() {}
   Barrett(int n) : m(n), im(u64(-1) / m + 1) {}
   constexpr inline i64 quo(u64 n) {
+    if (m == 1) return n;
     u64 x = u64((__uint128_t(n) * im) >> 64);
     u32 r = n - x * m;
     return m <= r ? x - 1 : x;
   }
   constexpr inline i64 rem(u64 n) {
+    if (m == 1) return 0;
     u64 x = u64((__uint128_t(n) * im) >> 64);
     u32 r = n - x * m;
     return m <= r ? r + m : r;
   }
   constexpr inline pair<i64, int> quorem(u64 n) {
+    if (m == 1) return {n, 0};
     u64 x = u64((__uint128_t(n) * im) >> 64);
     u32 r = n - x * m;
     if (m <= r) return {x - 1, r + m};

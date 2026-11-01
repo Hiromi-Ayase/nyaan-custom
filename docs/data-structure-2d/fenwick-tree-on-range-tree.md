@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure-2d/fenwick-tree-on-range-tree.hpp)
-- [検証: yosupo-point-add-rectangle-sum-rtree-fenwick.test.cpp](../../verify/verify-yosupo-ds/yosupo-point-add-rectangle-sum-rtree-fenwick.test.cpp)
+- [Verify: range-tree-fenwick.cpp](../../tests/unit/data-structure-2d/range-tree-fenwick.cpp)

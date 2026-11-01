@@ -4,9 +4,9 @@
 
 入力配列を破壊的にソートし、先頭に仮想根 `(-1,N+1)` を追加する。木の番号はソート後の配列の添字。同一区間は連鎖状に扱われる。
 
-時間 $O(m\log m)$、領域 $O(m)$。実装内で `trc` マクロを使用するため、テンプレートまたは同等の定義を先に読み込む。
+時間 $O(m\log m)$、領域 $O(m)$。
 
 #### 実装・検証
 
 - [実装](../../tree/inclusion-tree.hpp)
-- [検証: yuki-1778.test.cpp](../../verify/verify-yuki/yuki-1778.test.cpp)
+- [Verify: constructions.cpp](../../tests/unit/tree/constructions.cpp)

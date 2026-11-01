@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../misc/base64.hpp)
-- [検証: yuki-0502-base64.test.cpp](../../verify/verify-yuki/yuki-0502-base64.test.cpp)
+- [Verify: base64.cpp](../../tests/unit/misc/base64.cpp)

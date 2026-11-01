@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../string/wildcard-pattern-matching.hpp)
-- [検証: yosupo-wildcard-pattern-matching.test.cpp](../../verify/verify-yosupo-string/yosupo-wildcard-pattern-matching.test.cpp)
-- [検証: yuki-2231.test.cpp](../../verify/verify-yuki/yuki-2231.test.cpp)
+- [Verify: wildcard-pattern-matching.cpp](../../tests/unit/string/wildcard-pattern-matching.cpp)

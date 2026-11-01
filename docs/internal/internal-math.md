@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../internal/internal-math.hpp)
-- [検証: internal-math.test.cpp](../../verify/verify-unit-test/internal-math.test.cpp)
+- [Verify: math-and-traits.cpp](../../tests/unit/internal/math-and-traits.cpp)

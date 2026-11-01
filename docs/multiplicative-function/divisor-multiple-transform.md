@@ -86,6 +86,4 @@ $\mathrm{O}(N\log \log N)$の実装についてはnoshiさんが解説してい�
 #### 実装・検証
 
 - [実装](../../multiplicative-function/divisor-multiple-transform.hpp)
-- [検証: mf.test.cpp](../../verify/verify-unit-test/mf.test.cpp)
-- [検証: multiplicative-function.test.cpp](../../verify/verify-unit-test/multiplicative-function.test.cpp)
-- [検証: yosupo-lcm-convolution.test.cpp](../../verify/verify-yosupo-math/yosupo-lcm-convolution.test.cpp)
+- [Verify: basic.cpp](../../tests/unit/multiplicative-function/basic.cpp)

@@ -7,5 +7,4 @@
 #### 実装・検証
 
 - [実装](../../marathon/log_table.hpp)
-- [関連検証（間接使用）: sa-manager.test.cpp](../../verify/verify-unit-test/sa-manager.test.cpp)
-- [関連検証（間接使用）: simulated-annealing.test.cpp](../../verify/verify-unit-test/simulated-annealing.test.cpp)
+- [Verify: top-k-and-bandit.cpp](../../tests/unit/marathon/top-k-and-bandit.cpp)

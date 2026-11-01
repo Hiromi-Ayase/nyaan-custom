@@ -13,4 +13,4 @@ $a,k$の値によって`powl`関数が上下両方に誤差を発生しうるこ
 #### 実装・検証
 
 - [実装](../../math/kth-root-integral.hpp)
-- [検証: yosupo-kth-root-integral.test.cpp](../../verify/verify-yosupo-math/yosupo-kth-root-integral.test.cpp)
+- [Verify: integer-roots.cpp](../../tests/unit/math/integer-roots.cpp)

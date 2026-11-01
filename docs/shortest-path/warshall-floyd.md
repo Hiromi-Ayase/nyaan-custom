@@ -11,5 +11,4 @@
 #### 実装・検証
 
 - [実装](../../shortest-path/warshall-floyd.hpp)
-- [検証: aoj-grl-1-c.test.cpp](../../verify/verify-aoj-grl/aoj-grl-1-c.test.cpp)
-- [検証: semiring.test.cpp](../../verify/verify-unit-test/semiring.test.cpp)
+- [Verify: negative-edges.cpp](../../tests/unit/shortest-path/negative-edges.cpp)

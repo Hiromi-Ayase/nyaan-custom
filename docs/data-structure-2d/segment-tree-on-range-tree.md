@@ -11,5 +11,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure-2d/segment-tree-on-range-tree.hpp)
-- [検証: yosupo-point-add-rectangle-sum-dseg2d.test.cpp](../../verify/verify-yosupo-ds/yosupo-point-add-rectangle-sum-dseg2d.test.cpp)
-- [検証: ACL 移行・矩形和の差分検証](../../verify/verify-unit-test/acl-segment-tree.test.cpp)
+- [Verify: range-tree-segment.cpp](../../tests/unit/data-structure-2d/range-tree-segment.cpp)

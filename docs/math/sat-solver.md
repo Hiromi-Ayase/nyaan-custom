@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math/sat-solver.hpp)
-- [検証: yuki-1777.test.cpp](../../verify/verify-yuki/yuki-1777.test.cpp)
+- [Verify: sat.cpp](../../tests/unit/math/sat.cpp)

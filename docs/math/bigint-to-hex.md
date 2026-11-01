@@ -7,5 +7,4 @@
 #### 実装・検証
 
 - [実装](../../math/bigint-to-hex.hpp)
-- [検証: bigint-gcd.test.cpp](../../verify/verify-unit-test/bigint-gcd.test.cpp)
-- [検証: yosupo-division-of-hex.test.cpp](../../verify/verify-yosupo-math/yosupo-division-of-hex.test.cpp)
+- [Verify: bigint-hex.cpp](../../tests/unit/math/bigint-hex.cpp)

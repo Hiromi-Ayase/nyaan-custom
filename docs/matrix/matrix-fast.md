@@ -9,6 +9,4 @@
 #### 実装・検証
 
 - [実装](../../matrix/matrix-fast.hpp)
-- [検証: template.test.cpp](../../verify/verify-unit-test/template.test.cpp)
-- [検証: yosupo-determinant-matrixlib.test.cpp](../../verify/verify-yosupo-math/yosupo-determinant-matrixlib.test.cpp)
-- [検証: yosupo-pow-of-matrix-2.test.cpp](../../verify/verify-yosupo-math/yosupo-pow-of-matrix-2.test.cpp)
+- [Verify: fixed.cpp](../../tests/unit/matrix/fixed.cpp)

@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/sliding-window-minimum.hpp)
-- [検証: aoj-dsl-3-d.test.cpp](../../verify/verify-aoj-dsl/aoj-dsl-3-d.test.cpp)
+- [Verify: sparse-and-window.cpp](../../tests/unit/data-structure/sparse-and-window.cpp)

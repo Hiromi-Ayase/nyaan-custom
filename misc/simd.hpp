@@ -28,7 +28,7 @@ using m256 = __m256i;
 #define MSUB(a, b, MOD) GETMOD(SUB(ADD(a, MOD), b), MOD)
 
 #define SETLO(a) _mm256_shuffle_epi32(a, 0xA0)
-#define SETHI(a) _mm256_shuffle_epi32(a, 0xF9)
+#define SETHI(a) _mm256_shuffle_epi32(a, 0xF5)
 #define CAST64(a) AND(a, SET64(0xFFFFFFFF))
 #define ADD64(a, b) _mm256_add_epi64(a, b)
 

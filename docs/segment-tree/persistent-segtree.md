@@ -15,4 +15,4 @@
 #### 実装・検証
 
 - [実装](../../segment-tree/persistent-segment-tree.hpp)
-- [関連検証（間接使用）: yosupo-rectangle-sum.test.cpp](../../verify/verify-yosupo-ds/yosupo-rectangle-sum.test.cpp)
+- [Verify: persistent-and-dynamic.cpp](../../tests/unit/segment-tree/persistent-and-dynamic.cpp)

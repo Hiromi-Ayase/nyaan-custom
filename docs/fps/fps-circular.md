@@ -14,5 +14,4 @@ $g \equiv \cos f, h \equiv \sin f \pmod{x^n}$ を求めたい。
 #### 実装・検証
 
 - [実装](../../fps/fps-circular.hpp)
-- [検証: yuki-0963-circular.test.cpp](../../verify/verify-yuki/yuki-0963-circular.test.cpp)
-- [検証: yuki-1080.test.cpp](../../verify/verify-yuki/yuki-1080.test.cpp)
+- [Verify: special-series.cpp](../../tests/unit/fps/special-series.cpp)

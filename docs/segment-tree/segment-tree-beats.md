@@ -15,5 +15,4 @@ Range (Chmin Chmax Add Update)クエリとRange (Min Max Sum)クエリに対応�
 #### 実装・検証
 
 - [実装](../../segment-tree/segment-tree-beats.hpp)
-- [検証: segment-tree-beats.test.cpp](../../verify/verify-unit-test/segment-tree-beats.test.cpp)
-- [検証: yosupo-segtree-beats.test.cpp](../../verify/verify-yosupo-ds/yosupo-segtree-beats.test.cpp)
+- [Verify: beats.cpp](../../tests/unit/segment-tree/beats.cpp)

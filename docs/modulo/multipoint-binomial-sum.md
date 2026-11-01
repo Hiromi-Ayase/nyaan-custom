@@ -9,4 +9,4 @@ Mo のアルゴリズムで `(n,m)` を移動し、部分和の漸化式で 1 �
 #### 実装・検証
 
 - [実装](../../modulo/multipoint-binomial-sum.hpp)
-- [検証: multipoint-binomial-sum.test.cpp](../../verify/verify-unit-test/multipoint-binomial-sum.test.cpp)
+- [Verify: factorial-and-binomial-prefix.cpp](../../tests/unit/modulo/factorial-and-binomial-prefix.cpp)

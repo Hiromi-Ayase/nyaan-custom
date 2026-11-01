@@ -11,6 +11,4 @@
 #### 実装・検証
 
 - [実装](../../fps/newton-method.hpp)
-- [検証: yosupo-compositional-inverse-newton.test.cpp](../../verify/verify-yosupo-fps/yosupo-compositional-inverse-newton.test.cpp)
-- [検証: yosupo-exp-newton-method-2.test.cpp](../../verify/verify-yosupo-fps/yosupo-exp-newton-method-2.test.cpp)
-- [検証: yosupo-exp-newton-method.test.cpp](../../verify/verify-yosupo-fps/yosupo-exp-newton-method.test.cpp)
+- [Verify: equations.cpp](../../tests/unit/fps/equations.cpp)

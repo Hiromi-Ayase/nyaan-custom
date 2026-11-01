@@ -9,5 +9,5 @@ Lagrange の基底を前後の積で計算する。階乗表の準備後は時�
 #### 実装・検証
 
 - [実装](../../fps/lagrange-interpolation-point.hpp)
-- [検証: yosupo-sum-of-exp-poly-limit.test.cpp](../../verify/verify-yosupo-fps/yosupo-sum-of-exp-poly-limit.test.cpp)
-- [検証: yosupo-sum-of-exp-poly.test.cpp](../../verify/verify-yosupo-fps/yosupo-sum-of-exp-poly.test.cpp)
+- [Verify: famous-series.cpp](../../tests/unit/fps/famous-series.cpp)
+- [Verify: shifts.cpp](../../tests/unit/fps/shifts.cpp)

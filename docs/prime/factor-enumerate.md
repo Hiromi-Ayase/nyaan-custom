@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../prime/factor-enumerate.hpp)
-- [関連検証（間接使用）: factorize.test.cpp](../../verify/verify-unit-test/factorize.test.cpp)
-- [関連検証（間接使用）: osak.test.cpp](../../verify/verify-unit-test/osak.test.cpp)
+- [Verify: factorization.cpp](../../tests/unit/prime/factorization.cpp)

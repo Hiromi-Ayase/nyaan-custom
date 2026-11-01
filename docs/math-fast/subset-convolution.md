@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../math-fast/subset-convolution.hpp)
-- [検証: yosupo-subset-convolution-fast.test.cpp](../../verify/verify-yosupo-math/yosupo-subset-convolution-fast.test.cpp)
+- [Verify: subset-convolution.cpp](../../tests/unit/math-fast/subset-convolution.cpp)

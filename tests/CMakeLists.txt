@@ -1,0 +1,16 @@
+file(GLOB_RECURSE unit_sources CONFIGURE_DEPENDS "unit/*.cpp")
+include(check-coverage.cmake)
+
+foreach(source IN LISTS unit_sources)
+  file(RELATIVE_PATH name "${CMAKE_CURRENT_SOURCE_DIR}/unit" "${source}")
+  string(REGEX REPLACE "\\.cpp$" "" name "${name}")
+  string(REGEX REPLACE "[^a-zA-Z0-9_]" "_" target "unit_${name}")
+  add_executable("${target}" "${source}")
+  target_compile_features("${target}" PRIVATE cxx_std_17)
+  target_include_directories("${target}" PRIVATE "${PROJECT_SOURCE_DIR}")
+  # Keep assertions active even in Release; many references use exhaustive loops.
+  target_compile_options("${target}" PRIVATE -O2 -UNDEBUG)
+  add_test(NAME "${name}" COMMAND "${target}")
+  string(REGEX REPLACE "/.*" "" category "${name}")
+  set_tests_properties("${name}" PROPERTIES TIMEOUT 60 LABELS "unit;${category}")
+endforeach()

@@ -11,6 +11,4 @@
 #### 実装・検証
 
 - [実装](../../fps/fps-compositional-inverse.hpp)
-- [検証: composition.test.cpp](../../verify/verify-unit-test/composition.test.cpp)
-- [検証: yosupo-compositional-inverse-large.test.cpp](../../verify/verify-yosupo-fps/yosupo-compositional-inverse-large.test.cpp)
-- [検証: yosupo-compositional-inverse.test.cpp](../../verify/verify-yosupo-fps/yosupo-compositional-inverse.test.cpp)
+- [Verify: equations.cpp](../../tests/unit/fps/equations.cpp)

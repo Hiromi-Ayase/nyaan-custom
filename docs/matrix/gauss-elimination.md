@@ -11,6 +11,4 @@ $H\times W$ 行列に対して時間 $O(HW\min(H,W))$、行列以外の領域は
 #### 実装・検証
 
 - [実装](../../matrix/gauss-elimination.hpp)
-- [検証: gauss-elimination.test.cpp](../../verify/verify-unit-test/gauss-elimination.test.cpp)
-- [検証: inverse-matrix.test.cpp](../../verify/verify-unit-test/inverse-matrix.test.cpp)
-- [検証: yosupo-linear-equation-2.test.cpp](../../verify/verify-yosupo-math/yosupo-linear-equation-2.test.cpp)
+- [Verify: linear-algebra.cpp](../../tests/unit/matrix/linear-algebra.cpp)

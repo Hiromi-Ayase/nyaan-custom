@@ -9,4 +9,4 @@
 #### 実装・検証
 
 - [実装](../../modint/vectorize-modint.hpp)
-- [検証: yosupo-matrix-product-vectorize-modint.test.cpp](../../verify/verify-yosupo-math/yosupo-matrix-product-vectorize-modint.test.cpp)
+- [Verify: simd.cpp](../../tests/unit/modint/simd.cpp)

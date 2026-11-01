@@ -31,4 +31,4 @@ $$a \uparrow \uparrow b \equiv a^{a \uparrow \uparrow (b-1)} \equiv a^{(a \uparr
 #### 実装・検証
 
 - [実装](../../modulo/tetration.hpp)
-- [検証: yosupo-tetration-mod.test.cpp](../../verify/verify-yosupo-math/yosupo-tetration-mod.test.cpp)
+- [Verify: tetration.cpp](../../tests/unit/modulo/tetration.cpp)

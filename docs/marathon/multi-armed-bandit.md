@@ -9,3 +9,4 @@
 #### 実装・検証
 
 - [実装](../../marathon/multi-armed-bandit.hpp)
+- [Verify: top-k-and-bandit.cpp](../../tests/unit/marathon/top-k-and-bandit.cpp)

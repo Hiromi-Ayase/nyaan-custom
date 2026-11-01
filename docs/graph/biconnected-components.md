@@ -13,5 +13,4 @@
 #### 実装・検証
 
 - [実装](../../graph/biconnected-components.hpp)
-- [関連検証（間接使用）: aoj-3022.test.cpp](../../verify/verify-aoj-other/aoj-3022.test.cpp)
-- [関連検証（間接使用）: yuki-1326.test.cpp](../../verify/verify-yuki/yuki-1326.test.cpp)
+- [Verify: cuts.cpp](../../tests/unit/graph/cuts.cpp)

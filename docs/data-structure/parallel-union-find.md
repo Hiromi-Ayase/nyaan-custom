@@ -9,5 +9,4 @@
 #### 実装・検証
 
 - [実装](../../data-structure/parallel-union-find.hpp)
-- [検証: parallel-union-find.test.cpp](../../verify/verify-unit-test/parallel-union-find.test.cpp)
-- [検証: yosupo-range-parallel-unionfind.test.cpp](../../verify/verify-yosupo-ds/yosupo-range-parallel-unionfind.test.cpp)
+- [Verify: range-union-find.cpp](../../tests/unit/data-structure/range-union-find.cpp)

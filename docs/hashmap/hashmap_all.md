@@ -19,6 +19,4 @@
 
 - [実装: hashmap.hpp](../../hashmap/hashmap.hpp)
 - [実装: hashmap-unerasable.hpp](../../hashmap/hashmap-unerasable.hpp)
-- [検証: aoj-1377.test.cpp](../../verify/verify-aoj-other/aoj-1377.test.cpp)
-- [検証: debug.test.cpp](../../verify/verify-unit-test/debug.test.cpp)
-- [検証: hashmap.test.cpp](../../verify/verify-unit-test/hashmap.test.cpp)
+- [Verify: maps-and-sets.cpp](../../tests/unit/hashmap/maps-and-sets.cpp)
