@@ -1,5 +1,7 @@
 ## 頂点間の距離の度数分布
 
+入力の隣接リストは `vector<vector<int>>` と `vector<vector<pair<int, T>>>`（行き先・重み）の両方に対応する。木の構造の計算では重みを無視する。
+
 頂点間の距離の度数分布を$\mathrm{O}(n \log^2 n)$で計算するライブラリ。
 
 #### 使い方
@@ -11,3 +13,4 @@
 
 - [実装](../../tree/frequency-table-of-tree-distance.hpp)
 - [Verify: centroids-and-distances.cpp](../../tests/unit/tree/centroids-and-distances.cpp)
+- [Verify: weighted-containers.cpp](../../tests/unit/tree/weighted-containers.cpp)

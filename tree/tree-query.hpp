@@ -1,5 +1,5 @@
 #pragma once
-#include "../graph/graph-template.hpp"
+#include "../graph/graph-utility.hpp"
 
 template <typename G>
 struct Tree {
@@ -8,10 +8,13 @@ struct Tree {
   int root;
   vector<array<int, 24>> bl;
   vector<int> dp;
+
   void build() {
     bl.resize(g.size());
     dp.resize(g.size());
-    for (auto& v : bl) fill(begin(v), end(v), -1);
+    for (auto& v : bl) {
+      fill(begin(v), end(v), -1);
+    }
     dfs(root, -1, 0);
   }
 
@@ -21,21 +24,32 @@ struct Tree {
       bl[c][x] = i;
       i = bl[i][x], x++;
     }
-    for (auto& d : g[c]) {
-      if (d == p) continue;
+    for (const auto& entry : g[c]) {
+      int d = graph_internal::to_vertex(entry);
+      if (d == p) {
+        continue;
+      }
       dfs(d, c, _dp + 1);
     }
   }
 
  public:
-  Tree(G& _g, int _r = 0) : g(_g), root(_r) { build(); }
+  Tree(G& _g, int _r = 0) : g(_g), root(_r) {
+    build();
+  }
 
-  int depth(int u) const { return dp[u]; }
+  int depth(int u) const {
+    return dp[u];
+  }
 
-  int par(int u) const { return u == root ? -1 : bl[u][0]; }
+  int par(int u) const {
+    return u == root ? -1 : bl[u][0];
+  }
 
   int kth_ancestor(int u, int k) const {
-    if (dp[u] < k) return -1;
+    if (dp[u] < k) {
+      return -1;
+    }
     while (k) {
       int t = __builtin_ctz(k);
       u = bl[u][t], k ^= 1 << t;
@@ -44,7 +58,9 @@ struct Tree {
   }
 
   int nxt(int s, int t) const {
-    if (dp[s] >= dp[t]) return par(s);
+    if (dp[s] >= dp[t]) {
+      return par(s);
+    }
     int u = kth_ancestor(t, dp[t] - dp[s] - 1);
     return bl[u][0] == s ? u : bl[s][0];
   }
@@ -73,13 +89,21 @@ struct Tree {
 
   int lca(int u, int v) {
     if (dp[u] != dp[v]) {
-      if (dp[u] > dp[v]) swap(u, v);
+      if (dp[u] > dp[v]) {
+        swap(u, v);
+      }
       v = kth_ancestor(v, dp[v] - dp[u]);
     }
-    if (u == v) return u;
+    if (u == v) {
+      return u;
+    }
     for (int i = __lg(dp[u]); i >= 0; --i) {
-      if (dp[u] < (1 << i)) continue;
-      if (bl[u][i] != bl[v][i]) u = bl[u][i], v = bl[v][i];
+      if (dp[u] < (1 << i)) {
+        continue;
+      }
+      if (bl[u][i] != bl[v][i]) {
+        u = bl[u][i], v = bl[v][i];
+      }
     }
     return bl[u][0];
   }
@@ -89,9 +113,13 @@ struct Tree {
   int jump(int u, int v, int i) {
     int lc = lca(u, v);
     int d1 = dp[u] - dp[lc];
-    if (i <= d1) return kth_ancestor(u, i);
+    if (i <= d1) {
+      return kth_ancestor(u, i);
+    }
     int d = d1 + dp[v] - dp[lc];
-    if (i <= d) return kth_ancestor(v, d - i);
+    if (i <= d) {
+      return kth_ancestor(v, d - i);
+    }
     return -1;
   }
 };

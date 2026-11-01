@@ -1,5 +1,5 @@
 // Verify: shortest-path/dijkstra-skew-heap.hpp
-// 静的グラフの隣接辺を直接確認し、最短距離・親の復元を全単純路のDFSと比較する。
+// 標準のpair隣接リストを渡し、最短距離・親の復元を全単純路のDFSと比較する。
 #include <bits/stdc++.h>
 using namespace std;
 #include "shortest-path/dijkstra-skew-heap.hpp"
@@ -49,31 +49,18 @@ int main() {
   mt19937 rng(802);
   for (int n = 1; n <= 7; ++n) {
     for (int trial = 0; trial < 100; ++trial) {
-      Graph reference(n);
+      Graph graph(n);
       int edges = trial == 0 ? 0 : rng() % (n * n + 1);
-      StaticGraph<long long> graph(n, edges);
       for (int i = 0; i < edges; ++i) {
         int u = rng() % n;
         int v = rng() % n;
         long long weight = rng() % 30;
-        reference[u].emplace_back(v, weight);
-        graph.add_edge(u, v, weight);
-      }
-      for (int u = 0; u < n; ++u) {
-        vector<pair<int, long long>> got;
-        for (auto [v, weight] : graph[u]) {
-          got.emplace_back(v, weight);
-        }
-        sort(got.begin(), got.end());
-        auto expected = reference[u];
-        sort(expected.begin(), expected.end());
-        // 圧縮された隣接配列に、各頂点の辺が多重度と重みを含めて保存されている。
-        assert(got == expected);
+        graph[u].emplace_back(v, weight);
       }
       for (int source = 0; source < n; ++source) {
-        auto expected = enumerate_paths(reference, source);
+        auto expected = enumerate_paths(graph, source);
 
-        auto got = dijkstra_restore(graph, source);
+        auto got = dijkstra_restore_skew_heap(graph, source);
         for (int goal = 0; goal < n; ++goal) {
           // decrease-keyや到達不能の扱いを、全単純路の列挙結果と照合する。
           assert(got[goal].first == expected[goal]);
@@ -87,7 +74,7 @@ int main() {
             v = got[v].second;
           }
           reverse(path.begin(), path.end());
-          check_path(reference, expected, source, goal, path);
+          check_path(graph, expected, source, goal, path);
         }
       }
     }

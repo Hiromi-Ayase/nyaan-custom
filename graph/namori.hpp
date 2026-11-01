@@ -1,16 +1,19 @@
 #pragma once
 
+#include <algorithm>
+#include <cassert>
+#include <utility>
+
 #include <vector>
 
 #include "../data-structure/union-find.hpp"
 #include "../tree/heavy-light-decomposition.hpp"
-#include "graph-template.hpp"
 
 using namespace std;
 
 template <typename T>
 struct Namori {
-  using G = WeightedGraph<T>;
+  using G = vector<vector<pair<int, T>>>;
 
   int n;
   G g;
@@ -28,7 +31,9 @@ struct Namori {
   // HL分解
   vector<HeavyLightDecomposition<G>> hld;
 
-  Namori(int _n = 0) : _uf(_n) { init(_n); }
+  Namori(int _n = 0) : _uf(_n) {
+    init(_n);
+  }
 
   void init(int _n) {
     n = _n;
@@ -42,17 +47,23 @@ struct Namori {
   void add_edge(int u, int v, T w = 1) {
     assert(_built == false);
     if (_uf.same(u, v)) {
-      _root = u, _adj = v, _w = w;
+      _root = u;
+      _adj = v;
+      _w = w;
     } else {
       _uf.unite(u, v);
-      g[u].emplace_back(u, v, w);
-      g[v].emplace_back(v, u, w);
+      g[u].emplace_back(v, w);
+      g[v].emplace_back(u, w);
     }
-    if (++_es == n) build();
+    if (++_es == n) {
+      build();
+    }
   }
 
   void build() {
-    if (_built) return;
+    if (_built) {
+      return;
+    }
 
     _buf.resize(n, -1);
     dfs1(_root, -1);
@@ -60,18 +71,24 @@ struct Namori {
     for (int c = _adj; c >= 0; c = _buf[c]) {
       loop.emplace_back(c, -1);
       _is_loop[c] = true;
-      for (auto& e : g[c]) {
-        if (e == _buf[c]) loop.back().second = e.cost;
+      for (const auto& [to, weight] : g[c]) {
+        if (to == _buf[c]) {
+          loop.back().second = weight;
+        }
       }
     }
     assert(loop.back().first == _root);
     loop.back().second = _w;
 
     _h.resize(n);
-    for (auto& [i, _] : loop) dfs2(i, -1);
+    for (auto& [i, _] : loop) {
+      dfs2(i, -1);
+    }
 
     fill(begin(_buf), end(_buf), 0);
-    for (auto& [i, _] : loop) dfs3(i);
+    for (auto& [i, _] : loop) {
+      dfs3(i);
+    }
 
     _uf.data.clear();
     _buf.clear();
@@ -91,9 +108,13 @@ struct Namori {
     _built = true;
   }
 
-  pair<int, int> idx(int i) const { return mp[i]; }
+  pair<int, int> idx(int i) const {
+    return mp[i];
+  }
 
-  int root(int i) const { return loop[mp[i].first].first; }
+  int root(int i) const {
+    return loop[mp[i].first].first;
+  }
 
  private:
   // 初期化用の状態変数
@@ -107,7 +128,7 @@ struct Namori {
 
   // parをメモする
   void dfs1(int c, int p) {
-    for (auto& d : g[c]) {
+    for (const auto& [d, weight] : g[c]) {
       if (d != p) {
         _buf[d] = c;
         dfs1(d, c);
@@ -117,9 +138,11 @@ struct Namori {
 
   // _h で有向木を作る
   void dfs2(int c, int p) {
-    for (auto& d : g[c]) {
-      if (d == p or _is_loop[d]) continue;
-      _h[c].emplace_back(c, d, d.cost);
+    for (const auto& [d, weight] : g[c]) {
+      if (d == p or _is_loop[d]) {
+        continue;
+      }
+      _h[c].emplace_back(d, weight);
       dfs2(d, c);
     }
   }
@@ -127,11 +150,12 @@ struct Namori {
   // HLD用に順番替え
   void dfs3(int c) {
     _buf[c] = 1;
-    for (auto& d : _h[c]) {
+    for (auto& entry : _h[c]) {
+      auto [d, weight] = entry;
       dfs3(d);
       _buf[c] += _buf[d];
-      if (_buf[d] > _buf[_h[c][0]]) {
-        swap(_h[c][0], d);
+      if (_buf[d] > _buf[_h[c][0].first]) {
+        swap(_h[c][0], entry);
       }
     }
   }
@@ -139,20 +163,22 @@ struct Namori {
   // 順番をつける
   void dfs4(int c, int i, int& j) {
     mp[c] = make_pair(i, j++);
-    for (auto& d : _h[c]) {
+    for (auto& entry : _h[c]) {
+      auto [d, weight] = entry;
       dfs4(d, i, j);
     }
   }
 
   // 部分グラフを作る
   void dfs5(int c) {
-    for (auto& d : _h[c]) {
+    for (auto& entry : _h[c]) {
+      auto [d, weight] = entry;
       dfs5(d);
       auto [i, j] = mp[c];
       auto [_, k] = mp[d];
-      aux[i][j].emplace_back(j, k, d.cost);
+      aux[i][j].emplace_back(k, weight);
       // 逆辺も入れたいときはここをオンにする(動くか不明)
-      // aux[i][k].emplace_back(k, j, d.cost);
+      // aux[i][k].emplace_back(j, weight);
     }
   }
 };

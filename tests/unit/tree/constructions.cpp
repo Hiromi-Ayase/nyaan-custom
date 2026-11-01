@@ -5,7 +5,6 @@
 // 最小葉の除去によるPruefer符号化、区間最小値によるCartesian Tree、包含・併合の全探索を使う。
 #include <bits/stdc++.h>
 using namespace std;
-#include "graph/graph-template.hpp"
 #include "data-structure/union-find.hpp"
 #include "tree/pruefer-code.hpp"
 #include "tree/cartesian-tree.hpp"
@@ -113,7 +112,7 @@ int main() {
     assert(intervals.front() == make_pair(-1, n + 1));
   }
   for (int n = 1; n <= 30; ++n) {
-    Edges<int> edges;
+    vector<tuple<int, int, int>> edges;
     for (int u = 1; u < n; ++u) {
       edges.emplace_back(u, rng() % u, rng() % 30);
     }
@@ -129,22 +128,22 @@ int main() {
     vector<int> component(n);
     iota(component.begin(), component.end(), 0);
     int next = n;
-    for (auto e : edges) {
-      int a = component[e.src];
-      int b = component[e.to];
+    for (auto [src, to, weight] : edges) {
+      int a = component[src];
+      int b = component[to];
       if (a == b) {
         continue;
       }
       set<int> wanted = cluster[a];
       wanted.insert(cluster[b].begin(), cluster[b].end());
       set<int> actual;
-      for (auto child : tree[next]) {
-        actual.insert(cluster[child.to].begin(), cluster[child.to].end());
+      for (auto [child, cost] : tree[next]) {
+        actual.insert(cluster[child].begin(), cluster[child].end());
         // 補助頂点からの辺は、この併合に使った重みを保持する。
-        assert(child.cost == e.cost);
+        assert(cost == weight);
       }
       // 入力順に集合を併合した結果と、補助頂点の子が表す集合が一致する。
-      assert(actual == wanted && weights[next - n] == e.cost && tree[next].size() == 2);
+      assert(actual == wanted && weights[next - n] == weight && tree[next].size() == 2);
       cluster[next] = wanted;
       for (int& x : component) {
         if (x == a || x == b) {

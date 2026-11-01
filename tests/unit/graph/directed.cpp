@@ -42,77 +42,88 @@ int main() {
           }
         }
       }
-      StronglyConnectedComponents scc(g);
-      vector<int> seen(n);
-      multiset<pair<int, int>> expected_edges;
-      multiset<pair<int, int>> actual_edges;
-      for (int c = 0; c < (int)scc.dag.size(); ++c) {
-        for (int u : scc.belong(c)) {
-          ++seen[u];
-          // belongと頂点からの成分番号が互いに逆の対応になる。
-          assert(scc[u] == c);
-        }
-        for (int d : scc.dag[c]) {
-          actual_edges.emplace(c, d);
-        }
-      }
-      for (int u = 0; u < n; ++u) {
-        // 孤立点を含め、各頂点がちょうど一つの成分に属する。
-        assert(seen[u] == 1);
-        for (int v = 0; v < n; ++v) {
-          // 同じ強連結成分であることと、相互に到達できることは同値。
-          assert((scc[u] == scc[v]) == (reach[u][v] && reach[v][u]));
-        }
-        for (int v : g[u]) {
-          if (scc[u] != scc[v]) {
-            expected_edges.emplace(scc[u], scc[v]);
+      auto verify = [&](auto& input) {
+        StronglyConnectedComponents scc(input);
+        vector<int> seen(n);
+        multiset<pair<int, int>> expected_edges;
+        multiset<pair<int, int>> actual_edges;
+        for (int c = 0; c < (int)scc.dag.size(); ++c) {
+          for (int u : scc.belong(c)) {
+            ++seen[u];
+            // belongと頂点からの成分番号が互いに逆の対応になる。
+            assert(scc[u] == c);
+          }
+          for (int d : scc.dag[c]) {
+            actual_edges.emplace(c, d);
           }
         }
-      }
-      // 縮約後も成分間の辺が、多重度込みで保存される。
-      assert(actual_edges == expected_edges);
-      auto cycle = CycleDetection(g);
-      // 自己ループを含む閉路の有無が、BFSで始点へ戻れるかと一致する。
-      assert(!cycle.empty() == cyclic);
-      for (int i = 0; i < (int)cycle.size(); ++i) {
-        auto [u, v] = cycle[i];
-        // 復元結果は実在する辺が連続した閉じた列である。
-        assert(find(g[u].begin(), g[u].end(), v) != g[u].end());
-        assert(v == cycle[(i + 1) % cycle.size()].first);
-      }
-      auto topo = TopologicalSort(g);
-      auto grundy = GrundyNumber(g);
-      if (cyclic) {
-        // DAG専用の二つのAPIは、閉路があれば空列を返す。
-        assert(topo.empty() && grundy.empty());
-      } else {
-        vector<int> position(n);
-        // DAGなら全頂点を重複なく列挙する。
-        assert((int)topo.size() == n);
-        assert(set<int>(topo.begin(), topo.end()).size() == topo.size());
-        for (int i = 0; i < n; ++i) {
-          position[topo[i]] = i;
-        }
-        auto mex = [&](auto&& self, int u) -> int {
-          set<int> values;
-          for (int v : g[u]) {
-            values.insert(self(self, v));
-          }
-          int answer = 0;
-          while (values.count(answer)) {
-            ++answer;
-          }
-          return answer;
-        };
         for (int u = 0; u < n; ++u) {
-          for (int v : g[u]) {
-            // 全ての辺で始点が終点より先に現れる。
-            assert(position[u] < position[v]);
+          // 孤立点を含め、各頂点がちょうど一つの成分に属する。
+          assert(seen[u] == 1);
+          for (int v = 0; v < n; ++v) {
+            // 同じ強連結成分であることと、相互に到達できることは同値。
+            assert((scc[u] == scc[v]) == (reach[u][v] && reach[v][u]));
           }
-          // mexをその定義の再帰と集合で計算し、各頂点のGrundy数を比較する。
-          assert(grundy[u] == mex(mex, u));
+          for (int v : g[u]) {
+            if (scc[u] != scc[v]) {
+              expected_edges.emplace(scc[u], scc[v]);
+            }
+          }
+        }
+        // 縮約後も成分間の辺が、多重度込みで保存される。
+        assert(actual_edges == expected_edges);
+        auto cycle = CycleDetection(input);
+        // 自己ループを含む閉路の有無が、BFSで始点へ戻れるかと一致する。
+        assert(!cycle.empty() == cyclic);
+        for (int i = 0; i < (int)cycle.size(); ++i) {
+          auto [u, v] = cycle[i];
+          // 復元結果は実在する辺が連続した閉じた列である。
+          assert(find(g[u].begin(), g[u].end(), v) != g[u].end());
+          assert(v == cycle[(i + 1) % cycle.size()].first);
+        }
+        auto topo = TopologicalSort(input);
+        auto grundy = GrundyNumber(g);
+        if (cyclic) {
+          // DAG専用の二つのAPIは、閉路があれば空列を返す。
+          assert(topo.empty() && grundy.empty());
+        } else {
+          vector<int> position(n);
+          // DAGなら全頂点を重複なく列挙する。
+          assert((int)topo.size() == n);
+          assert(set<int>(topo.begin(), topo.end()).size() == topo.size());
+          for (int i = 0; i < n; ++i) {
+            position[topo[i]] = i;
+          }
+          auto mex = [&](auto&& self, int u) -> int {
+            set<int> values;
+            for (int v : g[u]) {
+              values.insert(self(self, v));
+            }
+            int answer = 0;
+            while (values.count(answer)) {
+              ++answer;
+            }
+            return answer;
+          };
+          for (int u = 0; u < n; ++u) {
+            for (int v : g[u]) {
+              // 全ての辺で始点が終点より先に現れる。
+              assert(position[u] < position[v]);
+            }
+            // mexをその定義の再帰と集合で計算し、各頂点のGrundy数を比較する。
+            assert(grundy[u] == mex(mex, u));
+          }
+        }
+      };
+      verify(g);
+      vector<vector<pair<int, long long>>> weighted(n);
+      for (int u = 0; u < n; ++u) {
+        for (int v : g[u]) {
+          weighted[u].emplace_back(v, (long long)u * 1000000000 - v);
         }
       }
+      // 同じ到達可能性の期待値で、pairの重みを無視した構造も検証する。
+      verify(weighted);
     }
   }
 }

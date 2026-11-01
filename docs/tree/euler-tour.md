@@ -1,5 +1,7 @@
 ## Euler Tour
 
+入力の隣接リストは `vector<vector<int>>` と `vector<vector<pair<int, T>>>`（行き先・重み）の両方に対応する。木の構造の計算では重みを無視する。
+
 無向森が与えられたときにそれぞれの木に対してEuler Tourを構築するライブラリ。
 
 #### 概要
@@ -31,3 +33,4 @@ TODO: 森が与えられた時と辺クエリのverifyを書いていないの�
 
 - [実装](../../tree/euler-tour.hpp)
 - [Verify: queries.cpp](../../tests/unit/tree/queries.cpp)
+- [Verify: weighted-containers.cpp](../../tests/unit/tree/weighted-containers.cpp)

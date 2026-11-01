@@ -8,7 +8,6 @@
 #include <vector>
 using namespace std;
 
-#include "../graph/graph-template.hpp"
 #include "static-top-tree-vertex-based.hpp"
 
 namespace DynamicDiameterImpl {
@@ -17,26 +16,37 @@ template <typename T>
 struct HalfPath {
   T d;
   int u;
+
   friend HalfPath max(const HalfPath& lhs, const HalfPath& rhs) {
-    if (lhs.d != rhs.d) return lhs.d > rhs.d ? lhs : rhs;
+    if (lhs.d != rhs.d) {
+      return lhs.d > rhs.d ? lhs : rhs;
+    }
     return lhs.u > rhs.u ? lhs : rhs;
   }
 };
+
 template <typename T>
 struct Path {
   T d;
   int u, v;
+
   friend Path max(const Path& lhs, const Path& rhs) {
-    if (lhs.d != rhs.d) return lhs.d > rhs.d ? lhs : rhs;
-    if (lhs.u != rhs.u) return lhs.u > rhs.u ? lhs : rhs;
+    if (lhs.d != rhs.d) {
+      return lhs.d > rhs.d ? lhs : rhs;
+    }
+    if (lhs.u != rhs.u) {
+      return lhs.u > rhs.u ? lhs : rhs;
+    }
     return lhs.v > rhs.v ? lhs : rhs;
   }
 };
+
 template <typename T>
 struct L {
   Path<T> dia;
   HalfPath<T> d1, d2;
 };
+
 template <typename T>
 struct H {
   Path<T> dia;
@@ -102,12 +112,12 @@ H<T> add_vertex(const L<T>& a, T x, int i) {
 template <typename T>
 struct Aux_Tree {
   int N, _buf;
-  const WeightedGraph<T>& g;
+  const vector<vector<pair<int, T>>>& g;
   vector<vector<int>> aux;
   vector<T> w;
   map<pair<int, int>, int> e_to_id;
 
-  Aux_Tree(const WeightedGraph<T>& _g) : g(_g) {
+  Aux_Tree(const vector<vector<pair<int, T>>>& _g) : g(_g) {
     N = g.size();
     aux.resize(2 * N - 1);
     w.resize(2 * N - 1);
@@ -117,12 +127,16 @@ struct Aux_Tree {
   }
 
   void dfs(int c, int p) {
-    for (auto& d : g[c]) {
-      if (d == p) continue;
+    for (const auto& [d, weight] : g[c]) {
+      if (d == p) {
+        continue;
+      }
       int id = _buf++;
-      aux[id].push_back(c), aux[c].push_back(id);
-      aux[id].push_back(d), aux[d].push_back(id);
-      w[id] = d.cost;
+      aux[id].push_back(c);
+      aux[c].push_back(id);
+      aux[id].push_back(d);
+      aux[d].push_back(id);
+      w[id] = weight;
       e_to_id[minmax<int>(c, d)] = id;
       dfs(d, c);
     }
@@ -131,18 +145,17 @@ struct Aux_Tree {
 
 template <typename T>
 struct DynamicDiameter {
-  const WeightedGraph<T>& g;
+  const vector<vector<pair<int, T>>>& g;
   int n;
   Aux_Tree<T> aux;
   HeavyLightDecomposition<vector<vector<int>>> hld;
-  DPonStaticTopTreeVertexBased<
-      vector<vector<int>>, H<T>, L<T>, function<H<T>(int)>,
-      function<H<T>(const H<T>&, const H<T>&)>,
-      function<L<T>(const L<T>&, const L<T>&)>, function<L<T>(const H<T>&)>,
-      function<H<T>(const L<T>&, int)>>
+  DPonStaticTopTreeVertexBased<vector<vector<int>>, H<T>, L<T>, function<H<T>(int)>,
+                               function<H<T>(const H<T>&, const H<T>&)>,
+                               function<L<T>(const L<T>&, const L<T>&)>,
+                               function<L<T>(const H<T>&)>, function<H<T>(const L<T>&, int)>>
       dp;
 
-  DynamicDiameter(const WeightedGraph<T>& _g)
+  DynamicDiameter(const vector<vector<pair<int, T>>>& _g)
       : g(_g),
         n(g.size()),
         aux(g),
@@ -152,9 +165,7 @@ struct DynamicDiameter {
             [&](const H<T>& p, const H<T>& c) { return compress(p, c); },
             [&](const L<T>& a, const L<T>& b) { return rake(a, b); },
             [&](const H<T>& a) { return add_edge(a); },
-            [&](const L<T>& a, int i) {
-              return add_vertex(a, aux.w[i], i < n ? i : -1);
-            }) {}
+            [&](const L<T>& a, int i) { return add_vertex(a, aux.w[i], i < n ? i : -1); }) {}
 
   pair<T, pair<int, int>> get() {
     auto [d, u, v] = dp.get().dia;

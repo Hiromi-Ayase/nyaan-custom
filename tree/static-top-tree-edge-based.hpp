@@ -23,9 +23,19 @@ struct StaticTopTree {
 
   StaticTopTree(const HeavyLightDecomposition<G>& _hld) : hld(_hld) {
     root = hld.root;
-    g = rooted_tree(hld.g, root);
+    g.resize(hld.g.size());
+    for (int u = 0; u < (int)g.size(); ++u) {
+      for (const auto& entry : hld.g[u]) {
+        int v = graph_internal::to_vertex(entry);
+        if (v != hld.par[u]) {
+          g[u].push_back(v);
+        }
+      }
+    }
     int n = g.size();
-    P.resize(n, -1), L.resize(n, -1), R.resize(n, -1);
+    P.resize(n, -1);
+    L.resize(n, -1);
+    R.resize(n, -1);
     T.resize(n, Type::Edge);
     build();
   }
@@ -37,16 +47,28 @@ struct StaticTopTree {
     }
     assert(t != Type::Edge);
     int k = P.size();
-    P.push_back(-1), L.push_back(l), R.push_back(r), T.push_back(t);
-    if (l != -1) P[l] = k;
-    if (r != -1) P[r] = k;
+    P.push_back(-1);
+    L.push_back(l);
+    R.push_back(r);
+    T.push_back(t);
+    if (l != -1) {
+      P[l] = k;
+    }
+    if (r != -1) {
+      P[r] = k;
+    }
     return k;
   }
+
   pair<int, int> merge(const vector<pair<int, int>>& a, Type t) {
     assert(!a.empty());
-    if (a.size() == 1) return a[0];
+    if (a.size() == 1) {
+      return a[0];
+    }
     int sum_s = 0;
-    for (auto& [_, s] : a) sum_s += s;
+    for (auto& [_, s] : a) {
+      sum_s += s;
+    }
     vector<pair<int, int>> b, c;
     for (auto& [i, s] : a) {
       (sum_s > s ? b : c).emplace_back(i, s);
@@ -56,6 +78,7 @@ struct StaticTopTree {
     auto [j, sj] = merge(c, t);
     return {add(i, j, t), si + sj};
   }
+
   pair<int, int> compress(int i) {
     vector<pair<int, int>> chs{{i, 1}};
     while (!g[i].empty()) {
@@ -64,11 +87,15 @@ struct StaticTopTree {
     }
     return merge(chs, Type::Compress);
   }
+
   pair<int, int> rake(int i) {
     vector<pair<int, int>> chs{{g[i][0], 1}};
-    for (int j = 1; j < (int)g[i].size(); j++) chs.push_back(compress(g[i][j]));
+    for (int j = 1; j < (int)g[i].size(); j++) {
+      chs.push_back(compress(g[i][j]));
+    }
     return merge(chs, Type::Rake);
   }
+
   void build() {
     auto [i, n] = compress(root);
     assert((int)g.size() == n);
@@ -77,8 +104,7 @@ struct StaticTopTree {
   }
 };
 
-template <typename G, typename Data, typename Edge, typename Compress,
-          typename Rake>
+template <typename G, typename Data, typename Edge, typename Compress, typename Rake>
 struct DPonStaticTopTree {
   const StaticTopTree<G> tt;
   vector<Data> dat;
@@ -94,9 +120,15 @@ struct DPonStaticTopTree {
     dfs(tt.tt_root);
   }
 
-  Data get() { return dat[tt.tt_root]; }
+  Data get() {
+    return dat[tt.tt_root];
+  }
+
   void update(int k) {
-    while (k != -1) _update(k), k = tt.P[k];
+    while (k != -1) {
+      _update(k);
+      k = tt.P[k];
+    }
   }
 
  private:
@@ -111,8 +143,12 @@ struct DPonStaticTopTree {
   }
 
   void dfs(int k) {
-    if (tt.L[k] != -1) dfs(tt.L[k]);
-    if (tt.R[k] != -1) dfs(tt.R[k]);
+    if (tt.L[k] != -1) {
+      dfs(tt.L[k]);
+    }
+    if (tt.R[k] != -1) {
+      dfs(tt.R[k]);
+    }
     _update(k);
   }
 };

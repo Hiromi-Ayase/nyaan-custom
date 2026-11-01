@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../graph/graph-template.hpp"
+#include "../graph/graph-utility.hpp"
 
 // Rerooting
 // f1(c1, c2) ... merge value of child node
@@ -9,24 +9,29 @@
 // dp[i] ... result of tree rooted i
 template <typename T, typename G, typename F1, typename F2>
 struct Rerooting {
-  const G &g;
+  const G& g;
   const F1 f1;
   const F2 f2;
   vector<T> memo, dp;
   T leaf;
 
-  Rerooting(const G &_g, const F1 _f1, const F2 _f2, const T &_leaf)
+  Rerooting(const G& _g, const F1 _f1, const F2 _f2, const T& _leaf)
       : g(_g), f1(_f1), f2(_f2), memo(g.size()), dp(g.size()), leaf(_leaf) {
     dfs(0, -1);
     dfs2(0, -1, T{});
   }
 
-  const T &operator[](int i) const { return dp[i]; }
+  const T& operator[](int i) const {
+    return dp[i];
+  }
 
   void dfs(int cur, int par) {
     vector<T> chds;
-    for (auto &dst : g[cur]) {
-      if (dst == par) continue;
+    for (const auto& entry : g[cur]) {
+      int dst = graph_internal::to_vertex(entry);
+      if (dst == par) {
+        continue;
+      }
       dfs(dst, cur);
       chds.push_back(f2(memo[dst], dst, cur));
     }
@@ -40,12 +45,17 @@ struct Rerooting {
     }
   }
 
-  void dfs2(int cur, int par, const T &pval) {
+  void dfs2(int cur, int par, const T& pval) {
     // get cumulative sum
     vector<T> buf;
-    if (cur != 0) buf.push_back(pval);
-    for (auto dst : g[cur]) {
-      if (dst == par) continue;
+    if (cur != 0) {
+      buf.push_back(pval);
+    }
+    for (const auto& entry : g[cur]) {
+      int dst = graph_internal::to_vertex(entry);
+      if (dst == par) {
+        continue;
+      }
       buf.push_back(f2(memo[dst], dst, cur));
     }
     vector<T> head(buf.size()), tail(buf.size());
@@ -61,8 +71,11 @@ struct Rerooting {
     }
     dp[cur] = head.empty() ? leaf : head.back();
     int idx = cur == 0 ? 0 : 1;
-    for (auto &dst : g[cur]) {
-      if (dst == par) continue;
+    for (const auto& entry : g[cur]) {
+      int dst = graph_internal::to_vertex(entry);
+      if (dst == par) {
+        continue;
+      }
       T val;
       bool first = idx == 0;
       bool last = idx + 1 == (int)head.size();

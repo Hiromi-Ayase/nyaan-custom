@@ -3,18 +3,18 @@
 #include <vector>
 using namespace std;
 
-#include "./graph-template.hpp"
+#include "graph-utility.hpp"
 
 // bridge ... 橋 (辺 (u, v) が u < v となるように格納)
 // articulation point ... 関節点
 template <typename G>
 struct LowLink {
-  const G &g;
+  const G& g;
   int N;
   vector<int> ord, low, articulation;
   vector<pair<int, int> > bridge;
 
-  LowLink(const G &_g) : g(_g), N(g.size()), ord(N, -1), low(N, -1) {
+  LowLink(const G& _g) : g(_g), N(g.size()), ord(N, -1), low(N, -1) {
     for (int i = 0, k = 0; i < N; i++) {
       if (ord[i] == -1) {
         k = dfs(i, k, -1);
@@ -26,7 +26,8 @@ struct LowLink {
     low[idx] = (ord[idx] = k++);
     int cnt = 0;
     bool arti = false, second = false;
-    for (auto &to : g[idx]) {
+    for (const auto& entry : g[idx]) {
+      int to = graph_internal::to_vertex(entry);
       if (ord[to] == -1) {
         cnt++;
         k = dfs(to, k, idx);
@@ -42,7 +43,9 @@ struct LowLink {
       }
     }
     arti |= par == -1 && cnt > 1;
-    if (arti) articulation.push_back(idx);
+    if (arti) {
+      articulation.push_back(idx);
+    }
     return k;
   }
 };

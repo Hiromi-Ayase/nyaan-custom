@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../graph/graph-utility.hpp"
+
 #include <array>
 #include <chrono>
 #include <random>
@@ -25,19 +27,27 @@ struct RootedTreeHash {
   RootedTreeHash(const G& _g, int root = 0) : g(_g), n(g.size()) {
     hash.resize(n);
     depth.resize(n, 0);
-    while ((int)xs().size() <= n) xs().push_back(Hash::get_basis());
+    while ((int)xs().size() <= n) {
+      xs().push_back(Hash::get_basis());
+    }
     dfs(root, -1);
   }
 
  private:
   int dfs(int c, int p) {
     int dep = 0;
-    for (auto& d : g[c]) {
-      if (d != p) dep = max(dep, dfs(d, c) + 1);
+    for (const auto& entry : g[c]) {
+      int d = graph_internal::to_vertex(entry);
+      if (d != p) {
+        dep = max(dep, dfs(d, c) + 1);
+      }
     }
     Hash x = xs()[dep], h = Hash::set(1);
-    for (auto& d : g[c]) {
-      if (d != p) h = h * (x + hash[d]);
+    for (const auto& entry : g[c]) {
+      int d = graph_internal::to_vertex(entry);
+      if (d != p) {
+        h = h * (x + hash[d]);
+      }
     }
     hash[c] = h;
     return depth[c] = dep;

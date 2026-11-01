@@ -1,4 +1,6 @@
 // Verify: shortest-path/dijkstra.hpp
+// Verify: shortest-path/dijkstra-fast.hpp
+// Verify: shortest-path/dijkstra-skew-heap.hpp
 // Verify: shortest-path/dijkstra-radix-heap.hpp
 // Verify: shortest-path/dijkstra-with-restore.hpp
 // Verify: shortest-path/bfs01.hpp
@@ -8,6 +10,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 #include "shortest-path/dijkstra.hpp"
+#include "shortest-path/dijkstra-fast.hpp"
+#include "shortest-path/dijkstra-skew-heap.hpp"
 #include "shortest-path/dijkstra-radix-heap.hpp"
 #include "shortest-path/dijkstra-with-restore.hpp"
 #include "shortest-path/bfs01.hpp"
@@ -60,18 +64,25 @@ int main() {
   for (int n = 1; n <= 7; ++n) {
     for (int trial = 0; trial < 60; ++trial) {
       Graph reference(n);
-      WeightedGraph<long long> graph(n);
+      vector<vector<pair<int, long long>>> graph(n);
       for (int i = 0; i < n * n / 2; ++i) {
         int u = rng() % n;
         int v = rng() % n;
         long long weight = trial % 3 == 0 ? 1 : trial % 3 == 1 ? rng() % 2 : rng() % 30;
         reference[u].emplace_back(v, weight);
-        graph[u].emplace_back(u, v, weight);
+        graph[u].emplace_back(v, weight);
       }
       for (int source = 0; source < n; ++source) {
         auto expected = enumerate_paths(reference, source);
         // 非負重みでは最短の単純路が存在するので、DFSの全列挙とDijkstraを比較できる。
         assert(dijkstra(graph, source) == expected);
+        // 同じ標準コンテナを、関数名の異なる高速版へもそのまま渡せる。
+        assert(dijkstra_fast(graph, source) == expected);
+        auto fast = dijkstra_restore_fast(graph, source);
+        auto skew = dijkstra_restore_skew_heap(graph, source);
+        for (int v = 0; v < n; ++v) {
+          assert(fast[v].first == expected[v] && skew[v].first == expected[v]);
+        }
         // RadixHeapを使う版でも、0辺や同距離の候補を含めて距離が一致する。
         assert(dijkstra_radix_heap(graph, source) == expected);
         if (trial % 3 <= 1) {

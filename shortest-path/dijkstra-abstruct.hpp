@@ -51,7 +51,8 @@ DijkstraResult<Index, Cost> dijkstra_abstruct(
   Q.emplace(0, start);
 
   while (!Q.empty()) {
-    auto [u, t] = Q.top();
+    Cost u = Q.top().first;
+    Index t = Q.top().second;
     Q.pop();
     if (d[t].first != u) continue;
     if constexpr (has_goal) {

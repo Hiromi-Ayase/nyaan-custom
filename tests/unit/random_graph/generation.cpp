@@ -38,27 +38,57 @@ int main() {
     assert((int)word.size() == n &&
            all_of(word.begin(), word.end(), [](char c) { return 'a' <= c && c <= 'z'; }));
   }
-  Graph graph(3, true);
-  graph.add_directed_edge(0, 2, -7, 4);
-  graph.add_undirected_edge(2, 1, 9, 5);
-  auto adjacency = graph.adjacent_list(true);
-  // 隣接リストでは始点・終点・重み・外部IDを保存し、無向追加は端点を小さい順に並べる。
-  assert(adjacency[0].size() == 1 && adjacency[0][0].v == 2 && adjacency[0][0].w == -7 &&
-         adjacency[0][0].idx == 4);
-  assert(adjacency[1].size() == 1 && adjacency[1][0].v == 2 && adjacency[1][0].idx == 5);
-  assert(graph.adjacent_matrix(true) ==
+  vector<vector<pair<int, long long>>> directed(3);
+  directed[0].emplace_back(2, -7);
+  directed[1].emplace_back(2, 9);
+  // 標準のpair隣接リストから、向きと重みを保って辺列・行列に変換できる。
+  assert((random_graph::edge_list(directed, true) ==
+          vector<tuple<int, int, long long>>({{0, 2, -7}, {1, 2, 9}})));
+  assert(random_graph::adjacent_matrix(directed) ==
          vector<vector<long long>>({{0, 0, -7}, {0, 0, 9}, {0, 0, 0}}));
   ostringstream text;
-  graph.print(text);
+  random_graph::print(text, directed, true, true);
   assert(text.str() == "3 2\n1 3 -7\n2 3 9\n");
   ostringstream edges;
-  graph.print_edge(edges, true);
+  random_graph::print_edges(edges, directed, true, true, true);
   assert(edges.str() == "0 2 -7\n1 2 9\n");
+  auto undirected_graph = directed;
+  undirected_graph[2].emplace_back(0, -7);
+  undirected_graph[2].emplace_back(1, 9);
   ostringstream matrix;
-  graph.print_matrix(matrix);
+  random_graph::print_matrix(matrix, undirected_graph);
   assert(matrix.str() == "0 0 -7\n0 0 9\n-7 9 0\n");
+  undirected_graph[2].emplace_back(2, 13);
+  undirected_graph[2].emplace_back(2, 13);
+  // 無向自己ループは隣接リスト内の2要素を、辺列では1本に戻す。
+  assert(random_graph::edge_count(undirected_graph) == 3);
+  assert(random_graph::edge_list(undirected_graph).back() == make_tuple(2, 2, 13LL));
+
+  vector<vector<pair<int, long long>>> repeated(2);
+  repeated[0] = {{0, 13}, {1, 5}, {0, 17}, {1, 5}, {0, 13}, {0, 17}, {0, 13}, {0, 13}};
+  repeated[1] = {{0, 5}, {0, 5}};
+  auto actual_edges = random_graph::edge_list(repeated);
+  multiset<tuple<int, int, long long>> expected_edges{
+      {0, 0, 13}, {0, 0, 13}, {0, 0, 17}, {0, 1, 5}, {0, 1, 5}};
+  // 離れて格納された自己ループも重みごとに組にし、多重辺の本数を保つ。
+  assert((multiset<tuple<int, int, long long>>(actual_edges.begin(), actual_edges.end()) ==
+          expected_edges));
+  assert(random_graph::edge_count(repeated) == 5);
+  // 有向指定では自己ループや逆向きの要素もそれぞれ1本として数える。
+  assert(random_graph::edge_list(repeated, true).size() == 10);
+  assert(random_graph::edge_count(repeated, true) == 10);
+  assert(random_graph::adjacent_matrix(repeated) == vector<vector<long long>>({{13, 5}, {5, 0}}));
+  vector<vector<pair<int, long long>>> empty;
+  ostringstream empty_text;
+  random_graph::print(empty_text, empty);
+  // 頂点も辺もないグラフは、空の辺列と行列、ヘッダ1行だけを返す。
+  assert(random_graph::edge_list(empty).empty());
+  assert(random_graph::adjacent_matrix(empty).empty());
+  assert(empty_text.str() == "0 0\n");
+
   UndirectedGraphGenerator generator(42);
-  using Method = Graph (UndirectedGraphGenerator::*)(int, bool, W, W);
+  using Method = vector<vector<pair<int, long long>>> (UndirectedGraphGenerator::*)(
+      int, bool, long long, long long);
   vector<Method> methods{
       &UndirectedGraphGenerator::tree,         &UndirectedGraphGenerator::path,
       &UndirectedGraphGenerator::star,         &UndirectedGraphGenerator::perfect,
@@ -72,39 +102,42 @@ int main() {
       auto repeat = (generator.*methods[type])(n, true, -10, 20);
       ostringstream a;
       ostringstream b;
-      a << g;
-      b << repeat;
+      random_graph::print(a, g, true);
+      random_graph::print(b, repeat, true);
       // グラフ生成もseedを戻すと辺列まで完全に再現する。
       assert(a.str() == b.str());
-      auto list = g.adjacent_list();
+      const auto& list = g;
       set<pair<int, int>> unique_edges;
       int total = 0;
       int max_degree = 0;
       for (int u = 0; u < n; ++u) {
         max_degree = max(max_degree, (int)list[u].size());
-        for (auto e : list[u]) {
+        for (auto [v, weight] : list[u]) {
           ++total;
           // 自己辺がなく重みが指定範囲に収まる。なもり以外は平行辺もない。
-          assert(e.u == u && e.v != u && 0 <= e.v && e.v < n && -10 <= e.w && e.w <= 20);
-          if (u < e.v) {
-            bool inserted = unique_edges.emplace(u, e.v).second;
+          assert(v != u && 0 <= v && v < n && -10 <= weight && weight <= 20);
+          // 無向辺は、同じ重みの逆辺を同じ本数だけ持つ。
+          assert(count(list[u].begin(), list[u].end(), make_pair(v, weight)) ==
+                 count(list[v].begin(), list[v].end(), make_pair(u, weight)));
+          if (u < v) {
+            bool inserted = unique_edges.emplace(u, v).second;
             assert(type == 5 || inserted);
           }
         }
       }
-      assert(total == 2 * g.edges_size());
+      assert(total == 2 * random_graph::edge_count(g));
       if (type != 5) {
-        assert((int)unique_edges.size() == g.edges_size());
+        assert((int)unique_edges.size() == random_graph::edge_count(g));
       }
       if (type <= 2 || type == 3 || type == 5) {
         vector<bool> seen(n);
         vector<int> q{0};
         seen[0] = true;
         for (int i = 0; i < (int)q.size(); ++i) {
-          for (auto e : list[q[i]]) {
-            if (!seen[e.v]) {
-              seen[e.v] = true;
-              q.push_back(e.v);
+          for (auto [v, weight] : list[q[i]]) {
+            if (!seen[v]) {
+              seen[v] = true;
+              q.push_back(v);
             }
           }
         }
@@ -112,7 +145,7 @@ int main() {
         assert(q.size() == (size_t)n);
       }
       if (type <= 2) {
-        assert(g.edges_size() == n - 1);
+        assert(random_graph::edge_count(g) == n - 1);
       }
       if (type == 1) {
         assert(max_degree == 2);
@@ -121,14 +154,20 @@ int main() {
         assert(max_degree == n - 1);
       }
       if (type == 3) {
-        assert(g.edges_size() == n * (n - 1) / 2);
+        assert(random_graph::edge_count(g) == n * (n - 1) / 2);
       }
       if (type == 5) {
-        assert(g.edges_size() == n);
+        assert(random_graph::edge_count(g) == n);
       }
     }
     auto selected = generator.test(n, true);
     // 複数の木生成法から選ぶAPIも、辺数n-1を保つ。
-    assert(selected.edges_size() == n - 1);
+    assert(random_graph::edge_count(selected) == n - 1);
+    for (const auto& neighbors : selected) {
+      for (auto [v, weight] : neighbors) {
+        // 重みなし指定の生成結果もpair形式で、重みは一律1になる。
+        assert(weight == 1);
+      }
+    }
   }
 }

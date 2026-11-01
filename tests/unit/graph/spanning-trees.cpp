@@ -6,7 +6,8 @@ using namespace std;
 #include "graph/kruskal.hpp"
 #include "graph/minimum-cost-arborescence.hpp"
 
-vector<bool> reach(int n, const Edges<long long>& es, unsigned mask, int s, bool directed) {
+vector<bool> reach(int n, const vector<tuple<int, int, long long>>& es, unsigned mask, int s,
+                   bool directed) {
   vector<bool> seen(n);
   seen[s] = true;
   vector<int> q{s};
@@ -15,8 +16,8 @@ vector<bool> reach(int n, const Edges<long long>& es, unsigned mask, int s, bool
       if (!(mask >> e & 1)) {
         continue;
       }
-      int u = es[e].src;
-      int v = es[e].to;
+      int u = get<0>(es[e]);
+      int v = get<1>(es[e]);
       if (!directed && v == q[i]) {
         swap(u, v);
       }
@@ -33,7 +34,7 @@ int main() {
   mt19937 rng(904);
   for (int n = 1; n <= 6; ++n) {
     for (int trial = 0; trial < 120; ++trial) {
-      Edges<long long> edges;
+      vector<tuple<int, int, long long>> edges;
       int m = rng() % 11;
       for (int e = 0; e < m; ++e) {
         edges.emplace_back(rng() % n, rng() % n, (int)(rng() % 31) - 15);
@@ -61,8 +62,8 @@ int main() {
         vector<int> indegree(n);
         for (int e = 0; e < m; ++e) {
           if (mask >> e & 1) {
-            cost += edges[e].cost;
-            ++indegree[edges[e].to];
+            cost += get<2>(edges[e]);
+            ++indegree[get<1>(edges[e])];
           }
         }
         if (count == n - components) {
@@ -103,16 +104,16 @@ int main() {
         long long cost = 0;
         vector<int> indegree(n);
         multiset<tuple<int, int, long long>> remaining;
-        for (auto e : edges) {
-          remaining.emplace(e.src, e.to, e.cost);
+        for (auto [src, to, weight] : edges) {
+          remaining.emplace(src, to, weight);
         }
-        for (auto e : result) {
-          auto found = remaining.find({e.src, e.to, e.cost});
+        for (auto [src, to, weight] : result) {
+          auto found = remaining.find({src, to, weight});
           // 復元した辺は、入力に存在する辺を多重度以内で使っている。
           assert(found != remaining.end());
           remaining.erase(found);
-          cost += e.cost;
-          ++indegree[e.to];
+          cost += weight;
+          ++indegree[to];
         }
         // 最適値、各頂点の入次数、根からの到達性の3つを独立に確認する。
         assert(cost == arborescence[root]);

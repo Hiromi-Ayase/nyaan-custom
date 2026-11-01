@@ -1,34 +1,41 @@
 #pragma once
 
-#include "../graph/graph-template.hpp"
+#include "../graph/graph-utility.hpp"
 
 template <typename G>
 struct HeavyLightDecomposition {
  private:
   void dfs_sz(int cur) {
     size[cur] = 1;
-    for (auto& dst : g[cur]) {
+    for (auto& entry : g[cur]) {
+      int dst = graph_internal::to_vertex(entry);
       if (dst == par[cur]) {
-        if (g[cur].size() >= 2 && int(dst) == int(g[cur][0]))
-          swap(g[cur][0], g[cur][1]);
-        else
+        if (g[cur].size() < 2 || &entry != &g[cur][0]) {
           continue;
+        }
+        swap(g[cur][0], g[cur][1]);
+        dst = graph_internal::to_vertex(entry);
       }
       depth[dst] = depth[cur] + 1;
       par[dst] = cur;
       dfs_sz(dst);
       size[cur] += size[dst];
-      if (size[dst] > size[g[cur][0]]) {
-        swap(dst, g[cur][0]);
+      int heavy = graph_internal::to_vertex(g[cur][0]);
+      if (size[dst] > size[heavy]) {
+        swap(entry, g[cur][0]);
       }
     }
   }
 
   void dfs_hld(int cur) {
     down[cur] = id++;
-    for (auto dst : g[cur]) {
-      if (dst == par[cur]) continue;
-      nxt[dst] = (int(dst) == int(g[cur][0]) ? nxt[cur] : int(dst));
+    for (const auto& entry : g[cur]) {
+      int dst = graph_internal::to_vertex(entry);
+      if (dst == par[cur]) {
+        continue;
+      }
+      int heavy = graph_internal::to_vertex(g[cur][0]);
+      nxt[dst] = dst == heavy ? nxt[cur] : dst;
       dfs_hld(dst);
     }
     up[cur] = id;
@@ -41,14 +48,20 @@ struct HeavyLightDecomposition {
       res.emplace_back(down[u], down[nxt[u]]);
       u = par[nxt[u]];
     }
-    if (u != v) res.emplace_back(down[u], down[v] + 1);
+    if (u != v) {
+      res.emplace_back(down[u], down[v] + 1);
+    }
     return res;
   }
 
   // (u, v]
   vector<pair<int, int>> descend(int u, int v) const {
-    if (u == v) return {};
-    if (nxt[u] == nxt[v]) return {{down[u] + 1, down[v]}};
+    if (u == v) {
+      return {};
+    }
+    if (nxt[u] == nxt[v]) {
+      return {{down[u] + 1, down[v]}};
+    }
     auto res = descend(u, par[nxt[v]]);
     res.emplace_back(down[nxt[v]], down[v]);
     return res;
@@ -58,6 +71,7 @@ struct HeavyLightDecomposition {
   G& g;
   int root, id;
   vector<int> size, depth, down, up, nxt, par;
+
   HeavyLightDecomposition(G& _g, int _root = 0)
       : g(_g),
         root(_root),
@@ -72,7 +86,9 @@ struct HeavyLightDecomposition {
     dfs_hld(root);
   }
 
-  pair<int, int> idx(int i) const { return make_pair(down[i], up[i]); }
+  pair<int, int> idx(int i) const {
+    return make_pair(down[i], up[i]);
+  }
 
   template <typename F>
   void path_query(int u, int v, bool vertex, const F& f) {
@@ -81,7 +97,9 @@ struct HeavyLightDecomposition {
       int s = a + 1, t = b;
       s > t ? f(t, s) : f(s, t);
     }
-    if (vertex) f(down[l], down[l] + 1);
+    if (vertex) {
+      f(down[l], down[l] + 1);
+    }
     for (auto&& [a, b] : descend(l, v)) {
       int s = a, t = b + 1;
       s > t ? f(t, s) : f(s, t);
@@ -91,9 +109,15 @@ struct HeavyLightDecomposition {
   template <typename F>
   void path_noncommutative_query(int u, int v, bool vertex, const F& f) {
     int l = lca(u, v);
-    for (auto&& [a, b] : ascend(u, l)) f(a + 1, b);
-    if (vertex) f(down[l], down[l] + 1);
-    for (auto&& [a, b] : descend(l, v)) f(a, b + 1);
+    for (auto&& [a, b] : ascend(u, l)) {
+      f(a + 1, b);
+    }
+    if (vertex) {
+      f(down[l], down[l] + 1);
+    }
+    for (auto&& [a, b] : descend(l, v)) {
+      f(a, b + 1);
+    }
   }
 
   template <typename F>
@@ -103,13 +127,17 @@ struct HeavyLightDecomposition {
 
   int lca(int a, int b) {
     while (nxt[a] != nxt[b]) {
-      if (down[a] < down[b]) swap(a, b);
+      if (down[a] < down[b]) {
+        swap(a, b);
+      }
       a = par[nxt[a]];
     }
     return depth[a] < depth[b] ? a : b;
   }
 
-  int dist(int a, int b) { return depth[a] + depth[b] - depth[lca(a, b)] * 2; }
+  int dist(int a, int b) {
+    return depth[a] + depth[b] - depth[lca(a, b)] * 2;
+  }
 };
 
 /**

@@ -8,14 +8,14 @@ int main() {
   mt19937 rng(1006);
   for (int n : {1, 2, 3, 7, 16, 31, 64}) {
     for (int shape = 0; shape < 3; ++shape) {
-      WeightedGraph<long long> g(n);
+      vector<vector<pair<int, long long>>> g(n);
       vector<pair<int, int>> edges;
       vector<vector<long long>> weight(n, vector<long long>(n));
       for (int u = 1; u < n; ++u) {
         int p = shape == 0 ? u - 1 : shape == 1 ? 0 : rng() % u;
         int w = rng() % 100;
-        g[u].emplace_back(u, p, w);
-        g[p].emplace_back(p, u, w);
+        g[u].emplace_back(p, w);
+        g[p].emplace_back(u, w);
         edges.emplace_back(u, p);
         weight[u][p] = w;
         weight[p][u] = w;
@@ -34,10 +34,10 @@ int main() {
         for (int s = 0; s < n; ++s) {
           auto dfs = [&](auto&& self, int u, int parent) -> void {
             expected = max(expected, distance[s][u]);
-            for (auto e : g[u]) {
-              if (e.to != parent) {
-                distance[s][e.to] = distance[s][u] + weight[u][e.to];
-                self(self, e.to, u);
+            for (auto [dst, cost] : g[u]) {
+              if (dst != parent) {
+                distance[s][dst] = distance[s][u] + weight[u][dst];
+                self(self, dst, u);
               }
             }
           };

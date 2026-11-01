@@ -4,7 +4,6 @@
 using namespace std;
 #define NyaanLocal
 #include "modint/modint.hpp"
-#include "fps/ntt-friendly-fps.hpp"
 #include "matrix/matrix-tree.hpp"
 
 using M = ModInt<998244353>;

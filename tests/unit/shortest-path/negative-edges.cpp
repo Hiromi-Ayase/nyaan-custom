@@ -18,7 +18,7 @@ int main() {
         x = int(rng() % 21) - 10;
       }
       vector<vector<pair<int, long long>>> graph(n);
-      Edges<long long> edges;
+      vector<tuple<int, int, long long>> edges;
       Dual_of_Shortest_Path<long long> dual(n);
       vector<vector<long long>> matrix(n, vector<long long>(n, inf));
       for (int i = 0; i < n * n / 2 + n; ++i) {
@@ -54,16 +54,16 @@ int main() {
       auto feasible = dual.solve();
       // 作ったポテンシャルが実行可能解なので、制約系は必ず可解である。
       assert((int)feasible.size() == n);
-      for (auto e : edges) {
+      for (auto [src, to, weight] : edges) {
         // 返された値が、登録した全ての差分不等式を直接満たす。
-        assert(feasible[e.to] <= feasible[e.src] + e.cost);
+        assert(feasible[to] <= feasible[src] + weight);
       }
       dual.add_edge(0, 0, -1);
       // 自分自身より1小さいという制約を加えると、矛盾した系として空列を返す。
       assert(dual.solve().empty());
     }
   }
-  Edges<long long> edges{{0, 1, 2}, {1, 2, -2}, {2, 1, 1}, {0, 3, 5}, {4, 4, -1}};
+  vector<tuple<int, int, long long>> edges{{0, 1, 2}, {1, 2, -2}, {2, 1, 1}, {0, 3, 5}, {4, 4, -1}};
   // 始点から到達する負閉路は検出される。
   assert(bellman_ford(5, edges, 0).empty());
   // 終点1は負閉路の影響を受けるので、終点指定でも解なしになる。

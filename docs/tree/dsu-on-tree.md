@@ -1,5 +1,7 @@
 ## DSU on Tree
 
+入力の隣接リストは `vector<vector<int>>` と `vector<vector<pair<int, T>>>`（行き先・重み）の両方に対応する。木の構造の計算では重みを無視する。
+
 DSU on Treeとは、全ての部分木に対するクエリを高速に処理するアルゴリズムである。
 
 #### 使い方&テンプレート
@@ -171,3 +173,4 @@ void dfs(int c, int p) {
 
 - [実装](../../tree/dsu-on-tree.hpp)
 - [Verify: queries.cpp](../../tests/unit/tree/queries.cpp)
+- [Verify: weighted-containers.cpp](../../tests/unit/tree/weighted-containers.cpp)

@@ -4,12 +4,13 @@
 #include <vector>
 using namespace std;
 
-#include "./graph-template.hpp"
+#include "graph-utility.hpp"
 
 template <typename G>
 vector<pair<int, int>> CycleDetection(const G& g, bool directed = true) {
   for (int i = 0; i < (int)g.size(); i++) {
-    for (auto j : g[i]) {
+    for (const auto& entry : g[i]) {
+      int j = graph_internal::to_vertex(entry);
       if (i == j) {
         vector<pair<int, int>> res;
         res.emplace_back(i, i);
@@ -25,14 +26,21 @@ vector<pair<int, int>> CycleDetection(const G& g, bool directed = true) {
   auto dfs = [&](auto rec, int cur, int pval, int par) -> int {
     pidx[cur] = pval;
     vis[cur] = 1;
-    for (auto& dst : g[cur]) {
-      if (finish) return -1;
-      if (!directed && dst == par) continue;
+    for (const auto& entry : g[cur]) {
+      int dst = graph_internal::to_vertex(entry);
+      if (finish) {
+        return -1;
+      }
+      if (!directed && dst == par) {
+        continue;
+      }
       if (pidx[dst] == pidx[cur]) {
         cycle.emplace_back(cur, dst);
         return dst;
       }
-      if (vis[dst]) continue;
+      if (vis[dst]) {
+        continue;
+      }
       int nx = rec(rec, dst, pval, cur);
       if (nx != -1) {
         cycle.emplace_back(cur, dst);
@@ -48,7 +56,9 @@ vector<pair<int, int>> CycleDetection(const G& g, bool directed = true) {
   };
 
   for (int i = 0; i < (int)g.size(); i++) {
-    if (vis[i]) continue;
+    if (vis[i]) {
+      continue;
+    }
     dfs(dfs, i, i, -1);
 
     if (finish) {

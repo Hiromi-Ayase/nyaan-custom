@@ -1,5 +1,7 @@
 ## 木に対する一般的なクエリ
 
+入力の隣接リストは `vector<vector<int>>` と `vector<vector<pair<int, T>>>`（行き先・重み）の両方に対応する。木の構造の計算では重みを無視する。
+
 #### 概要
 
 木を触る時によく使うクエリを詰め込んだデータ構造。ダブリングをベースに実装している。
@@ -26,3 +28,4 @@
 
 - [実装](../../tree/tree-query.hpp)
 - [Verify: queries.cpp](../../tests/unit/tree/queries.cpp)
+- [Verify: weighted-containers.cpp](../../tests/unit/tree/weighted-containers.cpp)

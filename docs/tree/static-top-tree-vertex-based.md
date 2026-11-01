@@ -1,5 +1,7 @@
 ## 頂点を基礎とする Static Top Tree
 
+入力の隣接リストは `vector<vector<int>>` と `vector<vector<pair<int, T>>>`（行き先・重み）の両方に対応する。木の構造の計算では重みを無視する。
+
 固定木の DP を頂点変更に追従させる。先に `HeavyLightDecomposition<G> hld(g)` を構築し、`DPonStaticTopTreeVertexBased` に hld と次のコールバックを渡す。
 
 - `vertex(i) -> Path`: 単一頂点の情報。
@@ -16,3 +18,4 @@
 
 - [実装](../../tree/static-top-tree-vertex-based.hpp)
 - [Verify: static-top-trees.cpp](../../tests/unit/tree/static-top-trees.cpp)
+- [Verify: weighted-containers.cpp](../../tests/unit/tree/weighted-containers.cpp)

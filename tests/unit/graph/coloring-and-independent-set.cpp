@@ -68,6 +68,14 @@ int main() {
       dfs(dfs, 0, 0);
       // 空グラフ・完全グラフも含め、実際に可能な彩色の最小色数と比較する。
       assert(ChromaticNumber(g) == chromatic);
+      vector<vector<pair<int, long long>>> weighted(n);
+      for (auto [u, v] : edges) {
+        long long weight = (1LL << 40) + u * n + v;
+        weighted[u].emplace_back(v, weight);
+        weighted[v].emplace_back(u, weight);
+      }
+      // pairの重みを頂点番号と取り違えず、同じグラフの彩色数を返す。
+      assert(ChromaticNumber(weighted) == chromatic);
     }
   }
 }

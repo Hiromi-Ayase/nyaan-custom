@@ -1,6 +1,6 @@
 ## 辺重み更新付きの木の直径
 
-`DynamicDiameter<T>(g)` は固定された重み付き木を Static Top Tree で管理する。非空・連結な木と、非負の辺重みを用いる。
+`DynamicDiameter<T>(g)` は`vector<vector<pair<int, T>>>` で与えた固定の重み付き木を Static Top Tree で管理する。隣接要素は `(行き先, 重み)`。非空・連結な木と、非負の辺重みを用いる。
 
 `update(u,v,x)` は存在する辺 u-v の重みを x へ変更する。`get()` は `(直径の長さ, (端点u,端点v))`。木の形を変える link/cut 操作はない。更新は内部の重みへ反映され、入力グラフを書き換えない。
 

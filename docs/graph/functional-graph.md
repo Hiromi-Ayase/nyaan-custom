@@ -15,7 +15,7 @@
 
 - `vector<pair<int, T>> loop`: なもりグラフのループ部分のグラフ。
   - `loop[i].second` は `loop[i]` と `loop[i+1]` の間の辺の重みを意味する。
-- `vector<WeightedGraph<T>> aux`: ループ部分に付随する部分木のグラフ。
+- `vector<vector<vector<pair<int, T>>>> aux`: ループ部分に付随する部分木のグラフ。各隣接要素は `(行き先, 重み)`。
   - `aux[i]` は `loop[i]` を根とするグラフ。
 - `vector<HeavyLightDecomposition<G>> hld`: `aux`をHL分解したもの。
   - `hld[i].idx(i).first`と`Namori::idx(i).first`が一致するようにしている(はず)

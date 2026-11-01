@@ -1,5 +1,7 @@
 ## 全方位木DP
 
+隣接リストは `vector<vector<int>>` と `vector<vector<pair<int, T>>>`（行き先・重み）の両方に対応する。重みを使う場合は、遷移コールバックに渡される頂点番号から辺重みを参照する。
+
 #### テンプレート
 
 ```
@@ -22,3 +24,4 @@ Rerooting<T, decltype(g), decltype(f1), decltype(f2)> dp(g, f1, f2, leaf);
 
 - [実装](../../tree/rerooting.hpp)
 - [Verify: queries.cpp](../../tests/unit/tree/queries.cpp)
+- [Verify: weighted-containers.cpp](../../tests/unit/tree/weighted-containers.cpp)

@@ -1,6 +1,6 @@
 ## Dijkstra 法（経路復元用の親付き）
 
-`dijkstra_restore(g, start = 0)` は `WeightedGraph<T>` の各頂点について `(最短距離, 一つ前の頂点)` を返す。
+`dijkstra_restore(g, start = 0)` は `vector<vector<pair<int, T>>>`（要素は `(行き先, 重み)`） の各頂点について `(最短距離, 一つ前の頂点)` を返す。
 
 始点は `(0, -1)`、到達不能は `(-1, -1)`。終点が到達可能なことを確認し、親をたどって反転すると始点からの経路を得られる。
 

@@ -1,19 +1,19 @@
 #pragma once
 
-#include "../hashmap/hashmap-unerasable.hpp"
+#include <unordered_map>
 
 template <typename Container, typename mint>
 mint number_of_subsequences(const Container& S) {
   using Key = typename Container::value_type;
-  UnerasableHashMap<Key, mint> mp;
-  mint al = 1;
-  for (auto& c : S) {
-    mint& mpc = mp[c];
-    mint x = mpc;
-    mpc = al;
-    al += al - x;
+  std::unordered_map<Key, mint> last;
+  mint total = 1;
+  for (const auto& value : S) {
+    mint& last_total = last[value];
+    mint previous = last_total;
+    last_total = total;
+    total += total - previous;
   }
-  return al - 1;
+  return total - 1;
 }
 
 /**

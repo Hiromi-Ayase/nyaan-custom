@@ -1,16 +1,13 @@
-## ダイクストラ法(Skew Heap)
+## ダイクストラ法（Skew Heap）
 
-ダイクストラ法の定数倍高速化ライブラリ。
+`dijkstra_restore_skew_heap(g, start=0)` は各頂点の `(最短距離, 一つ前の頂点)` を返す。始点は `(0, -1)`、到達不能は `(-1, -1)`。
 
-#### 概要
+`g` は `vector<vector<pair<int, T>>>` で、各要素は `(行き先, 重み)`。重みは非負で、距離の加算が `T` に収まることが必要。入力グラフは変更しない。親をたどり、得られた列を反転すると最短路を復元できる。
 
-ダイクストラ法のヒープにSkew Heap(ねじれヒープ)を使用することで最小値の取得にかかる時間計算量を高速化したライブラリ。
-
-#### 使い方
-
-- `dijkstra(g, start = 0)`: sを始点としたダイクストラ法を行い、計算結果を返す。
+ヒープには頂点ごとに1ノードを置き、距離が短くなった場合はキーを更新する。通常版・Radix Heap版のDijkstraと同時に include できる。
 
 #### 実装・検証
 
 - [実装](../../shortest-path/dijkstra-skew-heap.hpp)
 - [Verify: dijkstra-skew-heap.cpp](../../tests/unit/shortest-path/dijkstra-skew-heap.cpp)
+- [Verify: weighted.cpp](../../tests/unit/shortest-path/weighted.cpp)

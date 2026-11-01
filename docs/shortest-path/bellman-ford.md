@@ -2,7 +2,7 @@
 
 負の重みを許す有向グラフの単一始点最短路を求める。
 
-`bellman_ford(N, es, start = 0, goal = -1)` に頂点数、`Edges<T>` 型の辺列、始点を渡す。到達不能の距離は `numeric_limits<T>::max() / 2`。
+`bellman_ford(N, es, start = 0, goal = -1)` に頂点数、`vector<tuple<int, int, T>>` 型の辺列（要素は `(始点, 終点, 重み)`）、始点を渡す。到達不能の距離は `numeric_limits<T>::max() / 2`。
 
 - `goal == -1`: 始点から到達可能な負閉路があれば空の配列を返す。
 - `goal` 指定時: 始点から到達でき、さらに終点に影響する負閉路がある場合だけ空を返す。

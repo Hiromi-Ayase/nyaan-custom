@@ -73,16 +73,29 @@ int main() {
           articulation.insert(v);
         }
       }
+      vector<vector<pair<int, long long>>> weighted(n);
+      for (int u = 0; u < n; ++u) {
+        for (int v : g[u]) {
+          weighted[u].emplace_back(v, (long long)u * 1000000000 + v);
+        }
+      }
+      LowLink weighted_low(weighted);
+      // 重み付きpairでも、橋と関節点は同じ削除BFSの期待値に一致する。
+      assert(set(weighted_low.bridge.begin(), weighted_low.bridge.end()) == bridges);
+      assert(set(weighted_low.articulation.begin(), weighted_low.articulation.end()) ==
+             articulation);
       LowLink low(g);
       // 橋・関節点は、実際に削除したとき連結成分数を増やす辺・頂点に一致する。
       assert(set(low.bridge.begin(), low.bridge.end()) == bridges);
       assert(set(low.articulation.begin(), low.articulation.end()) == articulation);
       TwoEdgeConnectedComponents two(g);
+      TwoEdgeConnectedComponents weighted_two(weighted);
       auto labels = components(n, edges, -1, bridge_ids);
       for (int u = 0; u < n; ++u) {
         for (int v = 0; v < n; ++v) {
           // 橋を全て取り除いたグラフの連結成分と一致する。
           assert((two[u] == two[v]) == (labels[u] == labels[v]));
+          assert((weighted_two[u] == weighted_two[v]) == (labels[u] == labels[v]));
         }
       }
       // 辺同士が同一の単純閉路に現れたら同じブロックとし、その推移閉包を取る。
@@ -134,6 +147,13 @@ int main() {
       }
       // 全閉路から得たブロック分割と一致し、橋も1辺のブロックとして残る。
       assert(actual == expected);
+      BiConnectedComponents weighted_bi(weighted);
+      set<set<pair<int, int>>> weighted_blocks;
+      for (const auto& block : weighted_bi.bc) {
+        weighted_blocks.emplace(block.begin(), block.end());
+      }
+      // pair隣接リストからの二重頂点連結成分も、全閉路列挙と照合する。
+      assert(weighted_blocks == expected);
       if (!edges.empty()) {
         // 並行する2辺はどちらも橋でない。LowLinkの多重辺対応を別に確認する。
         auto [u, v] = edges[0];

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "./graph-template.hpp"
+#include "graph-utility.hpp"
 
 // Strongly Connected Components
 // DAG of SC graph   ... scc.dag (including multiedges)
@@ -9,7 +9,7 @@
 template <typename G>
 struct StronglyConnectedComponents {
  private:
-  const G &g;
+  const G& g;
   vector<vector<int>> rg;
   vector<int> comp, order;
   vector<char> used;
@@ -17,28 +17,46 @@ struct StronglyConnectedComponents {
 
  public:
   vector<vector<int>> dag;
-  StronglyConnectedComponents(G &_g) : g(_g), used(g.size(), 0) { build(); }
 
-  int operator[](int k) { return comp[k]; }
+  StronglyConnectedComponents(G& _g) : g(_g), used(g.size(), 0) {
+    build();
+  }
 
-  vector<int> &belong(int i) { return blng[i]; }
+  int operator[](int k) {
+    return comp[k];
+  }
+
+  vector<int>& belong(int i) {
+    return blng[i];
+  }
 
  private:
   void dfs(int idx) {
-    if (used[idx]) return;
+    if (used[idx]) {
+      return;
+    }
     used[idx] = true;
-    for (auto to : g[idx]) dfs(int(to));
+    for (const auto& entry : g[idx]) {
+      int to = graph_internal::to_vertex(entry);
+      dfs(to);
+    }
     order.push_back(idx);
   }
 
   void rdfs(int idx, int cnt) {
-    if (comp[idx] != -1) return;
+    if (comp[idx] != -1) {
+      return;
+    }
     comp[idx] = cnt;
-    for (int to : rg[idx]) rdfs(to, cnt);
+    for (int to : rg[idx]) {
+      rdfs(to, cnt);
+    }
   }
 
   void build() {
-    for (int i = 0; i < (int)g.size(); i++) dfs(i);
+    for (int i = 0; i < (int)g.size(); i++) {
+      dfs(i);
+    }
     reverse(begin(order), end(order));
     used.clear();
     used.shrink_to_fit();
@@ -47,13 +65,18 @@ struct StronglyConnectedComponents {
 
     rg.resize(g.size());
     for (int i = 0; i < (int)g.size(); i++) {
-      for (auto e : g[i]) {
-        rg[(int)e].emplace_back(i);
+      for (const auto& entry : g[i]) {
+        int e = graph_internal::to_vertex(entry);
+        rg[e].emplace_back(i);
       }
     }
     int ptr = 0;
-    for (int i : order)
-      if (comp[i] == -1) rdfs(i, ptr), ptr++;
+    for (int i : order) {
+      if (comp[i] == -1) {
+        rdfs(i, ptr);
+        ptr++;
+      }
+    }
     rg.clear();
     rg.shrink_to_fit();
     order.clear();
@@ -63,9 +86,12 @@ struct StronglyConnectedComponents {
     blng.resize(ptr);
     for (int i = 0; i < (int)g.size(); i++) {
       blng[comp[i]].push_back(i);
-      for (auto &to : g[i]) {
+      for (const auto& entry : g[i]) {
+        int to = graph_internal::to_vertex(entry);
         int x = comp[i], y = comp[to];
-        if (x == y) continue;
+        if (x == y) {
+          continue;
+        }
         dag[x].push_back(y);
       }
     }

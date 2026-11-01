@@ -1,17 +1,9 @@
 #pragma once
 
-#include "../graph/graph-template.hpp"
+#include <queue>
+#include <type_traits>
 
-template <typename T>
-struct has_cost {
- private:
-  template <typename U>
-  static auto confirm(U u) -> decltype(u.cost, std::true_type());
-  static auto confirm(...) -> std::false_type;
-
- public:
-  enum : bool { value = decltype(confirm(std::declval<T>()))::value };
-};
+#include "../graph/graph-utility.hpp"
 
 template <typename T>
 vector<vector<T>> inverse_tree(const vector<vector<T>>& g) {
@@ -21,10 +13,9 @@ vector<vector<T>> inverse_tree(const vector<vector<T>>& g) {
     for (auto& e : g[i]) {
       if constexpr (is_same<T, int>::value) {
         rg[e].push_back(i);
-      } else if constexpr (has_cost<T>::value) {
-        rg[e].emplace_back(e.to, i, e.cost);
       } else {
-        assert(0);
+        const auto& [to, weight] = e;
+        rg[to].emplace_back(i, weight);
       }
     }
   }
@@ -42,10 +33,11 @@ vector<vector<T>> rooted_tree(const vector<vector<T>>& g, int root = 0) {
   while (!que.empty()) {
     auto p = que.front();
     que.pop();
-    for (auto& e : g[p]) {
-      if (v[e] == false) {
-        v[e] = true;
-        que.push(e);
+    for (const auto& e : g[p]) {
+      int to = graph_internal::to_vertex(e);
+      if (v[to] == false) {
+        v[to] = true;
+        que.push(to);
         rg[p].push_back(e);
       }
     }

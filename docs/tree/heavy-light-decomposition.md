@@ -1,5 +1,7 @@
 ## Heavy Light Decomposition(重軽分解)
 
+入力の隣接リストは `vector<vector<int>>` と `vector<vector<pair<int, T>>>`（行き先・重み）の両方に対応する。木の構造の計算では重みを無視する。
+
 #### 概要
 
 Heavy Light Decomposition(重軽分解、HLDec)とは、木のパスをheavy pathとlight pathに分けて管理するデータ構造である。
@@ -19,3 +21,4 @@ HLDecの特長は「任意のパスを$\rm{O}(\log N)$本の列に分解する�
 
 - [実装](../../tree/heavy-light-decomposition.hpp)
 - [Verify: queries.cpp](../../tests/unit/tree/queries.cpp)
+- [Verify: weighted-containers.cpp](../../tests/unit/tree/weighted-containers.cpp)

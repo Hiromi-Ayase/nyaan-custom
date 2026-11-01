@@ -1,6 +1,6 @@
 # ドキュメント索引
 
-`library/nyaan` の各カテゴリにあるヘッダと、その `@docs` が参照する説明の一覧です。対象は 364 ヘッダです。同梱の AtCoder Library (`atcoder/`)、未使用コード (`unused/`)、ユニットテスト (`tests/`) は一覧の対象外です。
+`library/nyaan` の各カテゴリにあるヘッダと、その `@docs` が参照する説明の一覧です。対象は 363 ヘッダです。同梱の AtCoder Library (`atcoder/`)、未使用コード (`unused/`)、ユニットテスト (`tests/`) は一覧の対象外です。
 
 各機能の API や利用条件は以下のリンクから参照できます。「実装・検証」欄の **Verify** は、対象を直接呼び出し、素朴な計算・全探索・境界ケースと照合する独立したユニットテストへのリンクです。[CTestでの実行方法](../tests/README.md)も参照してください。
 
@@ -8,6 +8,7 @@
 
 - 基本の想定環境は GCC / C++17 です。AVX2 や GCC 拡張を使う実装は各ページの条件も確認してください。
 - ヘッダによっては標準ヘッダや共通テンプレートの事前読み込みが必要です。Verifyリンク先のユニットテストの include 順が参考になります。
+- グラフは重みなしなら `vector<vector<int>>`、重み付きなら `vector<vector<pair<int, T>>>`（行き先・重み）、辺列なら `vector<tuple<int, int, T>>`（始点・終点・重み）を使います。[入力と移行方法](graph/graph-utility.md#グラフの入力)も参照してください。
 - FPS の係数は通常、定数項から低次順です。演算には NTT 向けまたは任意法向けのバックエンドを選び、同名の実装を同時に読み込まないでください。
 - 区間の端点、添字の基準、失敗時の値は API ごとに異なります。各ページはこのチェックアウトの実装に合わせています。
 
@@ -22,14 +23,14 @@
 | [fps](#fps) | 42 |
 | [game](#game) | 3 |
 | [geometry](#geometry) | 6 |
-| [graph](#graph) | 17 |
+| [graph](#graph) | 15 |
 | [hashmap](#hashmap) | 4 |
 | [internal](#internal) | 5 |
 | [lct](#lct) | 10 |
 | [marathon](#marathon) | 5 |
 | [math-fast](#math-fast) | 8 |
 | [math](#math) | 37 |
-| [matrix](#matrix) | 14 |
+| [matrix](#matrix) | 15 |
 | [misc](#misc) | 14 |
 | [modint](#modint) | 10 |
 | [modulo](#modulo) | 14 |
@@ -197,7 +198,6 @@
 | [cycle-detection.hpp](../graph/cycle-detection.hpp) | [閉路の検出](graph/cycle-detection.md) |
 | [dimension-expanded-graph.hpp](../graph/dimension-expanded-graph.hpp) | [次元拡張グラフ](graph/dimension-expanded-graph.md) |
 | [functional-graph.hpp](../graph/functional-graph.hpp) | [Functional Graph の木への分解](graph/functional-graph-decomposition.md) |
-| [graph-template.hpp](../graph/graph-template.hpp) | [グラフテンプレート](graph/graph-template.md) |
 | [graph-utility.hpp](../graph/graph-utility.hpp) | [グラフユーティリティ](graph/graph-utility.md) |
 | [kruskal.hpp](../graph/kruskal.hpp) | [Kruskal 法](graph/kruskal.md) |
 | [lowlink.hpp](../graph/lowlink.hpp) | [Low Link（関節点・橋）](graph/lowlink.md) |
@@ -205,7 +205,6 @@
 | [minimum-cost-arborescence.hpp](../graph/minimum-cost-arborescence.hpp) | [最小全域有向木](graph/minimum-cost-arborescence.md) |
 | [namori.hpp](../graph/namori.hpp) | [Functional Graph(なもりグラフ)](graph/functional-graph.md) |
 | [offline-dynamic-connectivity.hpp](../graph/offline-dynamic-connectivity.hpp) | [オフライン動的連結性](graph/offline-dynamic-connectivity.md) |
-| [static-graph.hpp](../graph/static-graph.hpp) | [Static Graph](graph/static-graph.md) |
 | [strongly-connected-components.hpp](../graph/strongly-connected-components.hpp) | [強連結成分分解](graph/strongly-connected-components.md) |
 | [topological-sort.hpp](../graph/topological-sort.hpp) | [トポロジカルソート](graph/topological-sort.md) |
 | [two-edge-connected-components.hpp](../graph/two-edge-connected-components.hpp) | [二重辺連結成分分解](graph/two-edge-connected-components.md) |
@@ -327,6 +326,7 @@
 | [matrix.hpp](../matrix/matrix.hpp) | [動的サイズの行列](matrix/matrix.md) |
 | [polynomial-matrix-determinant.hpp](../matrix/polynomial-matrix-determinant.hpp) | [多項式行列の行列式](matrix/polynomial-matrix-determinant.md) |
 | [polynomial-matrix-prefix-prod.hpp](../matrix/polynomial-matrix-prefix-prod.hpp) | [多項式行列の連続積](matrix/polynomial-matrix-prefix-prod.md) |
+| [polynomial-matrix-tree.hpp](../matrix/polynomial-matrix-tree.hpp) | [多項式の辺重みに対応した行列木定理](matrix/polynomial-matrix-tree.md) |
 
 ## misc
 

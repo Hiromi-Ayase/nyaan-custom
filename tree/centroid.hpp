@@ -1,11 +1,13 @@
 #pragma once
 
+#include "../graph/graph-utility.hpp"
+
 #include <utility>
 #include <vector>
 using namespace std;
 
 template <typename G>
-vector<int> centroid(const G &g) {
+vector<int> centroid(const G& g) {
   const int N = (int)g.size();
 
   vector<pair<int, int> > st;
@@ -15,11 +17,19 @@ vector<int> centroid(const G &g) {
     auto p = st.back();
     if (sz[p.first] == 0) {
       sz[p.first] = 1;
-      for (auto &to : g[p.first])
-        if (to != p.second) st.emplace_back(to, p.first);
+      for (const auto& entry : g[p.first]) {
+        int to = graph_internal::to_vertex(entry);
+        if (to != p.second) {
+          st.emplace_back(to, p.first);
+        }
+      }
     } else {
-      for (auto &to : g[p.first])
-        if (to != p.second) sz[p.first] += sz[to];
+      for (const auto& entry : g[p.first]) {
+        int to = graph_internal::to_vertex(entry);
+        if (to != p.second) {
+          sz[p.first] += sz[to];
+        }
+      }
       par[p.first] = p.second;
       st.pop_back();
     }
@@ -29,10 +39,18 @@ vector<int> centroid(const G &g) {
   int size = N;
   for (int i = 0; i < N; i++) {
     int val = N - sz[i];
-    for (auto &to : g[i])
-      if (to != par[i]) val = max(val, sz[to]);
-    if (val < size) size = val, ret.clear();
-    if (val == size) ret.emplace_back(i);
+    for (const auto& entry : g[i]) {
+      int to = graph_internal::to_vertex(entry);
+      if (to != par[i]) {
+        val = max(val, sz[to]);
+      }
+    }
+    if (val < size) {
+      size = val, ret.clear();
+    }
+    if (val == size) {
+      ret.emplace_back(i);
+    }
   }
 
   return ret;

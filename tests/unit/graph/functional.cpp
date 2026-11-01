@@ -18,6 +18,7 @@ int main() {
       }
       FunctionalGraph<int> f(n, to, weights);
       FunctionalGraph<int> unit(n, to);
+      FunctionalGraph<long long> long_unit(n, to);
       vector<set<int>> cycle(n);
       set<set<int>> expected;
       for (int s = 0; s < n; ++s) {
@@ -32,6 +33,8 @@ int main() {
         // 行き先・重みと、重み省略時の1が保たれる。
         assert(f.to[s] == to[s] && f.weight[s] == weights[s]);
         assert(unit.weight[s] == 1);
+        // 重みの型がlong longでも、省略した重みは1になる。
+        assert(long_unit.to[s] == to[s] && long_unit.weight[s] == 1);
       }
       set<set<int>> actual;
       for (auto& loop : f.get_loops()) {
@@ -51,14 +54,14 @@ int main() {
         ++visits[u];
         // 仮想根からの木に循環や頂点の重複がない。
         assert(visits[u] == 1);
-        for (auto e : f.g[u]) {
-          int r = u == n ? e.to : representative;
+        for (auto [dst, cost] : f.g[u]) {
+          int r = u == n ? dst : representative;
           // 同じ木の代表は仮想根の直下にあり、元の閉路に属する。
-          assert(f.represent[e.to] == r && cycle[e.to].count(r));
+          assert(f.represent[dst] == r && cycle[dst].count(r));
           if (u != n) {
-            assert(to[e.to] == u && e.cost == weights[e.to]);
+            assert(to[dst] == u && cost == weights[dst]);
           }
-          self(self, e.to, r);
+          self(self, dst, r);
         }
       };
       dfs(dfs, n, -1);
@@ -108,20 +111,23 @@ int main() {
           }
         }
         for (int a = 0; a < (int)inverse.size(); ++a) {
-          for (auto e : namori.aux[i][a]) {
+          for (auto [dst, cost] : namori.aux[i][a]) {
             int x = inverse[a];
-            int y = inverse[e.to];
-            restored.emplace(min(x, y), max(x, y), e.cost);
+            int y = inverse[dst];
+            restored.emplace(min(x, y), max(x, y), cost);
           }
         }
       }
       // 閉路と枝を合わせ直すと、入力の全辺が重み・多重度込みで復元される。
       assert(restored == expected_edges);
       if (k >= 3) {
-        WeightedGraph<int> undirected(n);
+        vector<vector<pair<int, int>>> undirected(n);
+        vector<vector<int>> unweighted(n);
         for (auto [u, v, w] : edges) {
-          undirected[u].emplace_back(u, v, w);
-          undirected[v].emplace_back(v, u, w);
+          undirected[u].emplace_back(v, w);
+          undirected[v].emplace_back(u, w);
+          unweighted[u].push_back(v);
+          unweighted[v].push_back(u);
         }
         FunctionalGraph<int> f(n, undirected);
         auto loops = f.get_loops();
@@ -131,6 +137,17 @@ int main() {
         }
         // 無向単純グラフから構築するAPIも、生成時の閉路を取り出す。
         assert(loops.size() == 1 && set<int>(loops[0].begin(), loops[0].end()) == expected_loop);
+        FunctionalGraph<long long> plain(n, unweighted);
+        auto plain_loops = plain.get_loops();
+        // intの隣接リストでも閉路が一致し、各有向辺の重みは1になる。
+        assert(plain_loops.size() == 1);
+        assert(set<int>(plain_loops[0].begin(), plain_loops[0].end()) == expected_loop);
+        for (int u = 0; u < n; ++u) {
+          assert(plain.weight[u] == 1);
+          // pairから構築した辺の向きと重みは、元の無向辺のどちらかに対応する。
+          assert(find(undirected[u].begin(), undirected[u].end(),
+                      make_pair(f.to[u], f.weight[u])) != undirected[u].end());
+        }
       }
     }
   }
